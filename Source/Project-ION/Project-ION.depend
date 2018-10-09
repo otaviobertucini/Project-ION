@@ -1,10 +1,11 @@
 # depslib dependency file v1.0
-1539033493 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/main.cpp
+1539044802 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/main.cpp
 	<allegro.h>
 	<stdlib.h>
 	<time.h>
 	<cstddef>
 	<iostream>
+	"Level.h"
 
 1539027532 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/test.cpp
 	<allegro.h>
@@ -12,4 +13,18 @@
 	<time.h>
 	<cstddef>
 	<iostream>
+
+1539042536 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/Level.h
+	<allegro.h>
+	<cstddef>
+	"Map.h"
+	<iostream>
+
+1539044820 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/Map.h
+
+1539044860 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Level.cpp
+	"Level.h"
+
+1539044824 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Map.cpp
+	"Map.h"
 
