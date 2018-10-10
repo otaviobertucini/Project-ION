@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1539044802 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/main.cpp
+1539203794 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/main.cpp
 	<allegro.h>
 	<stdlib.h>
 	<time.h>
@@ -14,17 +14,37 @@
 	<cstddef>
 	<iostream>
 
-1539042536 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/Level.h
+1539203624 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/Level.h
 	<allegro.h>
 	<cstddef>
-	"Map.h"
 	<iostream>
+	<vector>
+	"Map.h"
+	"Character.h"
+	"Human.h"
 
 1539044820 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/Map.h
 
-1539044860 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Level.cpp
+1539203782 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Level.cpp
 	"Level.h"
 
 1539044824 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Map.cpp
 	"Map.h"
+
+1539184271 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/Character.h
+	<allegro.h>
+	<cstddef>
+	<vector>
+
+1539184564 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/Human.h
+	<string>
+	<iterator>
+	<iostream>
+	"Character.h"
+
+1539183689 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Character.cpp
+	"Character.h"
+
+1539203875 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Human.cpp
+	"Human.h"
 
