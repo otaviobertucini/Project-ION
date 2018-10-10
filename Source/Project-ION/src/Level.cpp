@@ -7,6 +7,13 @@ Level::Level()
 
 Level::Level(BITMAP* screen):screen(screen){
     map = NULL;
+    BITMAP* img_jack = load_bitmap("/home/otavio/Documentos/Project_ION/Material/Scenario/jack_1.bmp", NULL);
+    if(img_jack == NULL)
+        cout << "erro carregando" << endl;
+    std::vector<BITMAP*> *jacks = new std::vector<BITMAP*>;
+    jacks->push_back(img_jack);
+    jack = new Human("Jack", 10, 10, 1, 1, jacks);
+    characters.push_back(static_cast<Character*>(jack));
 }
 
 void Level::setMap(Map* map){
@@ -33,14 +40,27 @@ int Level::printMap(){
             j = 0;
             h++;
         }
-        cout << matrix[i] << endl;
         if(matrix[i] == 0)
             blit(stone_1, screen, 0, 0, 30*j, 30*h, 30, 30);
         j++;
     }
 }
 
+void Level::updatePosition(){
+    vector<Character*>::iterator itr = characters.begin();
+    for(itr; itr != characters.end(); itr++){
+        (*itr)->printCharacter(screen);
+    }
+}
+
+Human* Level::getJack(){
+    return jack;
+}
+
 Level::~Level()
 {
-    //dtor
+    /*std::vector<Character*>::iterator itr = characters.begin();
+    for(itr; itr != characters.end(); itr++)
+        delete *itr;
+    characters.clear();*/
 }

@@ -2,8 +2,11 @@
 #define LEVEL_H
 #include <allegro.h>
 #include <cstddef> //library for NULL
-#include "Map.h"
 #include <iostream>
+#include <vector>
+#include "Map.h"
+#include "Character.h"
+#include "Human.h"
 using std::cout;
 using std::endl;
 
@@ -16,9 +19,13 @@ public:
     void setMap(Map* map);
     Map* getMap();
     int printMap();
+    void updatePosition();
+    Human* getJack();
 private:
     Map* map;
     BITMAP* screen;
+    std::vector<Character*> characters;
+    Human* jack;
 };
 
 #endif // LEVEL_H

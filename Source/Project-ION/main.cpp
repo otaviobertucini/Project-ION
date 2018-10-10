@@ -52,8 +52,13 @@ int main() {
     level0.setMap(&map_level0);
     level0.printMap();
 
+    Human* jack = level0.getJack();
     while(!key[KEY_ESC]){
-        continue;
+        if (key[KEY_UP]){jack->move(0, -1);}
+        if (key[KEY_DOWN]){jack->move(0, 1);}
+        if (key[KEY_LEFT]){jack->move(-1, 0);}
+        if (key[KEY_RIGHT]){jack->move(1, 0);}
+        level0.updatePosition();
     }
     return 0;
 }

@@ -8,11 +8,13 @@
 		<Build>
 			<Target title="Debug">
 				<Option output="bin/Debug/Project-ION" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="bin/Debug" />
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
+					<Add directory="include" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -22,6 +24,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add directory="include" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -31,7 +34,11 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="include/Level.h" />
+		<Unit filename="include/Map.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/Level.cpp" />
+		<Unit filename="src/Map.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />
