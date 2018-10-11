@@ -2,21 +2,26 @@
 #define CHARACTER_H
 #include <allegro.h>
 #include <cstddef> //library for NULL
+#include <math.h>
 #include <vector>
+#include <iostream>
+using std::cout;
+using std::endl;
 
 class Character
 {
 public:
     Character();
-    Character(int x, int y, int x_speed, int y_speed, std::vector<BITMAP*> *img);
+    Character(float x, float y, float x_speed, float y_speed, std::vector<BITMAP*> *img);
     ~Character();
     virtual void move(int x_move, int y_move) = 0;
     virtual void printCharacter(BITMAP* screen) = 0;
+    virtual void getPosMatrix(int *i, int *j);
 protected:
-    int x;
-    int y;
-    int x_speed;
-    int y_speed;
+    float x;
+    float y;
+    float x_speed;
+    float y_speed;
     std::vector<BITMAP*> *img; //This vector stores the images that the character will use.
 };
 

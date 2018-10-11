@@ -52,7 +52,9 @@ int main() {
     Map map_level0(*m);
     level0.setMap(&map_level0);
 
+
     Human* jack = level0.getJack();
+    int i, j;
     while(!key[KEY_ESC]){
         level0.printMap();
         if (key[KEY_UP]){jack->move(0, -1);}
@@ -60,6 +62,8 @@ int main() {
         if (key[KEY_LEFT]){jack->move(-1, 0);}
         if (key[KEY_RIGHT]){jack->move(1, 0);}
         level0.updatePosition();
+        jack->getPosMatrix(&i, &j);
+        cout << "value: " << level0.getValueMap(j, i) << "  matrix: "<< i << " " << j << endl;
         draw_sprite(screen, buffer, 0, 0);
         clear_bitmap(buffer);
     }

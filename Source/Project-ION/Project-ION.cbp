@@ -34,9 +34,13 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="include/Character.h" />
+		<Unit filename="include/Human.h" />
 		<Unit filename="include/Level.h" />
 		<Unit filename="include/Map.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/Character.cpp" />
+		<Unit filename="src/Human.cpp" />
 		<Unit filename="src/Level.cpp" />
 		<Unit filename="src/Map.cpp" />
 		<Extensions>

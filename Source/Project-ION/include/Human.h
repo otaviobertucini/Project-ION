@@ -12,7 +12,7 @@ class Human:public Character
 {
     public:
         Human();
-        Human(string name, int x, int y, int x_speed, int y_speed, std::vector<BITMAP*> *img);
+        Human(string name, float x, float y, float x_speed, float y_speed, std::vector<BITMAP*> *img);
         ~Human();
         void move(int x_move, int y_move);
         void printCharacter(BITMAP* screen);

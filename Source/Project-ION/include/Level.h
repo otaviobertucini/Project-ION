@@ -21,6 +21,7 @@ public:
     int printMap();
     void updatePosition();
     Human* getJack();
+    int getValueMap(int i, int j);
 private:
     Map* map;
     BITMAP* screen;

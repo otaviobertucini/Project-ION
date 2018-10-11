@@ -12,7 +12,7 @@ Level::Level(BITMAP* screen):screen(screen){
         cout << "erro carregando" << endl;
     std::vector<BITMAP*> *jacks = new std::vector<BITMAP*>;
     jacks->push_back(img_jack);
-    jack = new Human("Jack", 10, 10, 1, 1, jacks);
+    jack = new Human("Jack", 0, 0, 0.2, 0.2, jacks);
     characters.push_back(static_cast<Character*>(jack));
 }
 
@@ -24,7 +24,7 @@ Map* Level::getMap(){
     return map;
 }
 
-/*This function returns 0 case success and 1 case fails*/
+/*This function print the background of the level. Returns 0 case success and 1 case fails*/
 int Level::printMap(){
     if(map == NULL){ //tests if map exists
         cout << "Mapa não existe" << endl;
@@ -46,11 +46,16 @@ int Level::printMap(){
     }
 }
 
+//This method update all the positions of the characters placed in the level.
 void Level::updatePosition(){
     vector<Character*>::iterator itr = characters.begin();
     for(itr; itr != characters.end(); itr++){
         (*itr)->printCharacter(screen);
     }
+}
+
+int Level::getValueMap(int i, int j){
+    return map->getValueMap(i, j);
 }
 
 Human* Level::getJack(){

@@ -5,7 +5,7 @@ Human::Human()
     //ctor
 }
 
-Human::Human(string name, int x, int y, int x_speed, int y_speed, std::vector<BITMAP*> *img):
+Human::Human(string name, float x, float y, float x_speed, float y_speed, std::vector<BITMAP*> *img):
                Character(x, y, x_speed, y_speed, img){
     this->name = name;
 }
@@ -23,7 +23,6 @@ void Human::printCharacter(BITMAP* screen){
     }
     std::vector<BITMAP*>::iterator itr = img->begin();
     blit(*itr, screen, 0, 0, x, y, 40, 60);
-
 }
 
 Human::~Human()

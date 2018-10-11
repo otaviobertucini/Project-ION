@@ -1,11 +1,30 @@
 # depslib dependency file v1.0
-1539221861 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/main.cpp
+0 <<<<<<< HEAD
+
+1539284082 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/main.cpp
 	<allegro.h>
 	<stdlib.h>
 	<time.h>
 	<cstddef>
 	<iostream>
 	"Level.h"
+
+1539203875 d783cf70352f85f6915c89f64713f80c4be4c
+	<allegro.h>
+	<stdlib.h>
+	<time.h>
+	<cstddef>
+	<iostream>
+	"Level.h"
+	<allegro.h>
+	<cstddef>
+	<iostream>
+	<vector>
+	"Map.h"
+	"Character.h"
+	"Human.h"
+	"Level.h"
+	"Human.h"
 
 1539027532 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/test.cpp
 	<allegro.h>
@@ -14,7 +33,9 @@
 	<cstddef>
 	<iostream>
 
-1539221593 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/Level.h
+1539183689 D
+
+1539262274 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/Level.h
 	<allegro.h>
 	<cstddef>
 	<iostream>
@@ -23,28 +44,31 @@
 	"Character.h"
 	"Human.h"
 
-1539044820 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/Map.h
+1539264220 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/Map.h
+	<cstddef>
 
-1539221602 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Level.cpp
+1539283826 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Level.cpp
 	"Level.h"
 
-1539044824 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Map.cpp
+1539264229 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Map.cpp
 	"Map.h"
 
-1539184271 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/Character.h
+1539283729 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/Character.h
 	<allegro.h>
 	<cstddef>
+	<math.h>
 	<vector>
+	<iostream>
 
-1539184564 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/Human.h
+1539283762 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/Human.h
 	<string>
 	<iterator>
 	<iostream>
 	"Character.h"
 
-1539183689 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Character.cpp
+1539283743 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Character.cpp
 	"Character.h"
 
-1539203983 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Human.cpp
+1539283794 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Human.cpp
 	"Human.h"
 
