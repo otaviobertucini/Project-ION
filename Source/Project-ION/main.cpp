@@ -16,7 +16,8 @@ int main() {
     if(res == 0)
         cout << "GFX OK" << endl;
 
-    Level level0(screen);
+    BITMAP* buffer = create_bitmap(1080, 720);
+    Level level0(buffer);
     int m[24][36] = {
                     {0, 0, 0, 0, 0, -1, -1, -1, -1, -1, -1, -1, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
                     {0, 0, 0, 0, 0, -1, -1, -1, -1, -1, -1, -1, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
@@ -50,15 +51,17 @@ int main() {
 
     Map map_level0(*m);
     level0.setMap(&map_level0);
-    level0.printMap();
 
     Human* jack = level0.getJack();
     while(!key[KEY_ESC]){
+        level0.printMap();
         if (key[KEY_UP]){jack->move(0, -1);}
         if (key[KEY_DOWN]){jack->move(0, 1);}
         if (key[KEY_LEFT]){jack->move(-1, 0);}
         if (key[KEY_RIGHT]){jack->move(1, 0);}
         level0.updatePosition();
+        draw_sprite(screen, buffer, 0, 0);
+        clear_bitmap(buffer);
     }
     return 0;
 }
