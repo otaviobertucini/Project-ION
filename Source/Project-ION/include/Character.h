@@ -18,10 +18,10 @@ public:
     virtual void printCharacter(BITMAP* screen) = 0;
     virtual void getPosMatrix(int *i, int *j);
 protected:
-    float x;
-    float y;
-    float x_speed;
-    float y_speed;
+    float x; //Position in x-axis.
+    float y; //Position in the y-axis.
+    float x_speed;  // Values that will be
+    float y_speed;  // increased/decreased when moving.
     std::vector<BITMAP*> *img; //This vector stores the images that the character will use.
 };
 

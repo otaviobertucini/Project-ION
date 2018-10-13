@@ -13,6 +13,8 @@ Character::Character(float x, float y, float x_speed, float y_speed, std::vector
     this->img = img;
 }
 
+// Returns the position in the matrix where the character is placed.
+// Takes the left foot as reference so far.
 void Character::getPosMatrix(int *i, int *j){
     *j = (int)floor((y+60)/30);
     *i = (int)floor((x+40)/30)-1;
@@ -20,8 +22,8 @@ void Character::getPosMatrix(int *i, int *j){
 
 Character::~Character()
 {
-    /*std::vector<BITMAP*>::iterator itr = img->begin();
+    std::vector<BITMAP*>::iterator itr = img->begin();
     for(itr; itr != img->end(); itr++)
         delete *itr;
-    img->clear();*/
+    img->clear();
 }

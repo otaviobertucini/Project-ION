@@ -10,6 +10,8 @@ Human::Human(string name, float x, float y, float x_speed, float y_speed, std::v
     this->name = name;
 }
 
+/*Move the character depending on x_move and y_move.
+This parameters can be valued as 1, 0 or -1 (depending on the movement). */
 void Human::move(int x_move, int y_move){
     x += x_speed*x_move;
     y += y_speed*y_move;

@@ -46,7 +46,7 @@ int Level::printMap(){
     }
 }
 
-//This method update all the positions of the characters placed in the level.
+//Update all the positions of the characters placed in the level.
 void Level::updatePosition(){
     vector<Character*>::iterator itr = characters.begin();
     for(itr; itr != characters.end(); itr++){
@@ -64,8 +64,8 @@ Human* Level::getJack(){
 
 Level::~Level()
 {
-    /*std::vector<Character*>::iterator itr = characters.begin();
+    std::vector<Character*>::iterator itr = characters.begin();
     for(itr; itr != characters.end(); itr++)
         delete *itr;
-    characters.clear();*/
+    characters.clear();
 }

@@ -44,14 +44,9 @@ int main() {
                     {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
                     {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
                     };
-    //int *m_ptr = m[0];
-    /*Map map_level0(m_ptr);
-    level0.setMap(&map_level0);
-    level0.printMap();*/
 
     Map map_level0(*m);
     level0.setMap(&map_level0);
-
 
     Human* jack = level0.getJack();
     int i, j;
