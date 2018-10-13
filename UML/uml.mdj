@@ -48,8 +48,13 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
+<<<<<<< Updated upstream
 											"left": -240,
 											"top": 192,
+=======
+											"left": -304,
+											"top": 320,
+>>>>>>> Stashed changes
 											"height": 13
 										},
 										{
@@ -59,9 +64,15 @@
 												"$ref": "AAAAAAFmVZwakRPSOyA="
 											},
 											"font": "Arial;13;1",
+<<<<<<< Updated upstream
 											"left": 53,
 											"top": 271,
 											"width": 199,
+=======
+											"left": 21,
+											"top": 335,
+											"width": 171.6025390625,
+>>>>>>> Stashed changes
 											"height": 13,
 											"text": "Map"
 										},
@@ -73,8 +84,13 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
+<<<<<<< Updated upstream
 											"left": -240,
 											"top": 192,
+=======
+											"left": -304,
+											"top": 320,
+>>>>>>> Stashed changes
 											"width": 73.67724609375,
 											"height": 13,
 											"text": "(from Model)"
@@ -87,16 +103,27 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
+<<<<<<< Updated upstream
 											"left": -240,
 											"top": 192,
+=======
+											"left": -304,
+											"top": 320,
+>>>>>>> Stashed changes
 											"height": 13,
 											"horizontalAlignment": 1
 										}
 									],
 									"font": "Arial;13;0",
+<<<<<<< Updated upstream
 									"left": 48,
 									"top": 264,
 									"width": 209,
+=======
+									"left": 16,
+									"top": 328,
+									"width": 181.6025390625,
+>>>>>>> Stashed changes
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAFmVZwakRPTmw4="
@@ -131,18 +158,30 @@
 												"$ref": "AAAAAAFmVZxGCBP7Pqs="
 											},
 											"font": "Arial;13;0",
+<<<<<<< Updated upstream
 											"left": 53,
 											"top": 294,
 											"width": 199,
+=======
+											"left": 21,
+											"top": 358,
+											"width": 171.6025390625,
+>>>>>>> Stashed changes
 											"height": 13,
 											"text": "-matrix: int",
 											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
+<<<<<<< Updated upstream
 									"left": 48,
 									"top": 289,
 									"width": 209,
+=======
+									"left": 16,
+									"top": 353,
+									"width": 181.6025390625,
+>>>>>>> Stashed changes
 									"height": 23
 								},
 								{
@@ -165,9 +204,15 @@
 												"$ref": "AAAAAAFmVZx7chQEjoM="
 											},
 											"font": "Arial;13;0",
+<<<<<<< Updated upstream
 											"left": 53,
 											"top": 317,
 											"width": 199,
+=======
+											"left": 21,
+											"top": 381,
+											"width": 171.6025390625,
+>>>>>>> Stashed changes
 											"height": 13,
 											"text": "+Map(): <<create>>",
 											"horizontalAlignment": 0
@@ -182,9 +227,15 @@
 												"$ref": "AAAAAAFmVZytiBQNKcg="
 											},
 											"font": "Arial;13;0",
+<<<<<<< Updated upstream
 											"left": 53,
 											"top": 332,
 											"width": 199,
+=======
+											"left": 21,
+											"top": 396,
+											"width": 171.6025390625,
+>>>>>>> Stashed changes
 											"height": 13,
 											"text": "+Map(matrix: int): <<create>>",
 											"horizontalAlignment": 0
@@ -199,6 +250,7 @@
 												"$ref": "AAAAAAFmVZ0vYRQaX7Y="
 											},
 											"font": "Arial;13;0",
+<<<<<<< Updated upstream
 											"left": 53,
 											"top": 347,
 											"width": 199,
@@ -212,6 +264,55 @@
 									"top": 312,
 									"width": 209,
 									"height": 53
+=======
+											"left": 21,
+											"top": 411,
+											"width": 171.6025390625,
+											"height": 13,
+											"text": "~Map(): <<destroy>>",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAFmZI93GpgQN74=",
+											"_parent": {
+												"$ref": "AAAAAAFmVZwakhPYQm8="
+											},
+											"model": {
+												"$ref": "AAAAAAFmZI922JgNJx4="
+											},
+											"font": "Arial;13;0",
+											"left": 21,
+											"top": 426,
+											"width": 171.6025390625,
+											"height": 13,
+											"text": "+getMatrix(): int*",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAFmZI/Xd5guaGI=",
+											"_parent": {
+												"$ref": "AAAAAAFmVZwakhPYQm8="
+											},
+											"model": {
+												"$ref": "AAAAAAFmZI/XQJgrhbg="
+											},
+											"font": "Arial;13;0",
+											"left": 21,
+											"top": 441,
+											"width": 171.6025390625,
+											"height": 13,
+											"text": "+getValueMap(i: int, j: int): int",
+											"horizontalAlignment": 0
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 16,
+									"top": 376,
+									"width": 181.6025390625,
+									"height": 83
+>>>>>>> Stashed changes
 								},
 								{
 									"_type": "UMLReceptionCompartmentView",
@@ -224,8 +325,13 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
+<<<<<<< Updated upstream
 									"left": -120,
 									"top": 96,
+=======
+									"left": -152,
+									"top": 160,
+>>>>>>> Stashed changes
 									"width": 10,
 									"height": 10
 								},
@@ -240,18 +346,31 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
+<<<<<<< Updated upstream
 									"left": -120,
 									"top": 96,
+=======
+									"left": -152,
+									"top": 160,
+>>>>>>> Stashed changes
 									"width": 10,
 									"height": 10
 								}
 							],
 							"font": "Arial;13;0",
 							"containerChangeable": true,
+<<<<<<< Updated upstream
 							"left": 48,
 							"top": 264,
 							"width": 209,
 							"height": 193,
+=======
+							"left": 16,
+							"top": 328,
+							"width": 181.6025390625,
+							"height": 131,
+							"autoResize": true,
+>>>>>>> Stashed changes
 							"nameCompartment": {
 								"$ref": "AAAAAAFmVZwakRPSOyA="
 							},
@@ -547,8 +666,13 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
+<<<<<<< Updated upstream
 									"left": 199,
 									"top": 227,
+=======
+									"left": 222,
+									"top": 420,
+>>>>>>> Stashed changes
 									"height": 13,
 									"alpha": 0.5235987755982988,
 									"distance": 30,
@@ -568,8 +692,13 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
+<<<<<<< Updated upstream
 									"left": 188,
 									"top": 218,
+=======
+									"left": 225,
+									"top": 406,
+>>>>>>> Stashed changes
 									"height": 13,
 									"alpha": 0.7853981633974483,
 									"distance": 40,
@@ -589,8 +718,13 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
+<<<<<<< Updated upstream
 									"left": 222,
 									"top": 243,
+=======
+									"left": 218,
+									"top": 447,
+>>>>>>> Stashed changes
 									"height": 13,
 									"alpha": -0.5235987755982988,
 									"distance": 25,
@@ -696,8 +830,12 @@
 							"tail": {
 								"$ref": "AAAAAAFmVZwakRPR/YM="
 							},
+<<<<<<< Updated upstream
 							"lineStyle": 1,
 							"points": "201:263;233:201",
+=======
+							"points": "197:441;215:441;215:222",
+>>>>>>> Stashed changes
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAFmVZ5VPBUn5OA="
