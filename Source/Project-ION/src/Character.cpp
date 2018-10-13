@@ -13,6 +13,7 @@ Character::Character(float x, float y, float x_speed, float y_speed, std::vector
     this->img = img;
 }
 
+//This method returns the position of the matrix where the player is.
 void Character::getPosMatrix(int *i, int *j){
     *j = (int)floor((y+60)/30);
     *i = (int)floor((x+40)/30)-1;
