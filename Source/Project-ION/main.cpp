@@ -12,7 +12,6 @@ int main() {
     SoloGame game;
     game.execute();
 
-
 //    allegro_init();
 //    install_keyboard();
 //    set_color_depth(32);

@@ -14,7 +14,7 @@ class Level
 {
 public:
     Level();
-    Level(BITMAP* screen);
+    Level(BITMAP* buffer);
     ~Level();
     void setMap(Map* map);
     Map* getMap();
@@ -24,7 +24,7 @@ public:
     int getValueMap(int i, int j);
 private:
     Map* map; //Pointer to the level map.
-    BITMAP* screen; //Pointer to the display where all components will be shown.
+    BITMAP* buffer; //Pointer to the display where all components will be shown.
     std::vector<Character*> characters; //Vector of ALL characters in the level.
 };
 

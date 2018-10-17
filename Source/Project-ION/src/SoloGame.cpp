@@ -52,19 +52,20 @@ SoloGame::SoloGame():Game()
 void SoloGame::execute(){
     current = levels[0];
     int i, j;
-    /*while(!key[KEY_ESC]){
+    while(!key[KEY_ESC]){
         current->printMap();
         if (key[KEY_UP]){jack->move(0, -1);}
         if (key[KEY_DOWN]){jack->move(0, 1);}
         if (key[KEY_LEFT]){jack->move(-1, 0);}
         if (key[KEY_RIGHT]){jack->move(1, 0);}
         current->updatePosition();
+        jack->printCharacter(buffer);
         jack->getPosMatrix(&i, &j);
         cout << "value: " << current->getValueMap(j, i) << "  matrix: "<< i << " " << j << endl;
 
         draw_sprite(screen, buffer, 0, 0);
         clear_bitmap(buffer);
-    }*/
+    }
 }
 
 SoloGame::~SoloGame()

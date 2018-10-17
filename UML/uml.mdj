@@ -693,7 +693,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": 109,
-									"top": 186,
+									"top": 193,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 15,
@@ -714,7 +714,7 @@
 									"visible": null,
 									"font": "Arial;13;0",
 									"left": 109,
-									"top": 171,
+									"top": 178,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 30,
@@ -735,7 +735,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": 109,
-									"top": 216,
+									"top": 223,
 									"height": 13,
 									"alpha": -1.5707963267948966,
 									"distance": 15,
@@ -819,7 +819,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": 214,
-									"top": 186,
+									"top": 193,
 									"height": 13,
 									"alpha": -0.5235987755982988,
 									"distance": 30,
@@ -839,7 +839,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": 211,
-									"top": 172,
+									"top": 179,
 									"height": 13,
 									"alpha": -0.7853981633974483,
 									"distance": 40,
@@ -858,7 +858,7 @@
 									},
 									"font": "Arial;13;0",
 									"left": 215,
-									"top": 213,
+									"top": 220,
 									"width": 7.22998046875,
 									"height": 13,
 									"alpha": 0.5235987755982988,
@@ -904,7 +904,7 @@
 							"tail": {
 								"$ref": "AAAAAAFmVZwakRPR/YM="
 							},
-							"points": "109:312;109:207;240:207",
+							"points": "109:312;109:214;240:214",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAFmVZ5VPBUn5OA="
@@ -2349,7 +2349,7 @@
 											"top": 294,
 											"width": 191,
 											"height": 13,
-											"text": "-jack: Human",
+											"text": "-jack: Human*",
 											"horizontalAlignment": 0
 										}
 									],
@@ -3245,13 +3245,30 @@
 											"height": 13,
 											"text": "-imgsJack: vector<BITMAP*>",
 											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLAttributeView",
+											"_id": "AAAAAAFmgszO1MK1Er0=",
+											"_parent": {
+												"$ref": "AAAAAAFmfg3Zg1e5Tec="
+											},
+											"model": {
+												"$ref": "AAAAAAFmgszOicKm9eE="
+											},
+											"font": "Arial;13;0",
+											"left": 677,
+											"top": 565,
+											"width": 205.54345703125,
+											"height": 13,
+											"text": "+imgsMap: vector<BITMAP*>",
+											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 672,
 									"top": 545,
 									"width": 215.54345703125,
-									"height": 23
+									"height": 38
 								},
 								{
 									"_type": "UMLOperationCompartmentView",
@@ -3274,7 +3291,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 677,
-											"top": 573,
+											"top": 588,
 											"width": 205.54345703125,
 											"height": 13,
 											"text": "«create»+Images()",
@@ -3291,7 +3308,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 677,
-											"top": 588,
+											"top": 603,
 											"width": 205.54345703125,
 											"height": 13,
 											"text": "«destroy»+Image()",
@@ -3308,18 +3325,35 @@
 											},
 											"font": "Arial;13;0",
 											"left": 677,
-											"top": 603,
+											"top": 618,
 											"width": 205.54345703125,
 											"height": 13,
 											"text": "+getImgsJack(): vector<BITMAP*>*",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAFmgs0KlMNSioE=",
+											"_parent": {
+												"$ref": "AAAAAAFmfg3Zg1e6llg="
+											},
+											"model": {
+												"$ref": "AAAAAAFmgs0KVsNDt+A="
+											},
+											"font": "Arial;13;0",
+											"left": 677,
+											"top": 633,
+											"width": 205.54345703125,
+											"height": 13,
+											"text": "+getImgsMap(): vector<BITMAP*>*",
 											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 672,
-									"top": 568,
+									"top": 583,
 									"width": 215.54345703125,
-									"height": 53
+									"height": 68
 								},
 								{
 									"_type": "UMLReceptionCompartmentView",
@@ -3359,7 +3393,7 @@
 							"left": 672,
 							"top": 520,
 							"width": 215.54345703125,
-							"height": 129,
+							"height": 131,
 							"nameCompartment": {
 								"$ref": "AAAAAAFmfg3Zg1e0ivI="
 							},
@@ -4721,9 +4755,7 @@
 							},
 							"name": "jack",
 							"visibility": "private",
-							"type": {
-								"$ref": "AAAAAAFmbfE6BqFGVsw="
-							}
+							"type": "Human*"
 						}
 					],
 					"operations": [
@@ -4832,6 +4864,15 @@
 							"name": "imgsJack",
 							"visibility": "private",
 							"type": "vector<BITMAP*>"
+						},
+						{
+							"_type": "UMLAttribute",
+							"_id": "AAAAAAFmgszOicKm9eE=",
+							"_parent": {
+								"$ref": "AAAAAAFmfg3ZglexDkc="
+							},
+							"name": "imgsMap",
+							"type": "vector<BITMAP*>"
 						}
 					],
 					"operations": [
@@ -4866,6 +4907,25 @@
 									"_id": "AAAAAAFmfhSHTWPB2Q0=",
 									"_parent": {
 										"$ref": "AAAAAAFmfhPUDGJpcjI="
+									},
+									"type": "vector<BITMAP*>*",
+									"direction": "return"
+								}
+							]
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAFmgs0KVsNDt+A=",
+							"_parent": {
+								"$ref": "AAAAAAFmfg3ZglexDkc="
+							},
+							"name": "getImgsMap",
+							"parameters": [
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAFmgs1WBMOVooQ=",
+									"_parent": {
+										"$ref": "AAAAAAFmgs0KVsNDt+A="
 									},
 									"type": "vector<BITMAP*>*",
 									"direction": "return"

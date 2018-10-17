@@ -4,11 +4,11 @@ Images::Images()
 {
     //Loads images from Jack
     imgsJack = new std::vector<BITMAP*>;
-    imgsJack->push_back(load_bitmap("/home/otavio/Documentos/Project_ION/Material/Scenario/jack_1.bmp", NULL));
+    imgsJack->push_back(load_bitmap("Material/Scenario/jack_1.bmp", NULL));
 
     //Loads images from map
     imgsMap = new std::vector<BITMAP*>;
-    imgsMap->push_back(load_bitmap("/home/otavio/Documentos/Project_ION/Material/Scenario/stone_1.bmp", NULL));
+    imgsMap->push_back(load_bitmap("Material/Scenario/stone_1.bmp", NULL));
 }
 
 std::vector<BITMAP*>* Images::getImgsJack(){
