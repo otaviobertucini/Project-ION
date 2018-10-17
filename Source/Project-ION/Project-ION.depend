@@ -36,7 +36,7 @@
 
 1539183689 D
 
-1539793117 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/Level.h
+1539793440 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/Level.h
 	<allegro.h>
 	<cstddef>
 	<iostream>
@@ -45,13 +45,14 @@
 	"Character.h"
 	"Human.h"
 
-1539264220 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/Map.h
+1539792917 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/Map.h
 	<cstddef>
+	<iostream>
 
-1539794194 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Level.cpp
+1539794553 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Level.cpp
 	"Level.h"
 
-1539688846 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Map.cpp
+1539794077 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Map.cpp
 	"Map.h"
 
 1539688846 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/Character.h
@@ -67,13 +68,13 @@
 	<iostream>
 	"Character.h"
 
-1539688846 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Character.cpp
+1539794220 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Character.cpp
 	"Character.h"
 
 1539688846 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Human.cpp
 	"Human.h"
 
-1539717245 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/SoloGame.h
+1539794895 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/SoloGame.h
 	<allegro.h>
 	<stdlib.h>
 	<time.h>
@@ -83,7 +84,7 @@
 	"Human.h"
 	"Game.h"
 
-1539727145 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/Game.h
+1539795579 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/Game.h
 	<allegro.h>
 	<stdlib.h>
 	<time.h>
@@ -101,12 +102,12 @@
 	<stdlib.h>
 	<cstddef>
 
-1539726990 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Game.cpp
+1539794178 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Game.cpp
 	"Game.h"
 
-1539794092 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Images.cpp
+1539794053 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Images.cpp
 	"Images.h"
 
-1539794498 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/SoloGame.cpp
+1539794854 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/SoloGame.cpp
 	"SoloGame.h"
 

@@ -21,5 +21,15 @@ std::vector<BITMAP*>* Images::getImgsMap(){
 
 Images::~Images()
 {
-    //dtor
+    cout << "entrei" << endl;
+
+    std::vector<BITMAP*>::iterator itr = imgsJack->begin();
+    for(itr; itr != imgsJack->end(); itr++)
+        delete *itr;
+    imgsJack->clear();
+
+    std::vector<BITMAP*>::iterator itr2 = imgsMap->begin();
+    for(itr2; itr2 != imgsMap->end(); itr2++)
+        delete *itr2;
+    imgsMap->clear();
 }

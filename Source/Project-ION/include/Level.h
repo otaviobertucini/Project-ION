@@ -26,6 +26,8 @@ private:
     Map* map; //Pointer to the level map.
     BITMAP* buffer; //Pointer to the display where all components will be shown.
     std::vector<Character*> characters; //Vector of ALL characters in the level.
+    BITMAP *stone_1;
+
 };
 
 #endif // LEVEL_H

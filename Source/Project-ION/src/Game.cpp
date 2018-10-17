@@ -5,5 +5,4 @@ Game::Game()
 
 Game::~Game()
 {
-    //dtor
 }
