@@ -1,0 +1,22 @@
+#ifndef SOLOGAME_H
+#define SOLOGAME_H
+#include <allegro.h>
+#include <stdlib.h>
+#include <time.h>
+#include <cstddef> //library for NULL
+#include <iostream>
+#include <vector>
+#include "Human.h"
+#include "Game.h"
+
+class SoloGame: public Game
+{
+public:
+    SoloGame();
+    ~SoloGame();
+    void execute();
+private:
+    Human *jack;
+};
+
+#endif // SOLOGAME_H
