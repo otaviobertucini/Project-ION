@@ -11,6 +11,7 @@ Character::Character(float x, float y, float x_speed, float y_speed, std::vector
     this->x_speed = x_speed;
     this->y_speed = y_speed;
     this->img = img;
+    getPosMatrix(&i_pos, &j_pos);
 }
 
 // Returns the position in the matrix where the character is placed.

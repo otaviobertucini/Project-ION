@@ -23,6 +23,8 @@ protected:
     float x_speed;  // Values that will be
     float y_speed;  // increased/decreased when moving.
     std::vector<BITMAP*> *img; //This vector stores the images that the character will use.
+    int i_pos; //Current position of character in the matrix (x-axis).
+    int j_pos; //Current position of character in the matrix (y-axis).
 };
 
 #endif // CHARACTER_H

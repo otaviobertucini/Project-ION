@@ -21,4 +21,8 @@ int Map::getValueMap(int i, int j){
 
 Map::~Map()
 {
+    for(int i = 0; i<24; i++)
+        delete[] matrix[i];
+    delete[] matrix;
+    matrix = NULL;
 }

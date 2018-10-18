@@ -17,9 +17,8 @@ public:
     SoloGame();
     ~SoloGame();
     void execute();
-    int* createMatrix();
+    void level0();
 private:
-    int** m;
     Human *jack;
 };
 
