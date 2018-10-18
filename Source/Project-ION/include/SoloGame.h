@@ -8,6 +8,8 @@
 #include <vector>
 #include "Human.h"
 #include "Game.h"
+using std::cout;
+using std::endl;
 
 class SoloGame: public Game
 {

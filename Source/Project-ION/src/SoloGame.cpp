@@ -12,7 +12,7 @@ SoloGame::SoloGame():Game()
 
     images = new Images;
     buffer = create_bitmap(1080, 720);
-    jack = new Human("Jack", 0, 0, 0.2, 0.2, images->getImgsJack());
+    jack = new Human("Jack", 0, 0, 2, 2, images->getImgsJack());
 
 
 
@@ -69,7 +69,7 @@ SoloGame::SoloGame():Game()
 
 void SoloGame::execute()
 {
-    int i, j;
+    int i, j, pos;
     while(!key[KEY_ESC])
     {
         current->printMap();
@@ -92,7 +92,11 @@ void SoloGame::execute()
         current->updatePosition();
         jack->printCharacter(buffer);
         jack->getPosMatrix(&i, &j);
-        cout << "value: " << current->getValueMap(j, i) << "  matrix: "<< i << " " << j << endl;
+        pos = current->getValueMap(j, i);
+        if(pos != -1)
+            cout << "value: " << pos << "  matrix: "<< i << " " << j << endl;
+        else
+            cout << "passou" << endl;
 
         draw_sprite(screen, buffer, 0, 0);
         clear_bitmap(buffer);
@@ -103,4 +107,7 @@ SoloGame::~SoloGame()
 {
     delete jack;
     jack = NULL;
+    for(int i = 0; i<24; i++)
+        delete[] m[i];
+    delete[] m;
 }
