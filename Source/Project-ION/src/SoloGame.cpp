@@ -2,14 +2,6 @@
 
 SoloGame::SoloGame():Game()
 {
-    allegro_init();
-    install_keyboard();
-    int depth = desktop_color_depth();
-    if(depth == 0)
-        depth = 32;
-    set_color_depth(depth);
-    set_gfx_mode(GFX_AUTODETECT_WINDOWED, 1080, 720, 0, 0);
-
     images = new Images;
     buffer = create_bitmap(1080, 720);
     jack = new Human("Jack", 0, 0, 1, 1, images->getImgsJack());
@@ -41,18 +33,14 @@ void SoloGame::execute()
             jack->move(1, 0);
         }
         current->updatePosition();
-        jack->printCharacter(buffer);
+        jack->print(buffer);
         jack->getPosMatrix(&i, &j);
-        pos = current->getValueMap(j, i);
+        pos = current->getValueMap(i, j);
+        cout << pos << endl;
         if(pos == 5){
             cout << "Next level" << endl;
             break;
         }
-
-//        if(pos != -1)
-//            cout << "value: " << pos << "  matrix: "<< i << " " << j << endl;
-//        else
-//            cout << "passou" << endl;
 
         draw_sprite(screen, buffer, 0, 0);
         clear_bitmap(buffer);
@@ -98,7 +86,7 @@ void SoloGame::level0(){
         }
     }
 
-    Level* level0 = new Level(buffer);
+    Level* level0 = new Level(buffer, images->getImgsMap());
     Map* map_level0 = new Map(m);
     maps.push_back(map_level0);
     level0->setMap(map_level0);

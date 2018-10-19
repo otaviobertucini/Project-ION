@@ -15,7 +15,8 @@ class Human:public Character
         Human(string name, float x, float y, float x_speed, float y_speed, std::vector<BITMAP*> *img);
         ~Human();
         void move(int x_move, int y_move);
-        void printCharacter(BITMAP* screen);
+        void print(BITMAP* screen);
+        void setPosMatrix();
     private:
         string name;
 };
