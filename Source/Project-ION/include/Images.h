@@ -5,6 +5,7 @@
 #include <iostream>
 #include <stdlib.h>
 #include <cstddef> //library for NULL
+#include "List_Images.h"
 using std::cout;
 using std::endl;
 
@@ -13,11 +14,11 @@ class Images
 public:
     Images();
     ~Images();
-    std::vector<BITMAP*>* getImgsJack();
-    std::vector<BITMAP*>* getImgsMap();
+    List_Images* getImgsJack();
+    List_Images* getImgsMap();
 private:
-    std::vector<BITMAP*> *imgsJack;
-    std::vector<BITMAP*> *imgsMap;
+    List_Images *imgsJack;
+    List_Images *imgsMap;
 };
 
 #endif // IMAGES_H

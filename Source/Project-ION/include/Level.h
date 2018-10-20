@@ -7,6 +7,7 @@
 #include "Map.h"
 #include "Character.h"
 #include "Human.h"
+#include "List_Images.h"
 using std::cout;
 using std::endl;
 
@@ -14,7 +15,7 @@ class Level
 {
 public:
     Level();
-    Level(BITMAP* buffer, std::vector<BITMAP*> *img);
+    Level(BITMAP* buffer, List_Images *img);
     ~Level();
     void setMap(Map* map);
     Map* getMap();
@@ -26,7 +27,7 @@ private:
     Map* map; //Pointer to the level map.
     BITMAP* buffer; //Pointer to the display where all components will be shown.
     std::vector<Character*> characters; //Vector of ALL characters in the level.
-    std::vector<BITMAP*> *img;
+    List_Images *img;
 };
 
 #endif // LEVEL_H

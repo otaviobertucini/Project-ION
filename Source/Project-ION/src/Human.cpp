@@ -5,7 +5,7 @@ Human::Human()
     //ctor
 }
 
-Human::Human(string name, float x, float y, float x_speed, float y_speed, std::vector<BITMAP*> *img):
+Human::Human(string name, float x, float y, float x_speed, float y_speed, List_Images *img):
                Character(x, y, x_speed, y_speed, img){
     this->name = name;
     setPosMatrix();
@@ -32,8 +32,9 @@ void Human::print(BITMAP* screen){
         cout << "Erro carregando imagem (humano)." << endl;
         return;
     }
-    std::vector<BITMAP*>::iterator itr = img->begin();
-    blit(*itr, screen, 0, 0, x, y, 40, 60);
+    //std::vector<BITMAP*>::iterator itr = img->begin();
+    BITMAP* image = (*img)[0];
+    blit(image, screen, 0, 0, x, y, 40, 60);
 }
 
 Human::~Human()

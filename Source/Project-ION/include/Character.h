@@ -13,7 +13,7 @@ class Character: public Entity
 {
 public:
     Character();
-    Character(float x, float y, float x_speed, float y_speed, std::vector<BITMAP*> *img);
+    Character(float x, float y, float x_speed, float y_speed, List_Images *img);
     ~Character();
     virtual void move(int x_move, int y_move) = 0;
     virtual void print(BITMAP* screen) = 0;

@@ -5,7 +5,7 @@ Entity::Entity()
     //ctor
 }
 
-Entity::Entity(float x, float y, std::vector<BITMAP*> *img){
+Entity::Entity(float x, float y, List_Images *img){
     this->x = x;
     this->y = y;
     this->img = img;

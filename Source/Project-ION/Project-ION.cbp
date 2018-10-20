@@ -35,18 +35,23 @@
 			<Add option="-Wall" />
 		</Compiler>
 		<Unit filename="include/Character.h" />
+		<Unit filename="include/Entity.h" />
 		<Unit filename="include/Game.h" />
 		<Unit filename="include/Human.h" />
 		<Unit filename="include/Images.h" />
 		<Unit filename="include/Level.h" />
+		<Unit filename="include/List.h" />
+		<Unit filename="include/List_Images.h" />
 		<Unit filename="include/Map.h" />
 		<Unit filename="include/SoloGame.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Character.cpp" />
+		<Unit filename="src/Entity.cpp" />
 		<Unit filename="src/Game.cpp" />
 		<Unit filename="src/Human.cpp" />
 		<Unit filename="src/Images.cpp" />
 		<Unit filename="src/Level.cpp" />
+		<Unit filename="src/List_Images.cpp" />
 		<Unit filename="src/Map.cpp" />
 		<Unit filename="src/SoloGame.cpp" />
 		<Extensions>
