@@ -20,19 +20,7 @@ Map* Level::getMap(){
 
 /*This function print the background of the level. Returns 0 case success and 1 case fails*/
 int Level::printMap(){
-    if(map == NULL){ //tests if map exists
-        cout << "Mapa não existe" << endl;
-        return 1;
-    }
-
-    int** matrix = map->getMatrix();
-    for(int i = 0; i<24; i++){
-        for(int j = 0; j<36; j++){
-            if(matrix[i][j] == 0)
-                blit((*img)[0], buffer, 0, 0, 30*j, 30*i, 30, 30);
-        }
-    }
-    return 0;
+    map->printMap(buffer);
 }
 
 //Update all the positions of the characters placed in the level.

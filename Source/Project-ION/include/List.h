@@ -11,6 +11,7 @@ public:
     void include(TYPE newe);
     void deleteAll();
     int empty();
+    int size();
     TYPE operator[](int index);
     virtual ~List();
 private:
@@ -45,6 +46,10 @@ int List<TYPE>::empty(){
     return vec.empty();
 }
 
+template<class TYPE>
+int List<TYPE>::size(){
+    return vec.size();
+}
 
 template<class TYPE>
 List<TYPE>::~List()

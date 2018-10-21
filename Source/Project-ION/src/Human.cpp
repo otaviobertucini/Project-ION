@@ -32,7 +32,6 @@ void Human::print(BITMAP* screen){
         cout << "Erro carregando imagem (humano)." << endl;
         return;
     }
-    //std::vector<BITMAP*>::iterator itr = img->begin();
     BITMAP* image = (*img)[0];
     blit(image, screen, 0, 0, x, y, 40, 60);
 }

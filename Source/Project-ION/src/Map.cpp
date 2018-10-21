@@ -5,7 +5,26 @@ Map::Map()
     //ctor
 }
 
-Map::Map(int** matrix):matrix(matrix){}
+Map::Map(int** matrix, List_Images *img){
+    this->matrix = matrix;
+    this->img = img;
+    generateStructures();
+}
+
+void Map::generateStructures(){
+    for(int i = 0; i<24; i++){
+        for(int j = 0; j<36; j++){
+            if(matrix[i][j] == 0)
+                structures.include(static_cast<Structure*>(new Stone(30*j, 30*i, (*img)[0])));
+        }
+    }
+}
+
+void Map::printMap(BITMAP* screen){
+    for(int i = 0; i<structures.size(); i++){
+        structures[i]->print(screen);
+    }
+}
 
 int** Map::getMatrix(){
     return matrix;

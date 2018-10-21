@@ -87,7 +87,7 @@ void SoloGame::level0(){
     }
 
     Level* level0 = new Level(buffer, images->getImgsMap());
-    Map* map_level0 = new Map(m);
+    Map* map_level0 = new Map(m, images->getImgsMap());
     maps.push_back(map_level0);
     level0->setMap(map_level0);
     levels.push_back(level0);

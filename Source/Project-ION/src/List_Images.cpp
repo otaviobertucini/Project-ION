@@ -11,10 +11,6 @@ int List_Images::empty(){
     return images.empty();
 }
 
-//BITMAP* List_Images::at(int index){
-//    return images[0];
-//}
-
 BITMAP* List_Images::operator[](int index){
     return images[index];
 }

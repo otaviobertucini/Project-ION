@@ -6,6 +6,7 @@
 #include <vector>
 #include <iostream>
 #include "Entity.h"
+#include "List_Images.h"
 using std::cout;
 using std::endl;
 
@@ -21,6 +22,8 @@ public:
 protected:
     float x_speed;  // Values that will be
     float y_speed;  // increased/decreased when moving.
+    List_Images *img;
+
 };
 
 #endif // CHARACTER_H

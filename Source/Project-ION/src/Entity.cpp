@@ -5,10 +5,14 @@ Entity::Entity()
     //ctor
 }
 
-Entity::Entity(float x, float y, List_Images *img){
+Entity::Entity(float x, float y, BITMAP* curren_img){
     this->x = x;
     this->y = y;
-    this->img = img;
+    this->current_img = curren_img;
+}
+
+BITMAP* Entity::getCurrentImg(){
+    return current_img;
 }
 
 void Entity::getPosMatrix(int* i, int* j){
@@ -18,5 +22,5 @@ void Entity::getPosMatrix(int* i, int* j){
 
 Entity::~Entity()
 {
-    //dtor
+    destroy_bitmap(current_img);
 }
