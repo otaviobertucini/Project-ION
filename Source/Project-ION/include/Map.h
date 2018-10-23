@@ -6,6 +6,7 @@
 #include "List_Images.h"
 #include "Structure.h"
 #include "Stone.h"
+
 using std::cout;
 using std::endl;
 

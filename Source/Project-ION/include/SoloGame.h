@@ -1,6 +1,7 @@
 #ifndef SOLOGAME_H
 #define SOLOGAME_H
 #include <allegro.h>
+#include <winalleg.h>
 #include <stdlib.h>
 #include <time.h>
 #include <cstddef> //library for NULL

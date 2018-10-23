@@ -42,8 +42,10 @@
 		<Unit filename="include/Level.h" />
 		<Unit filename="include/List.h" />
 		<Unit filename="include/List_Images.h" />
+		<Unit filename="include/List_Structures.h" />
 		<Unit filename="include/Map.h" />
 		<Unit filename="include/SoloGame.h" />
+		<Unit filename="include/Stone.h" />
 		<Unit filename="include/Structure.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Character.cpp" />
@@ -53,8 +55,10 @@
 		<Unit filename="src/Images.cpp" />
 		<Unit filename="src/Level.cpp" />
 		<Unit filename="src/List_Images.cpp" />
+		<Unit filename="src/List_Structures.cpp" />
 		<Unit filename="src/Map.cpp" />
 		<Unit filename="src/SoloGame.cpp" />
+		<Unit filename="src/Stone.cpp" />
 		<Unit filename="src/Structure.cpp" />
 		<Extensions>
 			<code_completion />
