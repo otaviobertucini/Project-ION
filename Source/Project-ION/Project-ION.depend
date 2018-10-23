@@ -78,7 +78,7 @@
 1540150290 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Character.cpp
 	"Character.h"
 
-1540144813 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Human.cpp
+1540156068 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Human.cpp
 	"Human.h"
 
 1539987665 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/SoloGame.h
@@ -91,7 +91,7 @@
 	"Human.h"
 	"Game.h"
 
-1539998955 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/Game.h
+1540253421 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/Game.h
 	<allegro.h>
 	<stdlib.h>
 	<time.h>
@@ -126,7 +126,7 @@
 	<vector>
 	"List_Images.h"
 
-1540152770 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Entity.cpp
+1540155866 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Entity.cpp
 	"Entity.h"
 
 1540146517 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/List_Images.cpp
