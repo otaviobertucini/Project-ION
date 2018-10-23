@@ -20,7 +20,6 @@ public:
 protected:
     std::vector<Level*> levels;
     std::vector<Map*> maps;
-    //std::vector<int*> matrices;
     BITMAP* buffer;
     Images *images;
     Level *current;
