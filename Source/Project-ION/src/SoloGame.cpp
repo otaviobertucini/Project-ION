@@ -41,6 +41,7 @@ void SoloGame::execute()
         pos = current->getValueMap(i, j);
 
         jack->isStructureCollide();
+        jack->gravity();
 
         if(pos == 5){
             cout << "Next level" << endl;

@@ -1,7 +1,7 @@
 #ifndef ENTITY_H
 #define ENTITY_H
 #include <allegro.h>
-#include <winalleg.h>
+//#include <winalleg.h>
 #include <cstddef> //library for NULL
 #include <iostream>
 #include <vector>

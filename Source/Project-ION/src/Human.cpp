@@ -11,6 +11,11 @@ Human::Human(string name, float x, float y, float x_speed, float y_speed, List_I
     setPosMatrix();
 }
 
+void Human::gravity(){
+    if(move_down)
+        y += y_speed;
+}
+
 /*Move the character depending on x_move and y_move.
 This parameters can be valued as 1, 0 or -1 (depending on the movement). */
 void Human::move(int x_move, int y_move)
@@ -47,7 +52,7 @@ void Human::print(BITMAP* screen){
     blit(image, screen, 0, 0, x, y, 40, 60);
 }
 
-//Calcule collision of the character with another body (entity), return 1 if the collision happens
+//Calculate collision of the character with another body (entity), return 1 if the collision happens
 int Human::isCollide(Entity* Body)
 {
     if((x >= Body->GetX()-40 && x <= Body->GetX()+30) &&
@@ -68,26 +73,14 @@ void Human::isStructureCollide()
     {
         if(isCollide(static_cast<Entity*>((*aux)[i])) == 1)
         {
-            if(x+40+(x_speed*2) >= (*aux)[i]->GetX() && x+40-(x_speed*2) <= (*aux)[i]->GetX())
-                move_right = false;
-            else
-                move_right = true;
-
-            if(x+(x_speed*2) >= (*aux)[i]->GetX() + 30 && x-(x_speed*2) <= (*aux)[i]->GetX() + 30)
-                move_left = false;
-            else
-                move_left = true;
-
-            if(y+60+(y_speed*2) >= (*aux)[i]->GetY() && y+60-(y_speed*2) <= (*aux)[i]->GetY())
+            if(y + 60 == (*aux)[i]->GetY())
                 move_down = false;
-            else
-                move_down = true;
-
-            if(y+(y_speed*2) >= (*aux)[i]->GetY() + 30 && y-(y_speed*2) <= (*aux)[i]->GetY() + 30)
+            else if(y == (*aux)[i]->GetY() + 30)
                 move_up = false;
-            else
-                move_up = true;
-
+            else if(x + 40 == (*aux)[i]->GetX())
+                move_right = false;
+            else if(x == (*aux)[i]->GetX() + 30)
+                move_left = false;
             colission = 1;
         }
     }

@@ -19,6 +19,7 @@ class Human:public Character
         void setPosMatrix();
         void isStructureCollide();
         int isCollide(Entity* Body);
+        void gravity();
         //int collisionDirection(Entity* Body);
     private:
         string name;
