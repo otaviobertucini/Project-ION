@@ -35,6 +35,7 @@
 			<Add option="-Wall" />
 		</Compiler>
 		<Unit filename="include/Character.h" />
+		<Unit filename="include/Enemy.h" />
 		<Unit filename="include/Entity.h" />
 		<Unit filename="include/Game.h" />
 		<Unit filename="include/Human.h" />
@@ -47,8 +48,10 @@
 		<Unit filename="include/SoloGame.h" />
 		<Unit filename="include/Stone.h" />
 		<Unit filename="include/Structure.h" />
+		<Unit filename="include/Topspin.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Character.cpp" />
+		<Unit filename="src/Enemy.cpp" />
 		<Unit filename="src/Entity.cpp" />
 		<Unit filename="src/Game.cpp" />
 		<Unit filename="src/Human.cpp" />
@@ -60,6 +63,7 @@
 		<Unit filename="src/SoloGame.cpp" />
 		<Unit filename="src/Stone.cpp" />
 		<Unit filename="src/Structure.cpp" />
+		<Unit filename="src/Topspin.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

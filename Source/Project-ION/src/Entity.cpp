@@ -32,5 +32,4 @@ void Entity::getPosMatrix(int* i, int* j){
 
 Entity::~Entity()
 {
-    destroy_bitmap(current_img);
 }

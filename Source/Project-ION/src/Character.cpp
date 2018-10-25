@@ -16,14 +16,17 @@ Character::Character(float x, float y, float x_speed, float y_speed, List_Images
     this->move_right = true;
     this->move_up = true;
     this->move_down = true;
-}
-
-Character::~Character()
-{
-    img->deleteAll();
+    current_img = (*img)[0];
+    h = 60;
+    w = 40;
 }
 
 void Character::setMap(Map* mp)
 {
         map = mp;
+}
+
+Character::~Character()
+{
+    img->deleteAll();
 }

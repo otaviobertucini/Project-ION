@@ -9,6 +9,11 @@ Images::Images()
     //Loads images from map
     imgsMap = new List_Images;
     imgsMap->include(load_bitmap("Material/Scenario/stone_1.bmp", NULL));
+
+    //Loads images from topspin
+    imgsTopspin = new List_Images;
+    imgsTopspin->include(load_bitmap("Material/Enemy/topSpin_Walk_1.bmp", NULL));
+    imgsTopspin->include(load_bitmap("Material/Enemy/topSpin_Walk_2.bmp", NULL));
 }
 
 List_Images* Images::getImgsJack(){
@@ -17,6 +22,10 @@ List_Images* Images::getImgsJack(){
 
 List_Images* Images::getImgsMap(){
     return imgsMap;
+}
+
+List_Images* Images::getImgsTopspin(){
+    return imgsTopspin;
 }
 
 Images::~Images()

@@ -20,7 +20,6 @@ class Human:public Character
         void isStructureCollide();
         int isCollide(Entity* Body);
         void gravity();
-        //int collisionDirection(Entity* Body);
     private:
         string name;
 

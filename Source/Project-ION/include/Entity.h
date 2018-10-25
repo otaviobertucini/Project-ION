@@ -27,6 +27,8 @@ protected:
     BITMAP* current_img;
     int i_pos;
     int j_pos;
+    int w; //Width
+    int h; //Height
 };
 
 #endif // ENTITY_H

@@ -17,9 +17,11 @@ public:
     ~Images();
     List_Images* getImgsJack();
     List_Images* getImgsMap();
+    List_Images* getImgsTopspin();
 private:
     List_Images *imgsJack;
     List_Images *imgsMap;
+    List_Images *imgsTopspin;
 };
 
 #endif // IMAGES_H

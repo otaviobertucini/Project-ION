@@ -25,8 +25,6 @@ public:
     virtual void setPosMatrix() = 0;
     virtual int isCollide(Entity* Body) = 0;
     virtual void isStructureCollide() = 0;
-    //virtual int collisionDirection(Entity* Body) = 0;
-
 protected:
     float x_speed;  // Values that will be
     float y_speed;  // increased/decreased when moving.

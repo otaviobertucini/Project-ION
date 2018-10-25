@@ -21,6 +21,7 @@ Map* Level::getMap(){
 /*This function print the background of the level. Returns 0 case success and 1 case fails*/
 int Level::printMap(){
     map->printMap(buffer);
+    return 1;
 }
 
 //Update all the positions of the characters placed in the level.
