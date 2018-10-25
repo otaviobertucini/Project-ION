@@ -4,7 +4,7 @@ SoloGame::SoloGame():Game()
 {
     images = new Images;
     buffer = create_bitmap(1080, 720);
-    jack = new Human("Jack", 0, 0, 1, 1, images->getImgsJack());
+    jack = new Human("Jack", 230, 0, 1, 1, images->getImgsJack());
 
     //Level 0
     level0();
@@ -16,6 +16,8 @@ void SoloGame::execute()
     while(!key[KEY_ESC])
     {
         current->printMap();
+
+
         if (key[KEY_UP])
         {
             jack->move(0, -1);
@@ -32,12 +34,13 @@ void SoloGame::execute()
         {
             jack->move(1, 0);
         }
+
         current->updatePosition();
         jack->print(buffer);
         jack->getPosMatrix(&i, &j);
         pos = current->getValueMap(i, j);
 
-        cout << jack->isStructureCollide() << endl;
+        jack->isStructureCollide();
 
         if(pos == 5){
             cout << "Next level" << endl;

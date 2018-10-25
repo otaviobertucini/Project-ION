@@ -24,7 +24,7 @@ public:
     virtual void print(BITMAP* screen) = 0;
     virtual void setPosMatrix() = 0;
     virtual int isCollide(Entity* Body) = 0;
-    virtual int isStructureCollide() = 0;
+    virtual void isStructureCollide() = 0;
     //virtual int collisionDirection(Entity* Body) = 0;
 
 protected:

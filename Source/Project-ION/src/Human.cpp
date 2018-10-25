@@ -15,6 +15,16 @@ Human::Human(string name, float x, float y, float x_speed, float y_speed, List_I
 This parameters can be valued as 1, 0 or -1 (depending on the movement). */
 void Human::move(int x_move, int y_move)
 {
+    if(x_move > 0 && move_right == false)
+        x_move = 0;
+    else if(x_move < 0 && move_left == false)
+        x_move = 0;
+
+    if(y_move > 0 && move_down == false)
+        y_move = 0;
+    else if(y_move < 0 && move_up == false)
+        y_move = 0;
+
     x += x_speed*x_move;
     y += y_speed*y_move;
     setPosMatrix();
@@ -40,28 +50,55 @@ void Human::print(BITMAP* screen){
 //Calcule collision of the character with another body (entity), return 1 if the collision happens
 int Human::isCollide(Entity* Body)
 {
-    if((x > Body->GetX()-40 && x < Body->GetX()+30) &&
-       (y > Body->GetY()-60 && y < Body->GetY()+30))
+    if((x >= Body->GetX()-40 && x <= Body->GetX()+30) &&
+       (y >= Body->GetY()-60 && y <= Body->GetY()+30))
         return 1;
     return 0;
 }
 
-int Human::isStructureCollide()
+void Human::isStructureCollide()
 {
-    int i;
+    int i,colission;
 
     List_Structures* aux;
     aux = map->getList();
 
+    colission = 0;
     for(i=0;i<aux->size();i++)
     {
         if(isCollide(static_cast<Entity*>((*aux)[i])) == 1)
         {
-            return 1;
+            if(x+40+(x_speed*2) >= (*aux)[i]->GetX() && x+40-(x_speed*2) <= (*aux)[i]->GetX())
+                move_right = false;
+            else
+                move_right = true;
+
+            if(x+(x_speed*2) >= (*aux)[i]->GetX() + 30 && x-(x_speed*2) <= (*aux)[i]->GetX() + 30)
+                move_left = false;
+            else
+                move_left = true;
+
+            if(y+60+(y_speed*2) >= (*aux)[i]->GetY() && y+60-(y_speed*2) <= (*aux)[i]->GetY())
+                move_down = false;
+            else
+                move_down = true;
+
+            if(y+(y_speed*2) >= (*aux)[i]->GetY() + 30 && y-(y_speed*2) <= (*aux)[i]->GetY() + 30)
+                move_up = false;
+            else
+                move_up = true;
+
+            colission = 1;
         }
     }
 
-    return 0;
+    if(colission == 0)
+    {
+        move_left = true;
+        move_right = true;
+        move_up = true;
+        move_down = true;
+    }
 }
 
 /*int Human::collisionDirection(Entity* Body)
