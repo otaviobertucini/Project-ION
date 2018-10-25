@@ -17,6 +17,7 @@ public:
     Map(int** matrix, List_Images *img);
     ~Map();
     int** getMatrix();
+    List_Structures* getList();
     int getValueMap(int i, int j);
     void generateStructures();
     void printMap(BITMAP* screen);

@@ -17,8 +17,12 @@ class Human:public Character
         void move(int x_move, int y_move);
         void print(BITMAP* screen);
         void setPosMatrix();
+        int isStructureCollide();
+        int isCollide(Entity* Body);
+        //int collisionDirection(Entity* Body);
     private:
         string name;
+
 };
 
 #endif // HUMAN_H

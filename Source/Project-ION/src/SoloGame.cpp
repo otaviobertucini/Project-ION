@@ -36,7 +36,9 @@ void SoloGame::execute()
         jack->print(buffer);
         jack->getPosMatrix(&i, &j);
         pos = current->getValueMap(i, j);
-        cout << pos << endl;
+
+        cout << jack->isStructureCollide() << endl;
+
         if(pos == 5){
             cout << "Next level" << endl;
             break;
@@ -92,6 +94,7 @@ void SoloGame::level0(){
     level0->setMap(map_level0);
     levels.push_back(level0);
     current = level0;
+    jack->setMap(map_level0);
 }
 
 SoloGame::~SoloGame()

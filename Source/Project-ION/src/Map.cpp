@@ -45,3 +45,8 @@ Map::~Map()
     delete[] matrix;
     matrix = NULL;
 }
+
+List_Structures* Map::getList()
+{
+    return &structures;
+}

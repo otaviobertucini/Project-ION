@@ -15,6 +15,16 @@ BITMAP* Entity::getCurrentImg(){
     return current_img;
 }
 
+float Entity::GetX()
+{
+    return x;
+}
+
+float Entity::GetY()
+{
+    return y;
+}
+
 void Entity::getPosMatrix(int* i, int* j){
     *i = i_pos;
     *j = j_pos;
