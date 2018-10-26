@@ -22,15 +22,14 @@ Character::Character(float x, float y, float x_speed, float y_speed, List_Images
 //Calculate collision of the character with another body (entity), return 1 if the collision happens
 int Character::isCollide(Entity* Body)
 {
-    if((x >= Body->GetX()-w && x <= Body->GetX()+30) &&
-       (y >= Body->GetY()-h && y <= Body->GetY()+30))
+    /*if((x >= Body->GetX() && x <= Body->GetX()+30) &&
+       (y >= Body->GetY() && y <= Body->GetY()+30))
+       {
+           cout << "1" << endl;
         return 1;
-
-    if((x >= Body->GetX()-40 && x <= Body->GetX()+30) &&
-        (y >= Body->GetY()-60 && y <= Body->GetY()+30))
-            return 1;
-
+       }
     return 0;
+    */
 }
 
 
@@ -59,6 +58,7 @@ void Character::isStructureCollide()
 
         if(isCollide(static_cast<Entity*>((*aux)[i])) == 1)
         {
+
             if(y + h >= (*aux)[i]->GetY() && y + h <= (*aux)[i]->GetY() + 3
                && abs(x_center - x_center_body) < 33)
                 move_down = false;
@@ -74,6 +74,7 @@ void Character::isStructureCollide()
 
             else if(x == (*aux)[i]->GetX() + 30 && abs(y_center - y_center_body) < 43)
                 move_left = false;
+
         }
     }
 }

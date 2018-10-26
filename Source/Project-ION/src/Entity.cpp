@@ -25,6 +25,16 @@ float Entity::GetY()
     return y;
 }
 
+int Entity::GetW()
+{
+    return w;
+}
+
+int Entity::GetH()
+{
+    return h;
+}
+
 void Entity::getPosMatrix(int* i, int* j){
     *i = i_pos;
     *j = j_pos;

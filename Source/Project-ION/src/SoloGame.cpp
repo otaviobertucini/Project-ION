@@ -20,15 +20,15 @@ void SoloGame::execute()
         {
             jack->jump();
         }
-        if (key[KEY_X])
+        if (key[KEY_X] && !(key[KEY_DOWN]))
         {
             jack->JetPack();
         }
-       /* if (key[KEY_DOWN])
+        if (key[KEY_X] && key[KEY_DOWN])
         {
-            jack->move(0, 1);
+            jack->activeDash();
         }
-        */
+
         if (key[KEY_LEFT])
         {
             jack->move(-1);
@@ -45,6 +45,7 @@ void SoloGame::execute()
         //pos = current->getValueMap(i, j);
         top->move(0);
         jack->gravity();
+        jack->dash();
         jack->isStructureCollide();
 
         draw_sprite(screen, buffer, 0, 0);

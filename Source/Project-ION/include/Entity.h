@@ -20,6 +20,8 @@ public:
     BITMAP* getCurrentImg();
     float GetX();
     float GetY();
+    int GetW();
+    int GetH();
     virtual ~Entity();
 protected:
     float x;

@@ -26,6 +26,7 @@ public:
     virtual int isCollide(Entity* Body);
     virtual void isStructureCollide();
 protected:
+    int current_side;
     float x_speed;  // Values that will be
     float y_speed;  // increased/decreased when moving.
     bool move_left;

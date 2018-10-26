@@ -23,11 +23,14 @@ class Human:public Character
         void gravity();
         void jump();
         void JetPack();
+        void activeDash();
+        void dash();
     private:
         string name;
         float y_force;
         bool charge;
-
+        bool dashOn;
+        float distance_dash;
 };
 
 #endif // HUMAN_H
