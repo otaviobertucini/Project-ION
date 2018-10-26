@@ -8,8 +8,12 @@ class Enemy: public Character
 public:
     Enemy();
     Enemy(float x, float y, float x_speed, float y_speed, List_Images *img);
+    void setPosMatrix();
+    virtual void move(int x_move) = 0;
+    void print(BITMAP* screen);
     virtual ~Enemy();
 protected:
+
 
 };
 

@@ -32,4 +32,5 @@ Images::~Images()
 {
     imgsJack->deleteAll();
     imgsMap->deleteAll();
+    imgsTopspin->deleteAll();
 }

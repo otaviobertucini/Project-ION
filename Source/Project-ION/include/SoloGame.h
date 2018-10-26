@@ -9,6 +9,8 @@
 #include <vector>
 #include "Human.h"
 #include "Game.h"
+#include "Topspin.h"
+
 using std::cout;
 using std::endl;
 
@@ -21,6 +23,7 @@ public:
     void level0();
 private:
     Human *jack;
+    Topspin *top;
 };
 
 #endif // SOLOGAME_H

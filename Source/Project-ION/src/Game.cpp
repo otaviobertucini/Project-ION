@@ -4,6 +4,7 @@ Game::Game()
 {
     allegro_init();
     install_keyboard();
+    install_mouse();
     set_color_depth(32);
     set_gfx_mode(GFX_AUTODETECT_WINDOWED, 1080, 720, 0, 0);
 }

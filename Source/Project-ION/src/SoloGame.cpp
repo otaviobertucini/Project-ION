@@ -4,7 +4,7 @@ SoloGame::SoloGame():Game()
 {
     images = new Images;
     buffer = create_bitmap(1080, 720);
-    jack = new Human("Jack", 230, 0, 1, 1, images->getImgsJack());
+    jack = new Human("Jack", 230, 0, 0.5, 1, images->getImgsJack());
 
     //Level 0
     level0();
@@ -12,12 +12,10 @@ SoloGame::SoloGame():Game()
 
 void SoloGame::execute()
 {
-    int i, j, pos;
+    //int i, j, pos;
     while(!key[KEY_ESC])
     {
         current->printMap();
-
-
         if (key[KEY_UP])
         {
             jack->jump();
@@ -37,18 +35,13 @@ void SoloGame::execute()
         }
 
         current->updatePosition();
+        top->print(buffer);
         jack->print(buffer);
-        jack->getPosMatrix(&i, &j);
-        pos = current->getValueMap(i, j);
-
+        //jack->getPosMatrix(&i, &j);
+        //pos = current->getValueMap(i, j);
+        top->move(0);
         jack->gravity();
         jack->isStructureCollide();
-
-
-        if(pos == 5){
-            cout << "Next level" << endl;
-            break;
-        }
 
         draw_sprite(screen, buffer, 0, 0);
         clear_bitmap(buffer);
@@ -94,6 +87,8 @@ void SoloGame::level0(){
         }
     }
 
+    top = new Topspin(600, 630+10, 1, 1, images->getImgsTopspin());
+
     Level* level0 = new Level(buffer, images->getImgsMap());
     Map* map_level0 = new Map(m, images->getImgsMap());
     maps.push_back(map_level0);
@@ -101,6 +96,7 @@ void SoloGame::level0(){
     levels.push_back(level0);
     current = level0;
     jack->setMap(map_level0);
+    top->setMap(map_level0);
 }
 
 SoloGame::~SoloGame()

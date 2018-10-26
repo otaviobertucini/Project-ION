@@ -3,6 +3,7 @@
 #include <string>
 #include <iterator>
 #include <iostream>
+#include <math.h>
 #include "Character.h"
 using namespace std;
 using std::cout;
@@ -17,8 +18,8 @@ class Human:public Character
         void move(int x_move);
         void print(BITMAP* screen);
         void setPosMatrix();
-        void isStructureCollide();
-        int isCollide(Entity* Body);
+        /*void isStructureCollide();
+        int isCollide(Entity* Body);*/
         void gravity();
         void jump();
     private:
