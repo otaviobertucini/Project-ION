@@ -1,7 +1,7 @@
 #ifndef CHARACTER_H
 #define CHARACTER_H
 #include <allegro.h>
-//#include <winalleg.h>
+#include <winalleg.h>
 #include <cstddef> //library for NULL
 #include <math.h>
 #include <vector>

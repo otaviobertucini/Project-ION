@@ -9,6 +9,7 @@ Human::Human(string name, float x, float y, float x_speed, float y_speed, List_I
                Character(x, y, x_speed, y_speed, img){
     this->name = name;
     this->y_force = 0;
+    this->charge = false;
     setPosMatrix();
     h = 60;
     w = 40;
@@ -33,13 +34,14 @@ void Human::gravity()
         y_force = y_force_limit;
 
     if(move_down == false)
+    {
        y_force = 0;
-
+       charge = true;
+    }
 /*
     else if(y_move < 0 && move_up == false)
         y_move = 0;
 */
-    if(move_down == true)
        y += y_force;
 }
 
@@ -49,6 +51,16 @@ void Human::jump()
     {
         y_force = -2.5;
         move_down = true;
+    }
+}
+
+void Human::JetPack()
+{
+    if(charge == true)
+    {
+        y_force = -2.7;
+        move_down = true;
+        charge = false;
     }
 }
 

@@ -22,9 +22,11 @@ class Human:public Character
         int isCollide(Entity* Body);*/
         void gravity();
         void jump();
+        void JetPack();
     private:
         string name;
         float y_force;
+        bool charge;
 
 };
 

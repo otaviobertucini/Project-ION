@@ -16,9 +16,13 @@ void SoloGame::execute()
     while(!key[KEY_ESC])
     {
         current->printMap();
-        if (key[KEY_UP])
+        if (key[KEY_C])
         {
             jack->jump();
+        }
+        if (key[KEY_X])
+        {
+            jack->JetPack();
         }
        /* if (key[KEY_DOWN])
         {
