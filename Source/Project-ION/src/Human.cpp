@@ -8,17 +8,50 @@ Human::Human()
 Human::Human(string name, float x, float y, float x_speed, float y_speed, List_Images *img):
                Character(x, y, x_speed, y_speed, img){
     this->name = name;
+    this->y_force = 0;
     setPosMatrix();
 }
 
-void Human::gravity(){
-    if(move_down)
-        y += y_speed;
+void Human::gravity()
+{
+
+    float y_force_limit;
+
+    if(move_up == false)
+    {
+        y_force *= -0.5;
+        move_up = true;
+    }
+
+    y_force_limit = 2;
+
+    y_force += 0.02;
+
+    if(y_force > y_force_limit)
+        y_force = y_force_limit;
+
+    if(move_down == false)
+       y_force = 0;
+
+/*
+    else if(y_move < 0 && move_up == false)
+        y_move = 0;
+*/
+    if(move_down == true)
+       y += y_force;
 }
 
+void Human::jump()
+{
+    if(move_down == false)
+    {
+        y_force = -2.5;
+        move_down = true;
+    }
+}
 /*Move the character depending on x_move and y_move.
 This parameters can be valued as 1, 0 or -1 (depending on the movement). */
-void Human::move(int x_move, int y_move)
+void Human::move(int x_move)
 {
     if(x_move > 0 && move_right == false){
         x_move = 0;
@@ -27,13 +60,7 @@ void Human::move(int x_move, int y_move)
         x_move = 0;
     }
 
-    if(y_move > 0 && move_down == false)
-        y_move = 0;
-    else if(y_move < 0 && move_up == false)
-        y_move = 0;
-
     x += x_speed*x_move;
-    y += y_speed*y_move;
     setPosMatrix();
 }
 
@@ -97,10 +124,12 @@ void Human::isStructureCollide()
 
         if(isCollide(static_cast<Entity*>((*aux)[i])) == 1)
         {
-            if(y + h == (*aux)[i]->GetY() && abs(x_center - x_center_body) < 33)
+            if(y + h >= (*aux)[i]->GetY() && y + h <= (*aux)[i]->GetY() + 3
+               && abs(x_center - x_center_body) < 33)
                 move_down = false;
 
-            else if(y == (*aux)[i]->GetY() + 30 && abs(x_center - x_center_body) < 33)
+            else if(y <= (*aux)[i]->GetY() + 30 && y >= (*aux)[i]->GetY() + 27
+                 && abs(x_center - x_center_body) < 33)
                 move_up = false;
 
             else if(x + w == (*aux)[i]->GetX() && abs(y_center - y_center_body) < 43)

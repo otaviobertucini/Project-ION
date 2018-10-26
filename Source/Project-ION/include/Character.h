@@ -20,7 +20,8 @@ public:
     Character(float x, float y, float x_speed, float y_speed, List_Images *img);
     ~Character();
     virtual void setMap(Map* map);
-    virtual void move(int x_move, int y_move) = 0;
+    virtual void jump() = 0;
+    virtual void move(int x_move) = 0;
     virtual void print(BITMAP* screen) = 0;
     virtual void setPosMatrix() = 0;
     virtual int isCollide(Entity* Body) = 0;

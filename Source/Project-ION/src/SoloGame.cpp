@@ -20,19 +20,20 @@ void SoloGame::execute()
 
         if (key[KEY_UP])
         {
-            jack->move(0, -1);
+            jack->jump();
         }
-        if (key[KEY_DOWN])
+       /* if (key[KEY_DOWN])
         {
             jack->move(0, 1);
         }
+        */
         if (key[KEY_LEFT])
         {
-            jack->move(-1, 0);
+            jack->move(-1);
         }
         if (key[KEY_RIGHT])
         {
-            jack->move(1, 0);
+            jack->move(1);
         }
 
         current->updatePosition();
@@ -40,8 +41,9 @@ void SoloGame::execute()
         jack->getPosMatrix(&i, &j);
         pos = current->getValueMap(i, j);
 
+        jack->gravity();
         jack->isStructureCollide();
-        //jack->gravity();
+
 
         if(pos == 5){
             cout << "Next level" << endl;

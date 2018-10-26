@@ -14,14 +14,16 @@ class Human:public Character
         Human();
         Human(string name, float x, float y, float x_speed, float y_speed, List_Images *img);
         ~Human();
-        void move(int x_move, int y_move);
+        void move(int x_move);
         void print(BITMAP* screen);
         void setPosMatrix();
         void isStructureCollide();
         int isCollide(Entity* Body);
         void gravity();
+        void jump();
     private:
         string name;
+        float y_force;
 
 };
 
