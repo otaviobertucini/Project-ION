@@ -18,13 +18,12 @@ class Human:public Character
         void move(int x_move);
         void print(BITMAP* screen);
         void setPosMatrix();
-        /*void isStructureCollide();
-        int isCollide(Entity* Body);*/
         void gravity();
         void jump();
         void JetPack();
         void activeDash();
         void dash();
+        void loop();
     private:
         string name;
         float y_force;

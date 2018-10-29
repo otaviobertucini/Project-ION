@@ -12,7 +12,6 @@ SoloGame::SoloGame():Game()
 
 void SoloGame::execute()
 {
-    //int i, j, pos;
     while(!key[KEY_ESC])
     {
         current->printMap();
@@ -38,15 +37,18 @@ void SoloGame::execute()
             jack->move(1);
         }
 
-        current->updatePosition();
+        jack->loop();
+        top->loop();
+        //current->updatePosition();
         top->print(buffer);
         jack->print(buffer);
-        //jack->getPosMatrix(&i, &j);
-        //pos = current->getValueMap(i, j);
-        top->move(0);
-        jack->gravity();
-        jack->dash();
-        jack->isStructureCollide();
+
+//        if(jack->isCollide(static_cast<Entity*>(top))){
+//            cout << "ai ai ai " << endl;
+//        }
+//        else{
+//            //cout << "não" << endl;
+//        }
 
         draw_sprite(screen, buffer, 0, 0);
         clear_bitmap(buffer);
@@ -81,7 +83,7 @@ void SoloGame::level0(){
         {0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 5},
         {0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 5},
         {0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 5},
-        {0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 5},
+        {0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 5},
         {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
         {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
     };
@@ -92,7 +94,7 @@ void SoloGame::level0(){
         }
     }
 
-    top = new Topspin(600, 630+10, 1, 1, images->getImgsTopspin());
+    top = new Topspin(600, 500, 0.06, 0.06, images->getImgsTopspin());
 
     Level* level0 = new Level(buffer, images->getImgsMap());
     Map* map_level0 = new Map(m, images->getImgsMap());

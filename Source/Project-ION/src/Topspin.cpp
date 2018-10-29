@@ -14,12 +14,17 @@ Topspin::Topspin(float x, float y, float x_speed, float y_speed, List_Images *im
 }
 
 void Topspin::move(int x_move){
-    isStructureCollide();
     if(!move_left || !move_right){
         direction *= -1;
     }
 
     x += x_speed*direction;
+}
+
+void Topspin::loop(){
+    isStructureCollide();
+    gravity();
+    move(0);
 }
 
 Topspin::~Topspin()

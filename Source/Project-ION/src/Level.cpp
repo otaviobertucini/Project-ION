@@ -7,7 +7,6 @@ Level::Level()
 
 Level::Level(BITMAP* buffer, List_Images *img):buffer(buffer){
     map = NULL;
-    this->img = img;
 }
 
 void Level::setMap(Map* map){
@@ -24,13 +23,13 @@ int Level::printMap(){
     return 1;
 }
 
-//Update all the positions of the characters placed in the level.
-void Level::updatePosition(){
-    vector<Character*>::iterator itr = characters.begin();
-    for(; itr != characters.end(); itr++){
-        (*itr)->print(buffer);
-    }
-}
+////Update all the positions of the characters placed in the level.
+//void Level::updatePosition(){
+//    vector<Character*>::iterator itr = characters.begin();
+//    for(; itr != characters.end(); itr++){
+//        (*itr)->print(buffer);
+//    }
+//}
 
 int Level::getValueMap(int i, int j){
     return map->getValueMap(i, j);
@@ -38,8 +37,8 @@ int Level::getValueMap(int i, int j){
 
 Level::~Level()
 {
-    std::vector<Character*>::iterator itr = characters.begin();
-    for(; itr != characters.end(); itr++)
-        delete *itr;
-    characters.clear();
+//    std::vector<Character*>::iterator itr = characters.begin();
+//    for(; itr != characters.end(); itr++)
+//        delete *itr;
+//    characters.clear();
 }

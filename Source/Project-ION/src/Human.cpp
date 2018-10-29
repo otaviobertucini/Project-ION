@@ -26,7 +26,7 @@ void Human::gravity()
 
         if(move_up == false)
         {
-            y_force *= -0.5;
+            y_force = 0.2;
             move_up = true;
         }
 
@@ -81,6 +81,12 @@ void Human::activeDash()
         y_force = 0;
         distance_dash = 0;
     }
+}
+
+void Human::loop(){
+    gravity();
+    dash();
+    isStructureCollide();
 }
 
 void Human::dash()

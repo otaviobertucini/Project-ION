@@ -1,7 +1,7 @@
 #ifndef CHARACTER_H
 #define CHARACTER_H
 #include <allegro.h>
-#include <winalleg.h>
+//#include <winalleg.h>
 #include <cstddef> //library for NULL
 #include <math.h>
 #include <vector>
@@ -25,6 +25,8 @@ public:
     virtual void setPosMatrix() = 0;
     virtual int isCollide(Entity* Body);
     virtual void isStructureCollide();
+    virtual void loop() = 0;
+    virtual void gravity();
 protected:
     int current_side;
     float x_speed;  // Values that will be
@@ -35,6 +37,7 @@ protected:
     bool move_down;
     List_Images *img;
     Map* map;
+    float y_force;
 };
 
 #endif // CHARACTER_H
