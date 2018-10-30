@@ -22,7 +22,7 @@ void Topspin::move(int x_move){
 }
 
 void Topspin::loop(){
-    isStructureCollide();
+    //isStructureCollide();
     gravity();
     move(0);
 }

@@ -11,9 +11,14 @@ SoloGame::SoloGame():Game()
 
 void SoloGame::execute()
 {
+    int morreu;
     while(!key[KEY_ESC])
     {
-        current->gameLoop();
+        morreu = current->gameLoop();
+        if(morreu == 0){
+            cout << "morreu" << endl;
+            break;
+        }
         draw_sprite(screen, buffer, 0, 0);
         clear_bitmap(buffer);
     }

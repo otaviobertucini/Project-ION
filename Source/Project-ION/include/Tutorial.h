@@ -8,10 +8,9 @@ class Tutorial: public Level
 public:
     Tutorial();
     Tutorial(BITMAP* buffer, Images* images);
-    void gameLoop();
+    int gameLoop();
     virtual ~Tutorial();
 private:
-
 };
 
 #endif // TUTORIAL_H

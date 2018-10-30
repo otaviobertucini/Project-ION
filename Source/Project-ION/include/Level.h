@@ -9,7 +9,7 @@
 #include "Human.h"
 #include "List_Images.h"
 #include "Entity.h"
-#include "List_Entities.h"
+#include "List_Characters.h"
 #include "Images.h"
 using std::cout;
 using std::endl;
@@ -25,13 +25,15 @@ public:
     void updatePosition();
     int getValueMap(int i, int j);
     int isCollide(Entity* a, Entity* b);
-    void loopEntities();
-    virtual void gameLoop() = 0;
+    void isStructureCollide(Character* a);
+    void loopCharacters();
+    void collisionCharacters();
+    virtual int gameLoop() = 0;
 protected:
     Map* map; //Pointer to the level map.
     BITMAP* buffer; //Pointer to the display where all components will be shown.
     Human* jack;
-    List_Entities* entities;
+    List_Characters* characters;
     Images* images;
 };
 

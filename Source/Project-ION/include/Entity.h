@@ -22,6 +22,7 @@ public:
     float gety();
     int getw();
     int geth();
+    void sety(float new_y);
     virtual void loop() = 0;
     virtual ~Entity();
 protected:

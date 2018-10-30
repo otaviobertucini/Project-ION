@@ -50,6 +50,7 @@
 		<Unit filename="include/Stone.h" />
 		<Unit filename="include/Structure.h" />
 		<Unit filename="include/Topspin.h" />
+		<Unit filename="include/Tutorial.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Character.cpp" />
 		<Unit filename="src/Enemy.cpp" />
@@ -66,6 +67,7 @@
 		<Unit filename="src/Stone.cpp" />
 		<Unit filename="src/Structure.cpp" />
 		<Unit filename="src/Topspin.cpp" />
+		<Unit filename="src/Tutorial.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

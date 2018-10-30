@@ -19,58 +19,6 @@ Character::Character(float x, float y, float x_speed, float y_speed, List_Images
     current_img = (*img)[0];
 }
 
-//Calculate collision of the character with another body (entity), return 1 if the collision happens
-//int Character::isCollide(Entity* Body)
-//{
-//    int x_sum = (w/2)+(Body->GetW()/2);
-//    int y_sum = (h/2)+(Body->GetH()/2);
-//
-//    if((abs(x - Body->getx()) <= x_sum) && (abs(y - Body->gety()) <= y_sum ))
-//        return 1;
-//    return 0;
-//}
-
-void Character::isStructureCollide()
-{
-
-    int i;
-    float x_center,y_center,x_center_body,y_center_body;
-    x_center = x+(w/2);
-    y_center = y+(h/2);
-
-    List_Structures* aux;
-    aux = map->getList();
-
-    move_left = true;
-    move_right = true;
-    move_up = true;
-    move_down = true;
-
-    for(i=0;i<aux->size();i++)
-    {
-
-        x_center_body = (*aux)[i]->getx() + 15;
-        y_center_body = (*aux)[i]->gety() + 15;
-
-        //if( isCollide(static_cast<Entity*>((*aux)[i])) == 1 )
-        //{
-            if(y + h >= (*aux)[i]->gety() && y + h <= (*aux)[i]->gety() + 3
-               && abs(x_center - x_center_body) < 33)
-                move_down = false;
-
-            if(y <= (*aux)[i]->gety() + 30 && y >= (*aux)[i]->gety() + 27
-                 && abs(x_center - x_center_body) < 33){
-                move_up = false;
-            }
-            if(x + w == (*aux)[i]->getx() && abs(y_center - y_center_body) < w+3)
-                move_right = false;
-
-            if(x == (*aux)[i]->getx() + 30 && abs(y_center - y_center_body) < w+3)
-                move_left = false;
-        //}
-    }
-}
-
 void Character::gravity()
 {
 
@@ -92,10 +40,6 @@ void Character::gravity()
     if(move_down == false)
        y_force = 0;
 
-/*
-    else if(y_move < 0 && move_up == false)
-        y_move = 0;
-*/
     if(move_down == true)
        y += y_force;
 }
@@ -103,6 +47,22 @@ void Character::gravity()
 void Character::setMap(Map* mp)
 {
         map = mp;
+}
+
+void Character::setRight(bool new_mode){
+    move_right = new_mode;
+}
+
+void Character::setLeft(bool new_mode){
+    move_left = new_mode;
+}
+
+void Character::setUp(bool new_mode){
+    move_up = new_mode;
+}
+
+void Character::setDown(bool new_mode){
+    move_down = new_mode;
 }
 
 Character::~Character()

@@ -42,12 +42,7 @@ void Human::gravity()
            y_force = 0;
            charge = true;
         }
-
-    /*
-        else if(y_move < 0 && move_up == false)
-            y_move = 0;
-    */
-           y += y_force;
+        y += y_force;
     }
 }
 
@@ -84,9 +79,9 @@ void Human::activeDash()
 }
 
 void Human::loop(){
-    gravity();
     dash();
-    isStructureCollide();
+    gravity();
+    //isStructureCollide();
 }
 
 void Human::dash()
