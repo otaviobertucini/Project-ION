@@ -23,7 +23,7 @@ public:
     virtual void move(int x_move) = 0;
     virtual void print(BITMAP* screen) = 0;
     virtual void setPosMatrix() = 0;
-    virtual int isCollide(Entity* Body);
+    //virtual int isCollide(Entity* Body);
     virtual void isStructureCollide();
     virtual void loop() = 0;
     virtual void gravity();

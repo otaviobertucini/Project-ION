@@ -18,10 +18,11 @@ public:
     void getPosMatrix(int* i, int* j);
     virtual void print(BITMAP* screen) = 0;
     BITMAP* getCurrentImg();
-    float GetX();
-    float GetY();
-    int GetW();
-    int GetH();
+    float getx();
+    float gety();
+    int getw();
+    int geth();
+    virtual void loop() = 0;
     virtual ~Entity();
 protected:
     float x;

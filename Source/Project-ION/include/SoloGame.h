@@ -10,6 +10,7 @@
 #include "Human.h"
 #include "Game.h"
 #include "Topspin.h"
+#include "Tutorial.h"
 
 using std::cout;
 using std::endl;
@@ -22,8 +23,7 @@ public:
     void execute();
     void level0();
 private:
-    Human *jack;
-    Topspin *top;
+
 };
 
 #endif // SOLOGAME_H

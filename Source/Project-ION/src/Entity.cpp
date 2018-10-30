@@ -15,22 +15,22 @@ BITMAP* Entity::getCurrentImg(){
     return current_img;
 }
 
-float Entity::GetX()
+float Entity::getx()
 {
     return x;
 }
 
-float Entity::GetY()
+float Entity::gety()
 {
     return y;
 }
 
-int Entity::GetW()
+int Entity::getw()
 {
     return w;
 }
 
-int Entity::GetH()
+int Entity::geth()
 {
     return h;
 }

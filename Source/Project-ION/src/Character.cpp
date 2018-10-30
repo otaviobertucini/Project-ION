@@ -20,15 +20,15 @@ Character::Character(float x, float y, float x_speed, float y_speed, List_Images
 }
 
 //Calculate collision of the character with another body (entity), return 1 if the collision happens
-int Character::isCollide(Entity* Body)
-{
-    int x_sum = (w/2)+(Body->GetW()/2);
-    int y_sum = (h/2)+(Body->GetH()/2);
-
-    if((abs(x - Body->GetX()) <= x_sum) && (abs(y - Body->GetY()) <= y_sum ))
-        return 1;
-    return 0;
-}
+//int Character::isCollide(Entity* Body)
+//{
+//    int x_sum = (w/2)+(Body->GetW()/2);
+//    int y_sum = (h/2)+(Body->GetH()/2);
+//
+//    if((abs(x - Body->getx()) <= x_sum) && (abs(y - Body->gety()) <= y_sum ))
+//        return 1;
+//    return 0;
+//}
 
 void Character::isStructureCollide()
 {
@@ -49,23 +49,23 @@ void Character::isStructureCollide()
     for(i=0;i<aux->size();i++)
     {
 
-        x_center_body = (*aux)[i]->GetX() + 15;
-        y_center_body = (*aux)[i]->GetY() + 15;
+        x_center_body = (*aux)[i]->getx() + 15;
+        y_center_body = (*aux)[i]->gety() + 15;
 
         //if( isCollide(static_cast<Entity*>((*aux)[i])) == 1 )
         //{
-            if(y + h >= (*aux)[i]->GetY() && y + h <= (*aux)[i]->GetY() + 3
+            if(y + h >= (*aux)[i]->gety() && y + h <= (*aux)[i]->gety() + 3
                && abs(x_center - x_center_body) < 33)
                 move_down = false;
 
-            if(y <= (*aux)[i]->GetY() + 30 && y >= (*aux)[i]->GetY() + 27
+            if(y <= (*aux)[i]->gety() + 30 && y >= (*aux)[i]->gety() + 27
                  && abs(x_center - x_center_body) < 33){
                 move_up = false;
             }
-            if(x + w == (*aux)[i]->GetX() && abs(y_center - y_center_body) < w+3)
+            if(x + w == (*aux)[i]->getx() && abs(y_center - y_center_body) < w+3)
                 move_right = false;
 
-            if(x == (*aux)[i]->GetX() + 30 && abs(y_center - y_center_body) < w+3)
+            if(x == (*aux)[i]->getx() + 30 && abs(y_center - y_center_body) < w+3)
                 move_left = false;
         //}
     }

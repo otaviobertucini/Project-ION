@@ -8,6 +8,9 @@
 #include "Character.h"
 #include "Human.h"
 #include "List_Images.h"
+#include "Entity.h"
+#include "List_Entities.h"
+#include "Images.h"
 using std::cout;
 using std::endl;
 
@@ -15,17 +18,21 @@ class Level
 {
 public:
     Level();
-    Level(BITMAP* buffer, List_Images *img);
+    Level(BITMAP* buffer, Images *images);
     ~Level();
-    void setMap(Map* map);
     Map* getMap();
-    int printMap();
+    void printMap();
     void updatePosition();
-    Human* getJack();
     int getValueMap(int i, int j);
-private:
+    int isCollide(Entity* a, Entity* b);
+    void loopEntities();
+    virtual void gameLoop() = 0;
+protected:
     Map* map; //Pointer to the level map.
     BITMAP* buffer; //Pointer to the display where all components will be shown.
+    Human* jack;
+    List_Entities* entities;
+    Images* images;
 };
 
 #endif // LEVEL_H
