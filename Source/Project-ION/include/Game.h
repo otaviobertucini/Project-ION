@@ -10,6 +10,7 @@
 #include "Images.h"
 #include "Level.h"
 #include "Map.h"
+#include "List_Levels.h"
 
 class Game
 {
@@ -18,8 +19,7 @@ public:
     virtual ~Game();
     virtual void execute() = 0;
 protected:
-    std::vector<Level*> levels;
-    std::vector<Map*> maps;
+    List_Levels* levels;
     BITMAP* buffer;
     Images *images;
     Level *current;

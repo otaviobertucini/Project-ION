@@ -64,6 +64,7 @@ int Menu::pause(){
         if(key[KEY_E]){
             return 1;
         }
+
         if(key[KEY_SPACE]){
             if(option == 1)
                 return 1;
@@ -75,6 +76,7 @@ int Menu::pause(){
             rest(200);
             option = 1;
         }
+
         if(key[KEY_DOWN]){
             rest(200);
             option = 2;

@@ -19,13 +19,5 @@ Game::~Game()
     destroy_bitmap(buffer);
     current = NULL;
 
-    std::vector<Level*>::iterator itr = levels.begin();
-    for(; itr != levels.end(); itr++)
-        delete *itr;
-    levels.clear();
-
-    std::vector<Map*>::iterator itr2 = maps.begin();
-    for(; itr2 != maps.end(); itr2++)
-        delete *itr2;
-    maps.clear();
+    //delete levels; //giving segmentation error
 }

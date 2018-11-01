@@ -18,7 +18,7 @@ class Level
 {
 public:
     Level();
-    Level(BITMAP* buffer, Images *images);
+    Level(BITMAP* buffer, Images *images, Human* jack);
     virtual ~Level();
     Map* getMap();
     void printMap();

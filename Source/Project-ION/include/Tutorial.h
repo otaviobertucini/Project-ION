@@ -7,7 +7,7 @@ class Tutorial: public Level
 {
 public:
     Tutorial();
-    Tutorial(BITMAP* buffer, Images* images);
+    Tutorial(BITMAP* buffer, Images* images, Human* jack);
     int gameLoop();
     void generateLevel();
     void resetLevel();

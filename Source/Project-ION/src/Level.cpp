@@ -5,11 +5,12 @@ Level::Level()
     //ctor
 }
 
-Level::Level(BITMAP* buffer, Images *images){
+Level::Level(BITMAP* buffer, Images *images, Human* jack){
     map = NULL;
     this->buffer = buffer;
     this->images = images;
     characters = new List_Characters;
+    this->jack = jack;
 }
 
 int Level::isCollide(Entity* a, Entity* b){

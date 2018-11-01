@@ -4,59 +4,75 @@ SoloGame::SoloGame():Game()
 {
     images = new Images;
     menu1 = new Menu(buffer);
+    levels = new List_Levels;
+
     chances = 3;
 
     //Level 0
     level0();
 }
 
-//void SoloGame::menu(){
-//    if(start)
-//        execute();
-//}
-
 void SoloGame::execute()
 {
-    int died;
+
+    int i_level;
+    int game_status;
+    bool dead = false;
     int pause;
     bool exit = false;
     bool exit_loop;
     //Loop do jogo todo
     while(!exit)
     {
+
         int start = menu1->inicial();
-        exit_loop = false;
         chances = 3;
+        i_level = 0;
         if(start)
         {
-            //Loop de cada fase
-            current->generateLevel();
-            while(!key[KEY_ESC] && !exit_loop)
-            {
-                died = current->gameLoop();
-                if(died == 0)
+            dead = false;
+            //Loop de cada jogada
+            while(!dead){
+                exit_loop = false;
+                current = (*levels)[i_level];
+                current->generateLevel();
+                //Loop de cada fase
+                while(!exit_loop)
                 {
-                    chances--;
-                    if(chances == 0)
+                    game_status = current->gameLoop();
+
+                    if(key[KEY_ESC])
                     {
+                        pause = menu1->pause();
+                        if(!pause){
+                            exit_loop = true;
+                            dead = true;
+                            current->resetLevel();
+                        }
+                    }
+
+                    if(game_status == 0)
+                    {
+                        chances--;
+                        if(chances == 0)
+                        {
+                            dead = true;
+                            break;
+                        }
+                        cout << "morreu" << endl;
+                        current->resetPlayer();
+                    }
+
+                    if(game_status == 2){
+                        i_level++;
                         break;
                     }
-                    cout << "morreu" << endl;
-                    current->resetPlayer();
-                }
 
-                if(key[KEY_P])
-                {
-                    pause = menu1->pause();
-                    if(!pause){
-                        exit_loop = true;
-                    }
+                    draw_sprite(screen, buffer, 0, 0);
+                    clear_bitmap(buffer);
                 }
-
-                draw_sprite(screen, buffer, 0, 0);
-                clear_bitmap(buffer);
+                current->resetLevel();
             }
-            current->resetLevel();
         }
         if(!start){
             exit = true;
@@ -65,8 +81,14 @@ void SoloGame::execute()
 }
 
 void SoloGame::level0(){
-    Tutorial* tutorial = new Tutorial(buffer, images);
-    current = static_cast<Level*>(tutorial);
+
+    Human* jack = new Human("Jack", 0, 0, 0.6, 0.6, images->getImgsJack());
+
+    Tutorial* tutorial = new Tutorial(buffer, images, jack);
+    levels->include(static_cast<Level*>(tutorial));
+
+    Level_1* level_1 = new Level_1(buffer, images, jack);
+    levels->include(static_cast<Level*>(level_1));
 }
 
 SoloGame::~SoloGame()
