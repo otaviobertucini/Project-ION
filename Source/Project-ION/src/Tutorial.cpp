@@ -6,7 +6,9 @@ Tutorial::Tutorial()
 }
 
 Tutorial::Tutorial(BITMAP* buffer, Images* images):Level(buffer, images){
-    jack = new Human("Jack", 230, 0, 0.5, 1, images->getImgsJack());
+    x_initial = 230;
+    y_initial = 0;
+    jack = new Human("Jack", x_initial, y_initial, 0.5, 1, images->getImgsJack());
 
     int** m = new int*[24];
     for(int i = 0; i<24; i++)
@@ -48,13 +50,20 @@ Tutorial::Tutorial(BITMAP* buffer, Images* images):Level(buffer, images){
 
     map = new Map(m, images->getImgsMap());
     jack->setMap(map);
+}
 
+void Tutorial::generateLevel(){
     //Topspin* top = new Topspin(600, 500, 0.06, 0.06, images->getImgsTopspin());
     //top->setMap(map);
     //characters->include(static_cast<Character*>(top));
     Topspin* top2 = new Topspin(330, 500, 0.06, 0.06, images->getImgsTopspin());
     top2->setMap(map);
     characters->include(static_cast<Character*>(top2));
+}
+
+void Tutorial::resetLevel(){
+    resetPlayer();
+    characters->eraseAll();
 }
 
 int Tutorial::gameLoop(){

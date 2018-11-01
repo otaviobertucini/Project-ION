@@ -10,8 +10,7 @@ using std::endl;
 
 int main() {
     SoloGame game;
-    game.menu();
-
+    game.execute();
     return 0;
 }
 END_OF_MAIN();

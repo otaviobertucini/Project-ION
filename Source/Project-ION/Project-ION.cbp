@@ -47,6 +47,7 @@
 		<Unit filename="include/List_Images.h" />
 		<Unit filename="include/List_Structures.h" />
 		<Unit filename="include/Map.h" />
+		<Unit filename="include/Menu.h" />
 		<Unit filename="include/SoloGame.h" />
 		<Unit filename="include/Stone.h" />
 		<Unit filename="include/Structure.h" />
@@ -65,6 +66,7 @@
 		<Unit filename="src/List_Images.cpp" />
 		<Unit filename="src/List_Structures.cpp" />
 		<Unit filename="src/Map.cpp" />
+		<Unit filename="src/Menu.cpp" />
 		<Unit filename="src/SoloGame.cpp" />
 		<Unit filename="src/Stone.cpp" />
 		<Unit filename="src/Structure.cpp" />

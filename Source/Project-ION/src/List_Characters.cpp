@@ -21,6 +21,10 @@ Character* List_Characters::operator[](int index){
     return characters[index];
 }
 
+void List_Characters::eraseAll(){
+    characters.erase(characters.begin(), characters.end());
+}
+
 void List_Characters::deleteAll(){
     typename std::vector<Character*>::iterator itr = characters.begin();
     for(; itr != characters.end(); itr++)

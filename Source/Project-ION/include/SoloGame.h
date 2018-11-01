@@ -26,6 +26,7 @@ public:
     void level0();
 private:
     Menu* menu1;
+    int chances;
 };
 
 #endif // SOLOGAME_H

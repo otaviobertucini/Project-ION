@@ -29,12 +29,17 @@ public:
     void loopCharacters();
     void collisionCharacters();
     virtual int gameLoop() = 0;
+    virtual void generateLevel() = 0;
+    virtual void resetLevel() = 0;
+    virtual void resetPlayer();
 protected:
     Map* map; //Pointer to the level map.
     BITMAP* buffer; //Pointer to the display where all components will be shown.
     Human* jack;
     List_Characters* characters;
     Images* images;
+    float x_initial;
+    float y_initial;
 };
 
 #endif // LEVEL_H

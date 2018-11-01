@@ -46,19 +46,19 @@ void Level::isStructureCollide(Character* a)
         if(a->gety() + a->geth() >= (*aux)[i]->gety() && abs(x_center - x_center_body) < (a->getw()/2)+((*aux)[i]->getw()/2))
         {
             a->setDown(false);
-            a->sety((*aux)[i]->gety() - a->geth());
+            //a->sety((*aux)[i]->gety() - a->geth());
         }
         //embaixo do 2
-        else if(a->gety() <= (*aux)[i]->gety() + 30 && a->gety() >= (*aux)[i]->gety() + 27 && abs(x_center - x_center_body) < 33)
-        {
-            a->setUp(false);
-        }
-        //esquerda do 2
-        else if(a->getx() + a->getw() >= (*aux)[i]->getx() && abs(y_center - y_center_body) < a->geth()+3)
-            a->setRight(false);
-        //direita do 2
-        else if(a->getx() <= (*aux)[i]->getx() + 30 && abs(a->gety() - (*aux)[i]->gety()) < a->geth()/2+3)
-            a->setLeft(false);
+//        else if(a->gety() <= (*aux)[i]->gety() + 30 && a->gety() >= (*aux)[i]->gety() + 27 && abs(x_center - x_center_body) < 33)
+//        {
+//            a->setUp(false);
+//        }
+//        //esquerda do 2
+//        else if(a->getx() + a->getw() >= (*aux)[i]->getx() && abs(y_center - y_center_body) < a->geth()+3)
+//            a->setRight(false);
+//        //direita do 2
+//        else if(a->getx() <= (*aux)[i]->getx() + 30 && abs(a->gety() - (*aux)[i]->gety()) < a->geth()/2+3)
+//            a->setLeft(false);
     }
 }
 
@@ -92,6 +92,13 @@ void Level::collisionCharacters(){
 
 int Level::getValueMap(int i, int j){
     return map->getValueMap(i, j);
+}
+
+void Level::resetPlayer(){
+    jack->setx(x_initial);
+    jack->sety(y_initial);
+    jack->setUp(false);
+    jack->setDown(false);
 }
 
 Level::~Level()

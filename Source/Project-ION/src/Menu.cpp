@@ -13,28 +13,32 @@ Menu::Menu(BITMAP* buffer){
 }
 
 int Menu::inicial(){
+    //cout << "aqui" << endl;
     bool exit = false;
     int option = 1;
     float y_cursor;
     //show_mouse(screen);
     while(!exit){
         draw_sprite(buffer, img_back, 0, 0);
-        if(key[KEY_ESC]){
+        if(key[KEY_E]){
             exit = true;
         }
         if(key[KEY_ENTER]){
-            if(option == 1)
+            if(option == 1){
                 return 1;
-            if(option == 2)
+            }
+            if(option == 2){
                 return 0;
+            }
         }
 
         if(key[KEY_UP]){
-            rest(100);
-            if(option == 1)
-                option = 2;
-            else
-                option = 1;
+            rest(200);
+            option = 1;
+        }
+        if(key[KEY_DOWN]){
+            rest(200);
+            option = 2;
         }
 
         if(option == 1){
@@ -57,10 +61,10 @@ int Menu::pause(){
     //show_mouse(screen);
     while(!exit){
         draw_sprite(buffer, pause_back, 0, 0);
-        if(key[KEY_ESC]){
+        if(key[KEY_E]){
             return 1;
         }
-        if(key[KEY_ENTER]){
+        if(key[KEY_SPACE]){
             if(option == 1)
                 return 1;
             if(option == 2)
@@ -68,11 +72,12 @@ int Menu::pause(){
         }
 
         if(key[KEY_UP]){
-            rest(100);
-            if(option == 1)
-                option = 2;
-            else
-                option = 1;
+            rest(200);
+            option = 1;
+        }
+        if(key[KEY_DOWN]){
+            rest(200);
+            option = 2;
         }
 
         if(option == 1){
@@ -86,6 +91,7 @@ int Menu::pause(){
         blit(buffer, screen, 0, 0, 0, 0, 1080, 720);
         clear(buffer);
     }
+    return 0;
 }
 
 Menu::~Menu()
