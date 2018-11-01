@@ -49,9 +49,12 @@ Tutorial::Tutorial(BITMAP* buffer, Images* images):Level(buffer, images){
     map = new Map(m, images->getImgsMap());
     jack->setMap(map);
 
-    Topspin* top = new Topspin(600, 500, 0.0, 0.0, images->getImgsTopspin());
-    top->setMap(map);
-    characters->include(static_cast<Character*>(top));
+    //Topspin* top = new Topspin(600, 500, 0.06, 0.06, images->getImgsTopspin());
+    //top->setMap(map);
+    //characters->include(static_cast<Character*>(top));
+    Topspin* top2 = new Topspin(330, 500, 0.06, 0.06, images->getImgsTopspin());
+    top2->setMap(map);
+    characters->include(static_cast<Character*>(top2));
 }
 
 int Tutorial::gameLoop(){
@@ -85,7 +88,10 @@ int Tutorial::gameLoop(){
     updatePosition();
     jack->print(buffer);
 
-    if(isCollide(static_cast<Entity*>(jack), static_cast<Entity*>((*characters)[0])) == 1){
+    if(isCollide(static_cast<Entity*>(jack), static_cast<Entity*>((*characters)[0]))){
+        return 0;
+    }
+    if(isCollide(static_cast<Entity*>(jack), static_cast<Entity*>((*characters)[1]))){
         return 0;
     }
     return 1;

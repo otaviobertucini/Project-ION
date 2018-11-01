@@ -11,6 +11,7 @@
 #include "Game.h"
 #include "Topspin.h"
 #include "Tutorial.h"
+#include "Menu.h"
 
 using std::cout;
 using std::endl;
@@ -20,10 +21,11 @@ class SoloGame: public Game
 public:
     SoloGame();
     ~SoloGame();
+    void menu();
     void execute();
     void level0();
 private:
-
+    Menu* menu1;
 };
 
 #endif // SOLOGAME_H

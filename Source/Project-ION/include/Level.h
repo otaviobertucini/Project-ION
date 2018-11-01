@@ -19,7 +19,7 @@ class Level
 public:
     Level();
     Level(BITMAP* buffer, Images *images);
-    ~Level();
+    virtual ~Level();
     Map* getMap();
     void printMap();
     void updatePosition();

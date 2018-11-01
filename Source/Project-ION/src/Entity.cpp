@@ -39,6 +39,10 @@ void Entity::sety(float new_y){
     y = new_y;
 }
 
+void Entity::setx(float new_x){
+    x = new_x;
+}
+
 void Entity::getPosMatrix(int* i, int* j){
     *i = i_pos;
     *j = j_pos;
