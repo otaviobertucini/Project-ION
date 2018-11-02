@@ -9,9 +9,6 @@ Tutorial::Tutorial(BITMAP* buffer, Images* images, Human* jack):Level(buffer, im
     x_initial = 230;
     y_initial = 0;
 
-    jack->setx(x_initial);
-    jack->sety(y_initial);
-
     int** m = new int*[24];
     for(int i = 0; i<24; i++)
         m[i] = new int[36];
@@ -56,10 +53,10 @@ Tutorial::Tutorial(BITMAP* buffer, Images* images, Human* jack):Level(buffer, im
 void Tutorial::generateLevel(){
     resetLevel();
     jack->setMap(map);
-    Topspin* top = new Topspin(600, 500, 0.06, 0.06, images->getImgsTopspin());
+    Topspin* top = new Topspin(600, 500, 0.2, 0.06, images->getImgsTopspin());
     top->setMap(map);
     characters->include(static_cast<Character*>(top));
-    Topspin* top2 = new Topspin(330, 500, 0.06, 0.06, images->getImgsTopspin());
+    Topspin* top2 = new Topspin(330, 500, 0.2, 0.06, images->getImgsTopspin());
     top2->setMap(map);
     characters->include(static_cast<Character*>(top2));
 }
@@ -110,6 +107,7 @@ int Tutorial::gameLoop(){
     if(jack->getx() >= 1050 && jack->gety() >  510){
         return 2; //next level
     }
+
     return 1;
 }
 

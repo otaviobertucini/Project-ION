@@ -15,7 +15,7 @@ SoloGame::SoloGame():Game()
 void SoloGame::execute()
 {
     int game_status;
-    bool dead = false;
+    bool dead;
     int pause;
     bool exit = false;
     bool exit_loop;
@@ -44,7 +44,6 @@ void SoloGame::execute()
                         if(pause == 0){
                             exit_loop = true;
                             dead = true;
-                            current->resetLevel();
                         }
                         else if(pause == 2){
                             exit_loop = true;
@@ -59,7 +58,7 @@ void SoloGame::execute()
                         if(chances == 0)
                         {
                             dead = true;
-                            break;
+                            exit_loop = true;
                         }
                         cout << "morreu" << endl;
                         current->resetPlayer();
@@ -67,12 +66,12 @@ void SoloGame::execute()
 
                     if(game_status == 2){
                         i_level++;
-                        break;
+                        exit_loop = true;
                     }
 
                     if(game_status == 3){
                         i_level--;
-                        break;
+                        exit_loop = true;
                     }
 
                     draw_sprite(screen, buffer, 0, 0);
