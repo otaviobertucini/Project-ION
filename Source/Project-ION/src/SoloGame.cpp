@@ -22,7 +22,6 @@ void SoloGame::execute()
     //Loop do jogo todo
     while(!exit)
     {
-
         int start = menu1->inicial();
         chances = 3;
         i_level = 0;
@@ -93,7 +92,6 @@ void SoloGame::execute()
 }
 
 void SoloGame::level0(){
-
     jack = new Human("Jack", 0, 0, 0.6, 0.6, images->getImgsJack());
 
     Tutorial* tutorial = new Tutorial(buffer, images, jack);

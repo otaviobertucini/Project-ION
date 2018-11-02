@@ -41,10 +41,11 @@
 		<Unit filename="include/Human.h" />
 		<Unit filename="include/Images.h" />
 		<Unit filename="include/Level.h" />
+		<Unit filename="include/Level_1.h" />
 		<Unit filename="include/List.h" />
 		<Unit filename="include/List_Characters.h" />
-		<Unit filename="include/List_Entities.h" />
 		<Unit filename="include/List_Images.h" />
+		<Unit filename="include/List_Levels.h" />
 		<Unit filename="include/List_Structures.h" />
 		<Unit filename="include/Map.h" />
 		<Unit filename="include/Menu.h" />
@@ -61,9 +62,10 @@
 		<Unit filename="src/Human.cpp" />
 		<Unit filename="src/Images.cpp" />
 		<Unit filename="src/Level.cpp" />
+		<Unit filename="src/Level_1.cpp" />
 		<Unit filename="src/List_Characters.cpp" />
-		<Unit filename="src/List_Entities.cpp" />
 		<Unit filename="src/List_Images.cpp" />
+		<Unit filename="src/List_Levels.cpp" />
 		<Unit filename="src/List_Structures.cpp" />
 		<Unit filename="src/Map.cpp" />
 		<Unit filename="src/Menu.cpp" />

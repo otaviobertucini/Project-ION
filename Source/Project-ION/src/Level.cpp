@@ -44,22 +44,26 @@ void Level::isStructureCollide(Character* a)
         y_center_body = (*aux)[i]->gety() + 15;
 
         //emcima do 2
-        if(a->gety() + a->geth() >= (*aux)[i]->gety() && abs(x_center - x_center_body) < (a->getw()/2)+((*aux)[i]->getw()/2))
+        if(a->gety() + a->geth() >= (*aux)[i]->gety() && y_center <= y_center_body
+           && abs(x_center - x_center_body) < (a->getw()/2)+((*aux)[i]->getw()/2)-2)
         {
             a->setDown(false);
             //a->sety((*aux)[i]->gety() - a->geth());
         }
         //embaixo do 2
-//        else if(a->gety() <= (*aux)[i]->gety() + 30 && a->gety() >= (*aux)[i]->gety() + 27 && abs(x_center - x_center_body) < 33)
-//        {
-//            a->setUp(false);
-//        }
-//        //esquerda do 2
-//        else if(a->getx() + a->getw() >= (*aux)[i]->getx() && abs(y_center - y_center_body) < a->geth()+3)
-//            a->setRight(false);
-//        //direita do 2
-//        else if(a->getx() <= (*aux)[i]->getx() + 30 && abs(a->gety() - (*aux)[i]->gety()) < a->geth()/2+3)
-//            a->setLeft(false);
+        if(a->gety() <= (*aux)[i]->gety() + (*aux)[i]->geth() && y_center >= y_center_body
+           && abs(x_center - x_center_body) < (a->getw()/2)+((*aux)[i]->getw()/2)-2)
+        {
+            a->setUp(false);
+        }
+        //esquerda do 29
+        if(a->getx() + a->getw() >= (*aux)[i]->getx() && x_center <= x_center_body
+                && abs(y_center - y_center_body) < (a->geth()/2)+((*aux)[i]->geth()/2)-2)
+            a->setRight(false);
+        //direita do 2
+        if(a->getx() <= (*aux)[i]->getx() + (*aux)[i]->getw() && (*aux)[i]->getx() && x_center >= x_center_body
+                && abs(y_center - y_center_body) < (a->geth()/2)+((*aux)[i]->geth()/2)-2)
+            a->setLeft(false);
     }
 }
 
