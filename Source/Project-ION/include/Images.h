@@ -1,7 +1,7 @@
 #ifndef IMAGES_H
 #define IMAGES_H
 #include <allegro.h>
-//#include <winalleg.h>
+#include <winalleg.h>
 #include <vector>
 #include <iostream>
 #include <stdlib.h>

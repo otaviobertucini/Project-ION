@@ -24,6 +24,8 @@ public:
     void printMap();
     void updatePosition();
     int getValueMap(int i, int j);
+    float getXInitial();
+    float getYInitial();
     int isCollide(Entity* a, Entity* b);
     void isStructureCollide(Character* a);
     void loopCharacters();
