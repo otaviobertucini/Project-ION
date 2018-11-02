@@ -6,6 +6,7 @@
 #include <math.h>
 #include <vector>
 #include <iostream>
+#include <string>
 #include "Entity.h"
 #include "List_Images.h"
 #include "Map.h"
@@ -25,11 +26,13 @@ public:
     virtual void setPosMatrix() = 0;
     virtual void loop() = 0;
     virtual void gravity();
+    std::string getType();
     void setRight(bool new_move);
     void setLeft(bool new_move);
     void setUp(bool new_move);
     void setDown(bool new_move);
 protected:
+    std::string type;
     int current_side;
     float x_speed;  // Values that will be
     float y_speed;  // increased/decreased when moving.

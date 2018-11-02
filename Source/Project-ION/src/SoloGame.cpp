@@ -7,15 +7,13 @@ SoloGame::SoloGame():Game()
     levels = new List_Levels;
 
     chances = 3;
-
+    i_level = 0;
     //Level 0
     level0();
 }
 
 void SoloGame::execute()
 {
-
-    int i_level;
     int game_status;
     bool dead = false;
     int pause;
@@ -28,7 +26,7 @@ void SoloGame::execute()
         int start = menu1->inicial();
         chances = 3;
         i_level = 0;
-        if(start)
+        if(start == 1)
         {
             dead = false;
             //Loop de cada jogada
@@ -44,10 +42,15 @@ void SoloGame::execute()
                     if(key[KEY_ESC])
                     {
                         pause = menu1->pause();
-                        if(!pause){
+                        if(pause == 0){
                             exit_loop = true;
                             dead = true;
                             current->resetLevel();
+                        }
+                        else if(pause == 2){
+                            exit_loop = true;
+                            dead = true;
+                            saveLevel();
                         }
                     }
 
@@ -68,27 +71,61 @@ void SoloGame::execute()
                         break;
                     }
 
+                    if(game_status == 3){
+                        i_level--;
+                        break;
+                    }
+
                     draw_sprite(screen, buffer, 0, 0);
                     clear_bitmap(buffer);
                 }
                 current->resetLevel();
             }
         }
-        if(!start){
+        if(start == 0){
             exit = true;
+        }
+        if(start == 2){
+            readLevel();
+            rest(400);
         }
     }
 }
 
 void SoloGame::level0(){
 
-    Human* jack = new Human("Jack", 0, 0, 0.6, 0.6, images->getImgsJack());
+    jack = new Human("Jack", 0, 0, 0.6, 0.6, images->getImgsJack());
 
     Tutorial* tutorial = new Tutorial(buffer, images, jack);
     levels->include(static_cast<Level*>(tutorial));
 
     Level_1* level_1 = new Level_1(buffer, images, jack);
     levels->include(static_cast<Level*>(level_1));
+}
+
+void SoloGame::saveLevel(){
+    List_Characters* characters = current->getListCharacters();
+    ofstream myfile("register.txt");
+    myfile << "LEV: " << i_level << "\n";
+    myfile << "JAK: " << jack->getx() << "," << jack->gety() << "\n";
+    for(int i = 0; i<(*characters).size(); i++){
+        Character* c = (*characters)[i];
+        myfile << c->getType() << ": " << c->getx() << "," << c->gety() << "\n";
+    }
+    //myfile << "###";
+}
+
+void SoloGame::readLevel(){
+    ifstream myfile("register.txt");
+    std::string line;
+    if(myfile.is_open()){
+        while (getline(myfile,line)){
+            std::string copy(line.begin(), line.begin()+3);
+            if(copy == "JAK"){
+                ;
+            }
+        }
+    }
 }
 
 SoloGame::~SoloGame()

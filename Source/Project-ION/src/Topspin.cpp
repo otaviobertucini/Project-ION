@@ -11,6 +11,7 @@ Topspin::Topspin(float x, float y, float x_speed, float y_speed, List_Images *im
     direction = 1;
     h = 20;
     w = 40;
+    type = "TOP";
 }
 
 void Topspin::move(int x_move){
@@ -22,7 +23,6 @@ void Topspin::move(int x_move){
 }
 
 void Topspin::loop(){
-    //isStructureCollide();
     gravity();
     move(0);
 }

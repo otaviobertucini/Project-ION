@@ -23,6 +23,9 @@ int Menu::inicial(){
         if(key[KEY_E]){
             exit = true;
         }
+        if(key[KEY_R]){
+            return 2;
+        }
         if(key[KEY_ENTER]){
             if(option == 1){
                 return 1;
@@ -63,6 +66,9 @@ int Menu::pause(){
         draw_sprite(buffer, pause_back, 0, 0);
         if(key[KEY_E]){
             return 1;
+        }
+        if(key[KEY_R]){
+            return 2;
         }
 
         if(key[KEY_SPACE]){

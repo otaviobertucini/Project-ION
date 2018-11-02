@@ -102,6 +102,10 @@ void Level::resetPlayer(){
     jack->setDown(false);
 }
 
+List_Characters* Level::getListCharacters(){
+    return characters;
+}
+
 Level::~Level()
 {
     characters->deleteAll();

@@ -75,6 +75,10 @@ int Level_1::gameLoop(){
         jack->move(1);
     }
 
+    if(jack->getx() >= 1050 && jack->gety() >= 0){
+        return 3; //prev level
+    }
+
     jack->loop();
     jack->print(buffer);
 }

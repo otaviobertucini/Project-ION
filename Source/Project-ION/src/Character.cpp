@@ -44,6 +44,10 @@ void Character::gravity()
        y += y_force;
 }
 
+std::string Character::getType(){
+    return type;
+}
+
 void Character::setMap(Map* mp)
 {
         map = mp;

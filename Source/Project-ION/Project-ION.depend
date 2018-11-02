@@ -36,7 +36,7 @@
 
 1539183689 D
 
-1541110619 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/Level.h
+1541117148 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/Level.h
 	<allegro.h>
 	<cstddef>
 	<iostream>
@@ -57,18 +57,19 @@
 	"Structure.h"
 	"Stone.h"
 
-1541110642 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Level.cpp
+1541117909 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Level.cpp
 	"Level.h"
 
 1540852191 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Map.cpp
 	"Map.h"
 
-1540940251 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/Character.h
+1541118271 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/Character.h
 	<allegro.h>
 	<cstddef>
 	<math.h>
 	<vector>
 	<iostream>
+	<string>
 	"Entity.h"
 	"List_Images.h"
 	"Map.h"
@@ -80,19 +81,21 @@
 	<math.h>
 	"Character.h"
 
-1541012193 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Character.cpp
+1541118283 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Character.cpp
 	"Character.h"
 
 1541028011 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Human.cpp
 	"Human.h"
 
-1541112050 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/SoloGame.h
+1541118635 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/SoloGame.h
 	<allegro.h>
 	<stdlib.h>
 	<time.h>
 	<cstddef>
 	<iostream>
 	<vector>
+	<fstream>
+	<string>
 	"Human.h"
 	"Game.h"
 	"Topspin.h"
@@ -126,7 +129,7 @@
 1540553370 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Images.cpp
 	"Images.h"
 
-1541113634 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/SoloGame.cpp
+1541118343 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/SoloGame.cpp
 	"SoloGame.h"
 
 1541025868 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/Entity.h
@@ -316,7 +319,7 @@
 	"Character.h"
 	"List_Images.h"
 
-1540941319 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Topspin.cpp
+1541118049 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Topspin.cpp
 	"Topspin.h"
 
 1540584894 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/Topspin.h
@@ -346,7 +349,7 @@
 	<Level.h>
 	"Topspin.h"
 
-1541113782 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Tutorial.cpp
+1541118425 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Tutorial.cpp
 	"Tutorial.h"
 
 1541104374 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/List_Characters.h
@@ -355,7 +358,7 @@
 1541104423 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/List_Characters.cpp
 	"List_Characters.h"
 
-1541113113 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Menu.cpp
+1541119247 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Menu.cpp
 	"Menu.h"
 
 1541033950 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/Menu.h
@@ -372,6 +375,6 @@
 1541111534 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/Level_1.h
 	"Level.h"
 
-1541111995 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Level_1.cpp
+1541116635 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Level_1.cpp
 	"Level_1.h"
 

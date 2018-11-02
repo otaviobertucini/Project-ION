@@ -28,6 +28,7 @@ public:
     void isStructureCollide(Character* a);
     void loopCharacters();
     void collisionCharacters();
+    List_Characters* getListCharacters();
     virtual int gameLoop() = 0;
     virtual void generateLevel() = 0;
     virtual void resetLevel() = 0;

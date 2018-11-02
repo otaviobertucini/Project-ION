@@ -7,6 +7,8 @@
 #include <cstddef> //library for NULL
 #include <iostream>
 #include <vector>
+#include <fstream>
+#include <string>
 #include "Human.h"
 #include "Game.h"
 #include "Topspin.h"
@@ -24,10 +26,14 @@ public:
     ~SoloGame();
     void menu();
     void execute();
+    void saveLevel();
+    void readLevel();
     void level0();
 private:
     Menu* menu1;
     int chances;
+    int i_level;
+    Human* jack;
 };
 
 #endif // SOLOGAME_H
