@@ -19,6 +19,7 @@ Character::Character(float x, float y, float x_speed, float y_speed, List_Images
     current_img = (*img)[0];
 }
 
+//Apply Gravity
 void Character::gravity()
 {
 
@@ -31,7 +32,6 @@ void Character::gravity()
     }
 
     y_force_limit = 2;
-
     y_force += 0.02;
 
     if(y_force > y_force_limit)
