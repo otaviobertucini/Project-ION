@@ -97,6 +97,13 @@ void Level::collisionCharacters(){
     }
 }
 
+int Level::isCollideCharacter(Character* a){
+    for(int i = 0; i<characters->size(); i++){
+        if(isCollide(static_cast<Entity*>(a), static_cast<Entity*>((*characters)[i])))
+            return 1;
+    }
+}
+
 int Level::getValueMap(int i, int j){
     return map->getValueMap(i, j);
 }
@@ -104,6 +111,13 @@ int Level::getValueMap(int i, int j){
 void Level::resetPlayer(){
     jack->setx(x_initial);
     jack->sety(y_initial);
+    jack->setUp(false);
+    jack->setDown(false);
+}
+
+void Level::resetPlayer(float x, float y){
+    jack->setx(x);
+    jack->sety(y);
     jack->setUp(false);
     jack->setDown(false);
 }

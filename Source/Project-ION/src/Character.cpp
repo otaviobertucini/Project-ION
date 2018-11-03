@@ -5,11 +5,9 @@ Character::Character()
     //ctor
 }
 
-Character::Character(float x, float y, float x_speed, float y_speed, List_Images *img):
+Character::Character(float x, float y, List_Images *img):
             Entity(x, y)
 {
-    this->x_speed = x_speed;
-    this->y_speed = y_speed;
     this->img = img;
     this->map = NULL;
     this->move_left = true;
@@ -67,6 +65,10 @@ void Character::setUp(bool new_mode){
 
 void Character::setDown(bool new_mode){
     move_down = new_mode;
+}
+
+int Character::getDirection(){
+    return direction;
 }
 
 Character::~Character()

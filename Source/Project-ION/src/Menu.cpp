@@ -23,7 +23,7 @@ int Menu::inicial(){
         if(key[KEY_E]){
             exit = true;
         }
-        if(key[KEY_R]){
+        if(key[KEY_T]){
             return 2;
         }
         if(key[KEY_ENTER]){

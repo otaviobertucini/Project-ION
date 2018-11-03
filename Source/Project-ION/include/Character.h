@@ -18,7 +18,7 @@ class Character: public Entity
 {
 public:
     Character();
-    Character(float x, float y, float x_speed, float y_speed, List_Images *img);
+    Character(float x, float y, List_Images *img);
     ~Character();
     virtual void setMap(Map* map);
     virtual void move(int x_move) = 0;
@@ -31,6 +31,7 @@ public:
     void setLeft(bool new_move);
     void setUp(bool new_move);
     void setDown(bool new_move);
+    int getDirection();
 protected:
     std::string type;
     int current_side;
@@ -43,6 +44,7 @@ protected:
     List_Images *img;
     Map* map;
     float y_force;
+    int direction;
 };
 
 #endif // CHARACTER_H

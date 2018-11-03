@@ -9,7 +9,8 @@ public:
     Tutorial();
     Tutorial(BITMAP* buffer, Images* images, Human* jack);
     int gameLoop();
-    void generateLevel();
+    virtual void generateLevel();
+    virtual void generateLevel(List_Characters* characters);
     void resetLevel();
     virtual ~Tutorial();
 private:

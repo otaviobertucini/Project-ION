@@ -5,8 +5,8 @@ Human::Human()
     //ctor
 }
 
-Human::Human(string name, float x, float y, float x_speed, float y_speed, List_Images *img):
-               Character(x, y, x_speed, y_speed, img){
+Human::Human(string name, float x, float y, List_Images *img, int direction):
+               Character(x, y, img){
     this->name = name;
     this->y_force = 0;
     this->current_side = 1;
@@ -15,6 +15,9 @@ Human::Human(string name, float x, float y, float x_speed, float y_speed, List_I
     setPosMatrix();
     h = 60;
     w = 40;
+    x_speed = 0.6;
+    y_speed = 0.6;
+    this->direction = direction;
 }
 
 void Human::gravity()
@@ -112,7 +115,7 @@ void Human::dash()
 This parameters can be valued as 1, 0 or -1 (depending on the movement). */
 void Human::move(int x_move)
 {
-
+    direction = x_move;
     if(!dashOn)
     {
         if(x_move > 0)
@@ -131,9 +134,11 @@ void Human::move(int x_move)
                 x_move = 0;
         }
 
+
         x += x_speed*x_move;
         setPosMatrix();
     }
+    cout << direction << endl;
 }
 
 // Returns the position in the matrix where the character is placed.

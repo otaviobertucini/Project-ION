@@ -27,7 +27,7 @@ public:
     void menu();
     void execute();
     void saveLevel();
-    void readLevel();
+    void readLevel(List_Characters* characters);
     void level0();
 private:
     Menu* menu1;

@@ -87,6 +87,8 @@ void Level_1::generateLevel(){
     jack->setMap(map);
 }
 
+void Level_1::generateLevel(List_Characters* characters){}
+
 void Level_1::resetLevel(){}
 
 Level_1::~Level_1()

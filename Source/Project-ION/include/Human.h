@@ -13,7 +13,7 @@ class Human:public Character
 {
     public:
         Human();
-        Human(string name, float x, float y, float x_speed, float y_speed, List_Images *img);
+        Human(string name, float x, float y, List_Images *img, int direction = 1);
         ~Human();
         void move(int x_move);
         void print(BITMAP* screen);

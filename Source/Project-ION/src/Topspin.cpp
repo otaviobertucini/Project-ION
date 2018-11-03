@@ -5,13 +5,15 @@ Topspin::Topspin()
     //ctor
 }
 
-Topspin::Topspin(float x, float y, float x_speed, float y_speed, List_Images *img):
-        Enemy(x, y, x_speed, y_speed, img)
+Topspin::Topspin(float x, float y, List_Images *img, int direction):
+        Enemy(x, y, img)
 {
-    direction = 1;
+    this->direction = direction;
     h = 20;
     w = 40;
     type = "TOP";
+    x_speed = 0.2;
+    y_speed = 0.06;
 }
 
 void Topspin::move(int x_move){

@@ -28,11 +28,14 @@ public:
     void isStructureCollide(Character* a);
     void loopCharacters();
     void collisionCharacters();
+    int isCollideCharacter(Character* a);
     List_Characters* getListCharacters();
     virtual int gameLoop() = 0;
     virtual void generateLevel() = 0;
+    virtual void generateLevel(List_Characters* characters) = 0;
     virtual void resetLevel() = 0;
     virtual void resetPlayer();
+    virtual void resetPlayer(float x, float y);
 protected:
     Map* map; //Pointer to the level map.
     BITMAP* buffer; //Pointer to the display where all components will be shown.
