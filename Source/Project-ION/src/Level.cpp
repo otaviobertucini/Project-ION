@@ -108,6 +108,16 @@ int Level::getValueMap(int i, int j){
     return map->getValueMap(i, j);
 }
 
+float Level::getXInitial()
+{
+    return x_initial;
+}
+
+float Level::getYInitial()
+{
+    return y_initial;
+}
+
 void Level::resetPlayer(){
     jack->setx(x_initial);
     jack->sety(y_initial);
