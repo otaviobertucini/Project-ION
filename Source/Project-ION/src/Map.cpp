@@ -16,6 +16,9 @@ void Map::generateStructures(){
         for(int j = 0; j<36; j++){
             if(matrix[i][j] == 0)
                 structures.include(static_cast<Structure*>(new Stone(30*j, 30*i, (*img)[0])));
+            else if(matrix[i][j] == 2){
+                obstacles.include(static_cast<Obstacle*>(new Lava(30*j, 30*i, (*img)[1])));
+            }
         }
     }
 }
@@ -23,6 +26,9 @@ void Map::generateStructures(){
 void Map::printMap(BITMAP* screen){
     for(int i = 0; i<structures.size(); i++){
         structures[i]->print(screen);
+    }
+    for(int i = 0; i<obstacles.size(); i++){
+        obstacles[i]->print(screen);
     }
 }
 
@@ -41,6 +47,10 @@ int Map::getValueMap(int i, int j){
 List_Structures* Map::getList()
 {
     return &structures;
+}
+
+List_Obstacles* Map::getListObstacles(){
+    return &obstacles;
 }
 
 Map::~Map()

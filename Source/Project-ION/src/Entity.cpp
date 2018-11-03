@@ -48,6 +48,11 @@ void Entity::getPosMatrix(int* i, int* j){
     *j = j_pos;
 }
 
+//Shows on screen the images in the images vector.
+void Entity::print(BITMAP* screen){
+    masked_blit(current_img, screen, 0,0, x, y, w, h);
+}
+
 Entity::~Entity()
 {
 }

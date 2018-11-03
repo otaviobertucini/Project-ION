@@ -3,9 +3,13 @@
 #include <cstddef> //library for NULL
 #include <iostream>
 #include "List_Structures.h"
+#include "List_Obstacles.h"
 #include "List_Images.h"
 #include "Structure.h"
 #include "Stone.h"
+#include "Lava.h"
+#include "Obstacle.h"
+
 using std::cout;
 using std::endl;
 
@@ -17,12 +21,14 @@ public:
     ~Map();
     int** getMatrix();
     List_Structures* getList();
+    List_Obstacles* getListObstacles();
     int getValueMap(int i, int j);
     void generateStructures();
     void printMap(BITMAP* screen);
 private:
     int** matrix;
     List_Structures structures;
+    List_Obstacles obstacles;
     List_Images *img;
 };
 

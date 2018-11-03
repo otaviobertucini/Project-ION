@@ -138,7 +138,6 @@ void Human::move(int x_move)
         x += x_speed*x_move;
         setPosMatrix();
     }
-    cout << direction << endl;
 }
 
 // Returns the position in the matrix where the character is placed.
@@ -146,11 +145,6 @@ void Human::move(int x_move)
 void Human::setPosMatrix(){
     i_pos = (int)floor((y+h)/30);
     j_pos = (int)floor((x+w)/30)-1;
-}
-
-//Shows on screen the images in the images vector.
-void Human::print(BITMAP* screen){
-    masked_blit(current_img, screen, 0,0, x, y, w, h);
 }
 
 Human::~Human()

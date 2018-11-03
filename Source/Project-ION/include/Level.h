@@ -30,7 +30,8 @@ public:
     void isStructureCollide(Character* a);
     void loopCharacters();
     void collisionCharacters();
-    int isCollideCharacter(Character* a);
+    int isCharacterCollide(Character* a);
+    int isObstacleCollide(Character* a);
     List_Characters* getListCharacters();
     virtual int gameLoop() = 0;
     virtual void generateLevel() = 0;

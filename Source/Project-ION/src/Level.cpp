@@ -16,7 +16,7 @@ Level::Level(BITMAP* buffer, Images *images, Human* jack){
 int Level::isCollide(Entity* a, Entity* b){
     int x_sum = (a->getw()/2)+(b->getw()/2);
     int y_sum = (a->geth()/2)+(b->geth()/2);
-    if((abs(a->getx() - b->getx()) < x_sum) && (abs(a->gety() - b->gety()) <= y_sum ))
+    if((abs(a->getx() - b->getx()) <= x_sum) && (abs(a->gety() - b->gety()) <= y_sum ))
         return 1;
     return 0;
 }
@@ -97,11 +97,21 @@ void Level::collisionCharacters(){
     }
 }
 
-int Level::isCollideCharacter(Character* a){
+int Level::isCharacterCollide(Character* a){
     for(int i = 0; i<characters->size(); i++){
         if(isCollide(static_cast<Entity*>(a), static_cast<Entity*>((*characters)[i])))
             return 1;
     }
+    return 0;
+}
+
+int Level::isObstacleCollide(Character* a){
+    List_Obstacles* aux = map->getListObstacles();
+    for(int i = 0; i<aux->size(); i++){
+        if(isCollide(static_cast<Entity*>(a), static_cast<Entity*>((*aux)[i])))
+            return 1;
+    }
+    return 0;
 }
 
 int Level::getValueMap(int i, int j){

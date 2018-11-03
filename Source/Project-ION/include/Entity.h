@@ -16,7 +16,7 @@ public:
     Entity(float x, float y, BITMAP* curren_img = NULL);
     virtual void setPosMatrix() = 0;
     void getPosMatrix(int* i, int* j);
-    virtual void print(BITMAP* screen) = 0;
+    virtual void print(BITMAP* screen);
     BITMAP* getCurrentImg();
     float getx();
     float gety();

@@ -22,7 +22,6 @@ public:
     ~Character();
     virtual void setMap(Map* map);
     virtual void move(int x_move) = 0;
-    virtual void print(BITMAP* screen) = 0;
     virtual void setPosMatrix() = 0;
     virtual void loop() = 0;
     virtual void gravity();

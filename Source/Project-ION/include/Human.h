@@ -16,7 +16,6 @@ class Human:public Character
         Human(string name, float x, float y, List_Images *img, int direction = 1);
         ~Human();
         void move(int x_move);
-        void print(BITMAP* screen);
         void setPosMatrix();
         void gravity();
         void jump();

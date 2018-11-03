@@ -10,6 +10,7 @@ public:
     Structure(float x, float y, BITMAP* current_img);
     void setPosMatrix();
     void print(BITMAP* screen);
+    virtual void loop() = 0;
     virtual ~Structure();
 protected:
 
