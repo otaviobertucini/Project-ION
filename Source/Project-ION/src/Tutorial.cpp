@@ -49,9 +49,7 @@ Tutorial::Tutorial(BITMAP* buffer, Images* images, Human* jack):Level(buffer, im
     map = new Map(m, images->getImgsMap());
 }
 
-void Tutorial::generateLevel(){
-    resetLevel();
-    jack->setMap(map);
+void Tutorial::startLevel(){
     Topspin* top = new Topspin(600, 500, images->getImgsTopspin());
     top->setMap(map);
     characters->include(static_cast<Character*>(top));
@@ -60,18 +58,20 @@ void Tutorial::generateLevel(){
     characters->include(static_cast<Character*>(top2));
 }
 
+void Tutorial::generateLevel(){
+    resetLevel();
+    jack->setMap(map);
+}
+
 void Tutorial::generateLevel(List_Characters* characters){
     this->characters = characters;
 }
 
-void Tutorial::resetLevel(){
-    resetPlayer();
-    characters->eraseAll();
-}
-
 int Tutorial::gameLoop(){
 
-    genericGameLoop();
+    game_status = genericGameLoop();
+    if(game_status != 1)
+        return game_status;
 
     loopCharacters();
     collisionCharacters();

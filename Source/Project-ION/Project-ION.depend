@@ -36,7 +36,7 @@
 
 1539183689 D
 
-1541276985 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/Level.h
+1541359583 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/Level.h
 	<allegro.h>
 	<cstddef>
 	<iostream>
@@ -60,7 +60,7 @@
 	"Lava.h"
 	"Obstacle.h"
 
-1541270064 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Level.cpp
+1541359381 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Level.cpp
 	"Level.h"
 
 1541276649 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Map.cpp
@@ -90,7 +90,7 @@
 1541273343 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Human.cpp
 	"Human.h"
 
-1541270132 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/SoloGame.h
+1541359686 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/SoloGame.h
 	<allegro.h>
 	<stdlib.h>
 	<time.h>
@@ -132,7 +132,7 @@
 1541274636 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Images.cpp
 	"Images.h"
 
-1541270102 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/SoloGame.cpp
+1541359897 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/SoloGame.cpp
 	"SoloGame.h"
 
 1541273254 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/Entity.h
@@ -360,11 +360,11 @@
 	<vector>
 	"Entity.h"
 
-1541267010 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/Tutorial.h
+1541359794 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/Tutorial.h
 	<Level.h>
 	"Topspin.h"
 
-1541277159 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Tutorial.cpp
+1541359616 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Tutorial.cpp
 	"Tutorial.h"
 
 1541104374 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/List_Characters.h
@@ -387,10 +387,10 @@
 1541111244 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/List_Levels.cpp
 	"List_Levels.h"
 
-1541267482 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/Level_1.h
+1541359808 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/Level_1.h
 	"Level.h"
 
-1541270064 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Level_1.cpp
+1541359827 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Level_1.cpp
 	"Level_1.h"
 
 1541190401 c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\include\list_characters.h

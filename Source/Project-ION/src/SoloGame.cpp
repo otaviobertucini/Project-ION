@@ -42,18 +42,19 @@ void SoloGame::execute()
         if(start == 1)
         {
             dead = false;
+            startLevels();
             //Loop de cada jogada
             while(!dead){
                 exit_loop = false;
                 current = (*levels)[i_level];
                 if(!load_level){
                     current->generateLevel();
+                    current->resetPlayer(x,y);
                 }
                 else{
                     current->generateLevel(characters);
                 }
                 load_level = 0;
-                current->resetPlayer(x,y);
                 //Loop de cada fase
                 while(!exit_loop)
                 {
@@ -100,9 +101,9 @@ void SoloGame::execute()
                     draw_sprite(screen, buffer, 0, 0);
                     clear_bitmap(buffer);
                 }
-
                 current->resetLevel();
             }
+            resetLevels();
         }
         if(start == 0){
             exit = true;
@@ -177,6 +178,18 @@ void SoloGame::readLevel(List_Characters* characters){
                 characters->include(static_cast<Character*>(new Topspin(x, y, images->getImgsTopspin(), dir)));
             }
         }
+    }
+}
+
+void SoloGame::startLevels(){
+    for(int i = 0; i<levels->size(); i++){
+        (*levels)[i]->startLevel();
+    }
+}
+
+void SoloGame::resetLevels(){
+    for(int i = 0; i<levels->size(); i++){
+        (*levels)[i]->eraseAll();
     }
 }
 

@@ -11,7 +11,7 @@ public:
     int gameLoop();
     virtual void generateLevel();
     virtual void generateLevel(List_Characters* characters);
-    void resetLevel();
+    void startLevel();
     virtual ~Tutorial();
 private:
 };

@@ -11,6 +11,7 @@ Level::Level(BITMAP* buffer, Images *images, Human* jack){
     this->images = images;
     characters = new List_Characters;
     this->jack = jack;
+    game_status = 1;
 }
 
 int Level::isCollide(Entity* a, Entity* b){
@@ -141,7 +142,15 @@ void Level::resetPlayer(float x, float y){
     resetPlayer();
 }
 
-void Level::genericGameLoop()
+void Level::resetLevel(){
+    resetPlayer();
+}
+
+void Level::eraseAll(){
+    characters->eraseAll();
+}
+
+int Level::genericGameLoop()
 {
     printMap();
     if (key[KEY_C])
@@ -169,6 +178,8 @@ void Level::genericGameLoop()
     jack->loop();
     isStructureCollide(static_cast<Character*>(jack));
     updatePosition();
+
+    return 1;
 }
 
 List_Characters* Level::getListCharacters(){
