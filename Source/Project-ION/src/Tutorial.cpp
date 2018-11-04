@@ -83,8 +83,8 @@ int Tutorial::gameLoop(){
     if(isObstacleCollide(static_cast<Character*>(jack)))
         return 0;
 
-    if(jack->getx() >= 1050 && jack->gety() >  510){
-        resetPlayer(30,630);
+    if(jack->getx() >= 1075){
+        resetPlayer(-15,jack->gety());
         return 2; //next level
     }
 
