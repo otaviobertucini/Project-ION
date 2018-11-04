@@ -8,6 +8,8 @@ Level_1::Level_1()
 }
 
 Level_1::Level_1(BITMAP* buffer, Images* images, Human* jack):Level(buffer, images, jack){
+    x_initial = 0;
+    y_initial = 660;
 
     int** m = new int*[24];
     for(int i = 0; i<24; i++)
@@ -55,7 +57,9 @@ Level_1::Level_1(BITMAP* buffer, Images* images, Human* jack):Level(buffer, imag
 int Level_1::gameLoop(){
 
 
-    genericGameLoop();
+    game_status = genericGameLoop();
+    if(game_status != 1)
+        return game_status;
 
     if(jack->getx() >= 1075 && jack->gety() >= 0){
         resetPlayer(240,140);

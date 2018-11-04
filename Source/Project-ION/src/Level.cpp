@@ -18,8 +18,10 @@ Level::Level(BITMAP* buffer, Images *images, Human* jack){
 int Level::isCollide(Entity* a, Entity* b){
     int x_sum = (a->getw()/2)+(b->getw()/2);
     int y_sum = (a->geth()/2)+(b->geth()/2);
-    if((abs(a->getx() - b->getx()) <= x_sum) && (abs(a->gety() - b->gety()) <= y_sum ))
+    if((abs((a->getx()+(a->getw()/2)) - (b->getx()+(b->getw()/2))) <= x_sum) &&
+       (abs((a->gety()+(a->geth()/2)) - (b->gety()+(b->geth()/2))) <= y_sum )){
         return 1;
+    }
     return 0;
 }
 
@@ -71,6 +73,35 @@ void Level::isStructureCollide(Character* a)
     }
 }
 
+//int Level::isBlockCollide(Character* a, Entity* block){
+//    float x_center = a->getx()+(a->getw()/2);
+//    float y_center = a->gety()+(a->geth()/2);
+//    float x_center_body = block->getx() + 15;
+//    float y_center_body = block->gety() + 15;
+//
+//    if(a->gety() + a->geth() >= block->gety() && y_center <= y_center_body)
+//    {
+//        return 1;
+//    }
+//    //embaixo do 2
+//    if(a->gety() <= block->gety() + block->geth() && y_center >= y_center_body)
+//    {
+//        return 1;
+//    }
+//    //esquerda do 29
+//    if(a->getx() + a->getw() >= block->getx() && x_center <= x_center_body)
+//    {
+//        return 1;
+//    }
+//    //direita do 2
+//    if(a->getx() <= block->getx() + block->getw() && x_center >= x_center_body)
+//
+//    {
+//        return 1;
+//    }
+//    return 0;
+//}
+
 Map* Level::getMap(){
     return map;
 }
@@ -110,8 +141,9 @@ int Level::isCharacterCollide(Character* a){
 int Level::isObstacleCollide(Character* a){
     List_Obstacles* aux = map->getListObstacles();
     for(int i = 0; i<aux->size(); i++){
-        if(isCollide(static_cast<Entity*>(a), static_cast<Entity*>((*aux)[i])))
+        if(isCollide(static_cast<Entity*>(a), static_cast<Entity*>((*aux)[i]))){
             return 1;
+        }
     }
     return 0;
 }
@@ -179,6 +211,12 @@ int Level::genericGameLoop()
 
     jack->loop();
     isStructureCollide(static_cast<Character*>(jack));
+
+    if(isCharacterCollide(static_cast<Character*>(jack)))
+        return 0;
+
+    if(isObstacleCollide(static_cast<Character*>(jack)))
+        return 0;
     updatePosition();
 
     return 1;

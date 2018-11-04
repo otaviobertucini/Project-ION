@@ -36,7 +36,7 @@
 
 1539183689 D
 
-1541361515 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/Level.h
+1541364930 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/Level.h
 	<allegro.h>
 	<cstddef>
 	<iostream>
@@ -60,7 +60,7 @@
 	"Lava.h"
 	"Obstacle.h"
 
-1541361706 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Level.cpp
+1541366725 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Level.cpp
 	"Level.h"
 
 1541276649 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Map.cpp
@@ -364,7 +364,7 @@
 	<Level.h>
 	"Topspin.h"
 
-1541361605 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Tutorial.cpp
+1541366714 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Tutorial.cpp
 	"Tutorial.h"
 
 1541104374 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/List_Characters.h
@@ -390,7 +390,7 @@
 1541359808 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/Level_1.h
 	"Level.h"
 
-1541359827 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Level_1.cpp
+1541366755 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Level_1.cpp
 	"Level_1.h"
 
 1541190401 c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\include\list_characters.h

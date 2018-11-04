@@ -32,6 +32,7 @@ public:
     void collisionCharacters();
     int isCharacterCollide(Character* a);
     int isObstacleCollide(Character* a);
+    int isBlockCollide(Character* a, Entity* block);
     List_Characters* getListCharacters();
     int genericGameLoop();
     virtual int gameLoop() = 0;
