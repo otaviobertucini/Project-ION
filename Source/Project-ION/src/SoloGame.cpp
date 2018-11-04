@@ -21,13 +21,15 @@ void SoloGame::execute()
     bool exit = false;
     bool exit_loop;
 
-    x = 240;
-    y = 140;
+
     //Loop do jogo todo
     while(!exit)
     {
         int load_level = 0;
         int start = menu1->inicial();
+
+        x = 240;
+        y = 140;
 
         chances = 3;
         i_level = 0;
