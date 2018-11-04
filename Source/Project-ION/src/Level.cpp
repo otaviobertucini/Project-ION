@@ -12,6 +12,7 @@ Level::Level(BITMAP* buffer, Images *images, Human* jack){
     characters = new List_Characters;
     this->jack = jack;
     game_status = 1;
+    was_genereted = 0;
 }
 
 int Level::isCollide(Entity* a, Entity* b){
@@ -148,6 +149,7 @@ void Level::resetLevel(){
 
 void Level::eraseAll(){
     characters->eraseAll();
+    was_genereted = 0;
 }
 
 int Level::genericGameLoop()

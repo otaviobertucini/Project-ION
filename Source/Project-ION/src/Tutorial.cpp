@@ -49,19 +49,22 @@ Tutorial::Tutorial(BITMAP* buffer, Images* images, Human* jack):Level(buffer, im
     map = new Map(m, images->getImgsMap());
 }
 
-void Tutorial::startLevel(){
-    Topspin* top = new Topspin(600, 500, images->getImgsTopspin());
-    top->setMap(map);
-    characters->include(static_cast<Character*>(top));
-    Topspin* top2 = new Topspin(330, 500, images->getImgsTopspin());
-    top2->setMap(map);
-    characters->include(static_cast<Character*>(top2));
-}
+void Tutorial::startLevel(){}
 
 void Tutorial::generateLevel(){
     resetLevel();
     jack->setMap(map);
+    if(!was_genereted){
+        Topspin* top = new Topspin(600, 500, images->getImgsTopspin());
+        top->setMap(map);
+        characters->include(static_cast<Character*>(top));
+        Topspin* top2 = new Topspin(330, 500, images->getImgsTopspin());
+        top2->setMap(map);
+        characters->include(static_cast<Character*>(top2));
+        was_genereted = 1;
+    }
 }
+
 
 void Tutorial::generateLevel(List_Characters* characters){
     this->characters = characters;

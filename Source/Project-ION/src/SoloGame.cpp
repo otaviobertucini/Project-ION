@@ -42,7 +42,6 @@ void SoloGame::execute()
         if(start == 1)
         {
             dead = false;
-            startLevels();
             //Loop de cada jogada
             while(!dead){
                 exit_loop = false;

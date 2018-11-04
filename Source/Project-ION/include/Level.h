@@ -51,6 +51,7 @@ protected:
     float x_initial;
     float y_initial;
     int game_status;
+    int was_genereted;
 };
 
 #endif // LEVEL_H
