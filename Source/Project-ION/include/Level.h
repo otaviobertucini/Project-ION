@@ -33,6 +33,7 @@ public:
     int isCharacterCollide(Character* a);
     int isObstacleCollide(Character* a);
     List_Characters* getListCharacters();
+    void genericGameLoop();
     virtual int gameLoop() = 0;
     virtual void generateLevel() = 0;
     virtual void generateLevel(List_Characters* characters) = 0;

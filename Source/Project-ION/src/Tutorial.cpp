@@ -7,8 +7,6 @@ Tutorial::Tutorial()
 
 Tutorial::Tutorial(BITMAP* buffer, Images* images, Human* jack):Level(buffer, images, jack){
 
-    x_initial = 130;
-    y_initial = 380;
 
     int** m = new int*[24];
     for(int i = 0; i<24; i++)
@@ -72,34 +70,11 @@ void Tutorial::resetLevel(){
 }
 
 int Tutorial::gameLoop(){
-    printMap();
-    if (key[KEY_C])
-    {
-        jack->jump();
-    }
-    if (key[KEY_X] && !(key[KEY_DOWN]))
-    {
-        jack->JetPack();
-    }
-    if (key[KEY_X] && key[KEY_DOWN])
-    {
-        jack->activeDash();
-    }
 
-    if (key[KEY_LEFT])
-    {
-        jack->move(-1);
-    }
-    if (key[KEY_RIGHT])
-    {
-        jack->move(1);
-    }
+    genericGameLoop();
 
-    jack->loop();
-    isStructureCollide(static_cast<Character*>(jack));
     loopCharacters();
     collisionCharacters();
-    updatePosition();
     jack->print(buffer);
 
     if(isCharacterCollide(static_cast<Character*>(jack)))
@@ -109,6 +84,7 @@ int Tutorial::gameLoop(){
         return 0;
 
     if(jack->getx() >= 1050 && jack->gety() >  510){
+        resetPlayer(30,630);
         return 2; //next level
     }
 

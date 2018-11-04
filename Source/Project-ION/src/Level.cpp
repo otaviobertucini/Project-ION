@@ -136,10 +136,39 @@ void Level::resetPlayer(){
 }
 
 void Level::resetPlayer(float x, float y){
-    jack->setx(x);
-    jack->sety(y);
-    jack->setUp(false);
-    jack->setDown(false);
+    x_initial = x;
+    y_initial = y;
+    resetPlayer();
+}
+
+void Level::genericGameLoop()
+{
+    printMap();
+    if (key[KEY_C])
+    {
+        jack->jump();
+    }
+    if (key[KEY_X] && !(key[KEY_DOWN]))
+    {
+        jack->JetPack();
+    }
+    if (key[KEY_X] && key[KEY_DOWN])
+    {
+        jack->activeDash();
+    }
+
+    if (key[KEY_LEFT])
+    {
+        jack->move(-1);
+    }
+    if (key[KEY_RIGHT])
+    {
+        jack->move(1);
+    }
+
+    jack->loop();
+    isStructureCollide(static_cast<Character*>(jack));
+    updatePosition();
 }
 
 List_Characters* Level::getListCharacters(){
@@ -152,3 +181,5 @@ Level::~Level()
     delete jack;
     jack = NULL;
 }
+
+

@@ -17,13 +17,18 @@ void SoloGame::execute()
     int game_status;
     bool dead;
     int pause;
+    float x,y;
     bool exit = false;
     bool exit_loop;
+
+    x = 240;
+    y = 140;
     //Loop do jogo todo
     while(!exit)
     {
         int load_level = 0;
         int start = menu1->inicial();
+
         chances = 3;
         i_level = 0;
         List_Characters* characters = new List_Characters;
@@ -46,6 +51,7 @@ void SoloGame::execute()
                     current->generateLevel(characters);
                 }
                 load_level = 0;
+                current->resetPlayer(x,y);
                 //Loop de cada fase
                 while(!exit_loop)
                 {
@@ -87,9 +93,12 @@ void SoloGame::execute()
                         exit_loop = true;
                     }
 
+                    x = current->getXInitial();
+                    y = current->getYInitial();
                     draw_sprite(screen, buffer, 0, 0);
                     clear_bitmap(buffer);
                 }
+
                 current->resetLevel();
             }
         }

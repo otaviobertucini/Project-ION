@@ -37,8 +37,8 @@ Level_1::Level_1(BITMAP* buffer, Images* images, Human* jack):Level(buffer, imag
         {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0},
         {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0},
         {1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0},
-        {1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0},
-        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 5, 5, 5, 5, 0, 0, 0, 0, 5, 5, 5, 0, 5, 5, 5, 5, 5, 0, 0, 0, 0, 0, 0, 0}
+        {1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 0, 0, 0, 0, 2, 2, 2, 0, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 0, 0, 0, 0, 2, 2, 2, 0, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0}
     };
 
     for(int i = 0; i<24; i++)
@@ -54,36 +54,19 @@ Level_1::Level_1(BITMAP* buffer, Images* images, Human* jack):Level(buffer, imag
 
 int Level_1::gameLoop(){
 
-    printMap();
-    if (key[KEY_C])
-    {
-        jack->jump();
-    }
-    if (key[KEY_X] && !(key[KEY_DOWN]))
-    {
-        jack->JetPack();
-    }
-    if (key[KEY_X] && key[KEY_DOWN])
-    {
-        jack->activeDash();
-    }
 
-    if (key[KEY_LEFT])
-    {
-        jack->move(-1);
-    }
-    if (key[KEY_RIGHT])
-    {
-        jack->move(1);
-    }
+    genericGameLoop();
 
     if(jack->getx() >= 1050 && jack->gety() >= 0){
+        resetPlayer(240,140);
         return 3; //prev level
     }
 
-    jack->loop();
-    isStructureCollide(static_cast<Character*>(jack));
-    updatePosition();
+    if(jack->getx() <= 0){
+        resetPlayer(1000,630);
+        return 3; //prev level
+    }
+
     jack->print(buffer);
 }
 
