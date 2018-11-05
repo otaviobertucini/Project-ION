@@ -47,20 +47,20 @@ Tutorial::Tutorial(BITMAP* buffer, Images* images, Human* jack):Level(buffer, im
     }
 
     map = new Map(m, images->getImgsMap());
+    lavas = map->getListLavas();
 }
 
 void Tutorial::startLevel(){}
 
 void Tutorial::generateLevel(){
     resetLevel();
-    jack->setMap(map);
     if(!was_genereted){
         Topspin* top = new Topspin(600, 500, images->getImgsTopspin());
-        top->setMap(map);
         characters->include(static_cast<Character*>(top));
         Topspin* top2 = new Topspin(330, 500, images->getImgsTopspin());
-        top2->setMap(map);
         characters->include(static_cast<Character*>(top2));
+//        Fireball* fire = new Fireball(500, 500, *(images->getImgsFireball());
+//        characters->include(static_cast<Character*>(fire));
         was_genereted = 1;
     }
 }
@@ -84,6 +84,8 @@ int Tutorial::gameLoop(){
         resetPlayer(-15,jack->gety());
         return 2; //next level
     }
+
+    loopFireballs();
 
     return 1;
 }

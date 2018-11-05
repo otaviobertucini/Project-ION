@@ -9,12 +9,12 @@ Character::Character(float x, float y, List_Images *img):
             Entity(x, y)
 {
     this->img = img;
-    this->map = NULL;
     this->move_left = true;
     this->move_right = true;
     this->move_up = true;
     this->move_down = true;
-    current_img = (*img)[0];
+    if(img != NULL)
+        current_img = (*img)[0];
 }
 
 //Apply Gravity
@@ -44,11 +44,6 @@ void Character::gravity()
 
 std::string Character::getType(){
     return type;
-}
-
-void Character::setMap(Map* mp)
-{
-        map = mp;
 }
 
 void Character::setRight(bool new_mode){

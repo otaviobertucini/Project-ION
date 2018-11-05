@@ -2,6 +2,7 @@
 #define TUTORIAL_H
 #include <Level.h>
 #include "Topspin.h"
+#include "Fireball.h"
 
 class Tutorial: public Level
 {

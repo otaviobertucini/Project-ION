@@ -17,7 +17,9 @@ void Map::generateStructures(){
             if(matrix[i][j] == 0)
                 structures.include(static_cast<Structure*>(new Stone(30*j, 30*i, (*img)[0])));
             else if(matrix[i][j] == 2){
-                obstacles.include(static_cast<Obstacle*>(new Lava(30*j, 30*i, (*img)[1])));
+                Lava* aux = new Lava(30*j, 30*i, (*img)[1]);
+                obstacles.include(static_cast<Obstacle*>(aux));
+                lavas.include(aux);
             }
         }
     }
@@ -51,6 +53,10 @@ List_Structures* Map::getList()
 
 List_Obstacles* Map::getListObstacles(){
     return &obstacles;
+}
+
+List_Lavas* Map::getListLavas(){
+    return &lavas;
 }
 
 Map::~Map()

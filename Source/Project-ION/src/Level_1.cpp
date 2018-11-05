@@ -52,6 +52,7 @@ Level_1::Level_1(BITMAP* buffer, Images* images, Human* jack):Level(buffer, imag
     }
 
     map = new Map(m, images->getImgsMap());
+    lavas = map->getListLavas();
 }
 
 int Level_1::gameLoop(){
@@ -71,12 +72,11 @@ int Level_1::gameLoop(){
         return 3; //prev level
     }
 
+    loopFireballs();
     jack->print(buffer);
 }
 
-void Level_1::generateLevel(){
-    jack->setMap(map);
-}
+void Level_1::generateLevel(){}
 
 void Level_1::generateLevel(List_Characters* characters){}
 

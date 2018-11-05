@@ -1,7 +1,7 @@
 #ifndef ENEMY_H
 #define ENEMY_H
-#include "Character.h"
 #include "List_Images.h"
+#include "Character.h"
 
 class Enemy: public Character
 {
@@ -10,7 +10,6 @@ public:
     Enemy(float x, float y, List_Images *img);
     void setPosMatrix();
     virtual void move(int x_move) = 0;
-    void print(BITMAP* screen);
     virtual ~Enemy();
 protected:
 

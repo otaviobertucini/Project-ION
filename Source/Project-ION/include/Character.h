@@ -9,7 +9,6 @@
 #include <string>
 #include "Entity.h"
 #include "List_Images.h"
-#include "Map.h"
 
 using std::cout;
 using std::endl;
@@ -20,7 +19,6 @@ public:
     Character();
     Character(float x, float y, List_Images *img);
     ~Character();
-    virtual void setMap(Map* map);
     virtual void move(int x_move) = 0;
     virtual void setPosMatrix() = 0;
     virtual void loop() = 0;
@@ -41,7 +39,6 @@ protected:
     bool move_up;
     bool move_down;
     List_Images *img;
-    Map* map;
     float y_force;
     int direction;
 };

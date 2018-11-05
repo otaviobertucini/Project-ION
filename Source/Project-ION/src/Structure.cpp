@@ -16,10 +16,6 @@ void Structure::setPosMatrix(){
     j_pos = (int)floor(x/30);
 }
 
-void Structure::print(BITMAP* screen){
-    blit(current_img, screen, 0, 0, x, y, 40, 60);
-}
-
 Structure::~Structure()
 {
     //dtor

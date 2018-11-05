@@ -148,6 +148,15 @@ int Level::isObstacleCollide(Character* a){
     return 0;
 }
 
+int Level::isFireballCollide(Character* a){
+    for(int i = 0; i < fireballs.size(); i++){
+        if(isCollide(static_cast<Entity*>(a), static_cast<Entity*>(fireballs[i]))){
+            return 1;
+        }
+    }
+    return 0;
+}
+
 int Level::getValueMap(int i, int j){
     return map->getValueMap(i, j);
 }
@@ -217,9 +226,29 @@ int Level::genericGameLoop()
 
     if(isObstacleCollide(static_cast<Character*>(jack)))
         return 0;
+
+    if(isFireballCollide(static_cast<Character*>(jack)))
+        return 0;
+
     updatePosition();
 
     return 1;
+}
+
+void Level::loopFireballs(){
+    Fireball* fire = (*lavas)[0]->createFireball();
+    if(fire != NULL){
+        fireballs.push_back(fire);
+    }
+
+    for(int i = 0; i<fireballs.size(); i++){
+        fireballs[i]->loop();
+        isStructureCollide(static_cast<Character*>(fireballs[i]));
+        if(!fireballs[i]->getMoveUp()){
+            fireballs.erase(fireballs.begin() + i);
+        }
+        fireballs[i]->print(buffer);
+    }
 }
 
 List_Characters* Level::getListCharacters(){

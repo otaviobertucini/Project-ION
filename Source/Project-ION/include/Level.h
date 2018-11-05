@@ -10,6 +10,7 @@
 #include "List_Images.h"
 #include "Entity.h"
 #include "List_Characters.h"
+#include "List_Lavas.h"
 #include "Images.h"
 using std::cout;
 using std::endl;
@@ -32,7 +33,7 @@ public:
     void collisionCharacters();
     int isCharacterCollide(Character* a);
     int isObstacleCollide(Character* a);
-    int isBlockCollide(Character* a, Entity* block);
+    int isFireballCollide(Character* a);
     List_Characters* getListCharacters();
     int genericGameLoop();
     virtual int gameLoop() = 0;
@@ -43,6 +44,7 @@ public:
     void eraseAll();
     virtual void resetPlayer();
     virtual void resetPlayer(float x, float y);
+    void loopFireballs();
 protected:
     Map* map; //Pointer to the level map.
     BITMAP* buffer; //Pointer to the display where all components will be shown.
@@ -53,6 +55,8 @@ protected:
     float y_initial;
     int game_status;
     int was_genereted;
+    List_Lavas* lavas;
+    std::vector<Fireball*> fireballs;
 };
 
 #endif // LEVEL_H

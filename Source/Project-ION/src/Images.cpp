@@ -19,8 +19,9 @@ Images::Images()
 
     //Loads images from fireball
     imgsFireball = new List_Images;
-    imgsFireball->include(load_bitmap("Material/Enemy/fireBall_Up_1.bmp", NULL));
-    imgsFireball->include(load_bitmap("Material/Enemy/fireBall_Up_2.bmp", NULL));
+    imgsFireball->include(load_bitmap("Material/Enemy/fireball.bmp", NULL));
+//    imgsFireball->include(load_bitmap("Material/Enemy/fireBall_Up_1.bmp", NULL));
+//    imgsFireball->include(load_bitmap("Material/Enemy/fireBall_Up_2.bmp", NULL));
 }
 
 List_Images* Images::getImgsJack(){
@@ -33,6 +34,10 @@ List_Images* Images::getImgsMap(){
 
 List_Images* Images::getImgsTopspin(){
     return imgsTopspin;
+}
+
+List_Images* Images::getImgsFireball(){
+    return imgsFireball;
 }
 
 Images::~Images()

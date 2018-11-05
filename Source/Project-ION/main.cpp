@@ -9,6 +9,8 @@ using std::cout;
 using std::endl;
 
 int main() {
+    srand(time(NULL));
+
     SoloGame game;
     game.execute();
     return 0;
