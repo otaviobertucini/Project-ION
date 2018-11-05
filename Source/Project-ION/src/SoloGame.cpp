@@ -46,6 +46,7 @@ void SoloGame::execute()
             while(!dead){
                 exit_loop = false;
                 current = (*levels)[i_level];
+
                 if(!load_level){
                     current->generateLevel();
                     current->resetPlayer(x,y);
@@ -53,7 +54,9 @@ void SoloGame::execute()
                 else{
                     current->generateLevel(characters);
                 }
+
                 load_level = 0;
+
                 //Loop de cada fase
                 while(!exit_loop)
                 {
@@ -119,6 +122,12 @@ void SoloGame::level0(){
 
     Level_1* level_1 = new Level_1(buffer, images, jack);
     levels->include(static_cast<Level*>(level_1));
+
+    Level_2* level_2 = new Level_2(buffer, images, jack);
+    levels->include(static_cast<Level*>(level_2));
+
+    Level_3* level_3 = new Level_3(buffer, images, jack);
+    levels->include(static_cast<Level*>(level_3));
 }
 
 void SoloGame::saveLevel(){

@@ -34,7 +34,7 @@
 	<cstddef>
 	<iostream>
 
-1539183689 D
+1541344038 D
 
 1541460977 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/Level.h
 	<allegro.h>
@@ -91,7 +91,7 @@
 1541273343 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Human.cpp
 	"Human.h"
 
-1541359686 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/SoloGame.h
+1541461757 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/SoloGame.h
 	<allegro.h>
 	<stdlib.h>
 	<time.h>
@@ -105,6 +105,8 @@
 	"Topspin.h"
 	"Tutorial.h"
 	"Level_1.h"
+	"Level_2.h"
+	"Level_3.h"
 	"Menu.h"
 
 1541270135 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/Game.h
@@ -133,7 +135,7 @@
 1541420625 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Images.cpp
 	"Images.h"
 
-1541361541 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/SoloGame.cpp
+1541461757 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/SoloGame.cpp
 	"SoloGame.h"
 
 1541273254 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/Entity.h
@@ -187,7 +189,7 @@
 	"Level.h"
 	"SoloGame.h"
 
-1541347750 c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\include\level.h
+1541422020 c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\include\level.h
 	<allegro.h>
 	<cstddef>
 	<iostream>
@@ -256,7 +258,7 @@
 	<math.h>
 	"Character.h"
 
-1541344038 c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\include\sologame.h
+1541457725 c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\include\sologame.h
 	<allegro.h>
 	<stdlib.h>
 	<time.h>
@@ -270,6 +272,8 @@
 	"Topspin.h"
 	"Tutorial.h"
 	"Level_1.h"
+	"Level_2.h"
+	"Level_3.h"
 	"Menu.h"
 
 1541344038 c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\include\game.h
@@ -307,7 +311,7 @@
 1541344038 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\images.cpp
 	"Images.h"
 
-1541347790 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\level.cpp
+1541422020 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\level.cpp
 	"Level.h"
 
 1541190401 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\list_images.cpp
@@ -316,7 +320,7 @@
 1541344038 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\map.cpp
 	"Map.h"
 
-1541349041 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\sologame.cpp
+1541454352 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\sologame.cpp
 	"SoloGame.h"
 
 1541190401 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\structure.cpp
@@ -392,7 +396,7 @@
 1541359808 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/Level_1.h
 	"Level.h"
 
-1541461463 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Level_1.cpp
+1541461757 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Level_1.cpp
 	"Level_1.h"
 
 1541190401 c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\include\list_characters.h
@@ -402,18 +406,18 @@
 	"Level.h"
 	<vector>
 
-1541344038 c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\include\tutorial.h
+1541422020 c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\include\tutorial.h
 	<Level.h>
 	"Topspin.h"
 
-1541344038 c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\include\level_1.h
+1541422020 c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\include\level_1.h
 	"Level.h"
 
 1541190401 c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\include\menu.h
 	<allegro.h>
 	<iostream>
 
-1541350072 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\level_1.cpp
+1541452713 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\level_1.cpp
 	"Level_1.h"
 
 1541190401 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\list_characters.cpp
@@ -425,7 +429,7 @@
 1541344038 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\menu.cpp
 	"Menu.h"
 
-1541349627 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\tutorial.cpp
+1541422020 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\tutorial.cpp
 	"Tutorial.h"
 
 1541273926 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/List_Obstacles.cpp
@@ -441,7 +445,7 @@
 1541273469 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Obstacle.cpp
 	"Obstacle.h"
 
-1541459677 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Lava.cpp
+1541461599 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Lava.cpp
 	"Lava.h"
 
 1541421751 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/Lava.h
@@ -480,4 +484,31 @@
 
 1541421499 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/List_Lavas.cpp
 	"List_Lavas.h"
+
+1541421499 s.h"
+
+1541424126 c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\include\level_2.h
+
+1541457690 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\level_2.cpp
+	"Level_2.h"
+
+1541458105 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\level_3.cpp
+	"Level_3.h"
+
+1541454218 c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\include\level_3.h
+	"Level.h"
+
+1541454218 038c6760386a00c8d7084e9528e32d81dc5ab
+
+1541461757 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/Level_2.h
+	"Level.h"
+
+1541461757 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/Level_3.h
+	"Level.h"
+
+1541461834 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Level_2.cpp
+	"Level_2.h"
+
+1541461850 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Level_3.cpp
+	"Level_3.h"
 

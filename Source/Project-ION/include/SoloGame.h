@@ -14,6 +14,8 @@
 #include "Topspin.h"
 #include "Tutorial.h"
 #include "Level_1.h"
+#include "Level_2.h"
+#include "Level_3.h"
 #include "Menu.h"
 
 using std::cout;

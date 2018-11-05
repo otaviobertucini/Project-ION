@@ -8,8 +8,6 @@ Level_1::Level_1()
 }
 
 Level_1::Level_1(BITMAP* buffer, Images* images, Human* jack):Level(buffer, images, jack){
-    x_initial = 0;
-    y_initial = 660;
 
     int** m = new int*[24];
     for(int i = 0; i<24; i++)
@@ -63,8 +61,8 @@ int Level_1::gameLoop(){
         return game_status;
 
     if(jack->getx() >= 1075 && jack->gety() >= 0){
-        resetPlayer(240,140);
-        return 3; //prev level
+        resetPlayer(-15,jack->gety());
+        return 2; //next level
     }
 
     if(jack->getx() <= -20){
@@ -72,7 +70,7 @@ int Level_1::gameLoop(){
         return 3; //prev level
     }
 
-    loopFireballs();
+    //loopFireballs();
     jack->print(buffer);
 }
 
