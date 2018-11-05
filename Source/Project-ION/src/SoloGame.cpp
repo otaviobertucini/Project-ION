@@ -46,14 +46,17 @@ void SoloGame::execute()
             while(!dead){
                 exit_loop = false;
                 current = (*levels)[i_level];
+
                 if(!load_level){
                     current->generateLevel();
+                    current->resetPlayer(x,y);
                 }
                 else{
                     current->generateLevel(characters);
                 }
+
                 load_level = 0;
-                current->resetPlayer(x,y);
+
                 //Loop de cada fase
                 while(!exit_loop)
                 {
