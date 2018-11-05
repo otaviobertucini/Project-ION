@@ -49,39 +49,36 @@ Tutorial::Tutorial(BITMAP* buffer, Images* images, Human* jack):Level(buffer, im
     map = new Map(m, images->getImgsMap());
 }
 
+void Tutorial::startLevel(){}
+
 void Tutorial::generateLevel(){
     resetLevel();
     jack->setMap(map);
-    Topspin* top = new Topspin(600, 500, images->getImgsTopspin());
-    top->setMap(map);
-    characters->include(static_cast<Character*>(top));
-    Topspin* top2 = new Topspin(330, 500, images->getImgsTopspin());
-    top2->setMap(map);
-    characters->include(static_cast<Character*>(top2));
+    if(!was_genereted){
+        Topspin* top = new Topspin(600, 500, images->getImgsTopspin());
+        top->setMap(map);
+        characters->include(static_cast<Character*>(top));
+        Topspin* top2 = new Topspin(330, 500, images->getImgsTopspin());
+        top2->setMap(map);
+        characters->include(static_cast<Character*>(top2));
+        was_genereted = 1;
+    }
 }
+
 
 void Tutorial::generateLevel(List_Characters* characters){
     this->characters = characters;
 }
 
-void Tutorial::resetLevel(){
-    resetPlayer();
-    characters->eraseAll();
-}
-
 int Tutorial::gameLoop(){
 
-    genericGameLoop();
+    game_status = genericGameLoop();
+    if(game_status != 1)
+        return game_status;
 
     loopCharacters();
     collisionCharacters();
     jack->print(buffer);
-
-    if(isCharacterCollide(static_cast<Character*>(jack)))
-        return 0;
-
-    if(isObstacleCollide(static_cast<Character*>(jack)))
-        return 0;
 
     if(jack->getx() >= 1075){
         resetPlayer(-15,jack->gety());

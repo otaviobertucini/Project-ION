@@ -1,19 +1,19 @@
-#ifndef LEVEL_2_H
-#define LEVEL_2_H
+#ifndef LEVEL_3_H
+#define LEVEL_3_H
 #include "Level.h"
 
-class Level_2: public Level
+class Level_3: public Level
 {
 public:
-    Level_2();
-    Level_2(BITMAP* buffer, Images* images, Human* jack);
+    Level_3();
+    Level_3(BITMAP* buffer, Images* images, Human* jack);
     int gameLoop();
     void generateLevel();
     void generateLevel(List_Characters* characters);
     void startLevel();
     void resetLevel();
-    virtual ~Level_2();
+    virtual ~Level_3();
 private:
 };
 
-#endif // LEVEL_2_H
+#endif // LEVEL_3_H

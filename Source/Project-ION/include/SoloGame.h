@@ -14,6 +14,8 @@
 #include "Topspin.h"
 #include "Tutorial.h"
 #include "Level_1.h"
+#include "Level_2.h"
+#include "Level_3.h"
 #include "Menu.h"
 
 using std::cout;
@@ -28,6 +30,8 @@ public:
     void execute();
     void saveLevel();
     void readLevel(List_Characters* characters);
+    void startLevels();
+    void resetLevels();
     void level0();
 private:
     Menu* menu1;

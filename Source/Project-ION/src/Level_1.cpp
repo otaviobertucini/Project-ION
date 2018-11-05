@@ -55,11 +55,13 @@ Level_1::Level_1(BITMAP* buffer, Images* images, Human* jack):Level(buffer, imag
 int Level_1::gameLoop(){
 
 
-    genericGameLoop();
+    game_status = genericGameLoop();
+    if(game_status != 1)
+        return game_status;
 
     if(jack->getx() >= 1075 && jack->gety() >= 0){
-        resetPlayer(240,140);
-        return 3; //prev level
+        resetPlayer(-15,jack->gety());
+        return 2; //next level
     }
 
     if(jack->getx() <= -20){
@@ -77,6 +79,8 @@ void Level_1::generateLevel(){
 void Level_1::generateLevel(List_Characters* characters){}
 
 void Level_1::resetLevel(){}
+
+void Level_1::startLevel(){}
 
 Level_1::~Level_1()
 {

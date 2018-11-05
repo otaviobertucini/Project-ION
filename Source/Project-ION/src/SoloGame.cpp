@@ -103,9 +103,9 @@ void SoloGame::execute()
                     draw_sprite(screen, buffer, 0, 0);
                     clear_bitmap(buffer);
                 }
-
                 current->resetLevel();
             }
+            resetLevels();
         }
         if(start == 0){
             exit = true;
@@ -122,6 +122,12 @@ void SoloGame::level0(){
 
     Level_1* level_1 = new Level_1(buffer, images, jack);
     levels->include(static_cast<Level*>(level_1));
+
+    Level_2* level_2 = new Level_2(buffer, images, jack);
+    levels->include(static_cast<Level*>(level_2));
+
+    Level_3* level_3 = new Level_3(buffer, images, jack);
+    levels->include(static_cast<Level*>(level_3));
 }
 
 void SoloGame::saveLevel(){
@@ -180,6 +186,18 @@ void SoloGame::readLevel(List_Characters* characters){
                 characters->include(static_cast<Character*>(new Topspin(x, y, images->getImgsTopspin(), dir)));
             }
         }
+    }
+}
+
+void SoloGame::startLevels(){
+    for(int i = 0; i<levels->size(); i++){
+        (*levels)[i]->startLevel();
+    }
+}
+
+void SoloGame::resetLevels(){
+    for(int i = 0; i<levels->size(); i++){
+        (*levels)[i]->eraseAll();
     }
 }
 

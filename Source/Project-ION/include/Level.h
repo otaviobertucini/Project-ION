@@ -32,12 +32,15 @@ public:
     void collisionCharacters();
     int isCharacterCollide(Character* a);
     int isObstacleCollide(Character* a);
+    int isBlockCollide(Character* a, Entity* block);
     List_Characters* getListCharacters();
-    void genericGameLoop();
+    int genericGameLoop();
     virtual int gameLoop() = 0;
     virtual void generateLevel() = 0;
     virtual void generateLevel(List_Characters* characters) = 0;
-    virtual void resetLevel() = 0;
+    virtual void startLevel() = 0;
+    virtual void resetLevel();
+    void eraseAll();
     virtual void resetPlayer();
     virtual void resetPlayer(float x, float y);
 protected:
@@ -48,6 +51,8 @@ protected:
     Images* images;
     float x_initial;
     float y_initial;
+    int game_status;
+    int was_genereted;
 };
 
 #endif // LEVEL_H
