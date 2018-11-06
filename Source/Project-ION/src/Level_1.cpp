@@ -64,8 +64,7 @@ int Level_1::gameLoop(){
         resetPlayer(-15,jack->gety());
         return 2; //next level
     }
-
-    if(jack->getx() <= -20){
+    else if(jack->getx() <= -20){
         resetPlayer(1050,jack->gety());
         return 3; //prev level
     }

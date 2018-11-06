@@ -60,7 +60,10 @@ int Level_3::gameLoop()
         resetPlayer(1050,jack->gety());
         return 3; //prev level
     }
-
+    else if(jack->getx() >= 1075){
+        resetPlayer(-15,jack->gety());
+        return 2; //next level
+    }
     jack->print(buffer);
 }
 

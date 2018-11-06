@@ -59,8 +59,8 @@ void Tutorial::generateLevel(){
         characters->include(static_cast<Character*>(top));
         Topspin* top2 = new Topspin(330, 500, images->getImgsTopspin());
         characters->include(static_cast<Character*>(top2));
-//        Fireball* fire = new Fireball(500, 500, *(images->getImgsFireball());
-//        characters->include(static_cast<Character*>(fire));
+       // Fireball* fire = new Fireball(500, 500, *(images->getImgsFireball()));
+       // characters->include(static_cast<Character*>(fire));
         was_genereted = 1;
     }
 }

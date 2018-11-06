@@ -92,11 +92,19 @@ void SoloGame::execute()
                         i_level++;
                         exit_loop = true;
                     }
-
-                    if(game_status == 3){
+                    else if(game_status == 3){
                         i_level--;
                         exit_loop = true;
                     }
+                    else if(game_status == 4){
+                        i_level+=3;
+                        exit_loop = true;
+                    }
+                    else if(game_status == 5){
+                        i_level-=3;
+                        exit_loop = true;
+                    }
+
 
                     x = current->getXInitial();
                     y = current->getYInitial();
@@ -128,6 +136,12 @@ void SoloGame::level0(){
 
     Level_3* level_3 = new Level_3(buffer, images, jack);
     levels->include(static_cast<Level*>(level_3));
+
+    Level_4* level_4 = new Level_4(buffer, images, jack);
+    levels->include(static_cast<Level*>(level_4));
+
+    Level_2_1* level_2_1 = new Level_2_1(buffer, images, jack);
+    levels->include(static_cast<Level*>(level_2_1));
 }
 
 void SoloGame::saveLevel(){
