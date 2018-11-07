@@ -50,6 +50,7 @@ Level_4_1::Level_4_1(BITMAP* buffer, Images* images, Human* jack):Level(buffer, 
     }
 
     map = new Map(m, images->getImgsMap());
+    lavas = map->getListLavas();
 }
 
 int Level_4_1::gameLoop(){

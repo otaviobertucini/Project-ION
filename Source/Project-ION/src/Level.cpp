@@ -196,6 +196,7 @@ int Level::genericGameLoop()
     }
 
     jack->loop();
+    loopFireballs();
     isStructureCollide(static_cast<Character*>(jack));
 
     if(isCharacterCollide(static_cast<Character*>(jack)))
@@ -213,19 +214,21 @@ int Level::genericGameLoop()
 }
 
 void Level::loopFireballs(){
-    Fireball* fire = (*lavas)[0]->createFireball();
-    if(fire != NULL){
-        fireballs.push_back(fire);
-    }
+    for(int i = 0; i < lavas->size(); i++){
+        Fireball* fire = (*lavas)[i]->createFireball();
+        if(fire != NULL){
+            fireballs.push_back(fire);
+        }
 
-    for(int i = 0; i<fireballs.size(); i++){
-        fireballs[i]->loop();
-        isStructureCollide(static_cast<Character*>(fireballs[i]));
-        fireballs[i]->print(buffer);
-        if(!fireballs[i]->getMoveUp()){
-            delete fireballs[i];
-            fireballs[i] = NULL;
-            fireballs.erase(fireballs.begin() + i);
+        for(int i = 0; i<fireballs.size(); i++){
+            fireballs[i]->loop();
+            isStructureCollide(static_cast<Character*>(fireballs[i]));
+            fireballs[i]->print(buffer);
+            if(!fireballs[i]->getMoveUp()){
+                delete fireballs[i];
+                fireballs[i] = NULL;
+                fireballs.erase(fireballs.begin() + i);
+            }
         }
     }
 }

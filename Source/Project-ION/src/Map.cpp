@@ -19,6 +19,10 @@ void Map::generateStructures(){
             else if(matrix[i][j] == 2){
                 Lava* aux = new Lava(30*j, 30*i, (*img)[1]);
                 obstacles.include(static_cast<Obstacle*>(aux));
+            }
+            else if(matrix[i][j] == 3){
+                Lava* aux = new Lava(30*j, 30*i, (*img)[2]);
+                obstacles.include(static_cast<Obstacle*>(aux));
                 lavas.include(aux);
             }
         }
