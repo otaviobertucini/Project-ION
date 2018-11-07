@@ -128,6 +128,7 @@ void SoloGame::execute()
         }
 
     }
+    deleteLevels();
 }
 
 void SoloGame::level0(){
@@ -235,6 +236,14 @@ void SoloGame::resetLevels(){
     }
 }
 
+void SoloGame::deleteLevels(){
+    for(unsigned int i = 0; i<levels->size(); i++){
+        delete (*levels)[i];
+    }
+}
+
 SoloGame::~SoloGame()
 {
+    delete jack;
+    jack = NULL;
 }

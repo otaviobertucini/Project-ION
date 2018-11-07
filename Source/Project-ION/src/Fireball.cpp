@@ -27,5 +27,4 @@ bool Fireball::getMoveUp(){
 
 Fireball::~Fireball()
 {
-    //dtor
 }

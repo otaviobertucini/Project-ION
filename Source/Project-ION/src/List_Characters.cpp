@@ -21,14 +21,19 @@ Character* List_Characters::operator[](int index){
     return characters[index];
 }
 
+void List_Characters::erase(int i){
+    characters.erase(characters.begin() + i);
+}
+
 void List_Characters::eraseAll(){
     characters.erase(characters.begin(), characters.end());
 }
 
 void List_Characters::deleteAll(){
-    typename std::vector<Character*>::iterator itr = characters.begin();
-    for(; itr != characters.end(); itr++)
-        delete *itr;
+    for(int i = 0; i<characters.size(); i++){
+        delete characters[i];
+        characters[i] = NULL;
+    }
     characters.clear();
 }
 

@@ -67,6 +67,4 @@ int Character::getDirection(){
 }
 
 Character::~Character()
-{
-    img->deleteAll();
-}
+{}

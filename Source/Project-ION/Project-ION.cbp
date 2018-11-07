@@ -48,10 +48,13 @@
 		<Unit filename="include/Level_2_1.h" />
 		<Unit filename="include/Level_3.h" />
 		<Unit filename="include/Level_4.h" />
+<<<<<<< Updated upstream
 		<Unit filename="include/Level_4_1.h" />
 		<Unit filename="include/Level_5.h" />
 		<Unit filename="include/Level_6.h" />
 		<Unit filename="include/Level_Boss.h" />
+=======
+>>>>>>> Stashed changes
 		<Unit filename="include/List.h" />
 		<Unit filename="include/List_Characters.h" />
 		<Unit filename="include/List_Images.h" />
@@ -82,10 +85,13 @@
 		<Unit filename="src/Level_2_1.cpp" />
 		<Unit filename="src/Level_3.cpp" />
 		<Unit filename="src/Level_4.cpp" />
+<<<<<<< Updated upstream
 		<Unit filename="src/Level_4_1.cpp" />
 		<Unit filename="src/Level_5.cpp" />
 		<Unit filename="src/Level_6.cpp" />
 		<Unit filename="src/Level_Boss.cpp" />
+=======
+>>>>>>> Stashed changes
 		<Unit filename="src/List_Characters.cpp" />
 		<Unit filename="src/List_Images.cpp" />
 		<Unit filename="src/List_Lavas.cpp" />

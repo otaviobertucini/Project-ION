@@ -73,6 +73,7 @@ int Level_4::gameLoop(){
 
     //loopFireballs();
     jack->print(buffer);
+    return 1;
 }
 
 void Level_4::generateLevel(){}
