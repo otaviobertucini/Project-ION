@@ -33,7 +33,7 @@ Level_2::Level_2(BITMAP* buffer, Images* images, Human* jack):Level(buffer, imag
         {0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1},
         {0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0},
         {0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0},
         {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0},
         {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0},
         {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0}
@@ -57,6 +57,9 @@ int Level_2::gameLoop()
     if(game_status != 1)
         return game_status;
 
+    loopCharacters();
+    collisionCharacters();
+
     if(jack->getx() >= 1075 && jack->gety() >= 0){
         resetPlayer(-15,jack->gety());
         return 2; //next level
@@ -73,9 +76,26 @@ int Level_2::gameLoop()
     jack->print(buffer);
 }
 
-void Level_2::generateLevel(List_Characters* characters){}
+void Level_2::generateLevel(List_Characters* characters){
+    this->characters = characters;
+}
 
-void Level_2::generateLevel(){}
+void Level_2::generateLevel(){
+    resetLevel();
+    if(!was_genereted)
+    {
+        Topspin* top = new Topspin(390,590, images->getImgsTopspin(),1);
+        characters->include(static_cast<Character*>(top));
+
+        Topspin* top2 = new Topspin(480,620, images->getImgsTopspin(),1);
+        characters->include(static_cast<Character*>(top2));
+
+        Topspin* top3 = new Topspin(870,430, images->getImgsTopspin(),-1);
+        characters->include(static_cast<Character*>(top3));
+
+        was_genereted = 1;
+    }
+}
 
 void Level_2::startLevel(){}
 

@@ -73,9 +73,12 @@ int Level_1::gameLoop(){
     jack->print(buffer);
 }
 
-void Level_1::generateLevel(){}
+void Level_1::generateLevel(){
+    resetLevel();
+}
 
-void Level_1::generateLevel(List_Characters* characters){}
+void Level_1::generateLevel(List_Characters* characters){
+}
 
 void Level_1::resetLevel(){}
 
