@@ -21,6 +21,10 @@ Character* List_Characters::operator[](int index){
     return characters[index];
 }
 
+void List_Characters::erase(int i){
+    characters.erase(characters.begin() + i);
+}
+
 void List_Characters::eraseAll(){
     characters.erase(characters.begin(), characters.end());
 }

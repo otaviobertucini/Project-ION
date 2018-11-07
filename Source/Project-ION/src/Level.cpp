@@ -92,6 +92,10 @@ void Level::updatePosition(){
 void Level::loopCharacters(){
     for(int i = 0; i < characters->size(); i++){
         (*characters)[i]->loop();
+        if(isObstacleCollide((*characters)[i])){
+            delete (*characters)[i];
+            characters->erase(i);
+        }
     }
 }
 

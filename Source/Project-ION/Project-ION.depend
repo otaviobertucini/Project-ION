@@ -62,7 +62,7 @@
 	"Lava.h"
 	"Obstacle.h"
 
-1541556836 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Level.cpp
+1541557882 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Level.cpp
 	"Level.h"
 
 1541555582 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Map.cpp
@@ -383,13 +383,13 @@
 	"Topspin.h"
 	"Fireball.h"
 
-1541556836 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Tutorial.cpp
+1541557773 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Tutorial.cpp
 	"Tutorial.h"
 
-1541104374 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/List_Characters.h
+1541557835 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/List_Characters.h
 	"Character.h"
 
-1541556836 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/List_Characters.cpp
+1541557865 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/List_Characters.cpp
 	"List_Characters.h"
 
 1541265814 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Menu.cpp
