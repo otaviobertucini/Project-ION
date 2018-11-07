@@ -43,7 +43,7 @@ void Level::isStructureCollide(Character* a)
 
     for(i=0; i<aux->size(); i++)
     {
-
+        int teste = 0;
         x_center_body = (*aux)[i]->getx() + 15;
         y_center_body = (*aux)[i]->gety() + 15;
 
@@ -60,16 +60,17 @@ void Level::isStructureCollide(Character* a)
         {
             a->setUp(false);
         }
-        //esquerda do 29
+        //esquerda do 2
         if(a->getx() + a->getw() >= (*aux)[i]->getx() && x_center <= x_center_body
                 && abs(y_center - y_center_body) < (a->geth()/2)+((*aux)[i]->geth()/2)-2){
             a->setRight(false);
         }
         //direita do 2
-        if(a->getx() <= (*aux)[i]->getx() + (*aux)[i]->getw() && (*aux)[i]->getx() && x_center >= x_center_body
+        if(a->getx() < (*aux)[i]->getx() + (*aux)[i]->getw() && x_center >= x_center_body
                 && abs(y_center - y_center_body) < (a->geth()/2)+((*aux)[i]->geth()/2)-2){
             a->setLeft(false);
         }
+
     }
 }
 

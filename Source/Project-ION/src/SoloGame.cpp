@@ -31,7 +31,7 @@ void SoloGame::execute()
         x = 240;
         y = 140;
 
-        chances = 3;
+        chances = 10;
         i_level = 0;
         List_Characters* characters = new List_Characters;
         if(start == 2){
