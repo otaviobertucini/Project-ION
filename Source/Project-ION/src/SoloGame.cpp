@@ -97,11 +97,19 @@ void SoloGame::execute()
                         exit_loop = true;
                     }
                     else if(game_status == 4){
-                        i_level+=3;
+                        i_level+=6;
                         exit_loop = true;
                     }
                     else if(game_status == 5){
-                        i_level-=3;
+                        i_level-=6;
+                        exit_loop = true;
+                    }
+                    else if(game_status == 6){
+                        i_level+=5;
+                        exit_loop = true;
+                    }
+                    else if(game_status == 7){
+                        i_level-=5;
                         exit_loop = true;
                     }
 
@@ -140,8 +148,20 @@ void SoloGame::level0(){
     Level_4* level_4 = new Level_4(buffer, images, jack);
     levels->include(static_cast<Level*>(level_4));
 
+    Level_5* level_5 = new Level_5(buffer, images, jack);
+    levels->include(static_cast<Level*>(level_5));
+
+    Level_6* level_6 = new Level_6(buffer, images, jack);
+    levels->include(static_cast<Level*>(level_6));
+
+    Level_Boss* level_boss = new Level_Boss(buffer, images, jack);
+    levels->include(static_cast<Level*>(level_boss));
+
     Level_2_1* level_2_1 = new Level_2_1(buffer, images, jack);
     levels->include(static_cast<Level*>(level_2_1));
+
+    Level_4_1* level_4_1 = new Level_4_1(buffer, images, jack);
+    levels->include(static_cast<Level*>(level_4_1));
 }
 
 void SoloGame::saveLevel(){

@@ -18,6 +18,10 @@
 #include "Level_2_1.h"
 #include "Level_3.h"
 #include "Level_4.h"
+#include "Level_4_1.h"
+#include "Level_5.h"
+#include "Level_6.h"
+#include "Level_Boss.h"
 #include "Menu.h"
 
 using std::cout;

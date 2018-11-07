@@ -45,7 +45,13 @@
 		<Unit filename="include/Level.h" />
 		<Unit filename="include/Level_1.h" />
 		<Unit filename="include/Level_2.h" />
+		<Unit filename="include/Level_2_1.h" />
 		<Unit filename="include/Level_3.h" />
+		<Unit filename="include/Level_4.h" />
+		<Unit filename="include/Level_4_1.h" />
+		<Unit filename="include/Level_5.h" />
+		<Unit filename="include/Level_6.h" />
+		<Unit filename="include/Level_Boss.h" />
 		<Unit filename="include/List.h" />
 		<Unit filename="include/List_Characters.h" />
 		<Unit filename="include/List_Images.h" />
@@ -73,7 +79,13 @@
 		<Unit filename="src/Level.cpp" />
 		<Unit filename="src/Level_1.cpp" />
 		<Unit filename="src/Level_2.cpp" />
+		<Unit filename="src/Level_2_1.cpp" />
 		<Unit filename="src/Level_3.cpp" />
+		<Unit filename="src/Level_4.cpp" />
+		<Unit filename="src/Level_4_1.cpp" />
+		<Unit filename="src/Level_5.cpp" />
+		<Unit filename="src/Level_6.cpp" />
+		<Unit filename="src/Level_Boss.cpp" />
 		<Unit filename="src/List_Characters.cpp" />
 		<Unit filename="src/List_Images.cpp" />
 		<Unit filename="src/List_Lavas.cpp" />
