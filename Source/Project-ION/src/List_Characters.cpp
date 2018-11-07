@@ -26,9 +26,10 @@ void List_Characters::eraseAll(){
 }
 
 void List_Characters::deleteAll(){
-    typename std::vector<Character*>::iterator itr = characters.begin();
-    for(; itr != characters.end(); itr++)
-        delete *itr;
+    for(int i = 0; i<characters.size(); i++){
+        delete characters[i];
+        characters[i] = NULL;
+    }
     characters.clear();
 }
 

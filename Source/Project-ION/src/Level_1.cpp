@@ -71,6 +71,7 @@ int Level_1::gameLoop(){
 
     //loopFireballs();
     jack->print(buffer);
+    return 1;
 }
 
 void Level_1::generateLevel(){}

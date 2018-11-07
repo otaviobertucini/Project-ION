@@ -30,10 +30,13 @@ void List<TYPE>::include(TYPE newe){
 
 template<class TYPE>
 void List<TYPE>::deleteAll(){
-    typename std::vector<TYPE>::iterator itr = vec.begin();
-    for(; itr != vec.end(); itr++)
-        delete *itr;
-    vec.clear();
+
+    //std::vector<TYPE>::iterator itr;
+    //itr = vec.begin();
+//    for(int i = 0; i != vec.size(); i++)
+//        delete vec[i];
+//    vec.clear();
+
 }
 
 template<class TYPE>

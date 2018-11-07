@@ -38,6 +38,7 @@ public:
     void readLevel(List_Characters* characters);
     void startLevels();
     void resetLevels();
+    void deleteLevels();
     void level0();
 private:
     Menu* menu1;
