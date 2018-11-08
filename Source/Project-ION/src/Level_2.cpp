@@ -32,7 +32,7 @@ Level_2::Level_2(BITMAP* buffer, Images* images, Human* jack):Level(buffer, imag
         {0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1},
         {0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1},
         {0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-        {0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0},
         {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0},
         {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0},
         {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0},
@@ -84,7 +84,7 @@ void Level_2::generateLevel(){
     resetLevel();
     if(!was_genereted)
     {
-        Topspin* top = new Topspin(390,590, images->getImgsTopspin(),1);
+        Topspin* top = new Topspin(330,590, images->getImgsTopspin(),-1);
         characters->include(static_cast<Character*>(top));
 
         Topspin* top2 = new Topspin(480,620, images->getImgsTopspin(),1);
@@ -92,6 +92,9 @@ void Level_2::generateLevel(){
 
         Topspin* top3 = new Topspin(870,430, images->getImgsTopspin(),-1);
         characters->include(static_cast<Character*>(top3));
+
+        Topspin* top4 = new Topspin(210,560, images->getImgsTopspin(),1);
+        characters->include(static_cast<Character*>(top4));
 
         was_genereted = 1;
     }
