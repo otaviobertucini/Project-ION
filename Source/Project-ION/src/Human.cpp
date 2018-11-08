@@ -18,6 +18,7 @@ Human::Human(string name, float x, float y, List_Images *img, int direction):
     x_speed = 0.6;
     y_speed = 0.6;
     this->direction = direction;
+    invincible = false;
 }
 
 void Human::gravity()
@@ -145,6 +146,14 @@ void Human::move(int x_move)
 void Human::setPosMatrix(){
     i_pos = (int)floor((y+h)/30);
     j_pos = (int)floor((x+w)/30)-1;
+}
+
+void Human::toInvincible(bool state){
+    invincible = state;
+}
+
+bool Human::isInvincible(){
+    return invincible;
 }
 
 Human::~Human()

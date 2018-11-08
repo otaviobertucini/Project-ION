@@ -6,6 +6,7 @@ Bat::Bat()
 }
 
 Bat::Bat(float x, float y, List_Images *img):Enemy(x, y, img){
+    type = "BAT";
     h = 30;
     w = 40;
     vertical = true;

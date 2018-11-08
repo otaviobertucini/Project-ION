@@ -13,8 +13,9 @@ Images::Images()
     imgsMap->include(load_bitmap("Material/Scenario/lava_2.bmp", NULL));
     imgsMap->include(load_bitmap("Material/Scenario/spine_1.bmp", NULL));
     imgsMap->include(load_bitmap("Material/Scenario/spine_2.bmp", NULL));
-    imgsMap->include(load_bitmap("Material/Scenario/spine_3.bmp", NULL));
+    imgsMap->include(load_bitmap("Material/Scenario/spine_3.bmp", NULL)); //5
     imgsMap->include(load_bitmap("Material/Scenario/spine_4.bmp", NULL));
+    imgsMap->include(load_bitmap("Material/Powerups/birl.bmp", NULL));
 
     //Loads images from topspin
     imgsTopspin = new List_Images;

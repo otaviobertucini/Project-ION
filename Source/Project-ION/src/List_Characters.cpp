@@ -26,7 +26,11 @@ void List_Characters::erase(int i){
 }
 
 void List_Characters::eraseAll(){
-    characters.erase(characters.begin(), characters.end());
+    for(unsigned int i = 0; i<characters.size(); i++){
+        delete characters[i];
+        characters[i] = NULL;
+    }
+    characters.clear();
 }
 
 void List_Characters::deleteAll(){

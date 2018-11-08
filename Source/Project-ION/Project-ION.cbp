@@ -34,6 +34,7 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="include/Bat.h" />
 		<Unit filename="include/Character.h" />
 		<Unit filename="include/Enemy.h" />
 		<Unit filename="include/Entity.h" />
@@ -63,11 +64,13 @@
 		<Unit filename="include/Menu.h" />
 		<Unit filename="include/Obstacle.h" />
 		<Unit filename="include/SoloGame.h" />
+		<Unit filename="include/Spine.h" />
 		<Unit filename="include/Stone.h" />
 		<Unit filename="include/Structure.h" />
 		<Unit filename="include/Topspin.h" />
 		<Unit filename="include/Tutorial.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/Bat.cpp" />
 		<Unit filename="src/Character.cpp" />
 		<Unit filename="src/Enemy.cpp" />
 		<Unit filename="src/Entity.cpp" />
@@ -96,6 +99,7 @@
 		<Unit filename="src/Menu.cpp" />
 		<Unit filename="src/Obstacle.cpp" />
 		<Unit filename="src/SoloGame.cpp" />
+		<Unit filename="src/Spine.cpp" />
 		<Unit filename="src/Stone.cpp" />
 		<Unit filename="src/Structure.cpp" />
 		<Unit filename="src/Topspin.cpp" />

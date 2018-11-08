@@ -41,6 +41,9 @@ void Map::generateStructures(){
                 }
                 obstacles.include(static_cast<Obstacle*>(new Spine(30*j, 30*i, (*img)[side])));
             }
+            else if(matrix[i][j] == 20){
+                powers.include(static_cast<Powerup*>(new Birl(30*j, 30*i, (*img)[7])));
+            }
         }
     }
 }
@@ -77,6 +80,10 @@ List_Obstacles* Map::getListObstacles(){
 
 List_Lavas* Map::getListLavas(){
     return &lavas;
+}
+
+List_Powerups* Map::getListPowers(){
+    return &powers;
 }
 
 Map::~Map()
