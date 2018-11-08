@@ -6,10 +6,14 @@
 #include "List_Obstacles.h"
 #include "List_Images.h"
 #include "List_Lavas.h"
+#include "List_Powerups.h"
 #include "Structure.h"
 #include "Stone.h"
 #include "Lava.h"
+#include "Spine.h"
 #include "Obstacle.h"
+#include "Powerup.h"
+#include "Birl.h"
 using std::cout;
 using std::endl;
 
@@ -23,6 +27,7 @@ public:
     List_Structures* getList();
     List_Obstacles* getListObstacles();
     List_Lavas* getListLavas();
+    List_Powerups* getListPowers();
     int getValueMap(int i, int j);
     void generateStructures();
     void printMap(BITMAP* screen);
@@ -31,6 +36,7 @@ private:
     List_Structures structures;
     List_Obstacles obstacles;
     List_Lavas lavas;
+    List_Powerups powers;
     List_Images *img;
 };
 

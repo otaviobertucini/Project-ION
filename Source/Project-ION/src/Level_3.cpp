@@ -33,7 +33,7 @@ Level_3::Level_3(BITMAP* buffer, Images* images, Human* jack):Level(buffer, imag
         {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0},
         {0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0},
         {0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0},
-        {0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0, 0},
+        {0, 0, 0, 2, 2, 2, 2, 2, 3, 3, 3, 2, 2, 3, 3, 3, 2, 2, 0, 2, 2, 2, 2, 3, 3, 3, 3, 3, 2, 2, 2, 2, 2, 2, 0, 0},
         {0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0, 0},
         {0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0, 0},
         {0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
@@ -48,6 +48,7 @@ Level_3::Level_3(BITMAP* buffer, Images* images, Human* jack):Level(buffer, imag
     }
 
     map = new Map(m, images->getImgsMap());
+    lavas = map->getListLavas();
 }
 
 int Level_3::gameLoop()
@@ -55,6 +56,9 @@ int Level_3::gameLoop()
     game_status = genericGameLoop();
     if(game_status != 1)
         return game_status;
+
+    loopCharacters();
+    collisionCharacters();
 
     if(jack->getx() <= -20){
         resetPlayer(1050,jack->gety());
@@ -67,9 +71,18 @@ int Level_3::gameLoop()
     jack->print(buffer);
 }
 
-void Level_3::generateLevel(List_Characters* characters){}
+void Level_3::generateLevel(List_Characters* characters){
+    this->characters = characters;
+}
 
-void Level_3::generateLevel(){}
+void Level_3::generateLevel(){
+    resetLevel();
+    if(!was_genereted){
+        Topspin* top = new Topspin(590, 400, images->getImgsTopspin(),-1);
+        characters->include(static_cast<Character*>(top));
+        was_genereted = 1;
+    }
+}
 
 void Level_3::resetLevel(){}
 

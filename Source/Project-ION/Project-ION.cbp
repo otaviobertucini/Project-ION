@@ -34,6 +34,8 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="include/Bat.h" />
+		<Unit filename="include/Birl.h" />
 		<Unit filename="include/Character.h" />
 		<Unit filename="include/Enemy.h" />
 		<Unit filename="include/Entity.h" />
@@ -58,16 +60,22 @@
 		<Unit filename="include/List_Lavas.h" />
 		<Unit filename="include/List_Levels.h" />
 		<Unit filename="include/List_Obstacles.h" />
+		<Unit filename="include/List_Powerups.h" />
 		<Unit filename="include/List_Structures.h" />
 		<Unit filename="include/Map.h" />
+		<Unit filename="include/Matrices.h" />
 		<Unit filename="include/Menu.h" />
 		<Unit filename="include/Obstacle.h" />
+		<Unit filename="include/Powerup.h" />
 		<Unit filename="include/SoloGame.h" />
+		<Unit filename="include/Spine.h" />
 		<Unit filename="include/Stone.h" />
 		<Unit filename="include/Structure.h" />
 		<Unit filename="include/Topspin.h" />
 		<Unit filename="include/Tutorial.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/Bat.cpp" />
+		<Unit filename="src/Birl.cpp" />
 		<Unit filename="src/Character.cpp" />
 		<Unit filename="src/Enemy.cpp" />
 		<Unit filename="src/Entity.cpp" />
@@ -86,16 +94,20 @@
 		<Unit filename="src/Level_5.cpp" />
 		<Unit filename="src/Level_6.cpp" />
 		<Unit filename="src/Level_Boss.cpp" />
+		<Unit filename="src/List.cpp" />
 		<Unit filename="src/List_Characters.cpp" />
 		<Unit filename="src/List_Images.cpp" />
 		<Unit filename="src/List_Lavas.cpp" />
 		<Unit filename="src/List_Levels.cpp" />
 		<Unit filename="src/List_Obstacles.cpp" />
+		<Unit filename="src/List_Powerups.cpp" />
 		<Unit filename="src/List_Structures.cpp" />
 		<Unit filename="src/Map.cpp" />
 		<Unit filename="src/Menu.cpp" />
 		<Unit filename="src/Obstacle.cpp" />
+		<Unit filename="src/Powerup.cpp" />
 		<Unit filename="src/SoloGame.cpp" />
+		<Unit filename="src/Spine.cpp" />
 		<Unit filename="src/Stone.cpp" />
 		<Unit filename="src/Structure.cpp" />
 		<Unit filename="src/Topspin.cpp" />

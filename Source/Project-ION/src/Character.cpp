@@ -15,6 +15,7 @@ Character::Character(float x, float y, List_Images *img):
     this->move_down = true;
     if(img != NULL)
         current_img = (*img)[0];
+    direction = 1;
 }
 
 //Apply Gravity

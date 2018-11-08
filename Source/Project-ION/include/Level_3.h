@@ -1,6 +1,7 @@
 #ifndef LEVEL_3_H
 #define LEVEL_3_H
 #include "Level.h"
+#include "Topspin.h"
 
 class Level_3: public Level
 {

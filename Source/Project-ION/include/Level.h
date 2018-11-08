@@ -11,6 +11,7 @@
 #include "Entity.h"
 #include "List_Characters.h"
 #include "List_Lavas.h"
+#include "List_Powerups.h"
 #include "Images.h"
 using std::cout;
 using std::endl;
@@ -31,9 +32,10 @@ public:
     void isStructureCollide(Character* a);
     void loopCharacters();
     void collisionCharacters();
-    int isCharacterCollide(Character* a);
+    int isCharacterCollide(Human* a);
     int isObstacleCollide(Character* a);
     int isFireballCollide(Character* a);
+    int isPowerupCollide(Human* a);
     List_Characters* getListCharacters();
     int genericGameLoop();
     virtual int gameLoop() = 0;
@@ -56,7 +58,9 @@ protected:
     int game_status;
     int was_genereted;
     List_Lavas* lavas;
+    List_Powerups* powers;
     std::vector<Fireball*> fireballs;
+    int iterations;
 };
 
 #endif // LEVEL_H

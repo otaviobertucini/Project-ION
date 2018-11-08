@@ -23,12 +23,15 @@ class Human:public Character
         void activeDash();
         void dash();
         void loop();
+        void toInvincible(bool state = true);
+        bool isInvincible();
     private:
         string name;
         float y_force;
         bool charge;
         bool dashOn;
         float distance_dash;
+        bool invincible;
 };
 
 #endif // HUMAN_H
