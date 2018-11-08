@@ -25,6 +25,22 @@ void Map::generateStructures(){
                 obstacles.include(static_cast<Obstacle*>(aux));
                 lavas.include(aux);
             }
+            else if(matrix[i][j] == 4){
+                int side;
+                if(matrix[i-1][j] == 0){
+                    side = 5;
+                }
+                else if(matrix[i+1][j] == 0){
+                    side = 3;
+                }
+                else if(matrix[i][j+1] == 0){
+                    side = 6;
+                }
+                else if(matrix[i][j-1] == 0){
+                    side = 4;
+                }
+                obstacles.include(static_cast<Obstacle*>(new Spine(30*j, 30*i, (*img)[side])));
+            }
         }
     }
 }

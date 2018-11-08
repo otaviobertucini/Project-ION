@@ -9,6 +9,7 @@
 #include "Structure.h"
 #include "Stone.h"
 #include "Lava.h"
+#include "Spine.h"
 #include "Obstacle.h"
 using std::cout;
 using std::endl;
