@@ -87,14 +87,11 @@ void Level_5::generateLevel(){
         Topspin* top2 = new Topspin(210, 330, images->getImgsTopspin());
         characters->include(static_cast<Character*>(top2));
 
-        Topspin* top3 = new Topspin(290, 330, images->getImgsTopspin(),-1);
+        Topspin* top3 = new Topspin(950, 680, images->getImgsTopspin(),-1);
         characters->include(static_cast<Character*>(top3));
 
-        Topspin* top4 = new Topspin(950, 680, images->getImgsTopspin(),-1);
+        Topspin* top4 = new Topspin(510, 400, images->getImgsTopspin(),-1);
         characters->include(static_cast<Character*>(top4));
-
-        Topspin* top5 = new Topspin(510, 400, images->getImgsTopspin(),-1);
-        characters->include(static_cast<Character*>(top5));
 
         was_genereted = 1;
     }
