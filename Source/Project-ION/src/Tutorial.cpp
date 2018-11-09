@@ -70,7 +70,8 @@ void Tutorial::generateLevel(List_Characters* characters){
 int Tutorial::gameLoop(){
 
     game_status = genericGameLoop();
-    (*powers)[0]->print(buffer);
+    loopPowerups();
+
     isPowerupCollide(jack);
 
     if(game_status != 1)

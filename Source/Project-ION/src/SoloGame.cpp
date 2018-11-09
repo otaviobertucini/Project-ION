@@ -31,7 +31,7 @@ void SoloGame::execute()
         x = 240;
         y = 140;
 
-        chances = 10;
+        chances = 100;
         i_level = 0;
         List_Characters* characters = new List_Characters;
         if(start == 2){
@@ -128,7 +128,6 @@ void SoloGame::execute()
         }
 
     }
-    deleteLevels();
 }
 
 void SoloGame::level0(){
@@ -174,7 +173,7 @@ void SoloGame::saveLevel(){
     for(int i = 0; i<(*characters).size(); i++){
         Character* c = (*characters)[i];
         myfile << c->getType() << ":" << c->getx() << "," << c->gety() << ","
-                << c->getDirection() << "\n";
+                << c->getDirection();
     }
 }
 
@@ -220,6 +219,21 @@ void SoloGame::readLevel(List_Characters* characters){
                 int dir = (int) atoi(dir_copy.c_str());
                 characters->include(static_cast<Character*>(new Topspin(x, y, images->getImgsTopspin(), dir)));
             }
+            if(copy == "BAT"){
+                int i;
+                std::vector<int> index;
+                for(i=4; i<line.size(); i++){
+                    if(line[i] == ',')
+                        index.push_back(i);
+                }
+                std::string x_copy(line, 4, index[0]);
+                std::string y_copy(line, index[0]+1, index[1]);
+                std::string dir_copy(line, index[1]+1, line.size()-1);
+                float x = (float) atof(x_copy.c_str());
+                float y = (float) atof(y_copy.c_str());
+                int dir = (int) atoi(dir_copy.c_str());
+                characters->include(static_cast<Character*>(new Bat(x, y, images->getImgsBat(), dir)));
+            }
         }
     }
 }
@@ -246,4 +260,5 @@ SoloGame::~SoloGame()
 {
     delete jack;
     jack = NULL;
+    deleteLevels();
 }

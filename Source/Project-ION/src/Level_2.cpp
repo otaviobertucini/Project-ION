@@ -60,7 +60,6 @@ int Level_2::gameLoop()
 
     loopCharacters();
     collisionCharacters();
-
     if(jack->getx() >= 1075 && jack->gety() >= 0){
         resetPlayer(-15,jack->gety());
         return 2; //next level
@@ -86,12 +85,18 @@ void Level_2::generateLevel(){
     {
         Topspin* top = new Topspin(330,590, images->getImgsTopspin(),-1);
         characters->include(static_cast<Character*>(top));
+//
+//        Topspin* top2 = new Topspin(480,620, images->getImgsTopspin(),1);
+//        characters->include(static_cast<Character*>(top2));
 
-        Topspin* top2 = new Topspin(480,620, images->getImgsTopspin(),1);
-        characters->include(static_cast<Character*>(top2));
+//        Topspin* top3 = new Topspin(870,430, images->getImgsTopspin(),-1);
+//        characters->include(static_cast<Character*>(top3));
 
-        Topspin* top3 = new Topspin(870,430, images->getImgsTopspin(),-1);
-        characters->include(static_cast<Character*>(top3));
+//        Bat* batman = new Bat(870, 400, images->getImgsBat());
+//        characters->include(batman);
+//
+//        Bat* batman2 = new Bat(200, 450, images->getImgsBat());
+//        characters->include(batman2);
 
         was_genereted = 1;
     }

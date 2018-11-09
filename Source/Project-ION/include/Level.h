@@ -47,6 +47,7 @@ public:
     virtual void resetPlayer();
     virtual void resetPlayer(float x, float y);
     void loopFireballs();
+    void loopPowerups();
 protected:
     Map* map; //Pointer to the level map.
     BITMAP* buffer; //Pointer to the display where all components will be shown.

@@ -66,11 +66,11 @@ void Level::isStructureCollide(Character* a)
             a->setRight(false);
         }
         //direita do 2
-        if(a->getx() < (*aux)[i]->getx() + (*aux)[i]->getw() && x_center >= x_center_body
+        if(a->getx() <= (*aux)[i]->getx() + (*aux)[i]->getw() && x_center >= x_center_body
                 && abs(y_center - y_center_body) < (a->geth()/2)+((*aux)[i]->geth()/2)-2){
             a->setLeft(false);
+            cout << "encostei e n sei pq" << endl;
         }
-
     }
 }
 
@@ -91,10 +91,13 @@ void Level::updatePosition(){
 }
 
 void Level::loopCharacters(){
+    //cout << characters->size() << endl;
     for(int i = 0; i < characters->size(); i++){
         (*characters)[i]->loop();
         if(isObstacleCollide((*characters)[i])){
+            cout << "encostei" << endl;
             delete (*characters)[i];
+            //(*characters)[i] = NULL;
             characters->erase(i);
         }
     }
@@ -142,11 +145,20 @@ int Level::isFireballCollide(Character* a){
 int Level::isPowerupCollide(Human* a){
     for(unsigned int i = 0; i < powers->size(); i++){
         if(isCollide(static_cast<Entity*>(a), static_cast<Entity*>((*powers)[i]))){
-            (*powers)[i]->modify(a);
+            //(*powers)[i]->modify(a);
+            delete (*powers)[i];
+            //(*powers)[i] = NULL;
+            powers->erase(i);
             return 1;
         }
     }
     return 0;
+}
+
+void Level::loopPowerups(){
+    for(int i = 0; i < powers->size(); i++){
+        (*powers)[i]->print(buffer);
+    }
 }
 
 int Level::getValueMap(int i, int j){
@@ -217,7 +229,7 @@ int Level::genericGameLoop()
     updatePosition();
     jack->print(buffer);
 
-    if(iterations == 30){
+    if(iterations >= 15){
 
         if(isCharacterCollide(jack)){
             return 0;

@@ -5,33 +5,46 @@ Bat::Bat()
     //ctor
 }
 
-Bat::Bat(float x, float y, List_Images *img):Enemy(x, y, img){
+Bat::Bat(float x, float y, List_Images *img, int direction, int step):Enemy(x, y, img){
     type = "BAT";
     h = 30;
     w = 40;
-    vertical = true;
-    dir_vertical = 1;
-    dir_horizontal = -1;
     flew = 0.0;
+    this->direction = direction;
+    this->step = step;
 }
 
 void Bat::move(int x_move){
-    if(vertical){
-        y += 0.2*dir_vertical;
+    //cout << step << endl;
+    if(step == 1)
+    {
+        y += 0.2;
         flew += 0.2;
-        if(flew > 30){
-            vertical = false;
-            dir_vertical *= -1;
+        if(flew > 30)
+        {
+            flew = 0.0;
+            step = 2;
+        }
+    }
+    else if(step == 2)
+    {
+        cout << flew << endl;
+        x += 0.2*direction;
+        flew += 0.2;
+        if(flew > 60)
+        {
+            direction *= -1;
+            step = 3;
             flew = 0.0;
         }
     }
-    else{
-        x += 0.2*direction;
+    else if(step = 3){
+        y -= 0.2;
         flew += 0.2;
-        if(flew > 60){
-            vertical = true;
-            direction *= -1;
+        if(flew > 30)
+        {
             flew = 0.0;
+            step = 1;
         }
     }
 }
