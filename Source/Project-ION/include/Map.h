@@ -2,6 +2,7 @@
 #define MAP_H
 #include <cstddef> //library for NULL
 #include <iostream>
+#include "stdlib.h"
 #include "List_Structures.h"
 #include "List_Obstacles.h"
 #include "List_Images.h"

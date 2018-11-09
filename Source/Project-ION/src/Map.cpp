@@ -8,41 +8,122 @@ Map::Map()
 Map::Map(int** matrix, List_Images *img){
     this->matrix = matrix;
     this->img = img;
+    srand(NULL);
+
     generateStructures();
 }
 
 void Map::generateStructures(){
+
+    bool upStone;
+    bool downStone;
+    bool leftStone;
+    bool rightStone;
+
     for(int i = 0; i<24; i++){
         for(int j = 0; j<36; j++){
+
             if(matrix[i][j] == 0)
-                structures.include(static_cast<Structure*>(new Stone(30*j, 30*i, (*img)[0])));
+            {
+                upStone = false;
+                downStone = false;
+                leftStone = false;
+                rightStone = false;
+
+                if(i != 0 && matrix[i-1][j] != 0)
+                    upStone = true;
+                if(j != 35 && matrix[i][j+1] != 0)
+                    rightStone = true;
+                if(i != 23 && matrix[i+1][j] != 0)
+                    downStone = true;
+                if(j != 0 && matrix[i][j-1] != 0)
+                    leftStone = true;
+
+                if(upStone)
+                {
+                    if(downStone)
+                    {
+                        if(rightStone)
+                            structures.include(static_cast<Structure*>(new Stone(30*j, 30*i, (*img)[13])));
+                        else if(leftStone)
+                            structures.include(static_cast<Structure*>(new Stone(30*j, 30*i, (*img)[15])));
+                        else
+                            structures.include(static_cast<Structure*>(new Stone(30*j, 30*i, (*img)[11])));
+                    }
+                    else if(rightStone)
+                    {
+                        if(leftStone)
+                            structures.include(static_cast<Structure*>(new Stone(30*j, 30*i, (*img)[16])));
+                        else
+                            structures.include(static_cast<Structure*>(new Stone(30*j, 30*i, (*img)[7])));
+                    }
+                    else if(leftStone)
+                        structures.include(static_cast<Structure*>(new Stone(30*j, 30*i, (*img)[10])));
+                    else
+                        structures.include(static_cast<Structure*>(new Stone(30*j, 30*i, (*img)[3])));
+                }
+                else if(rightStone)
+                {
+                    if(leftStone)
+                    {
+                        if(downStone)
+                            structures.include(static_cast<Structure*>(new Stone(30*j, 30*i, (*img)[14])));
+                        else
+                            structures.include(static_cast<Structure*>(new Stone(30*j, 30*i, (*img)[12])));
+                    }
+                    else if(downStone)
+                        structures.include(static_cast<Structure*>(new Stone(30*j, 30*i, (*img)[8])));
+                    else
+                        structures.include(static_cast<Structure*>(new Stone(30*j, 30*i, (*img)[4])));
+                }
+                else if(downStone)
+                {
+                    if(leftStone)
+                        structures.include(static_cast<Structure*>(new Stone(30*j, 30*i, (*img)[9])));
+                    else
+                        structures.include(static_cast<Structure*>(new Stone(30*j, 30*i, (*img)[5])));
+                }
+                else if(leftStone)
+                        structures.include(static_cast<Structure*>(new Stone(30*j, 30*i, (*img)[6])));
+                else
+                {
+                    int aux;
+                    aux = rand()%3;
+                    structures.include(static_cast<Structure*>(new Stone(30*j, 30*i, (*img)[aux])));
+                }
+            }
             else if(matrix[i][j] == 2){
-                Lava* aux = new Lava(30*j, 30*i, (*img)[1]);
+                Lava* aux;
+                if(matrix[i-1][j] != 2 && matrix[i-1][j] != 3)
+                    aux = new Lava(30*j, 30*i, (*img)[18]);
+                else
+                    aux = new Lava(30*j, 30*i, (*img)[17]);
+
                 obstacles.include(static_cast<Obstacle*>(aux));
             }
             else if(matrix[i][j] == 3){
-                Lava* aux = new Lava(30*j, 30*i, (*img)[2]);
+                Lava* aux = new Lava(30*j, 30*i, (*img)[18]);
                 obstacles.include(static_cast<Obstacle*>(aux));
                 lavas.include(aux);
             }
             else if(matrix[i][j] == 4){
                 int side;
                 if(matrix[i-1][j] == 0){
-                    side = 5;
+                    side = 21;
                 }
                 else if(matrix[i+1][j] == 0){
-                    side = 3;
+                    side = 19;
                 }
                 else if(matrix[i][j+1] == 0){
-                    side = 6;
+                    side = 22;
                 }
                 else if(matrix[i][j-1] == 0){
-                    side = 4;
+                    side = 20;
                 }
                 obstacles.include(static_cast<Obstacle*>(new Spine(30*j, 30*i, (*img)[side])));
             }
             else if(matrix[i][j] == 20){
-                powers.include(static_cast<Powerup*>(new Birl(30*j, 30*i, (*img)[7])));
+                powers.include(static_cast<Powerup*>(new Birl(30*j, 30*i, (*img)[23])));
             }
         }
     }
