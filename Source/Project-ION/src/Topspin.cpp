@@ -22,11 +22,12 @@ void Topspin::move(int x_move){
         move_left = true;
     }
     else if(!move_right){
-        direction *= -1;
+        direction = -1;
         move_right = true;
     }
 
     x += x_speed*direction;
+    cout << getx() << " Y: " << gety() << endl;
 }
 
 void Topspin::loop(){

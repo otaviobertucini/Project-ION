@@ -228,6 +228,7 @@ int Level::genericGameLoop()
     loopCharacters();
     updatePosition();
     jack->print(buffer);
+    cout << "N characters" << characters->size() << endl;
 
     if(iterations >= 15){
 

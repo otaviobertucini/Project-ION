@@ -172,8 +172,7 @@ void SoloGame::saveLevel(){
     myfile << "JAK:" << jack->getx() << "," << jack->gety() << "\n";
     for(int i = 0; i<(*characters).size(); i++){
         Character* c = (*characters)[i];
-        myfile << c->getType() << ":" << c->getx() << "," << c->gety() << ","
-                << c->getDirection();
+        myfile << c->getType() << ":" << c->getx() << "," << c->gety() << "," << c->getDirection() << "\n";
     }
 }
 
@@ -200,7 +199,7 @@ void SoloGame::readLevel(List_Characters* characters){
                 std::string x(line, 4, i);
                 std::string y(line, i+1, line.size()-1);
                 jack->setx((float) atof(x.c_str()));
-                jack->sety((float) atof(y.c_str()));
+                jack->sety((float) atof(y.c_str())-1);
                 jack->setDown(false);
                 jack->setUp(false);
             }
