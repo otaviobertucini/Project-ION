@@ -22,7 +22,7 @@ void Topspin::move(int x_move){
         move_left = true;
     }
     else if(!move_right){
-        direction *= -1;
+        direction = -1;
         move_right = true;
     }
 

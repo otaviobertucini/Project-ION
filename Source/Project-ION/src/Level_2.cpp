@@ -58,8 +58,6 @@ int Level_2::gameLoop()
     if(game_status != 1)
         return game_status;
 
-    loopCharacters();
-    collisionCharacters();
     if(jack->getx() >= 1075 && jack->gety() >= 0){
         resetPlayer(-15,jack->gety());
         return 2; //next level
@@ -72,7 +70,7 @@ int Level_2::gameLoop()
         resetPlayer(jack->getx(),710);
         return 4;
     }
-    jack->print(buffer);
+
 }
 
 void Level_2::generateLevel(List_Characters* characters){
@@ -83,21 +81,20 @@ void Level_2::generateLevel(){
     resetLevel();
     if(!was_genereted)
     {
-        Topspin* top = new Topspin(330,590, images->getImgsTopspin(),-1);
+        Topspin* top = new Topspin(330,589, images->getImgsTopspin(),-1);
         characters->include(static_cast<Character*>(top));
-//
-//        Topspin* top2 = new Topspin(480,620, images->getImgsTopspin(),1);
-//        characters->include(static_cast<Character*>(top2));
 
-//        Topspin* top3 = new Topspin(870,430, images->getImgsTopspin(),-1);
-//        characters->include(static_cast<Character*>(top3));
+        Topspin* top2 = new Topspin(480,619, images->getImgsTopspin(),1);
+        characters->include(static_cast<Character*>(top2));
+
+        Topspin* top3 = new Topspin(870,420, images->getImgsTopspin(),-1);
+        characters->include(static_cast<Character*>(top3));
 
 //        Bat* batman = new Bat(870, 400, images->getImgsBat());
 //        characters->include(batman);
 //
 //        Bat* batman2 = new Bat(200, 450, images->getImgsBat());
 //        characters->include(batman2);
-
         was_genereted = 1;
     }
 }

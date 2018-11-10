@@ -62,9 +62,6 @@ int Level_Boss::gameLoop(){
         resetPlayer(1050,jack->gety());
         return 3; //prev level
     }
-
-    //loopFireballs();
-    jack->print(buffer);
 }
 
 void Level_Boss::generateLevel(){}

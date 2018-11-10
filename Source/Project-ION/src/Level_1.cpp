@@ -55,7 +55,6 @@ Level_1::Level_1(BITMAP* buffer, Images* images, Human* jack):Level(buffer, imag
 
 int Level_1::gameLoop(){
 
-
     game_status = genericGameLoop();
     if(game_status != 1)
         return game_status;
@@ -68,7 +67,7 @@ int Level_1::gameLoop(){
         resetPlayer(1050,jack->gety());
         return 3; //prev level
     }
-    jack->print(buffer);
+
     return 1;
 }
 

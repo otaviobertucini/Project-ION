@@ -30,7 +30,6 @@ void Bat::move(int x_move){
     }
     else if(step == 2)
     {
-       // cout << flew << endl;
         x += 0.2*direction;
         flew += 0.2;
         if(flew > x_distance)

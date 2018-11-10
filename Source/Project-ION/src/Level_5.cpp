@@ -60,9 +60,6 @@ int Level_5::gameLoop(){
     if(game_status != 1)
         return game_status;
 
-    loopCharacters();
-    collisionCharacters();
-
     if(jack->getx() <= -20){
         resetPlayer(1050,jack->gety());
         return 3; //prev level
@@ -72,8 +69,6 @@ int Level_5::gameLoop(){
         return 2;
     }
 
-    //loopFireballs();
-    jack->print(buffer);
 }
 
 void Level_5::generateLevel(){
