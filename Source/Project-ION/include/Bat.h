@@ -6,13 +6,15 @@ class Bat: public Enemy
 {
 public:
     Bat();
-    Bat(float x, float y, List_Images *img, int direction = 1, int step = 1);
+    Bat(float x, float y, List_Images *img, int direction = 1, int step = 1,int x_distance = 40, int y_distance = 30);
     void loop();
     void move(int x_move);
     virtual ~Bat();
 private:
     float flew;
     int step;
+    int x_distance;
+    int y_distance;
 };
 
 #endif // BAT_H

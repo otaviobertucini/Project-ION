@@ -2,6 +2,7 @@
 #define LEVEL_5_H
 #include "Level.h"
 #include "Topspin.h"
+#include "Bat.h"
 
 class Level_5: public Level
 {

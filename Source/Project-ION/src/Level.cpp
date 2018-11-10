@@ -69,7 +69,7 @@ void Level::isStructureCollide(Character* a)
         if(a->getx() <= (*aux)[i]->getx() + (*aux)[i]->getw() && x_center >= x_center_body
                 && abs(y_center - y_center_body) < (a->geth()/2)+((*aux)[i]->geth()/2)-2){
             a->setLeft(false);
-            cout << "encostei e n sei pq" << endl;
+             //<< "encostei e n sei pq" << endl;
         }
     }
 }
@@ -91,11 +91,11 @@ void Level::updatePosition(){
 }
 
 void Level::loopCharacters(){
-    //cout << characters->size() << endl;
+    // << characters->size() << endl;
     for(int i = 0; i < characters->size(); i++){
         (*characters)[i]->loop();
         if(isObstacleCollide((*characters)[i])){
-            cout << "encostei" << endl;
+            // << "encostei" << endl;
             delete (*characters)[i];
             //(*characters)[i] = NULL;
             characters->erase(i);
@@ -149,7 +149,7 @@ int Level::isPowerupCollide(Human* a){
             delete (*powers)[i];
             //(*powers)[i] = NULL;
             powers->erase(i);
-            return 1;
+        return 1;
         }
     }
     return 0;

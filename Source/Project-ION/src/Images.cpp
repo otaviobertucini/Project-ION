@@ -44,7 +44,7 @@ Images::Images()
 
     //loads images from bat
     imgsBat = new List_Images;
-    imgsBat->include(load_bitmap("Material/Enemy/bat_test.bmp", NULL));
+    imgsBat->include(load_bitmap("Material/Enemy/bat_1.bmp", NULL));
 }
 
 List_Images* Images::getImgsJack(){

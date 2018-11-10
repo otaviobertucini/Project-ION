@@ -57,7 +57,7 @@ void Tutorial::generateLevel(){
 
     resetLevel();
     if(!was_genereted){
-        Bat* bat = new Bat(450, 360, images->getImgsBat());
+        Bat* bat = new Bat(450, 360, images->getImgsBat(),-1,1);
         characters->include(static_cast<Character*>(bat));
         was_genereted = 1;
     }
