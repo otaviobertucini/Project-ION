@@ -69,7 +69,6 @@ void Level::isStructureCollide(Character* a)
         if(a->getx() <= (*aux)[i]->getx() + (*aux)[i]->getw() && x_center >= x_center_body
                 && abs(y_center - y_center_body) < (a->geth()/2)+((*aux)[i]->geth()/2)-2){
             a->setLeft(false);
-            cout << "encostei e n sei pq" << endl;
         }
     }
 }
@@ -88,14 +87,15 @@ void Level::updatePosition(){
     for(int i = 0; i < characters->size(); i++){
         (*characters)[i]->print(buffer);
     }
+    for(int i = 0; i < fireballs.size(); i++){
+        fireballs[i]->print(buffer);
+    }
 }
 
 void Level::loopCharacters(){
-    //cout << characters->size() << endl;
     for(int i = 0; i < characters->size(); i++){
         (*characters)[i]->loop();
         if(isObstacleCollide((*characters)[i])){
-            cout << "encostei" << endl;
             delete (*characters)[i];
             //(*characters)[i] = NULL;
             characters->erase(i);
@@ -200,73 +200,85 @@ void Level::eraseAll(){
 
 int Level::genericGameLoop()
 {
-    printMap();
-    if (key[KEY_C])
-    {
-        jack->jump();
-    }
-    if (key[KEY_X])
-    {
-        jack->JetPack();
-    }
-    if (key[KEY_Z])
-    {
-        jack->activeDash();
+    if(iterations % 4 == 0){
+        printMap();
+        jack->print(buffer);
+        updatePosition();
+        draw_sprite(screen, buffer, 0, 0);
+        clear_bitmap(buffer);
+        if (key[KEY_C])
+        {
+            jack->jump();
+        }
+        if (key[KEY_X])
+        {
+            jack->JetPack();
+        }
+        if (key[KEY_Z])
+        {
+            jack->activeDash();
+        }
+
+        if (key[KEY_LEFT])
+        {
+            jack->move(-1);
+        }
+        if (key[KEY_RIGHT])
+        {
+            jack->move(1);
+        }
+        jack->loop();
+        isStructureCollide(static_cast<Character*>(jack));
+        loopCharacters();
     }
 
-    if (key[KEY_LEFT])
-    {
-        jack->move(-1);
-    }
-    if (key[KEY_RIGHT])
-    {
-        jack->move(1);
-    }
-    jack->loop();
-    loopFireballs();
-    isStructureCollide(static_cast<Character*>(jack));
-    loopCharacters();
-    updatePosition();
-    jack->print(buffer);
-    cout << "N characters" << characters->size() << endl;
-
-    if(iterations >= 15){
+    if(iterations % 3 == 0){
 
         if(isCharacterCollide(jack)){
             return 0;
         }
+        collisionCharacters();
+    }
+
+    if(iterations % 7 == 0){
 
         if(isObstacleCollide(static_cast<Character*>(jack))){
             return 0;
         }
+    }
+
+    if(iterations % 13 == 0){
+        createFireball();
+        loopFireballs();
 
         if(isFireballCollide(static_cast<Character*>(jack))){
             return 0;
         }
-        collisionCharacters();
-
         iterations = 0;
     }
+
     iterations++;
     return 1;
 }
 
-void Level::loopFireballs(){
+void Level::loopFireballs()
+{
+    for(int i = 0; i<fireballs.size(); i++){
+        fireballs[i]->loop();
+        isStructureCollide(static_cast<Character*>(fireballs[i]));
+        if(!fireballs[i]->getMoveUp()){
+            delete fireballs[i];
+            fireballs[i] = NULL;
+            fireballs.erase(fireballs.begin() + i);
+        }
+    }
+}
+
+void Level::createFireball(){
     for(int i = 0; i < lavas->size(); i++){
         Fireball* fire = (*lavas)[i]->createFireball();
         if(fire != NULL){
             fireballs.push_back(fire);
-        }
-
-        for(unsigned int i = 0; i<fireballs.size(); i++){
-            fireballs[i]->loop();
-            isStructureCollide(static_cast<Character*>(fireballs[i]));
-            fireballs[i]->print(buffer);
-            if(!fireballs[i]->getMoveUp()){
-                delete fireballs[i];
-                fireballs[i] = NULL;
-                fireballs.erase(fireballs.begin() + i);
-            }
         }
     }
 }

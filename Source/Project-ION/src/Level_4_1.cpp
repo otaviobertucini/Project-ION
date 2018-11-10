@@ -55,7 +55,6 @@ Level_4_1::Level_4_1(BITMAP* buffer, Images* images, Human* jack):Level(buffer, 
 
 int Level_4_1::gameLoop(){
 
-
     game_status = genericGameLoop();
     if(game_status != 1)
         return game_status;
@@ -65,8 +64,6 @@ int Level_4_1::gameLoop(){
         return 7;
     }
 
-    //loopFireballs();
-    jack->print(buffer);
 }
 
 void Level_4_1::generateLevel(){}

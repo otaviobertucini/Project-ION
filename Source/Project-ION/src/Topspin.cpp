@@ -27,7 +27,6 @@ void Topspin::move(int x_move){
     }
 
     x += x_speed*direction;
-    cout << getx() << " Y: " << gety() << endl;
 }
 
 void Topspin::loop(){

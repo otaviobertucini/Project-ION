@@ -69,8 +69,6 @@ int Level_6::gameLoop(){
         return 2; //next level
     }
 
-    //loopFireballs();
-    jack->print(buffer);
 }
 
 void Level_6::generateLevel(){}

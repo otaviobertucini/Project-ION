@@ -84,7 +84,6 @@ void SoloGame::execute()
                             dead = true;
                             exit_loop = true;
                         }
-                        cout << "morreu" << endl;
                         current->resetPlayer();
                     }
 
@@ -116,8 +115,6 @@ void SoloGame::execute()
 
                     x = current->getXInitial();
                     y = current->getYInitial();
-                    draw_sprite(screen, buffer, 0, 0);
-                    clear_bitmap(buffer);
                 }
                 current->resetLevel();
             }

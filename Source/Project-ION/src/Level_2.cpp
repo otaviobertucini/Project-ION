@@ -58,8 +58,6 @@ int Level_2::gameLoop()
     if(game_status != 1)
         return game_status;
 
-    //loopCharacters();
-    //collisionCharacters();
     if(jack->getx() >= 1075 && jack->gety() >= 0){
         resetPlayer(-15,jack->gety());
         return 2; //next level
@@ -72,7 +70,7 @@ int Level_2::gameLoop()
         resetPlayer(jack->getx(),710);
         return 4;
     }
-    jack->print(buffer);
+
 }
 
 void Level_2::generateLevel(List_Characters* characters){

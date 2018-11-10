@@ -8,7 +8,6 @@ Human::Human()
 Human::Human(string name, float x, float y, List_Images *img, int direction):
                Character(x, y, img){
     this->name = name;
-    this->y_force = 0;
     this->current_side = 1;
     this->charge = false;
     this->dashOn = false;

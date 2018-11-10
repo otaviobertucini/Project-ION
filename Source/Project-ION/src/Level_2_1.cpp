@@ -55,20 +55,15 @@ Level_2_1::Level_2_1(BITMAP* buffer, Images* images, Human* jack):Level(buffer, 
 
 int Level_2_1::gameLoop(){
 
-
     game_status = genericGameLoop();
     if(game_status != 1)
         return game_status;
-
-    loopCharacters();
-    collisionCharacters();
 
     if(jack->gety() >= 720){
         resetPlayer(jack->getx(),-20);
         return 5;
     }
-    //loopFireballs();
-    jack->print(buffer);
+
 }
 
 void Level_2_1::generateLevel(){
