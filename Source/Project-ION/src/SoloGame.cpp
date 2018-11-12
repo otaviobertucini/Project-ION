@@ -8,6 +8,8 @@ SoloGame::SoloGame():Game()
 
     chances = 3;
     i_level = 0;
+    power_time = 0;
+
     //Level 0
     level0();
 }
@@ -60,6 +62,7 @@ void SoloGame::execute()
                 //Loop de cada fase
                 while(!exit_loop)
                 {
+                    int start = clock();
                     game_status = current->gameLoop();
 
                     if(key[KEY_ESC])
@@ -111,7 +114,19 @@ void SoloGame::execute()
                         i_level-=5;
                         exit_loop = true;
                     }
-
+                    if(game_status == 20){
+                        power_time = 0;
+                    }
+                    if(jack->isPowered()){
+                        int stop=clock();
+                        power_time += (stop-start)/double(CLOCKS_PER_SEC)*1000;
+                        cout << power_time << endl;
+                        if(power_time >= 5000){
+                            jack->turnPowerup(false);
+                            jack->toInvincible(false);
+                            cout << "terminou power" << endl;
+                        }
+                    }
 
                     x = current->getXInitial();
                     y = current->getYInitial();

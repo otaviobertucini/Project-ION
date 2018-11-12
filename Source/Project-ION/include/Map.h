@@ -28,7 +28,6 @@ public:
     List_Structures* getList();
     List_Obstacles* getListObstacles();
     List_Lavas* getListLavas();
-    List_Powerups* getListPowers();
     int getValueMap(int i, int j);
     void generateStructures();
     void printMap(BITMAP* screen);
@@ -37,7 +36,6 @@ private:
     List_Structures structures;
     List_Obstacles obstacles;
     List_Lavas lavas;
-    List_Powerups powers;
     List_Images *img;
 };
 

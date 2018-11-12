@@ -18,6 +18,7 @@ Human::Human(string name, float x, float y, List_Images *img, int direction):
     y_speed = 0.6;
     this->direction = direction;
     invincible = false;
+    powerup_on = false;
 }
 
 void Human::gravity()
@@ -153,6 +154,14 @@ void Human::toInvincible(bool state){
 
 bool Human::isInvincible(){
     return invincible;
+}
+
+void Human::turnPowerup(bool state){
+    powerup_on = state;
+}
+
+bool Human::isPowered(){
+    return powerup_on;
 }
 
 Human::~Human()

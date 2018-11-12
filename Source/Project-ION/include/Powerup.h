@@ -1,6 +1,7 @@
 #ifndef POWERUP_H
 #define POWERUP_H
-#include <Entity.h>
+#include <string>
+#include "Entity.h"
 #include "Human.h"
 
 class Powerup : public Entity
@@ -13,6 +14,7 @@ public:
     virtual void modify(Human* a) = 0;
     virtual ~Powerup();
 protected:
+    std::string type;
 };
 
 #endif // POWERUP_H

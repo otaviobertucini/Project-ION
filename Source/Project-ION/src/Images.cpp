@@ -13,23 +13,23 @@ Images::Images()
     imgsMap->include(load_bitmap("Material/Scenario/stone_3.bmp", NULL));
     imgsMap->include(load_bitmap("Material/Scenario/stone_4.bmp", NULL));
     imgsMap->include(load_bitmap("Material/Scenario/stone_5.bmp", NULL));
-    imgsMap->include(load_bitmap("Material/Scenario/stone_6.bmp", NULL));
+    imgsMap->include(load_bitmap("Material/Scenario/stone_6.bmp", NULL)); //5
     imgsMap->include(load_bitmap("Material/Scenario/stone_7.bmp", NULL));
     imgsMap->include(load_bitmap("Material/Scenario/stone_8.bmp", NULL));
     imgsMap->include(load_bitmap("Material/Scenario/stone_9.bmp", NULL));
     imgsMap->include(load_bitmap("Material/Scenario/stone_10.bmp", NULL));
-    imgsMap->include(load_bitmap("Material/Scenario/stone_11.bmp", NULL));
+    imgsMap->include(load_bitmap("Material/Scenario/stone_11.bmp", NULL));//10
     imgsMap->include(load_bitmap("Material/Scenario/stone_12.bmp", NULL));
     imgsMap->include(load_bitmap("Material/Scenario/stone_13.bmp", NULL));
     imgsMap->include(load_bitmap("Material/Scenario/stone_14.bmp", NULL));
     imgsMap->include(load_bitmap("Material/Scenario/stone_15.bmp", NULL));
-    imgsMap->include(load_bitmap("Material/Scenario/stone_16.bmp", NULL));
+    imgsMap->include(load_bitmap("Material/Scenario/stone_16.bmp", NULL));//15
     imgsMap->include(load_bitmap("Material/Scenario/stone_17.bmp", NULL));
     imgsMap->include(load_bitmap("Material/Scenario/lava_1.bmp", NULL));
     imgsMap->include(load_bitmap("Material/Scenario/lava_2.bmp", NULL));
     imgsMap->include(load_bitmap("Material/Scenario/spine_1.bmp", NULL));
-    imgsMap->include(load_bitmap("Material/Scenario/spine_2.bmp", NULL));
-    imgsMap->include(load_bitmap("Material/Scenario/spine_3.bmp", NULL)); //5
+    imgsMap->include(load_bitmap("Material/Scenario/spine_2.bmp", NULL));//20
+    imgsMap->include(load_bitmap("Material/Scenario/spine_3.bmp", NULL));
     imgsMap->include(load_bitmap("Material/Scenario/spine_4.bmp", NULL));
     imgsMap->include(load_bitmap("Material/Powerups/birl.bmp", NULL));
 

@@ -9,6 +9,7 @@
 #include <vector>
 #include <fstream>
 #include <string>
+#include <ctime>
 #include "Human.h"
 #include "Game.h"
 #include "Topspin.h"
@@ -45,6 +46,7 @@ private:
     int chances;
     int i_level;
     Human* jack;
+    double power_time;
 };
 
 #endif // SOLOGAME_H

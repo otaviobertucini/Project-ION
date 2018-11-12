@@ -25,6 +25,8 @@ class Human:public Character
         void loop();
         void toInvincible(bool state = true);
         bool isInvincible();
+        void turnPowerup(bool state = true);
+        bool isPowered();
     private:
         string name;
         float y_force;
@@ -32,6 +34,7 @@ class Human:public Character
         bool dashOn;
         float distance_dash;
         bool invincible;
+        bool powerup_on;
 };
 
 #endif // HUMAN_H

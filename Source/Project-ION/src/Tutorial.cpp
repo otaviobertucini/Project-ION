@@ -48,7 +48,9 @@ Tutorial::Tutorial(BITMAP* buffer, Images* images, Human* jack):Level(buffer, im
 
     map = new Map(m, images->getImgsMap());
     lavas = map->getListLavas();
-    powers = map->getListPowers();
+
+    //powers = map->getListPowers();
+    //powers = new List_Powerups;
 }
 
 void Tutorial::startLevel(){}
@@ -59,6 +61,8 @@ void Tutorial::generateLevel(){
     if(!was_genereted){
         Bat* bat = new Bat(450, 360, images->getImgsBat(),-1,1);
         characters->include(static_cast<Character*>(bat));
+        List_Images* aux = images->getImgsMap();
+        powers->include(static_cast<Powerup*>(new Birl(840, 630, (*aux)[23])));
         was_genereted = 1;
     }
 }
@@ -70,9 +74,6 @@ void Tutorial::generateLevel(List_Characters* characters){
 int Tutorial::gameLoop(){
 
     game_status = genericGameLoop();
-    loopPowerups();
-
-    isPowerupCollide(jack);
 
     if(game_status != 1)
         return game_status;

@@ -10,6 +10,7 @@ Level::Level(BITMAP* buffer, Images *images, Human* jack){
     this->buffer = buffer;
     this->images = images;
     characters = new List_Characters;
+    powers = new List_Powerups;
     this->jack = jack;
     game_status = 1;
     was_genereted = 0;
@@ -84,10 +85,10 @@ void Level::printMap(){
 
 //Update all the positions of the characters placed in the level.
 void Level::updatePosition(){
-    for(int i = 0; i < characters->size(); i++){
+    for(unsigned int i = 0; i < characters->size(); i++){
         (*characters)[i]->print(buffer);
     }
-    for(int i = 0; i < fireballs.size(); i++){
+    for(unsigned int i = 0; i < fireballs.size(); i++){
         fireballs[i]->print(buffer);
     }
 }
@@ -146,11 +147,11 @@ int Level::isFireballCollide(Character* a){
 int Level::isPowerupCollide(Human* a){
     for(unsigned int i = 0; i < powers->size(); i++){
         if(isCollide(static_cast<Entity*>(a), static_cast<Entity*>((*powers)[i]))){
-            //(*powers)[i]->modify(a);
+            (*powers)[i]->modify(a);
+            a->turnPowerup();
             delete (*powers)[i];
-            //(*powers)[i] = NULL;
             powers->erase(i);
-        return 1;
+            return 1;
         }
     }
     return 0;
@@ -195,6 +196,7 @@ void Level::resetLevel(){
 
 void Level::eraseAll(){
     characters->eraseAll();
+    //powers->eraseAll();
     fireballs.erase(fireballs.begin(), fireballs.end());
     was_genereted = 0;
 }
@@ -230,6 +232,7 @@ int Level::genericGameLoop()
         }
         jack->loop();
         isStructureCollide(static_cast<Character*>(jack));
+        loopPowerups();
         loopCharacters();
     }
 
@@ -238,7 +241,13 @@ int Level::genericGameLoop()
         if(isCharacterCollide(jack)){
             return 0;
         }
+    }
+
+    if(iterations == 5){
         collisionCharacters();
+        if(isPowerupCollide(jack)){
+            return 20;
+        }
     }
 
     if(iterations % 7 == 0){
@@ -264,7 +273,7 @@ int Level::genericGameLoop()
 
 void Level::loopFireballs()
 {
-    for(int i = 0; i<fireballs.size(); i++){
+    for(unsigned int i = 0; i<fireballs.size(); i++){
         fireballs[i]->loop();
         isStructureCollide(static_cast<Character*>(fireballs[i]));
         if(!fireballs[i]->getMoveUp()){
