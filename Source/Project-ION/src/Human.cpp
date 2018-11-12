@@ -5,7 +5,7 @@ Human::Human()
     //ctor
 }
 
-Human::Human(string name, float x, float y, List_Images *img, int direction):
+Human::Human(string name, float x, float y, List_Images *img, int direction, bool powerup_on):
                Character(x, y, img){
     this->name = name;
     this->current_side = 1;
@@ -17,13 +17,11 @@ Human::Human(string name, float x, float y, List_Images *img, int direction):
     x_speed = 0.6;
     y_speed = 0.6;
     this->direction = direction;
-    invincible = false;
-    powerup_on = false;
+    this->powerup_on = powerup_on;
 }
 
 void Human::gravity()
 {
-
     if(!dashOn)
     {
         float y_force_limit;
@@ -148,20 +146,16 @@ void Human::setPosMatrix(){
     j_pos = (int)floor((x+w)/30)-1;
 }
 
-void Human::toInvincible(bool state){
-    invincible = state;
-}
-
-bool Human::isInvincible(){
-    return invincible;
-}
-
 void Human::turnPowerup(bool state){
     powerup_on = state;
 }
 
 bool Human::isPowered(){
     return powerup_on;
+}
+
+void Human::saveState(std::ofstream& myfile){
+    myfile << name << ":" << x << "," << y << "," << direction << "," << powerup_on << "\n";
 }
 
 Human::~Human()

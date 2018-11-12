@@ -36,7 +36,7 @@ public:
     void menu();
     void execute();
     void saveLevel();
-    void readLevel(List_Characters* characters);
+    void readLevel(List_Characters* characters, List_Powerups* powers);
     void startLevels();
     void resetLevels();
     void deleteLevels();

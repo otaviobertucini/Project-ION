@@ -38,10 +38,11 @@ public:
     int isFireballCollide(Character* a);
     int isPowerupCollide(Human* a);
     List_Characters* getListCharacters();
+    List_Powerups* getListPowerups();
     int genericGameLoop();
     virtual int gameLoop() = 0;
     virtual void generateLevel() = 0;
-    virtual void generateLevel(List_Characters* characters) = 0;
+    virtual void generateLevel(List_Characters* characters, List_Powerups* powers);
     virtual void startLevel() = 0;
     virtual void resetLevel();
     void eraseAll();

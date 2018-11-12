@@ -67,9 +67,10 @@ void Tutorial::generateLevel(){
     }
 }
 
-void Tutorial::generateLevel(List_Characters* characters){
-    this->characters = characters;
-}
+//void Tutorial::generateLevel(List_Characters* characters){
+//    this->characters = characters;
+//    was_genereted = 1;
+//}
 
 int Tutorial::gameLoop(){
 

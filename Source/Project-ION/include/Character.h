@@ -7,6 +7,7 @@
 #include <vector>
 #include <iostream>
 #include <string>
+#include <fstream>
 #include "Entity.h"
 #include "Moveable.h"
 #include "List_Images.h"
@@ -25,6 +26,7 @@ public:
     virtual void loop() = 0;
     virtual void gravity();
     std::string getType();
+    virtual void saveState(std::ofstream& myfile) = 0;
 protected:
     std::string type;
     int current_side;
@@ -32,6 +34,8 @@ protected:
     float y_speed;  // increased/decreased when moving.
     List_Images *img;
     float y_force;
+    const int x_initial;
+    const int y_initial;
 };
 
 #endif // CHARACTER_H

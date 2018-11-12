@@ -9,6 +9,7 @@ public:
     Topspin(float x, float y, List_Images *img, int direction = 1);
     void move(int x_move);
     void loop();
+    void saveState(std::ofstream& myfile);
     virtual ~Topspin();
 private:
 };

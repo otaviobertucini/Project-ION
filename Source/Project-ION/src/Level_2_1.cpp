@@ -90,6 +90,7 @@ void Level_2_1::generateLevel(){
 
 void Level_2_1::generateLevel(List_Characters* characters){
     this->characters = characters;
+    was_genereted = 1;
 }
 
 void Level_2_1::resetLevel(){}

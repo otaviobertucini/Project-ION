@@ -1,12 +1,12 @@
 #include "Character.h"
 
-Character::Character()
+Character::Character(): x_initial(x), y_initial(y)
 {
     //ctor
 }
 
 Character::Character(float x, float y, List_Images *img):
-            Moveable(x, y)
+            Moveable(x, y), x_initial(x), y_initial(y)
 {
     this->img = img;
     this->move_left = true;

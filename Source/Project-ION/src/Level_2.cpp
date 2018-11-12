@@ -75,6 +75,7 @@ int Level_2::gameLoop()
 
 void Level_2::generateLevel(List_Characters* characters){
     this->characters = characters;
+    was_genereted = 1;
 }
 
 void Level_2::generateLevel(){

@@ -36,7 +36,7 @@
 
 1541344038 D
 
-1542024842 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/Level.h
+1542051683 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/Level.h
 	<allegro.h>
 	<cstddef>
 	<iostream>
@@ -69,37 +69,38 @@
 	"Powerup.h"
 	"Birl.h"
 
-1542020376 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Level.cpp
+1542055668 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Level.cpp
 	"Level.h"
 
 1542018777 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Map.cpp
 	"Map.h"
 
-1542024223 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/Character.h
+1542049088 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/Character.h
 	<allegro.h>
 	<cstddef>
 	<math.h>
 	<vector>
 	<iostream>
 	<string>
+	<fstream>
 	"Entity.h"
 	"Moveable.h"
 	"List_Images.h"
 
-1541967199 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/Human.h
+1542055760 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/Human.h
 	<string>
 	<iterator>
 	<iostream>
 	<math.h>
 	"Character.h"
 
-1542024642 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Character.cpp
+1542047763 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Character.cpp
 	"Character.h"
 
-1541967269 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Human.cpp
+1542055790 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Human.cpp
 	"Human.h"
 
-1542020337 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/SoloGame.h
+1542051434 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/SoloGame.h
 	<allegro.h>
 	<stdlib.h>
 	<time.h>
@@ -150,7 +151,7 @@
 1542018751 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Images.cpp
 	"Images.h"
 
-1542021258 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/SoloGame.cpp
+1542056053 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/SoloGame.cpp
 	"SoloGame.h"
 
 1541273254 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/Entity.h
@@ -367,10 +368,10 @@
 	"List_Images.h"
 	"Character.h"
 
-1541855475 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Topspin.cpp
+1542049323 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Topspin.cpp
 	"Topspin.h"
 
-1541269459 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/Topspin.h
+1542049101 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/Topspin.h
 	"Enemy.h"
 
 1541499256 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\enemy.cpp
@@ -393,13 +394,13 @@
 	<vector>
 	"Entity.h"
 
-1541633388 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/Tutorial.h
+1542051760 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/Tutorial.h
 	<Level.h>
 	"Topspin.h"
 	"Bat.h"
 	"Fireball.h"
 
-1542019173 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Tutorial.cpp
+1542051755 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Tutorial.cpp
 	"Tutorial.h"
 
 1541557835 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/List_Characters.h
@@ -546,10 +547,10 @@
 	"Level.h"
 	"Topspin.h"
 
-1541856705 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Level_2.cpp
+1542050527 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Level_2.cpp
 	"Level_2.h"
 
-1541856593 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Level_3.cpp
+1542050536 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Level_3.cpp
 	"Level_3.h"
 
 1541499256 c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\include\list_lavas.h
@@ -621,7 +622,7 @@
 1541856601 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Level_4.cpp
 	"Level_4.h"
 
-1541960325 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Level_2_1.cpp
+1542050532 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Level_2_1.cpp
 	"Level_2_1.h"
 
 1541546752 shed changes
@@ -640,7 +641,7 @@
 1541556834 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/Level_Boss.h
 	"Level.h"
 
-1541960325 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Level_5.cpp
+1542050267 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Level_5.cpp
 	"Level_5.h"
 
 1541856630 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Level_6.cpp
@@ -652,10 +653,10 @@
 1541856614 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Level_4_1.cpp
 	"Level_4_1.h"
 
-1541960325 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/Bat.h
+1542049930 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/Bat.h
 	<Enemy.h>
 
-1541960325 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Bat.cpp
+1542050445 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Bat.cpp
 	"Bat.h"
 
 1541634673 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/Spine.h
@@ -676,7 +677,7 @@
 1541676657 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/Birl.h
 	<Powerup.h>
 
-1541966944 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Birl.cpp
+1542055656 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Birl.cpp
 	"Birl.h"
 
 1541677168 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/List_Powerups.cpp
@@ -725,4 +726,7 @@
 
 1542024588 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/Moveable.h
 	"Entity.h"
+
+1542024618 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Moveable.cpp
+	"Moveable.h"
 

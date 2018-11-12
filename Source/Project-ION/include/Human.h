@@ -13,7 +13,7 @@ class Human:public Character
 {
     public:
         Human();
-        Human(string name, float x, float y, List_Images *img, int direction = 1);
+        Human(string name, float x, float y, List_Images *img, int direction = 1, bool powerup_on = 0);
         ~Human();
         void move(int x_move);
         void setPosMatrix();
@@ -23,10 +23,9 @@ class Human:public Character
         void activeDash();
         void dash();
         void loop();
-        void toInvincible(bool state = true);
-        bool isInvincible();
         void turnPowerup(bool state = true);
         bool isPowered();
+        void saveState(std::ofstream& myfile);
     private:
         string name;
         float y_force;

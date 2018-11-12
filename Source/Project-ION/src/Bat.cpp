@@ -5,11 +5,12 @@ Bat::Bat()
     //ctor
 }
 
-Bat::Bat(float x, float y, List_Images *img, int direction, int step, int x_distance, int y_distance):Enemy(x, y, img){
+Bat::Bat(float x, float y, List_Images *img, int direction, int step, int x_distance, int y_distance, float flew)
+        :Enemy(x, y, img){
     type = "BAT";
     h = 30;
     w = 40;
-    flew = 0.0;
+    this->flew = flew;
     this->direction = direction;
     this->step = step;
     this->x_distance = x_distance;
@@ -52,6 +53,15 @@ void Bat::move(int x_move){
 
 void Bat::loop(){
     move(0);
+}
+
+const int Bat::getyInitial() const{
+    return y_initial + y_distance;
+}
+
+void Bat::saveState(std::ofstream& myfile){
+    myfile << type << ":" << x << "," << y << "," << direction << "," << step << "," <<
+            y_distance << "," << x_distance << "," << flew << "\n";
 }
 
 Bat::~Bat()

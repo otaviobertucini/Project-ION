@@ -27,6 +27,12 @@ int Level::isCollide(Entity* a, Entity* b){
     return 0;
 }
 
+void Level::generateLevel(List_Characters* characters, List_Powerups* powers){
+    this->characters = characters;
+    this->powers = powers;
+    was_genereted = 1;
+}
+
 void Level::isStructureCollide(Moveable* a)
 {
     int i;
@@ -114,7 +120,7 @@ void Level::collisionCharacters(){
 int Level::isCharacterCollide(Human* a){
     for(int i = 0; i<characters->size(); i++){
         if(isCollide(static_cast<Entity*>(a), static_cast<Entity*>((*characters)[i]))){
-            if(a->isInvincible()){
+            if(a->isPowered()){
                 //a->toInvincible(false);
                 return 0;
             }
@@ -196,7 +202,7 @@ void Level::resetLevel(){
 
 void Level::eraseAll(){
     characters->eraseAll();
-    //powers->eraseAll();
+    powers->eraseAll();
     fireballs.erase(fireballs.begin(), fireballs.end());
     was_genereted = 0;
 }
@@ -295,6 +301,10 @@ void Level::createFireball(){
 
 List_Characters* Level::getListCharacters(){
     return characters;
+}
+
+List_Powerups* Level::getListPowerups(){
+    return powers;
 }
 
 Level::~Level()

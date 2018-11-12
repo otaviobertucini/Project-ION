@@ -34,6 +34,10 @@ void Topspin::loop(){
     move(0);
 }
 
+void Topspin::saveState(std::ofstream& myfile){
+    myfile << type << ":" << x << "," << y << "," << direction << "\n";
+}
+
 Topspin::~Topspin()
 {
     //dtor

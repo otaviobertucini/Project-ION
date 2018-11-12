@@ -12,7 +12,7 @@ Birl::Birl(float x, float y, BITMAP* current_img):Powerup(x, y, current_img){
 }
 
 void Birl::modify(Human* a){
-    a->toInvincible();
+    a->turnPowerup();
 }
 
 Birl::~Birl()
