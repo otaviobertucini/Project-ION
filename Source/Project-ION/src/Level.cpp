@@ -27,7 +27,7 @@ int Level::isCollide(Entity* a, Entity* b){
     return 0;
 }
 
-void Level::isStructureCollide(Character* a)
+void Level::isStructureCollide(Moveable* a)
 {
     int i;
     float x_center,y_center,x_center_body,y_center_body;
@@ -107,7 +107,7 @@ void Level::loopCharacters(){
 
 void Level::collisionCharacters(){
     for(int i = 0; i < characters->size(); i++){
-        isStructureCollide((*characters)[i]);
+        isStructureCollide(static_cast<Moveable*>((*characters)[i]));
     }
 }
 
@@ -231,7 +231,7 @@ int Level::genericGameLoop()
             jack->move(1);
         }
         jack->loop();
-        isStructureCollide(static_cast<Character*>(jack));
+        isStructureCollide(static_cast<Moveable*>(jack));
         loopPowerups();
         loopCharacters();
     }
@@ -275,7 +275,7 @@ void Level::loopFireballs()
 {
     for(unsigned int i = 0; i<fireballs.size(); i++){
         fireballs[i]->loop();
-        isStructureCollide(static_cast<Character*>(fireballs[i]));
+        isStructureCollide(static_cast<Moveable*>(fireballs[i]));
         if(!fireballs[i]->getMoveUp()){
             delete fireballs[i];
             fireballs[i] = NULL;

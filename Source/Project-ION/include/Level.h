@@ -9,6 +9,7 @@
 #include "Human.h"
 #include "List_Images.h"
 #include "Entity.h"
+#include "Moveable.h"
 #include "List_Characters.h"
 #include "List_Lavas.h"
 #include "List_Powerups.h"
@@ -29,7 +30,7 @@ public:
     float getXInitial();
     float getYInitial();
     int isCollide(Entity* a, Entity* b);
-    void isStructureCollide(Character* a);
+    void isStructureCollide(Moveable* a);
     void loopCharacters();
     void collisionCharacters();
     int isCharacterCollide(Human* a);

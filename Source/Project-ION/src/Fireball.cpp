@@ -5,7 +5,7 @@ Fireball::Fireball()
     //ctor
 }
 
-Fireball::Fireball(float x, float y, BITMAP* img):Enemy(x, y, NULL){
+Fireball::Fireball(float x, float y, BITMAP* img):Moveable(x, y){
     this->current_img = img;
     h = 10;
     w = 10;
@@ -24,6 +24,8 @@ void Fireball::loop(){
 bool Fireball::getMoveUp(){
     return move_up;
 }
+
+void Fireball::setPosMatrix(){}
 
 Fireball::~Fireball()
 {

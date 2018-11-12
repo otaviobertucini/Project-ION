@@ -6,7 +6,7 @@ Character::Character()
 }
 
 Character::Character(float x, float y, List_Images *img):
-            Entity(x, y)
+            Moveable(x, y)
 {
     this->img = img;
     this->move_left = true;
@@ -46,26 +46,6 @@ void Character::gravity()
 
 std::string Character::getType(){
     return type;
-}
-
-void Character::setRight(bool new_mode){
-    move_right = new_mode;
-}
-
-void Character::setLeft(bool new_mode){
-    move_left = new_mode;
-}
-
-void Character::setUp(bool new_mode){
-    move_up = new_mode;
-}
-
-void Character::setDown(bool new_mode){
-    move_down = new_mode;
-}
-
-int Character::getDirection(){
-    return direction;
 }
 
 Character::~Character()
