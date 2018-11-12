@@ -80,10 +80,6 @@ void Level::isStructureCollide(Moveable* a)
     }
 }
 
-Map* Level::getMap(){
-    return map;
-}
-
 /*This function print the background of the level.*/
 void Level::printMap(){
     map->printMap(buffer);
@@ -103,17 +99,11 @@ void Level::loopCharacters(){
 
     for(int i = 0; i < characters->size(); i++){
         (*characters)[i]->loop();
+        isStructureCollide(static_cast<Moveable*>((*characters)[i]));
         if(isObstacleCollide((*characters)[i])){
             delete (*characters)[i];
-            //(*characters)[i] = NULL;
             characters->erase(i);
         }
-    }
-}
-
-void Level::collisionCharacters(){
-    for(int i = 0; i < characters->size(); i++){
-        isStructureCollide(static_cast<Moveable*>((*characters)[i]));
     }
 }
 
@@ -250,7 +240,6 @@ int Level::genericGameLoop()
     }
 
     if(iterations == 5){
-        collisionCharacters();
         if(isPowerupCollide(jack)){
             return 20;
         }

@@ -23,7 +23,6 @@ public:
     Level();
     Level(BITMAP* buffer, Images *images, Human* jack);
     virtual ~Level();
-    Map* getMap();
     void printMap();
     void updatePosition();
     int getValueMap(int i, int j);
@@ -32,7 +31,6 @@ public:
     int isCollide(Entity* a, Entity* b);
     void isStructureCollide(Moveable* a);
     void loopCharacters();
-    void collisionCharacters();
     int isCharacterCollide(Human* a);
     int isObstacleCollide(Character* a);
     int isFireballCollide(Character* a);
@@ -43,7 +41,6 @@ public:
     virtual int gameLoop() = 0;
     virtual void generateLevel() = 0;
     virtual void generateLevel(List_Characters* characters, List_Powerups* powers);
-    virtual void startLevel() = 0;
     virtual void resetLevel();
     void eraseAll();
     virtual void resetPlayer();

@@ -53,8 +53,6 @@ Tutorial::Tutorial(BITMAP* buffer, Images* images, Human* jack):Level(buffer, im
     //powers = new List_Powerups;
 }
 
-void Tutorial::startLevel(){}
-
 void Tutorial::generateLevel(){
 
     resetLevel();
@@ -66,11 +64,6 @@ void Tutorial::generateLevel(){
         was_genereted = 1;
     }
 }
-
-//void Tutorial::generateLevel(List_Characters* characters){
-//    this->characters = characters;
-//    was_genereted = 1;
-//}
 
 int Tutorial::gameLoop(){
 

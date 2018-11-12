@@ -55,10 +55,6 @@ void Bat::loop(){
     move(0);
 }
 
-const int Bat::getyInitial() const{
-    return y_initial + y_distance;
-}
-
 void Bat::saveState(std::ofstream& myfile){
     myfile << type << ":" << x << "," << y << "," << direction << "," << step << "," <<
             y_distance << "," << x_distance << "," << flew << "\n";

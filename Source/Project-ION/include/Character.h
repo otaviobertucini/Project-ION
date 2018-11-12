@@ -25,7 +25,6 @@ public:
     virtual void setPosMatrix() = 0;
     virtual void loop() = 0;
     virtual void gravity();
-    std::string getType();
     virtual void saveState(std::ofstream& myfile) = 0;
 protected:
     std::string type;
@@ -34,8 +33,6 @@ protected:
     float y_speed;  // increased/decreased when moving.
     List_Images *img;
     float y_force;
-    const int x_initial;
-    const int y_initial;
 };
 
 #endif // CHARACTER_H

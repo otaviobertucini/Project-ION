@@ -100,8 +100,6 @@ void Level_2::generateLevel(){
     }
 }
 
-void Level_2::startLevel(){}
-
 void Level_2::resetLevel(){}
 
 Level_2::~Level_2()

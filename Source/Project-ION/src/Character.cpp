@@ -1,12 +1,12 @@
 #include "Character.h"
 
-Character::Character(): x_initial(x), y_initial(y)
+Character::Character()
 {
     //ctor
 }
 
 Character::Character(float x, float y, List_Images *img):
-            Moveable(x, y), x_initial(x), y_initial(y)
+            Moveable(x, y)
 {
     this->img = img;
     this->move_left = true;
@@ -42,10 +42,6 @@ void Character::gravity()
 
     if(move_down == true)
        y += y_force;
-}
-
-std::string Character::getType(){
-    return type;
 }
 
 Character::~Character()

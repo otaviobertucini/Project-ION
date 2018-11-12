@@ -84,8 +84,6 @@ void Level_3::generateLevel(){
 
 void Level_3::resetLevel(){}
 
-void Level_3::startLevel(){}
-
 Level_3::~Level_3()
 {
     //dtor

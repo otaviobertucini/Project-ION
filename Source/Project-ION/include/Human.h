@@ -32,7 +32,6 @@ class Human:public Character
         bool charge;
         bool dashOn;
         float distance_dash;
-        bool invincible;
         bool powerup_on;
 };
 

@@ -285,12 +285,6 @@ void SoloGame::readLevel(List_Characters* characters, List_Powerups* powers){
     }
 }
 
-void SoloGame::startLevels(){
-    for(int i = 0; i<levels->size(); i++){
-        (*levels)[i]->startLevel();
-    }
-}
-
 void SoloGame::resetLevels(){
     for(int i = 0; i<levels->size(); i++){
         (*levels)[i]->eraseAll();

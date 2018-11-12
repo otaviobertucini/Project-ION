@@ -95,8 +95,6 @@ void Level_2_1::generateLevel(List_Characters* characters){
 
 void Level_2_1::resetLevel(){}
 
-void Level_2_1::startLevel(){}
-
 Level_2_1::~Level_2_1()
 {
     //dtor

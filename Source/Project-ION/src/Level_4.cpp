@@ -76,11 +76,7 @@ int Level_4::gameLoop(){
 
 void Level_4::generateLevel(){}
 
-void Level_4::generateLevel(List_Characters* characters){}
-
 void Level_4::resetLevel(){}
-
-void Level_4::startLevel(){}
 
 Level_4::~Level_4()
 {

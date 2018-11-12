@@ -66,11 +66,7 @@ int Level_Boss::gameLoop(){
 
 void Level_Boss::generateLevel(){}
 
-void Level_Boss::generateLevel(List_Characters* characters){}
-
 void Level_Boss::resetLevel(){}
-
-void Level_Boss::startLevel(){}
 
 Level_Boss::~Level_Boss()
 {
