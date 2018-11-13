@@ -56,6 +56,7 @@
 		<Unit filename="include/Level_Boss.h" />
 		<Unit filename="include/List.h" />
 		<Unit filename="include/List_Characters.h" />
+		<Unit filename="include/List_Fireballs.h" />
 		<Unit filename="include/List_Images.h" />
 		<Unit filename="include/List_Lavas.h" />
 		<Unit filename="include/List_Levels.h" />
@@ -97,6 +98,7 @@
 		<Unit filename="src/Level_Boss.cpp" />
 		<Unit filename="src/List.cpp" />
 		<Unit filename="src/List_Characters.cpp" />
+		<Unit filename="src/List_Fireballs.cpp" />
 		<Unit filename="src/List_Images.cpp" />
 		<Unit filename="src/List_Lavas.cpp" />
 		<Unit filename="src/List_Levels.cpp" />

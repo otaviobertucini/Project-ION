@@ -69,20 +69,36 @@ int Level_2_1::gameLoop(){
 void Level_2_1::generateLevel(){
     resetLevel();
     if(!was_genereted){
-        Topspin* top = new Topspin(480, 530, images->getImgsTopspin());
-        characters->include(static_cast<Character*>(top));
 
-        Topspin* top2 = new Topspin(750, 610, images->getImgsTopspin());
-        characters->include(static_cast<Character*>(top2));
+        if(rand()%2 == 0)
+        {
+            Topspin* top = new Topspin(480, 530, images->getImgsTopspin());
+            characters->include(static_cast<Character*>(top));
+        }
 
-        Topspin* top3 = new Topspin(450, 220, images->getImgsTopspin());
-        characters->include(static_cast<Character*>(top3));
+        if(rand()%2 == 0)
+        {
+            Topspin* top2 = new Topspin(750, 610, images->getImgsTopspin());
+            characters->include(static_cast<Character*>(top2));
+        }
 
-        Bat* batman1 = new Bat(240,300,images->getImgsBat(),1,1,560,80);
-        characters->include(static_cast<Character*>(batman1));
+        if(rand()%2 == 0)
+        {
+            Topspin* top3 = new Topspin(450, 220, images->getImgsTopspin());
+            characters->include(static_cast<Character*>(top3));
+        }
 
-        Bat* batman2 = new Bat(800,90,images->getImgsBat(),-1,1,450,50);
-        characters->include(static_cast<Character*>(batman2));
+        if(rand()%2 == 0)
+        {
+            Bat* batman1 = new Bat(240,300,images->getImgsBat(),1,1,560,80);
+            characters->include(static_cast<Character*>(batman1));
+        }
+
+        if(rand()%2 == 0)
+        {
+            Bat* batman2 = new Bat(800,90,images->getImgsBat(),-1,1,450,50);
+            characters->include(static_cast<Character*>(batman2));
+        }
 
         was_genereted = 1;
     }

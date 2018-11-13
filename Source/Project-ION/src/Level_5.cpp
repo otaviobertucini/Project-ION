@@ -76,26 +76,48 @@ void Level_5::generateLevel(){
     resetLevel();
     if(!was_genereted){
 
-        Topspin* top = new Topspin(150, 190, images->getImgsTopspin());
-        characters->include(static_cast<Character*>(top));
 
-        Topspin* top2 = new Topspin(210, 330, images->getImgsTopspin());
-        characters->include(static_cast<Character*>(top2));
+        if(rand()%2 == 0)
+        {
+            Topspin* top = new Topspin(150, 190, images->getImgsTopspin());
+            characters->include(static_cast<Character*>(top));
+        }
 
-        Topspin* top3 = new Topspin(950, 680, images->getImgsTopspin(),-1);
-        characters->include(static_cast<Character*>(top3));
+        if(rand()%2 == 0)
+        {
+            Topspin* top2 = new Topspin(210, 330, images->getImgsTopspin());
+            characters->include(static_cast<Character*>(top2));
+        }
 
-        Topspin* top4 = new Topspin(510, 400, images->getImgsTopspin(),-1);
-        characters->include(static_cast<Character*>(top4));
+        if(rand()%2 == 0)
+        {
+            Topspin* top3 = new Topspin(950, 680, images->getImgsTopspin(),-1);
+            characters->include(static_cast<Character*>(top3));
+        }
 
-        Bat* batman1 = new Bat(720,510,images->getImgsBat(),1,1,150,60);
-        characters->include(static_cast<Character*>(batman1));
+        if(rand()%2 == 0)
+        {
+            Topspin* top4 = new Topspin(510, 400, images->getImgsTopspin(),-1);
+            characters->include(static_cast<Character*>(top4));
+        }
 
-        Bat* batman2 = new Bat(480,90,images->getImgsBat(),1,1,330,130);
-        characters->include(static_cast<Character*>(batman2));
+        if(rand()%2 == 0)
+        {
+            Bat* batman1 = new Bat(720,510,images->getImgsBat(),1,1,150,60);
+            characters->include(static_cast<Character*>(batman1));
+        }
 
-        Bat* batman3 = new Bat(810,90,images->getImgsBat(),-1,1,330,130);
-        characters->include(static_cast<Character*>(batman3));
+        if(rand()%2 == 0)
+        {
+            Bat* batman2 = new Bat(480,90,images->getImgsBat(),1,1,330,130);
+            characters->include(static_cast<Character*>(batman2));
+        }
+
+        if(rand()%2 == 0)
+        {
+            Bat* batman3 = new Bat(810,90,images->getImgsBat(),-1,1,330,130);
+            characters->include(static_cast<Character*>(batman3));
+        }
 
         was_genereted = 1;
     }

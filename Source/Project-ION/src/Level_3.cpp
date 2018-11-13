@@ -76,8 +76,13 @@ void Level_3::generateLevel(List_Characters* characters){
 void Level_3::generateLevel(){
     resetLevel();
     if(!was_genereted){
-        Topspin* top = new Topspin(590, 400, images->getImgsTopspin(),-1);
-        characters->include(static_cast<Character*>(top));
+
+        if(rand()%2 == 0)
+        {
+            Topspin* top = new Topspin(590, 400, images->getImgsTopspin(),-1);
+            characters->include(static_cast<Character*>(top));
+        }
+
         was_genereted = 1;
     }
 }

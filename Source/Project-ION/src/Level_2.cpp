@@ -82,14 +82,23 @@ void Level_2::generateLevel(){
     resetLevel();
     if(!was_genereted)
     {
-        Topspin* top = new Topspin(330,589, images->getImgsTopspin(),-1);
-        characters->include(static_cast<Character*>(top));
 
-        Topspin* top2 = new Topspin(480,619, images->getImgsTopspin(),1);
-        characters->include(static_cast<Character*>(top2));
+        if(rand()%2 == 0)
+        {
+            Topspin* top = new Topspin(330,589, images->getImgsTopspin(),-1);
+            characters->include(static_cast<Character*>(top));
+        }
+        if(rand()%2 == 0)
+        {
+            Topspin* top2 = new Topspin(480,619, images->getImgsTopspin(),1);
+            characters->include(static_cast<Character*>(top2));
+        }
+        if(rand()%2 == 0)
+        {
+            Topspin* top3 = new Topspin(870,420, images->getImgsTopspin(),-1);
+            characters->include(static_cast<Character*>(top3));
+        }
 
-        Topspin* top3 = new Topspin(870,420, images->getImgsTopspin(),-1);
-        characters->include(static_cast<Character*>(top3));
 
 //        Bat* batman = new Bat(870, 400, images->getImgsBat());
 //        characters->include(batman);
