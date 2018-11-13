@@ -12,6 +12,8 @@ public:
     void setUp(bool new_move);
     void setDown(bool new_move);
     int getDirection();
+    virtual void move(int x_move) = 0;
+    virtual void saveState(std::ofstream& myfile) = 0;
     virtual ~Moveable();
 protected:
     bool move_left;

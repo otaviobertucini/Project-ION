@@ -35,8 +35,9 @@ void SoloGame::execute()
         i_level = 0;
         List_Characters* characters = new List_Characters;
         List_Powerups* powers = new List_Powerups;
+        List_Fireballs* fires = new List_Fireballs;
         if(start == 2){
-            readLevel(characters, powers);
+            readLevel(characters, powers, fires);
             start = 1;
             load_level = 1;
         }
@@ -53,7 +54,7 @@ void SoloGame::execute()
                     current->resetPlayer(x,y);
                 }
                 else{
-                    current->generateLevel(characters, powers);
+                    current->generateLevel(characters, powers, fires);
                 }
 
                 load_level = 0;
@@ -179,6 +180,7 @@ void SoloGame::level0(){
 void SoloGame::saveLevel(){
     List_Characters* characters = current->getListCharacters();
     List_Powerups* powers = current->getListPowerups();
+    List_Fireballs* fires = current->getListFireballs();
     ofstream myfile("register.txt");
     myfile << "LEV:" << i_level << "\n";
     myfile << "LIF:" << chances << "\n";
@@ -192,9 +194,13 @@ void SoloGame::saveLevel(){
         Powerup* p = (*powers)[i];
         myfile << "POW:" << p->getx() << "," << p->gety() << "\n";
     }
+    for(int i = 0; i<(*fires).size(); i++){
+        Fireball* f = (*fires)[i];
+        f->saveState(myfile);
+    }
 }
 
-void SoloGame::readLevel(List_Characters* characters, List_Powerups* powers){
+void SoloGame::readLevel(List_Characters* characters, List_Powerups* powers, List_Fireballs* fires){
     ifstream myfile("register.txt");
     std::string line;
     if(myfile.is_open()){
@@ -280,6 +286,21 @@ void SoloGame::readLevel(List_Characters* characters, List_Powerups* powers){
                 int y = (int) atoi(y_copy.c_str());
                 List_Images* aux = images->getImgsMap();
                 powers->include(static_cast<Powerup*>(new Birl(x, y, (*aux)[23])));
+            }
+            if(copy == "FIR"){
+                int i;
+                std::vector<int> index;
+                for(i=4; i<line.size(); i++){
+                    if(line[i] == ',')
+                        index.push_back(i);
+                }
+                std::string x_copy(line, 4, index[0]);
+                std::string y_copy(line, index[0]+1, line.size()-1);
+                int x = (int) atoi(x_copy.c_str());
+                int y = (int) atoi(y_copy.c_str());
+                cout << x << ", " << y << endl;
+                List_Images* aux = images->getImgsFireball();
+                fires->include(static_cast<Fireball*>(new Fireball(x, y, (*aux)[0])));
             }
         }
     }

@@ -11,6 +11,7 @@ Level::Level(BITMAP* buffer, Images *images, Human* jack){
     this->images = images;
     characters = new List_Characters;
     powers = new List_Powerups;
+    fireballs = new List_Fireballs;
     this->jack = jack;
     game_status = 1;
     was_genereted = 0;
@@ -27,9 +28,10 @@ int Level::isCollide(Entity* a, Entity* b){
     return 0;
 }
 
-void Level::generateLevel(List_Characters* characters, List_Powerups* powers){
+void Level::generateLevel(List_Characters* characters, List_Powerups* powers, List_Fireballs* fires){
     this->characters = characters;
     this->powers = powers;
+    this->fireballs = fires;
     was_genereted = 1;
 }
 
@@ -90,8 +92,8 @@ void Level::updatePosition(){
     for(unsigned int i = 0; i < characters->size(); i++){
         (*characters)[i]->print(buffer);
     }
-    for(unsigned int i = 0; i < fireballs.size(); i++){
-        fireballs[i]->print(buffer);
+    for(unsigned int i = 0; i < fireballs->size(); i++){
+        (*fireballs)[i]->print(buffer);
     }
 }
 
@@ -132,8 +134,8 @@ int Level::isObstacleCollide(Character* a){
 }
 
 int Level::isFireballCollide(Character* a){
-    for(unsigned int i = 0; i < fireballs.size(); i++){
-        if(isCollide(static_cast<Entity*>(a), static_cast<Entity*>(fireballs[i]))){
+    for(unsigned int i = 0; i < fireballs->size(); i++){
+        if(isCollide(static_cast<Entity*>(a), static_cast<Entity*>((*fireballs)[i]))){
             return 1;
         }
     }
@@ -193,7 +195,7 @@ void Level::resetLevel(){
 void Level::eraseAll(){
     characters->eraseAll();
     powers->eraseAll();
-    fireballs.erase(fireballs.begin(), fireballs.end());
+    fireballs->eraseAll();
     was_genereted = 0;
 }
 
@@ -268,13 +270,13 @@ int Level::genericGameLoop()
 
 void Level::loopFireballs()
 {
-    for(unsigned int i = 0; i<fireballs.size(); i++){
-        fireballs[i]->loop();
-        isStructureCollide(static_cast<Moveable*>(fireballs[i]));
-        if(!fireballs[i]->getMoveUp()){
-            delete fireballs[i];
-            fireballs[i] = NULL;
-            fireballs.erase(fireballs.begin() + i);
+    for(unsigned int i = 0; i<fireballs->size(); i++){
+        (*fireballs)[i]->loop();
+        isStructureCollide(static_cast<Moveable*>((*fireballs)[i]));
+        if(!(*fireballs)[i]->getMoveUp()){
+            delete (*fireballs)[i];
+            //fireballs[i] = NULL;
+            fireballs->erase(i);
         }
     }
 }
@@ -283,7 +285,7 @@ void Level::createFireball(){
     for(int i = 0; i < lavas->size(); i++){
         Fireball* fire = (*lavas)[i]->createFireball();
         if(fire != NULL){
-            fireballs.push_back(fire);
+            fireballs->include(fire);
         }
     }
 }
@@ -294,6 +296,10 @@ List_Characters* Level::getListCharacters(){
 
 List_Powerups* Level::getListPowerups(){
     return powers;
+}
+
+List_Fireballs* Level::getListFireballs(){
+    return fireballs;
 }
 
 Level::~Level()

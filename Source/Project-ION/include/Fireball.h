@@ -10,6 +10,7 @@ public:
     Fireball();
     Fireball(float x, float y, BITMAP* img);
     void move(int x_move);
+    void saveState(std::ofstream& myfile);
     void setPosMatrix();
     void loop();
     bool getMoveUp();

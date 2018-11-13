@@ -21,11 +21,9 @@ public:
     Character();
     Character(float x, float y, List_Images *img);
     ~Character();
-    virtual void move(int x_move) = 0;
     virtual void setPosMatrix() = 0;
     virtual void loop() = 0;
     virtual void gravity();
-    virtual void saveState(std::ofstream& myfile) = 0;
 protected:
     std::string type;
     int current_side;

@@ -25,6 +25,10 @@ bool Fireball::getMoveUp(){
     return move_up;
 }
 
+void Fireball::saveState(std::ofstream& myfile){
+    myfile << "FIR:" << x << "," << y << "\n";
+}
+
 void Fireball::setPosMatrix(){}
 
 Fireball::~Fireball()

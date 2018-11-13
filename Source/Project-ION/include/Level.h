@@ -12,7 +12,8 @@
 #include "Moveable.h"
 #include "List_Characters.h"
 #include "List_Lavas.h"
-#include "List_Powerups.h"
+#include "List_Powerups.h"'
+#include "List_Fireballs.h"
 #include "Images.h"
 using std::cout;
 using std::endl;
@@ -37,10 +38,11 @@ public:
     int isPowerupCollide(Human* a);
     List_Characters* getListCharacters();
     List_Powerups* getListPowerups();
+    List_Fireballs* getListFireballs();
     int genericGameLoop();
     virtual int gameLoop() = 0;
     virtual void generateLevel() = 0;
-    virtual void generateLevel(List_Characters* characters, List_Powerups* powers);
+    virtual void generateLevel(List_Characters* characters, List_Powerups* powers, List_Fireballs* fires);
     virtual void resetLevel();
     void eraseAll();
     virtual void resetPlayer();
@@ -60,7 +62,7 @@ protected:
     int was_genereted;
     List_Lavas* lavas;
     List_Powerups* powers;
-    std::vector<Fireball*> fireballs;
+    List_Fireballs* fireballs;
     int iterations;
 };
 
