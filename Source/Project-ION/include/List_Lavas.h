@@ -2,6 +2,7 @@
 #define LIST_LAVAS_H
 #include <vector>
 #include "Lava.h"
+#include "List_Fireballs.h"
 
 class List_Lavas
 {
@@ -13,10 +14,10 @@ public:
     int size();
     void eraseAll();
     Lava* operator[](int index);
+    void createFireballs(List_Fireballs* fires);
     virtual ~List_Lavas();
 private:
     std::vector<Lava*> lavas;
-
 };
 
 #endif // LIST_LAVAS_H

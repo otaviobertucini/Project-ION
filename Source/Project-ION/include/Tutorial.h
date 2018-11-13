@@ -14,6 +14,7 @@ public:
     virtual void generateLevel();
     virtual ~Tutorial();
 private:
+    List_Powerups* powers;
 };
 
 #endif // TUTORIAL_H

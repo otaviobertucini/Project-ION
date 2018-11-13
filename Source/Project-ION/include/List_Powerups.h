@@ -13,6 +13,8 @@ public:
     int size();
     void erase(int i);
     void eraseAll();
+    int isCollide(Human* a);
+    void print(BITMAP* buffer);
     Powerup* operator[](int index);
     virtual ~List_Powerups();
 private:

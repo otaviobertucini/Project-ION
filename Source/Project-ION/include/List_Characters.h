@@ -1,6 +1,7 @@
 #ifndef LIST_CHARACTERS_H
 #define LIST_CHARACTERS_H
 #include "Character.h"
+#include "Human.h"
 
 class List_Characters
 {
@@ -12,7 +13,11 @@ public:
     int size();
     void erase(int i);
     void eraseAll();
+    void print(BITMAP* buffer);
+    void loop();
+    int isCollide(Human* a);
     Character* operator[](int index);
+
     virtual ~List_Characters();
 private:
     std::vector<Character*> characters;

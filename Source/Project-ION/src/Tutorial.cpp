@@ -46,9 +46,11 @@ Tutorial::Tutorial(BITMAP* buffer, Images* images, Human* jack):Level(buffer, im
         }
     }
 
-    map = new Map(m, images->getImgsMap());
-    lavas = map->getListLavas();
+    generateMap(m);
+    powers = new List_Powerups;
 
+//    map = new Map(m, images->getImgsMap());
+//    lavas = map->getListLavas();
     //powers = map->getListPowers();
     //powers = new List_Powerups;
 }
@@ -66,8 +68,10 @@ void Tutorial::generateLevel(){
 }
 
 int Tutorial::gameLoop(){
-
     game_status = genericGameLoop();
+
+    powers->print(buffer);
+    powers->isCollide(jack);
 
     if(game_status != 1)
         return game_status;
@@ -76,7 +80,6 @@ int Tutorial::gameLoop(){
         resetPlayer(-15,jack->gety());
         return 2; //next level
     }
-
     return 1;
 }
 

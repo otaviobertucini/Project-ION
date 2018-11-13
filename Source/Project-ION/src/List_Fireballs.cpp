@@ -25,6 +25,30 @@ void List_Fireballs::erase(int i){
     fireballs.erase(fireballs.begin() + i);
 }
 
+int List_Fireballs::isCollide(Human* a){
+    for(int i = 0; i < size(); i++){
+        int x_sum = (a->getw()/2)+(fireballs[i]->getw()/2);
+        int y_sum = (a->geth()/2)+(fireballs[i]->geth()/2);
+        if((abs((a->getx()+(a->getw()/2)) - (fireballs[i]->getx()+(fireballs[i]->getw()/2))) <= x_sum) &&
+            (abs((a->gety()+(a->geth()/2)) - (fireballs[i]->gety()+(fireballs[i]->geth()/2))) <= y_sum )){
+        return 1;
+        }
+    }
+    return 0;
+}
+
+void List_Fireballs::print(BITMAP* buffer){
+    for(int i = 0; i < size(); i++){
+        fireballs[i]->print(buffer);
+    }
+}
+
+void List_Fireballs::loop(){
+    for(int i = 0; i < size(); i++){
+        fireballs[i]->loop();
+    }
+}
+
 void List_Fireballs::eraseAll(){
     for(unsigned int i = 0; i<fireballs.size(); i++){
         delete fireballs[i];

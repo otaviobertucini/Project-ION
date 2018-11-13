@@ -10,6 +10,7 @@ Menu::Menu(BITMAP* buffer){
     img_back = load_bitmap("Material/back.bmp", NULL);
     cursor = load_bitmap("Material/Scenario/pack_1.bmp", NULL);
     pause_back = load_bitmap("Material/pause.bmp", NULL);
+    solo_back = load_bitmap("Material/solo_back.bmp", NULL);
 }
 
 int Menu::inicial(){
@@ -96,6 +97,27 @@ int Menu::pause(){
         }
 
         draw_sprite(buffer, cursor, 225, y_cursor);
+        blit(buffer, screen, 0, 0, 0, 0, 1080, 720);
+        clear(buffer);
+    }
+    return 0;
+}
+
+int Menu::sologame(){
+    bool exit = false;
+    while(!exit){
+        draw_sprite(buffer, solo_back, 0, 0);
+        if(key[KEY_J]){
+            return 1;
+        }
+        if(key[KEY_T]){
+            return 2;
+        }
+
+        if(key[KEY_ESC]){
+            exit = true;
+        }
+
         blit(buffer, screen, 0, 0, 0, 0, 1080, 720);
         clear(buffer);
     }

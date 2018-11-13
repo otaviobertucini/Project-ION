@@ -2,6 +2,8 @@
 #define LIST_OBSTACLES_H
 #include <vector>
 #include "Obstacle.h"
+#include "Character.h"
+#include "List_Characters.h"
 
 class List_Obstacles
 {
@@ -12,7 +14,9 @@ public:
     int empty();
     int size();
     void eraseAll();
-    Obstacle* operator[](int index);
+    int isCollide(Character* a);
+    int isCollide(List_Characters* chars);
+    void print(BITMAP* buffer);
     virtual ~List_Obstacles();
 private:
     std::vector<Obstacle*> obstacles;

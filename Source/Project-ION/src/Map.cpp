@@ -137,9 +137,6 @@ void Map::printMap(BITMAP* screen){
     for(int i = 0; i<structures.size(); i++){
         structures[i]->print(screen);
     }
-    for(int i = 0; i<obstacles.size(); i++){
-        obstacles[i]->print(screen);
-    }
 }
 
 int** Map::getMatrix(){

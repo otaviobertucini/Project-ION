@@ -1,11 +1,11 @@
 #include "SoloGame.h"
 
-SoloGame::SoloGame():Game()
-{
-    images = new Images;
-    menu1 = new Menu(buffer);
-    levels = new List_Levels;
+SoloGame::SoloGame(){}
 
+SoloGame::SoloGame(Menu* menu, BITMAP* buffer):Game()
+{
+    this->buffer = buffer;
+    menu1 = menu;
     chances = 3;
     i_level = 0;
     power_time = 0;
@@ -26,7 +26,7 @@ void SoloGame::execute()
     while(!exit)
     {
         int load_level = 0;
-        int start = menu1->inicial();
+        int start = menu1->sologame();
 
         x = 240;
         y = 140;
@@ -48,7 +48,6 @@ void SoloGame::execute()
             while(!dead){
                 exit_loop = false;
                 current = (*levels)[i_level];
-
                 if(!load_level){
                     current->generateLevel();
                     current->resetPlayer(x,y);
@@ -179,8 +178,8 @@ void SoloGame::level0(){
 
 void SoloGame::saveLevel(){
     List_Characters* characters = current->getListCharacters();
-    List_Powerups* powers = current->getListPowerups();
-    List_Fireballs* fires = current->getListFireballs();
+    //List_Powerups* powers = current->getListPowerups();
+    //List_Fireballs* fires = current->getListFireballs();
     ofstream myfile("register.txt");
     myfile << "LEV:" << i_level << "\n";
     myfile << "LIF:" << chances << "\n";
@@ -190,14 +189,14 @@ void SoloGame::saveLevel(){
         Character* c = (*characters)[i];
         c->saveState(myfile);
     }
-    for(int i = 0; i<(*powers).size(); i++){
-        Powerup* p = (*powers)[i];
-        myfile << "POW:" << p->getx() << "," << p->gety() << "\n";
-    }
-    for(int i = 0; i<(*fires).size(); i++){
-        Fireball* f = (*fires)[i];
-        f->saveState(myfile);
-    }
+//    for(int i = 0; i<(*powers).size(); i++){
+//        Powerup* p = (*powers)[i];
+//        myfile << "POW:" << p->getx() << "," << p->gety() << "\n";
+//    }
+//    for(int i = 0; i<(*fires).size(); i++){
+//        Fireball* f = (*fires)[i];
+//        f->saveState(myfile);
+//    }
 }
 
 void SoloGame::readLevel(List_Characters* characters, List_Powerups* powers, List_Fireballs* fires){
