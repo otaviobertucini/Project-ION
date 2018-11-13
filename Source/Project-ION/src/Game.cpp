@@ -8,7 +8,6 @@ Game::Game()
     show_mouse(screen);
     set_color_depth(32);
     set_gfx_mode(GFX_AUTODETECT_WINDOWED, 1080, 720, 0, 0);
-
     buffer = create_bitmap(1080, 720);
 }
 

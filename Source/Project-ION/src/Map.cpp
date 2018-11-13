@@ -8,8 +8,6 @@ Map::Map()
 Map::Map(int** matrix, List_Images *img){
     this->matrix = matrix;
     this->img = img;
-    srand(NULL);
-
     generateStructures();
 }
 
@@ -19,6 +17,8 @@ void Map::generateStructures(){
     bool downStone;
     bool leftStone;
     bool rightStone;
+
+    srand(time(NULL));
 
     for(int i = 0; i<24; i++){
         for(int j = 0; j<36; j++){
@@ -107,20 +107,27 @@ void Map::generateStructures(){
                 lavas.include(aux);
             }
             else if(matrix[i][j] == 4){
-                int side;
-                if(matrix[i-1][j] == 0){
-                    side = 21;
+
+                int aux;
+                aux = rand()%2;
+
+                if(aux == 0)
+                {
+                    int side;
+                    if(matrix[i-1][j] == 0){
+                        side = 21;
+                    }
+                    else if(matrix[i+1][j] == 0){
+                        side = 19;
+                    }
+                    else if(matrix[i][j+1] == 0){
+                        side = 22;
+                    }
+                    else if(matrix[i][j-1] == 0){
+                        side = 20;
+                    }
+                    obstacles.include(static_cast<Obstacle*>(new Spine(30*j, 30*i, (*img)[side])));
                 }
-                else if(matrix[i+1][j] == 0){
-                    side = 19;
-                }
-                else if(matrix[i][j+1] == 0){
-                    side = 22;
-                }
-                else if(matrix[i][j-1] == 0){
-                    side = 20;
-                }
-                obstacles.include(static_cast<Obstacle*>(new Spine(30*j, 30*i, (*img)[side])));
             }
         }
     }

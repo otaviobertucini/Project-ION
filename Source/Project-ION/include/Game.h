@@ -6,11 +6,13 @@
 #include <time.h>
 #include <cstddef> //library for NULL
 #include <iostream>
+#include<stdlib.h>
 #include <vector>
 #include "Images.h"
 #include "Level.h"
 #include "Map.h"
 #include "List_Levels.h"
+
 
 class Game
 {
