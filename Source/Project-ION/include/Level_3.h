@@ -14,6 +14,7 @@ public:
     void resetLevel();
     virtual ~Level_3();
 private:
+    List_Fireballs* fireballs;
 };
 
 #endif // LEVEL_3_H

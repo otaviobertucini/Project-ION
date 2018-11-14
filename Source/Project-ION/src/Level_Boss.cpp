@@ -47,8 +47,7 @@ Level_Boss::Level_Boss(BITMAP* buffer, Images* images, Human* jack):Level(buffer
         }
     }
 
-    map = new Map(m, images->getImgsMap());
-    lavas = map->getListLavas();
+    generateMap(m);
 }
 
 int Level_Boss::gameLoop(){

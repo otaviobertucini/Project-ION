@@ -49,14 +49,34 @@ Level_5::Level_5(BITMAP* buffer, Images* images, Human* jack):Level(buffer, imag
         }
     }
 
-    map = new Map(m, images->getImgsMap());
-    lavas = map->getListLavas();
+    fireballs = new List_Fireballs;
+    generateMap(m);
 }
 
 int Level_5::gameLoop(){
 
 
     game_status = genericGameLoop();
+
+    if(iterations % 4 == 0){
+        fireballs->print(buffer);
+    }
+
+    if(iterations % 7 == 0){
+        lavas->createFireballs(fireballs);
+    }
+
+    if(iterations == 3){
+        structures->isCollide(fireballs);
+        fireballs->loop();
+    }
+
+    if(iterations == 5){
+        if(fireballs->isCollide(jack)){
+            return 0;
+        }
+    }
+
     if(game_status != 1)
         return game_status;
 

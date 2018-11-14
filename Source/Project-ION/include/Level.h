@@ -48,7 +48,6 @@ public:
     virtual void resetPlayer(float x, float y);
     void loopPowerups();
 protected:
-    Map* map; //Pointer to the level map.
     BITMAP* buffer; //Pointer to the display where all components will be shown.
     Human* jack;
     List_Characters* characters;

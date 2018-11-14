@@ -6,7 +6,6 @@ Level::Level()
 }
 
 Level::Level(BITMAP* buffer, Images *images, Human* jack){
-    map = NULL;
     this->buffer = buffer;
     this->images = images;
     characters = new List_Characters;
@@ -209,10 +208,6 @@ void Level::generateMap(int** matrix){
 void Level::printMap(){
     structures->print(buffer);
     obstacles->print(buffer);
-}
-
-int Level::getValueMap(int i, int j){
-    return map->getValueMap(i, j);
 }
 
 float Level::getXInitial()

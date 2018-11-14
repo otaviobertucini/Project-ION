@@ -15,7 +15,7 @@ void Lava::setPosMatrix(){}
 void Lava::loop(){}
 
 Fireball* Lava::createFireball(){
-    int num = rand()%500;
+    int num = rand()%5000;
     if(num == 69){
         int rand_size = rand()%30;
         BITMAP* img = load_bitmap("Material/Enemy/fireball.bmp", NULL);
