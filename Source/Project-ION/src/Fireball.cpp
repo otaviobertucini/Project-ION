@@ -13,7 +13,7 @@ Fireball::Fireball(float x, float y, BITMAP* img):Moveable(x, y){
 
 void Fireball::move(int x_move){
     if(move_up){
-        y -= 0.6;
+        y -= 0.2;
     }
 }
 

@@ -21,6 +21,15 @@ Lava* List_Lavas::operator[](int index){
     return lavas[index];
 }
 
+void List_Lavas::createFireballs(List_Fireballs* fires){
+    for(int i = 0; i < size(); i++){
+        Fireball* fire = lavas[i]->createFireball();
+        if(fire != NULL){
+            fires->include(fire);
+        }
+    }
+}
+
 void List_Lavas::eraseAll(){
     lavas.erase(lavas.begin(), lavas.end());
 }

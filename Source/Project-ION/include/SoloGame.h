@@ -23,7 +23,6 @@
 #include "Level_5.h"
 #include "Level_6.h"
 #include "Level_Boss.h"
-#include "Menu.h"
 
 using std::cout;
 using std::endl;
@@ -32,6 +31,7 @@ class SoloGame: public Game
 {
 public:
     SoloGame();
+    SoloGame(Menu* menu, BITMAP* buffer);
     ~SoloGame();
     void menu();
     void execute();
@@ -41,7 +41,6 @@ public:
     void deleteLevels();
     void level0();
 private:
-    Menu* menu1;
     int chances;
     int i_level;
     Human* jack;

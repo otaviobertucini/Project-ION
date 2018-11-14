@@ -35,7 +35,7 @@ Level_2::Level_2(BITMAP* buffer, Images* images, Human* jack):Level(buffer, imag
         {0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0},
         {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0},
         {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 3, 3, 3, 3, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 3, 2, 2, 3, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0},
         {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0}
     };
 
@@ -47,14 +47,34 @@ Level_2::Level_2(BITMAP* buffer, Images* images, Human* jack):Level(buffer, imag
         }
     }
 
-    map = new Map(m, images->getImgsMap());
-    lavas = map->getListLavas();
+    fireballs = new List_Fireballs;
+    generateMap(m);
 }
 
 int Level_2::gameLoop()
 {
 
     game_status = genericGameLoop();
+
+    if(iterations % 4 == 0){
+        fireballs->print(buffer);
+    }
+
+    if(iterations % 7 == 0){
+        lavas->createFireballs(fireballs);
+    }
+
+    if(iterations == 3){
+        structures->isCollide(fireballs);
+        fireballs->loop();
+    }
+
+    if(iterations == 5){
+        if(fireballs->isCollide(jack)){
+            return 0;
+        }
+    }
+
     if(game_status != 1)
         return game_status;
 
@@ -137,14 +157,11 @@ void Level_2::generateLevel(){
             characters->include(static_cast<Character*>(batman4));
         }
 
-        //if(rand()%2 == 0)
-        //{
+        if(rand()%2 == 0)
+        {
             Bat* batman5 = new Bat(800,60,images->getImgsBat(),1,1,60,210);
             characters->include(static_cast<Character*>(batman5));
-        //}
-//
-//        Bat* batman2 = new Bat(200, 450, images->getImgsBat());
-//        characters->include(batman2);
+        }
         was_genereted = 1;
     }
 }

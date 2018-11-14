@@ -1,5 +1,6 @@
 #ifndef LAVA_H
 #define LAVA_H
+#include "time.h"
 #include "Obstacle.h"
 #include "Fireball.h"
 

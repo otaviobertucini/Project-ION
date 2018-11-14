@@ -5,12 +5,14 @@
 #include <iostream>
 #include "Level.h"
 #include "SoloGame.h"
+
+#include "Main.h"
 using std::cout;
 using std::endl;
 
 int main() {
 
-    SoloGame game;
+    Main game;
     game.execute();
     return 0;
 }

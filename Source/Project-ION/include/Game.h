@@ -12,6 +12,7 @@
 #include "Level.h"
 #include "Map.h"
 #include "List_Levels.h"
+#include "Menu.h"
 
 
 class Game
@@ -25,6 +26,7 @@ protected:
     BITMAP* buffer;
     Images *images;
     Level *current;
+    Menu* menu1;
 };
 
 #endif // GAME_H

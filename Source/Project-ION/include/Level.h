@@ -14,6 +14,8 @@
 #include "List_Lavas.h"
 #include "List_Powerups.h"'
 #include "List_Fireballs.h"
+#include "List_Obstacles.h"
+#include "List_Structures.h"
 #include "Images.h"
 using std::cout;
 using std::endl;
@@ -25,15 +27,12 @@ public:
     Level(BITMAP* buffer, Images *images, Human* jack);
     virtual ~Level();
     void printMap();
-    void updatePosition();
     int getValueMap(int i, int j);
     float getXInitial();
     float getYInitial();
+    void generateMap(int** matrix);
     int isCollide(Entity* a, Entity* b);
     void isStructureCollide(Moveable* a);
-    void loopCharacters();
-    int isCharacterCollide(Human* a);
-    int isObstacleCollide(Character* a);
     int isFireballCollide(Character* a);
     int isPowerupCollide(Human* a);
     List_Characters* getListCharacters();
@@ -47,8 +46,6 @@ public:
     void eraseAll();
     virtual void resetPlayer();
     virtual void resetPlayer(float x, float y);
-    void loopFireballs();
-    void createFireball();
     void loopPowerups();
 protected:
     Map* map; //Pointer to the level map.
@@ -60,10 +57,11 @@ protected:
     float y_initial;
     int game_status;
     int was_genereted;
+    List_Obstacles* obstacles;
+    List_Structures* structures;
     List_Lavas* lavas;
-    List_Powerups* powers;
-    List_Fireballs* fireballs;
     int iterations;
+    FONT* font_main;
 };
 
 #endif // LEVEL_H
