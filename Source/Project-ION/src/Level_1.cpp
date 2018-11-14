@@ -21,8 +21,8 @@ Level_1::Level_1(BITMAP* buffer, Images* images, Human* jack):Level(buffer, imag
         {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0},
         {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0},
         {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
-        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
-        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
         {0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0},
         {0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0},
         {0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0},
@@ -32,7 +32,7 @@ Level_1::Level_1(BITMAP* buffer, Images* images, Human* jack):Level(buffer, imag
         {0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0},
         {0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0},
         {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0},
-        {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0},
+        {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 0, 0},
         {1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0},
         {1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0},
         {1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0},
@@ -72,7 +72,73 @@ int Level_1::gameLoop(){
 }
 
 void Level_1::generateLevel(){
+
     resetLevel();
+
+    if(!was_genereted)
+    {
+        if(rand()%2 == 0)
+        {
+            Topspin* top = new Topspin(330, 190, images->getImgsTopspin());
+            characters->include(static_cast<Character*>(top));
+        }
+
+        if(rand()%2 == 0)
+        {
+            Topspin* top2 = new Topspin(440, 190, images->getImgsTopspin(),-1);
+            characters->include(static_cast<Character*>(top2));
+        }
+
+        if(rand()%2 == 0)
+        {
+            Topspin* top3 = new Topspin(940, 530, images->getImgsTopspin(),-1);
+            characters->include(static_cast<Character*>(top3));
+        }
+
+        if(rand()%2 == 0)
+        {
+            Topspin* top4 = new Topspin(910, 530, images->getImgsTopspin());
+            characters->include(static_cast<Character*>(top4));
+        }
+
+        if(rand()%2 == 0)
+        {
+            Topspin* top5 = new Topspin(540, 530, images->getImgsTopspin());
+            characters->include(static_cast<Character*>(top5));
+        }
+
+        if(rand()%2 == 0)
+        {
+            Bat* batman1 = new Bat(210,240,images->getImgsBat(),1,1,270,80);
+            characters->include(static_cast<Character*>(batman1));
+        }
+
+        if(rand()%2 == 0)
+        {
+            Bat* batman2 = new Bat(480,240,images->getImgsBat(),-1,1,270,80);
+            characters->include(static_cast<Character*>(batman2));
+        }
+
+        if(rand()%2 == 0)
+        {
+            Bat* batman3 = new Bat(390,60,images->getImgsBat(),1,1,390,40);
+            characters->include(static_cast<Character*>(batman3));
+        }
+
+        if(rand()%2 == 0)
+        {
+            Bat* batman4 = new Bat(780,60,images->getImgsBat(),-1,1,390,40);
+            characters->include(static_cast<Character*>(batman4));
+        }
+
+        if(rand()%2 == 0)
+        {
+            Bat* batman5 = new Bat(810,60,images->getImgsBat(),1,1,60,390);
+            characters->include(static_cast<Character*>(batman5));
+        }
+
+        was_genereted = 1;
+    }
 }
 
 void Level_1::generateLevel(List_Characters* characters){

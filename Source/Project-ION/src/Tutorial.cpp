@@ -57,8 +57,6 @@ void Tutorial::generateLevel(){
 
     resetLevel();
     if(!was_genereted){
-        Bat* bat = new Bat(450, 360, images->getImgsBat(),-1,1);
-        characters->include(static_cast<Character*>(bat));
         List_Images* aux = images->getImgsMap();
         powers->include(static_cast<Powerup*>(new Birl(840, 630, (*aux)[23])));
         was_genereted = 1;
