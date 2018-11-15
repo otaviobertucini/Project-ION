@@ -9,19 +9,11 @@ Boss::Boss(float x, float y, List_Images* img, Human* jack):Enemy(x, y, img), sp
     h = 70;
     w = 70;
     this->jack = jack;
+    timer = 2001;
+    last_poison = 0;
 }
 
 void Boss::move(int x_move){
-
-    if(x_move == -1)
-        y -= speed;
-    else if(x_move == 1)
-        y += speed;
-}
-
-void Boss::loop(){
-    //cout << "loop em andamento" << endl;
-
     int y_move;
 
     if(jack->gety() > 120 )
@@ -35,8 +27,42 @@ void Boss::loop(){
     }
     else
         y_move = 0;
-    move(y_move);
-   // move()
+
+    if(y_move == -1)
+        y -= speed;
+    else if(y_move == 1)
+        y += speed;
+}
+
+void Boss::loop(){
+    if(last_poison != 0){
+        timer = (clock() - last_poison)/double(CLOCKS_PER_SEC)*1000;
+    }
+    verifyDirection();
+    move(0);
+}
+
+void Boss::createPoison(List_Poisons* poisons){
+    if(abs(jack->gety() - y) <= 10 && timer > 2000){
+        last_poison = clock();
+        timer = 0;
+        BITMAP* img = load_bitmap("Material/Enemy/poison.bmp", NULL);
+        Poison* p = new Poison(side_ball, y + h/2, img, direction);
+        poisons->include(p);
+    }
+}
+
+void Boss::verifyDirection(){
+    if(jack->getx() > x + w/2){
+        direction = -1;
+        side_ball = x+w;
+        current_img = (*img)[2];
+    }
+    else{
+        direction = 1;
+        side_ball = x;
+        current_img = (*img)[0];
+    }
 }
 
 void Boss::saveState(std::ofstream& myfile) const{}

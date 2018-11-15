@@ -4,6 +4,7 @@
 #include "Moveable.h"
 #include "List_Characters.h"
 #include "List_Fireballs.h"
+#include "List_Poisons.h"
 
 class List_Structures
 {
@@ -17,6 +18,7 @@ public:
     int isCollide(Moveable* a);
     int isCollide(List_Characters* chars);
     int isCollide(List_Fireballs* fires);
+    int isCollide(List_Poisons* poisons);
     Structure* operator[](int index);
     virtual ~List_Structures();
 private:

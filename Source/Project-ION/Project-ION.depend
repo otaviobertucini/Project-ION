@@ -157,10 +157,10 @@
 1542304222 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Game.cpp
 	"Game.h"
 
-1542303507 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Images.cpp
+1542310353 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Images.cpp
 	"Images.h"
 
-1542304391 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/SoloGame.cpp
+1542307076 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/SoloGame.cpp
 	"SoloGame.h"
 
 1542301720 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/Entity.h
@@ -182,15 +182,16 @@
 	<vector>
 	"List.h"
 
-1542306858 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/List.h
+1542314375 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/List.h
 	<cstddef>
 	<iostream>
 
-1542304878 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/List_Structures.h
+1542312459 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/List_Structures.h
 	"Structure.h"
 	"Moveable.h"
 	"List_Characters.h"
 	"List_Fireballs.h"
+	"List_Poisons.h"
 
 1542305720 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/Structure.h
 	<math.h>
@@ -199,7 +200,7 @@
 1542304409 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/Stone.h
 	"Structure.h"
 
-1542204826 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/List_Structures.cpp
+1542313676 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/List_Structures.cpp
 	"List_Structures.h"
 
 1542304412 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Stone.cpp
@@ -548,7 +549,7 @@
 	"Enemy.h"
 	"Moveable.h"
 
-1542302518 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Fireball.cpp
+1542308254 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Fireball.cpp
 	"Fireball.h"
 
 1542306088 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/List_Lavas.h
@@ -557,7 +558,7 @@
 	"List_Fireballs.h"
 	"List.h"
 
-1542306827 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/List_Lavas.cpp
+1542308637 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/List_Lavas.cpp
 	"List_Lavas.h"
 
 1541421499 s.h"
@@ -697,10 +698,11 @@
 	"Topspin.h"
 	"Bat.h"
 
-1542243524 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/Level_Boss.h
+1542310726 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/Level_Boss.h
 	"Level.h"
 	"Level_Boss.h"
 	"Boss.h"
+	"List_Poisons.h"
 
 1542300766 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Level_5.cpp
 	"Level_5.h"
@@ -708,7 +710,7 @@
 1542300766 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Level_6.cpp
 	"Level_6.h"
 
-1542245066 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Level_Boss.cpp
+1542313742 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Level_Boss.cpp
 	"Level_Boss.h"
 
 1542243524 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Level_4_1.cpp
@@ -832,12 +834,15 @@
 1542195699 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\main.cpp
 	"Main.h"
 
-1542302304 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/Boss.h
+1542311048 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/Boss.h
 	"Enemy.h"
 	"Human.h"
+	"List_Poisons.h"
+	"Poison.h"
 	<fstream>
+	<ctime>
 
-1542302348 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Boss.cpp
+1542311902 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Boss.cpp
 	"Boss.h"
 
 1542242174 11b40ad2ee0d43911828bfc83d6e2b3daa99b
@@ -849,4 +854,19 @@
 
 1542248274 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\boss.cpp
 	"Boss.h"
+
+1542313829 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/List_Poisons.h
+	"List.h"
+	"Poison.h"
+	"Human.h"
+
+1542312830 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/Poison.h
+	"Moveable.h"
+	<fstream>
+
+1542313918 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/List_Poisons.cpp
+	"List_Poisons.h"
+
+1542312881 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Poison.cpp
+	"Poison.h"
 

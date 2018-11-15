@@ -31,4 +31,5 @@ void Fireball::saveState(std::ofstream& myfile) const{
 
 Fireball::~Fireball()
 {
+    destroy_bitmap(current_img);
 }

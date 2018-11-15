@@ -49,6 +49,9 @@ Images::Images()
     //loads images from boss
     imgsBoss = new List_Images;
     imgsBoss->include(load_bitmap("Material/Enemy/boss_1.bmp", NULL));
+    imgsBoss->include(load_bitmap("Material/Enemy/boss_2.bmp", NULL));
+    imgsBoss->include(load_bitmap("Material/Enemy/boss_3.bmp", NULL));
+    imgsBoss->include(load_bitmap("Material/Enemy/boss_4.bmp", NULL));
 }
 
 List_Images* Images::getImgsJack(){
