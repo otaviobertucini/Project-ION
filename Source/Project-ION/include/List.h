@@ -8,34 +8,48 @@ using std::endl;
 template<class TYPE>
 class List
 {
-    public:
-        List();
-        virtual ~List();
-        void include(TYPE newe);
-        void go();
+public:
+    List();
+    virtual ~List();
+    void include(TYPE newe);
+    void go();
+    int size();
+    void clear();
 
-        //template<class TYPE>
-        class Element{
-            private:
-                Element* next;
-                TYPE data;
-            public:
-                Element();
-                void setNext(Element* n);
-                Element* getNext() {return next;}
-                void setData(TYPE d);
-                TYPE getData();
-        };
+    class Element{
+        private:
+            Element* next;
+            TYPE data;
+        public:
+            Element();
+            void setNext(Element* n);
+            Element* getNext() {return next;}
+            void setData(TYPE d);
+            TYPE getData();
+            ~Element();
+    };
 
-    private:
-        Element* first;
-        Element* current;
+    TYPE at(int i){
+        Element* aux = first;
+        for(int j = 0; j < i; j++){
+            aux = aux->getNext();
+        }
+        return aux->getData();
+    }
+
+private:
+    Element* first;
+    Element* current;
+    int sizee;
 };
 
 template<class TYPE>
 List<TYPE>::Element::Element(){
     next = NULL;
 }
+
+template<class TYPE>
+List<TYPE>::Element::~Element(){}
 
 template<class TYPE>
 void List<TYPE>::Element::setNext(Element* n){
@@ -52,16 +66,15 @@ TYPE List<TYPE>::Element::getData(){
     return data;
 }
 
-//template<class TYPE>
-//List<TYPE>::Element *List<TYPE>::Element::getNext(){
-//    return next;
-//}
-
 template<class TYPE>
 List<TYPE>::List(){
     first = NULL;
     current = NULL;
+    sizee = 0;
 }
+
+template<class TYPE>
+List<TYPE>::~List(){}
 
 template<class TYPE>
 void List<TYPE>::include(TYPE newe){
@@ -75,14 +88,24 @@ void List<TYPE>::include(TYPE newe){
         current->setNext(aux);
         current = aux;
     }
+    sizee++;
 }
 
 template<class TYPE>
-void List<TYPE>::go(){
+int List<TYPE>::size(){
+    return sizee;
+}
+
+template<class TYPE>
+void List<TYPE>::clear(){
     List<TYPE>::Element* aux = first;
+    List<TYPE>::Element* aux2;
     while(aux != NULL){
-        cout << aux->getData() << endl;
-        aux = aux->getNext();
+        aux2 = aux->getNext();
+        delete aux;
+        aux = NULL;
+        sizee--;
+        aux = aux2;
     }
 }
 

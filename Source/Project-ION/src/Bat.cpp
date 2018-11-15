@@ -1,6 +1,6 @@
 #include "Bat.h"
 
-Bat::Bat():x_distance(x_distance), y_distance(y_distance)
+Bat::Bat():x_distance(0), y_distance(0)
 {
     //ctor
 }

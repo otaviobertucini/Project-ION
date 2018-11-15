@@ -3,21 +3,20 @@
 #include <vector>
 #include "Lava.h"
 #include "List_Fireballs.h"
+#include "List.h"
 
 class List_Lavas
 {
 public:
     List_Lavas();
     void include(Lava* newl);
-    void deleteAll();
-    int empty();
     int size();
     void eraseAll();
     Lava* operator[](int index);
     void createFireballs(List_Fireballs* fires);
     virtual ~List_Lavas();
 private:
-    std::vector<Lava*> lavas;
+    List<Lava*> lavas;
 };
 
 #endif // LIST_LAVAS_H
