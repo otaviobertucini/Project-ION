@@ -1,6 +1,7 @@
 #ifndef LEVEL_BOSS_H
 #define LEVEL_BOSS_H
 #include "Level.h"
+#include "Level_Boss.h"
 
 class Level_Boss: public Level
 {

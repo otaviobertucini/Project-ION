@@ -2,6 +2,7 @@
 #define LEVEL_3_H
 #include "Level.h"
 #include "Topspin.h"
+#include "Bat.h"
 
 class Level_3: public Level
 {
@@ -14,6 +15,7 @@ public:
     void resetLevel();
     virtual ~Level_3();
 private:
+    List_Fireballs* fireballs;
 };
 
 #endif // LEVEL_3_H

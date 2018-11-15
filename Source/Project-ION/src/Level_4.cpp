@@ -25,10 +25,10 @@ Level_4::Level_4(BITMAP* buffer, Images* images, Human* jack):Level(buffer, imag
         {0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 4, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0},
         {0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 4, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0},
         {0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 4, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-        {0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 4, 1, 1, 1, 4, 4, 1, 1, 1, 1, 1, 0, 0},
+        {0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0},
         {0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0},
         {0, 0, 0, 1, 1, 1, 4, 4, 4, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0},
-        {0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0},
+        {0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0},
         {0, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0},
         {0, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0},
         {0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0},
@@ -47,8 +47,7 @@ Level_4::Level_4(BITMAP* buffer, Images* images, Human* jack):Level(buffer, imag
         }
     }
 
-    map = new Map(m, images->getImgsMap());
-    lavas = map->getListLavas();
+    generateMap(m);
 }
 
 int Level_4::gameLoop(){
@@ -74,7 +73,79 @@ int Level_4::gameLoop(){
     return 1;
 }
 
-void Level_4::generateLevel(){}
+void Level_4::generateLevel(List_Characters* characters){
+    this->characters = characters;
+    was_genereted = 1;
+}
+
+void Level_4::generateLevel(){
+
+    resetLevel();
+    if(!was_genereted){
+
+        if(rand()%2 == 0)
+        {
+            Topspin* top1 = new Topspin(90, 670, images->getImgsTopspin(),1);
+            characters->include(static_cast<Character*>(top1));
+        }
+
+        if(rand()%2 == 0)
+        {
+            Topspin* top2 = new Topspin(950, 670, images->getImgsTopspin(),-1);
+            characters->include(static_cast<Character*>(top2));
+        }
+
+        if(rand()%2 == 0)
+        {
+            Topspin* top3 = new Topspin(480, 670, images->getImgsTopspin(),-1);
+            characters->include(static_cast<Character*>(top3));
+        }
+
+        if(rand()%2 == 0)
+        {
+            Topspin* top4 = new Topspin(520, 670, images->getImgsTopspin(),1);
+            characters->include(static_cast<Character*>(top4));
+        }
+
+        if(rand()%2 == 0)
+        {
+            Topspin* top5 = new Topspin(750, 450, images->getImgsTopspin(),-1);
+            characters->include(static_cast<Character*>(top5));
+        }
+
+        if(rand()%2 == 0)
+        {
+            Bat* batman1 = new Bat(420,240,images->getImgsBat(),1,1,200,90);
+            characters->include(static_cast<Character*>(batman1));
+        }
+
+        if(rand()%2 == 0)
+        {
+            Bat* batman2 = new Bat(620,240,images->getImgsBat(),-1,1,200,90);
+            characters->include(static_cast<Character*>(batman2));
+        }
+
+        if(rand()%2 == 0)
+        {
+            Bat* batman3 = new Bat(90,240,images->getImgsBat(),1,1,120,120);
+            characters->include(static_cast<Character*>(batman3));
+        }
+
+        if(rand()%2 == 0)
+        {
+            Bat* batman4 = new Bat(240,480,images->getImgsBat(),1,1,70,90);
+            characters->include(static_cast<Character*>(batman4));
+        }
+
+        if(rand()%2 == 0)
+        {
+            Bat* batman5 = new Bat(810,30,images->getImgsBat(),1,1,110,180);
+            characters->include(static_cast<Character*>(batman5));
+        }
+
+        was_genereted = 1;
+    }
+}
 
 void Level_4::resetLevel(){}
 

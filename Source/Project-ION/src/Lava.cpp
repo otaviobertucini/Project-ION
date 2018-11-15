@@ -15,9 +15,8 @@ void Lava::setPosMatrix(){}
 void Lava::loop(){}
 
 Fireball* Lava::createFireball(){
-    int num = rand()%5000;
 
-
+    int num = rand()%4000;
 
     if(num == 0){
         int rand_size = rand()%30;
