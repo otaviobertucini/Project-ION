@@ -4,15 +4,18 @@
 #include <cstddef> //library for NULL
 #include <iostream>
 #include <vector>
+#include <fstream>
 #include "Map.h"
 #include "Character.h"
+#include "Topspin.h"
+#include "Bat.h"
 #include "Human.h"
 #include "List_Images.h"
 #include "Entity.h"
 #include "Moveable.h"
 #include "List_Characters.h"
 #include "List_Lavas.h"
-#include "List_Powerups.h"'
+#include "List_Powerups.h"
 #include "List_Fireballs.h"
 #include "List_Obstacles.h"
 #include "List_Structures.h"
@@ -41,12 +44,12 @@ public:
     int genericGameLoop();
     virtual int gameLoop() = 0;
     virtual void generateLevel() = 0;
-    virtual void generateLevel(List_Characters* characters, List_Powerups* powers, List_Fireballs* fires);
     virtual void resetLevel();
-    void eraseAll();
+    virtual void eraseAll();
     virtual void resetPlayer();
     virtual void resetPlayer(float x, float y);
-    void loopPowerups();
+    virtual void saveLevel(std::ofstream& myfile);
+    virtual void loadLevel(ifstream& file);
 protected:
     BITMAP* buffer; //Pointer to the display where all components will be shown.
     Human* jack;

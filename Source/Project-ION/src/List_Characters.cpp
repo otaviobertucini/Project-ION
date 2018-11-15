@@ -67,6 +67,12 @@ void List_Characters::deleteAll(){
     characters.clear();
 }
 
+void List_Characters::saveLevel(std::ofstream& myfile){
+    for(int i = 0; i < size(); i++){
+        characters[i]->saveState(myfile);
+    }
+}
+
 List_Characters::~List_Characters()
 {
     //dtor

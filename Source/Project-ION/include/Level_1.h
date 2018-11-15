@@ -12,7 +12,8 @@ public:
     int gameLoop();
     void generateLevel();
     void generateLevel(List_Characters* characters);
-    void resetLevel();
+    void saveLevel(std::ofstream& myfile);
+    void eraseAll();
     virtual ~Level_1();
 private:
     List_Fireballs* fireballs;

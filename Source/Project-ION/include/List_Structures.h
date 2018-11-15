@@ -20,7 +20,8 @@ public:
     Structure* operator[](int index);
     virtual ~List_Structures();
 private:
-    List<Structure*> structures;
+    //List<Structure*> structures;
+    std::vector<Structure*> structures;
 };
 
 #endif // LIST_STRUCTURES_H

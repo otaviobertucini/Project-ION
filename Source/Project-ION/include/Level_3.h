@@ -13,6 +13,7 @@ public:
     void generateLevel();
     void generateLevel(List_Characters* characters);
     void resetLevel();
+    void eraseAll();
     virtual ~Level_3();
 private:
     List_Fireballs* fireballs;

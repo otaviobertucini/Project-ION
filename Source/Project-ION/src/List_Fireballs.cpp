@@ -65,6 +65,12 @@ void List_Fireballs::deleteAll(){
     fireballs.clear();
 }
 
+void List_Fireballs::saveLevel(std::ofstream& myfile){
+    for(int i = 0; i < size(); i++){
+        fireballs[i]->saveState(myfile);
+    }
+}
+
 List_Fireballs::~List_Fireballs()
 {
     //dtor

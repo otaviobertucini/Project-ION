@@ -96,6 +96,12 @@ void Level_6::generateLevel(){}
 
 void Level_6::resetLevel(){}
 
+void Level_6::eraseAll(){
+    characters->eraseAll();
+    fireballs->eraseAll();
+    was_genereted = 0;
+}
+
 Level_6::~Level_6()
 {
     //dtor

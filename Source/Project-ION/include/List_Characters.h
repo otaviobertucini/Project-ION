@@ -16,8 +16,8 @@ public:
     void print(BITMAP* buffer);
     void loop();
     int isCollide(Human* a);
+    void saveLevel(std::ofstream& myfile);
     Character* operator[](int index);
-
     virtual ~List_Characters();
 private:
     std::vector<Character*> characters;

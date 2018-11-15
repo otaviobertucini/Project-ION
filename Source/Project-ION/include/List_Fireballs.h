@@ -18,6 +18,7 @@ public:
     int isCollide(Human* a);
     void print(BITMAP* buffer);
     void loop();
+    void saveLevel(std::ofstream& myfile);
     virtual ~List_Fireballs();
 private:
     std::vector<Fireball*> fireballs;

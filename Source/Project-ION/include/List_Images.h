@@ -16,7 +16,7 @@ public:
     BITMAP* operator[](int index);
     virtual ~List_Images();
 private:
-    List<BITMAP*> images;
+    std::vector<BITMAP*> images;
 };
 
 #endif // LIST_IMAGES_H
