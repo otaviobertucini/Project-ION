@@ -5,7 +5,6 @@
 #include <iostream>
 #include <vector>
 #include <fstream>
-#include "Map.h"
 #include "Character.h"
 #include "Topspin.h"
 #include "Bat.h"
@@ -13,6 +12,9 @@
 #include "List_Images.h"
 #include "Entity.h"
 #include "Moveable.h"
+#include "Stone.h"
+#include "Spine.h"
+#include "Birl.h"
 #include "List_Characters.h"
 #include "List_Lavas.h"
 #include "List_Powerups.h"
@@ -30,11 +32,9 @@ public:
     Level(BITMAP* buffer, Images *images, Human* jack);
     virtual ~Level();
     void printMap();
-    int getValueMap(int i, int j);
-    float getXInitial();
-    float getYInitial();
+    const float getXInitial();
+    const float getYInitial();
     void generateMap(int** matrix);
-    int isCollide(Entity* a, Entity* b);
     void isStructureCollide(Moveable* a);
     int isFireballCollide(Character* a);
     int isPowerupCollide(Human* a);
@@ -48,7 +48,7 @@ public:
     virtual void eraseAll();
     virtual void resetPlayer();
     virtual void resetPlayer(float x, float y);
-    virtual void saveLevel(std::ofstream& myfile);
+    virtual void saveLevel(std::ofstream& myfile) const;
     virtual void loadLevel(ifstream& file);
 protected:
     BITMAP* buffer; //Pointer to the display where all components will be shown.

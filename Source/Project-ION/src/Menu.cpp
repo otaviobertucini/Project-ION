@@ -126,5 +126,8 @@ int Menu::sologame(){
 
 Menu::~Menu()
 {
-    //dtor
+    destroy_bitmap(img_back);
+    destroy_bitmap(cursor);
+    destroy_bitmap(pause_back);
+    destroy_bitmap(solo_back);
 }

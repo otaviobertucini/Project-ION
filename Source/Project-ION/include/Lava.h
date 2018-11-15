@@ -9,8 +9,6 @@ class Lava: public Obstacle
 public:
     Lava();
     Lava(float x, float y, BITMAP* current_img);
-    void setPosMatrix();
-    void loop();
     Fireball* createFireball();
     virtual ~Lava();
 private:

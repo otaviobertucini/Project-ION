@@ -11,11 +11,11 @@ public:
     Boss(float x, float y, List_Images* img, Human* jack);
     void move(int x_move);
     void loop();
-    void saveState(std::ofstream& file);
+    void saveState(std::ofstream& file) const;
     virtual ~Boss();
 private:
     Human* jack;
-    float velocidade;
+    const float speed;
 };
 
 #endif // BOSS_H

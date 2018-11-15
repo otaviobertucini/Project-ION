@@ -1,23 +1,22 @@
 #include "Boss.h"
 
-Boss::Boss()
+Boss::Boss(): speed(0.25)
 {
     //ctor
 }
 
-Boss::Boss(float x, float y, List_Images* img, Human* jack):Enemy(x, y, img){
+Boss::Boss(float x, float y, List_Images* img, Human* jack):Enemy(x, y, img), speed(0.25){
     h = 70;
     w = 70;
     this->jack = jack;
-    velocidade = 0.25;
 }
 
 void Boss::move(int x_move){
 
     if(x_move == -1)
-        y -= velocidade;
+        y -= speed;
     else if(x_move == 1)
-        y += velocidade;
+        y += speed;
 }
 
 void Boss::loop(){
@@ -40,7 +39,7 @@ void Boss::loop(){
    // move()
 }
 
-void Boss::saveState(std::ofstream& myfile){}
+void Boss::saveState(std::ofstream& myfile) const{}
 
 Boss::~Boss()
 {

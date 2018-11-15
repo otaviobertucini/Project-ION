@@ -11,6 +11,6 @@ Game::~Game()
 {
     delete images;
     images = NULL;
-    destroy_bitmap(buffer);
+    buffer = NULL;
     current = NULL;
 }

@@ -15,37 +15,32 @@ BITMAP* Entity::getCurrentImg(){
     return current_img;
 }
 
-float Entity::getx()
+const float Entity::getx() const
 {
     return x;
 }
 
-float Entity::gety()
+const float Entity::gety() const
 {
     return y;
 }
 
-int Entity::getw()
+const int Entity::getw() const
 {
     return w;
 }
 
-int Entity::geth()
+const int Entity::geth() const
 {
     return h;
 }
 
-void Entity::sety(float new_y){
+void Entity::sety(const float new_y){
     y = new_y;
 }
 
-void Entity::setx(float new_x){
+void Entity::setx(const float new_x){
     x = new_x;
-}
-
-void Entity::getPosMatrix(int* i, int* j){
-    *i = i_pos;
-    *j = j_pos;
 }
 
 //Shows on screen the images in the images vector.

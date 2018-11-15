@@ -11,8 +11,6 @@ Stone::Stone(float x, float y, BITMAP* current_img):
     w = 30;
 }
 
-void Stone::loop(){}
-
 Stone::~Stone()
 {
     //dtor

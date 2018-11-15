@@ -10,7 +10,6 @@
 #include <vector>
 #include "Images.h"
 #include "Level.h"
-#include "Map.h"
 #include "List_Levels.h"
 #include "Menu.h"
 

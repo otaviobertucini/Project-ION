@@ -80,4 +80,7 @@ Images::~Images()
     imgsJack->deleteAll();
     imgsMap->deleteAll();
     imgsTopspin->deleteAll();
+    imgsFireball->deleteAll();
+    imgsBat->deleteAll();
+    imgsBoss->deleteAll();
 }

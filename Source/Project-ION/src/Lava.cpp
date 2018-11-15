@@ -10,10 +10,6 @@ Lava::Lava(float x, float y, BITMAP* current_img):Obstacle(x, y, current_img){
     h = 30;
 }
 
-void Lava::setPosMatrix(){}
-
-void Lava::loop(){}
-
 Fireball* Lava::createFireball(){
 
     int num = rand()%4000;

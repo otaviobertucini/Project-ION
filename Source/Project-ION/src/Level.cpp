@@ -19,16 +19,6 @@ Level::Level(BITMAP* buffer, Images *images, Human* jack){
     font_main = load_font("Fonts/ImpactFont.pcx", NULL, NULL);
 }
 
-int Level::isCollide(Entity* a, Entity* b){
-    int x_sum = (a->getw()/2)+(b->getw()/2);
-    int y_sum = (a->geth()/2)+(b->geth()/2);
-    if((abs((a->getx()+(a->getw()/2)) - (b->getx()+(b->getw()/2))) <= x_sum) &&
-       (abs((a->gety()+(a->geth()/2)) - (b->gety()+(b->geth()/2))) <= y_sum )){
-        return 1;
-    }
-    return 0;
-}
-
 void Level::generateMap(int** matrix){
     bool upStone;
     bool downStone;
@@ -156,12 +146,12 @@ void Level::printMap(){
     obstacles->print(buffer);
 }
 
-float Level::getXInitial()
+const float Level::getXInitial()
 {
     return x_initial;
 }
 
-float Level::getYInitial()
+const float Level::getYInitial()
 {
     return y_initial;
 }
@@ -248,7 +238,7 @@ int Level::genericGameLoop()
     return 1;
 }
 
-void Level::saveLevel(std::ofstream& myfile){
+void Level::saveLevel(std::ofstream& myfile) const{
     characters->saveLevel(myfile);
 }
 
