@@ -54,7 +54,6 @@ Images::Images()
 List_Images* Images::getImgsJack(){
     return imgsJack;
 }
-
 List_Images* Images::getImgsMap(){
     return imgsMap;
 }
