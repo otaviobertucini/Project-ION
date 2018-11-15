@@ -3,8 +3,6 @@
 Level_1::Level_1()
 {
     //ctor
-
-
 }
 
 Level_1::Level_1(BITMAP* buffer, Images* images, Human* jack):Level(buffer, images, jack){
@@ -92,13 +90,21 @@ int Level_1::gameLoop(){
 }
 
 void Level_1::generateLevel(){
-    resetLevel();
+    if(!was_genereted){
+        resetLevel();
+    }
 }
 
-void Level_1::generateLevel(List_Characters* characters){
+void Level_1::saveLevel(std::ofstream& myfile){
+    characters->saveLevel(myfile);
+    fireballs->saveLevel(myfile);
 }
 
-void Level_1::resetLevel(){}
+void Level_1::eraseAll(){
+    characters->eraseAll();
+    fireballs->eraseAll();
+    was_genereted = 0;
+}
 
 Level_1::~Level_1()
 {

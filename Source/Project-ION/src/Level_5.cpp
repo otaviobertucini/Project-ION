@@ -93,10 +93,8 @@ int Level_5::gameLoop(){
 
 void Level_5::generateLevel(){
 
-    resetLevel();
     if(!was_genereted){
-
-
+        resetLevel();
         if(rand()%2 == 0)
         {
             Topspin* top = new Topspin(150, 190, images->getImgsTopspin());
@@ -143,12 +141,13 @@ void Level_5::generateLevel(){
     }
 }
 
-void Level_5::generateLevel(List_Characters* characters){
-    this->characters = characters;
-    was_genereted = 1;
-}
-
 void Level_5::resetLevel(){}
+
+void Level_5::eraseAll(){
+    characters->eraseAll();
+    fireballs->eraseAll();
+    was_genereted = 0;
+}
 
 Level_5::~Level_5()
 {

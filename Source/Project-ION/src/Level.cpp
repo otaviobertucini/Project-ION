@@ -29,60 +29,6 @@ int Level::isCollide(Entity* a, Entity* b){
     return 0;
 }
 
-void Level::generateLevel(List_Characters* characters, List_Powerups* powers, List_Fireballs* fires){
-    this->characters = characters;
-    //this->powers = powers;
-    //this->fireballs = fires;
-    was_genereted = 1;
-}
-
-//void Level::isStructureCollide(Moveable* a)
-//{
-//    int i;
-//    float x_center,y_center,x_center_body,y_center_body;
-//
-//    x_center = a->getx()+(a->getw()/2);
-//    y_center = a->gety()+(a->geth()/2);
-//
-//    List_Structures* aux;
-//    aux = map->getList();
-//
-//    a->setLeft(true);
-//    a->setRight(true);
-//    a->setUp(true);
-//    a->setDown(true);
-//
-//    for(i=0; i<aux->size(); i++)
-//    {
-//        x_center_body = (*aux)[i]->getx() + 15;
-//        y_center_body = (*aux)[i]->gety() + 15;
-//
-//        //emcima do 2
-//        if(a->gety() + a->geth() >= (*aux)[i]->gety() && y_center <= y_center_body
-//           && abs(x_center - x_center_body) < (a->getw()/2)+((*aux)[i]->getw()/2)-2)
-//        {
-//            a->setDown(false);
-//            a->sety((*aux)[i]->gety() - a->geth());
-//        }
-//        //embaixo do 2
-//        if(a->gety() <= (*aux)[i]->gety() + (*aux)[i]->geth() && y_center >= y_center_body
-//           && abs(x_center - x_center_body) < (a->getw()/2)+((*aux)[i]->getw()/2)-2)
-//        {
-//            a->setUp(false);
-//        }
-//        //esquerda do 2
-//        if(a->getx() + a->getw() >= (*aux)[i]->getx() && x_center <= x_center_body
-//                && abs(y_center - y_center_body) < (a->geth()/2)+((*aux)[i]->geth()/2)-2){
-//            a->setRight(false);
-//        }
-//        //direita do 2
-//        if(a->getx() <= (*aux)[i]->getx() + (*aux)[i]->getw() && x_center >= x_center_body
-//                && abs(y_center - y_center_body) < (a->geth()/2)+((*aux)[i]->geth()/2)-2){
-//            a->setLeft(false);
-//        }
-//    }
-//}
-
 void Level::generateMap(int** matrix){
     bool upStone;
     bool downStone;
@@ -239,7 +185,6 @@ void Level::resetLevel(){
 
 void Level::eraseAll(){
     characters->eraseAll();
-    //powers->eraseAll();
     was_genereted = 0;
 }
 
@@ -303,8 +248,76 @@ int Level::genericGameLoop()
     return 1;
 }
 
-List_Characters* Level::getListCharacters(){
-    return characters;
+void Level::saveLevel(std::ofstream& myfile){
+    characters->saveLevel(myfile);
+}
+
+void Level::loadLevel(ifstream& myfile){
+    std::string line;
+    if(myfile.is_open()){
+        while (getline(myfile,line)){
+            std::string copy(line.begin(), line.begin()+3);
+            if(copy == "JAK"){
+                int i;
+                std::vector<int> index;
+                for(i=4; i<line.size(); i++){
+                    if(line[i] == ',')
+                        index.push_back(i);
+                }
+                std::string x(line, 4, index[0]);
+                std::string y(line, index[0]+1, index[1]);
+                std::string dir_copy(line, index[1]+1, index[2]);
+                std::string power_copy(line, index[2]+1, line.size()-1);
+                jack->setx((float) atof(x.c_str()));
+                jack->sety((float) atof(y.c_str())-1);
+                jack->setDown(false);
+                jack->setUp(false);
+                jack->turnPowerup((int) atoi(power_copy.c_str()));
+            }
+            if(copy == "TOP"){
+                int i;
+                std::vector<int> index;
+                for(i=4; i<line.size(); i++){
+                    if(line[i] == ',')
+                        index.push_back(i);
+                }
+                std::string x_copy(line, 4, index[0]);
+                std::string y_copy(line, index[0]+1, index[1]);
+                std::string dir_copy(line, index[1]+1, line.size()-1);
+                float x = (float) atof(x_copy.c_str());
+                float y = (float) atof(y_copy.c_str());
+                int dir = (int) atoi(dir_copy.c_str());
+                characters->include(static_cast<Character*>(new Topspin(x, y, images->getImgsTopspin(), dir)));
+            }
+            if(copy == "BAT"){
+                int i;
+                std::vector<int> index;
+                for(i=4; i<line.size(); i++){
+                    if(line[i] == ',')
+                        index.push_back(i);
+                }
+                std::string x_copy(line, 4, index[0]);
+                std::string y_copy(line, index[0]+1, index[1]);
+                std::string dir_copy(line, index[1]+1, index[2]);
+                std::string step_copy(line, index[2]+1, index[3]);
+                std::string ylim_copy(line, index[3]+1, index[4]);
+                std::string xlim_copy(line, index[4]+1, index[5]);
+                std::string flew_copy(line, index[5]+1, line.size()-1);
+                float x = (float) atof(x_copy.c_str());
+                float y = (float) atof(y_copy.c_str());
+                int dir = (int) atoi(dir_copy.c_str());
+                int step = (int) atoi(step_copy.c_str());
+                int x_lim = (int) atoi(xlim_copy.c_str());
+                int y_lim = (int) atoi(ylim_copy.c_str());
+                float flew = (float) atof(flew_copy.c_str());
+                characters->include(static_cast<Character*>(new Bat(x, y, images->getImgsBat(), dir, step, x_lim, y_lim, flew)));
+            }
+        }
+        was_genereted = 1;
+    }
+    else{
+        cout << "NÃO ABRIU LULULULULUL" << endl;
+    }
 }
 
 Level::~Level()

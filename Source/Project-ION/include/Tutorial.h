@@ -12,6 +12,7 @@ public:
     Tutorial(BITMAP* buffer, Images* images, Human* jack);
     int gameLoop();
     virtual void generateLevel();
+    void eraseAll();
     virtual ~Tutorial();
 private:
     List_Powerups* powers;

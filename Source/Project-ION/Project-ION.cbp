@@ -97,7 +97,6 @@
 		<Unit filename="src/Level_5.cpp" />
 		<Unit filename="src/Level_6.cpp" />
 		<Unit filename="src/Level_Boss.cpp" />
-		<Unit filename="src/List.cpp" />
 		<Unit filename="src/List_Characters.cpp" />
 		<Unit filename="src/List_Fireballs.cpp" />
 		<Unit filename="src/List_Images.cpp" />

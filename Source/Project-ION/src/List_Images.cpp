@@ -4,7 +4,7 @@ List_Images::List_Images()
 {}
 
 void List_Images::include(BITMAP* newi){
-    images.include(newi);
+    images.push_back(newi);
 }
 
 int List_Images::empty(){
@@ -16,7 +16,7 @@ BITMAP* List_Images::operator[](int index){
 }
 
 void List_Images::deleteAll(){
-    images.deleteAll();
+    images.erase(images.begin(), images.end());
 }
 
 List_Images::~List_Images()

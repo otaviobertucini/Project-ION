@@ -33,11 +33,12 @@ void SoloGame::execute()
 
         chances = 100;
         i_level = 0;
-        List_Characters* characters = new List_Characters;
-        List_Powerups* powers = new List_Powerups;
-        List_Fireballs* fires = new List_Fireballs;
         if(start == 2){
-            readLevel(characters, powers, fires);
+            ifstream file("register.txt");
+            readLevel(file);
+            current = (*levels)[i_level];
+            current->loadLevel(file);
+
             start = 1;
             load_level = 1;
         }
@@ -45,16 +46,15 @@ void SoloGame::execute()
         {
             dead = false;
             //Loop de cada jogada
+
             while(!dead){
                 exit_loop = false;
                 current = (*levels)[i_level];
+
                 if(!load_level){
-                    current->generateLevel();
                     current->resetPlayer(x,y);
                 }
-                else{
-                    current->generateLevel(characters, powers, fires);
-                }
+                current->generateLevel();
 
                 load_level = 0;
 
@@ -118,7 +118,7 @@ void SoloGame::execute()
                         power_time = 0;
                     }
                     if(jack->isPowered()){
-                        int stop=clock();
+                        int stop = clock();
                         power_time += (stop-start)/double(CLOCKS_PER_SEC)*1000;
 
                         //cout << power_time << endl;
@@ -177,133 +177,156 @@ void SoloGame::level0(){
 }
 
 void SoloGame::saveLevel(){
-    List_Characters* characters = current->getListCharacters();
-    //List_Powerups* powers = current->getListPowerups();
-    //List_Fireballs* fires = current->getListFireballs();
     ofstream myfile("register.txt");
     myfile << "LEV:" << i_level << "\n";
     myfile << "LIF:" << chances << "\n";
     myfile << "TIM:" << power_time << endl;
     jack->saveState(myfile);
-    for(int i = 0; i<(*characters).size(); i++){
-        Character* c = (*characters)[i];
-        c->saveState(myfile);
-    }
-//    for(int i = 0; i<(*powers).size(); i++){
-//        Powerup* p = (*powers)[i];
-//        myfile << "POW:" << p->getx() << "," << p->gety() << "\n";
-//    }
-//    for(int i = 0; i<(*fires).size(); i++){
-//        Fireball* f = (*fires)[i];
-//        f->saveState(myfile);
-//    }
+    current->saveLevel(myfile);
 }
 
-void SoloGame::readLevel(List_Characters* characters, List_Powerups* powers, List_Fireballs* fires){
-    ifstream myfile("register.txt");
+void SoloGame::readLevel(ifstream& myfile){
     std::string line;
     if(myfile.is_open()){
-        while (getline(myfile,line)){
-            std::string copy(line.begin(), line.begin()+3);
-            if(copy == "LEV"){
-                std::string lev(line, 4, line.size()-1);
-                i_level =((int) atoi(lev.c_str()));
+        getline(myfile, line);
+        std::string copy(line.begin(), line.begin()+3);
+        if(copy == "LEV"){
+            std::string lev(line, 4, line.size()-1);
+            i_level = ((int) atoi(lev.c_str()));
+        }
+        if(copy == "LIF"){
+            std::string lif(line, 4, line.size()-1);
+            chances = ((int) atoi(lif.c_str()));
+        }
+        if(copy == "TIM"){
+            std::string lif(line, 4, line.size()-1);
+            power_time = ((float) atof(lif.c_str()));
+        }
+        if(copy == "JAK"){
+            int i;
+            std::vector<int> index;
+            for(i=4; i<line.size(); i++){
+                if(line[i] == ',')
+                    index.push_back(i);
             }
-            if(copy == "LIF"){
-                std::string lif(line, 4, line.size()-1);
-                chances = ((int) atoi(lif.c_str()));
-            }
-            if(copy == "TIM"){
-                std::string lif(line, 4, line.size()-1);
-                power_time = ((float) atof(lif.c_str()));
-            }
-            if(copy == "JAK"){
-                int i;
-                std::vector<int> index;
-                for(i=4; i<line.size(); i++){
-                    if(line[i] == ',')
-                        index.push_back(i);
-                }
-                std::string x(line, 4, index[0]);
-                std::string y(line, index[0]+1, index[1]);
-                std::string dir_copy(line, index[1]+1, index[2]);
-                std::string power_copy(line, index[2]+1, line.size()-1);
-                jack->setx((float) atof(x.c_str()));
-                jack->sety((float) atof(y.c_str())-1);
-                jack->setDown(false);
-                jack->setUp(false);
-                jack->turnPowerup((int) atoi(power_copy.c_str()));
-            }
-            if(copy == "TOP"){
-                int i;
-                std::vector<int> index;
-                for(i=4; i<line.size(); i++){
-                    if(line[i] == ',')
-                        index.push_back(i);
-                }
-                std::string x_copy(line, 4, index[0]);
-                std::string y_copy(line, index[0]+1, index[1]);
-                std::string dir_copy(line, index[1]+1, line.size()-1);
-                float x = (float) atof(x_copy.c_str());
-                float y = (float) atof(y_copy.c_str());
-                int dir = (int) atoi(dir_copy.c_str());
-                characters->include(static_cast<Character*>(new Topspin(x, y, images->getImgsTopspin(), dir)));
-            }
-            if(copy == "BAT"){
-                int i;
-                std::vector<int> index;
-                for(i=4; i<line.size(); i++){
-                    if(line[i] == ',')
-                        index.push_back(i);
-                }
-                std::string x_copy(line, 4, index[0]);
-                std::string y_copy(line, index[0]+1, index[1]);
-                std::string dir_copy(line, index[1]+1, index[2]);
-                std::string step_copy(line, index[2]+1, index[3]);
-                std::string ylim_copy(line, index[3]+1, index[4]);
-                std::string xlim_copy(line, index[4]+1, index[5]);
-                std::string flew_copy(line, index[5]+1, line.size()-1);
-                float x = (float) atof(x_copy.c_str());
-                float y = (float) atof(y_copy.c_str());
-                int dir = (int) atoi(dir_copy.c_str());
-                int step = (int) atoi(step_copy.c_str());
-                int x_lim = (int) atoi(xlim_copy.c_str());
-                int y_lim = (int) atoi(ylim_copy.c_str());
-                float flew = (float) atof(flew_copy.c_str());
-                characters->include(static_cast<Character*>(new Bat(x, y, images->getImgsBat(), dir, step, x_lim, y_lim, flew)));
-            }
-            if(copy == "POW"){
-                int i;
-                std::vector<int> index;
-                for(i=4; i<line.size(); i++){
-                    if(line[i] == ',')
-                        index.push_back(i);
-                }
-                std::string x_copy(line, 4, index[0]);
-                std::string y_copy(line, index[0]+1, line.size()-1);
-                int x = (int) atoi(x_copy.c_str());
-                int y = (int) atoi(y_copy.c_str());
-                List_Images* aux = images->getImgsMap();
-                powers->include(static_cast<Powerup*>(new Birl(x, y, (*aux)[23])));
-            }
-            if(copy == "FIR"){
-                int i;
-                std::vector<int> index;
-                for(i=4; i<line.size(); i++){
-                    if(line[i] == ',')
-                        index.push_back(i);
-                }
-                std::string x_copy(line, 4, index[0]);
-                std::string y_copy(line, index[0]+1, line.size()-1);
-                int x = (int) atoi(x_copy.c_str());
-                int y = (int) atoi(y_copy.c_str());
-                cout << x << ", " << y << endl;
-                List_Images* aux = images->getImgsFireball();
-                fires->include(static_cast<Fireball*>(new Fireball(x, y, (*aux)[0])));
-            }
+            std::string x(line, 4, index[0]);
+            std::string y(line, index[0]+1, index[1]);
+            std::string dir_copy(line, index[1]+1, index[2]);
+            std::string power_copy(line, index[2]+1, line.size()-1);
+            jack->setx((float) atof(x.c_str()));
+            jack->sety((float) atof(y.c_str())-1);
+            jack->setDown(false);
+            jack->setUp(false);
+            jack->turnPowerup((int) atoi(power_copy.c_str()));
         }
     }
 }
+
+//void SoloGame::readLevel(List_Characters* characters, List_Powerups* powers, List_Fireballs* fires){
+//    ifstream myfile("register.txt");
+//    std::string line;
+//    if(myfile.is_open()){
+//        while (getline(myfile,line)){
+//            std::string copy(line.begin(), line.begin()+3);
+//            if(copy == "LEV"){
+//                std::string lev(line, 4, line.size()-1);
+//                i_level =((int) atoi(lev.c_str()));
+//            }
+//            if(copy == "LIF"){
+//                std::string lif(line, 4, line.size()-1);
+//                chances = ((int) atoi(lif.c_str()));
+//            }
+//            if(copy == "TIM"){
+//                std::string lif(line, 4, line.size()-1);
+//                power_time = ((float) atof(lif.c_str()));
+//            }
+//            if(copy == "JAK"){
+//                int i;
+//                std::vector<int> index;
+//                for(i=4; i<line.size(); i++){
+//                    if(line[i] == ',')
+//                        index.push_back(i);
+//                }
+//                std::string x(line, 4, index[0]);
+//                std::string y(line, index[0]+1, index[1]);
+//                std::string dir_copy(line, index[1]+1, index[2]);
+//                std::string power_copy(line, index[2]+1, line.size()-1);
+//                jack->setx((float) atof(x.c_str()));
+//                jack->sety((float) atof(y.c_str())-1);
+//                jack->setDown(false);
+//                jack->setUp(false);
+//                jack->turnPowerup((int) atoi(power_copy.c_str()));
+//            }
+//            if(copy == "TOP"){
+//                int i;
+//                std::vector<int> index;
+//                for(i=4; i<line.size(); i++){
+//                    if(line[i] == ',')
+//                        index.push_back(i);
+//                }
+//                std::string x_copy(line, 4, index[0]);
+//                std::string y_copy(line, index[0]+1, index[1]);
+//                std::string dir_copy(line, index[1]+1, line.size()-1);
+//                float x = (float) atof(x_copy.c_str());
+//                float y = (float) atof(y_copy.c_str());
+//                int dir = (int) atoi(dir_copy.c_str());
+//                characters->include(static_cast<Character*>(new Topspin(x, y, images->getImgsTopspin(), dir)));
+//            }
+//            if(copy == "BAT"){
+//                int i;
+//                std::vector<int> index;
+//                for(i=4; i<line.size(); i++){
+//                    if(line[i] == ',')
+//                        index.push_back(i);
+//                }
+//                std::string x_copy(line, 4, index[0]);
+//                std::string y_copy(line, index[0]+1, index[1]);
+//                std::string dir_copy(line, index[1]+1, index[2]);
+//                std::string step_copy(line, index[2]+1, index[3]);
+//                std::string ylim_copy(line, index[3]+1, index[4]);
+//                std::string xlim_copy(line, index[4]+1, index[5]);
+//                std::string flew_copy(line, index[5]+1, line.size()-1);
+//                float x = (float) atof(x_copy.c_str());
+//                float y = (float) atof(y_copy.c_str());
+//                int dir = (int) atoi(dir_copy.c_str());
+//                int step = (int) atoi(step_copy.c_str());
+//                int x_lim = (int) atoi(xlim_copy.c_str());
+//                int y_lim = (int) atoi(ylim_copy.c_str());
+//                float flew = (float) atof(flew_copy.c_str());
+//                characters->include(static_cast<Character*>(new Bat(x, y, images->getImgsBat(), dir, step, x_lim, y_lim, flew)));
+//            }
+//            if(copy == "POW"){
+//                int i;
+//                std::vector<int> index;
+//                for(i=4; i<line.size(); i++){
+//                    if(line[i] == ',')
+//                        index.push_back(i);
+//                }
+//                std::string x_copy(line, 4, index[0]);
+//                std::string y_copy(line, index[0]+1, line.size()-1);
+//                int x = (int) atoi(x_copy.c_str());
+//                int y = (int) atoi(y_copy.c_str());
+//                List_Images* aux = images->getImgsMap();
+//                powers->include(static_cast<Powerup*>(new Birl(x, y, (*aux)[23])));
+//            }
+//            if(copy == "FIR"){
+//                int i;
+//                std::vector<int> index;
+//                for(i=4; i<line.size(); i++){
+//                    if(line[i] == ',')
+//                        index.push_back(i);
+//                }
+//                std::string x_copy(line, 4, index[0]);
+//                std::string y_copy(line, index[0]+1, line.size()-1);
+//                int x = (int) atoi(x_copy.c_str());
+//                int y = (int) atoi(y_copy.c_str());
+//                cout << x << ", " << y << endl;
+//                List_Images* aux = images->getImgsFireball();
+//                fires->include(static_cast<Fireball*>(new Fireball(x, y, (*aux)[0])));
+//            }
+//        }
+//    }
+//}
 
 void SoloGame::resetLevels(){
     for(int i = 0; i<levels->size(); i++){

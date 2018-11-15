@@ -6,7 +6,7 @@ List_Structures::List_Structures()
 }
 
 void List_Structures::include(Structure* news){
-    structures.include(news);
+    structures.push_back(news);
 }
 
 int List_Structures::empty(){
@@ -88,7 +88,7 @@ Structure* List_Structures::operator[](int index){
 }
 
 void List_Structures::deleteAll(){
-    structures.deleteAll();
+    structures.erase(structures.begin(), structures.end());
 }
 
 List_Structures::~List_Structures()

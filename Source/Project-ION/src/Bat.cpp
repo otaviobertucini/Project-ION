@@ -40,7 +40,7 @@ void Bat::move(int x_move){
             flew = 0.0;
         }
     }
-    else if(step = 3){
+    else if(step == 3){
         y -= 0.2;
         flew += 0.2;
         if(flew > y_distance)

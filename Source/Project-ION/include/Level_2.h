@@ -11,7 +11,7 @@ public:
     int gameLoop();
     void generateLevel();
     void generateLevel(List_Characters* characters);
-    void resetLevel();
+    void eraseAll();
     virtual ~Level_2();
 private:
     List_Fireballs* fireballs;

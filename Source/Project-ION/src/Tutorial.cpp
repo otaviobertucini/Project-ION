@@ -48,17 +48,11 @@ Tutorial::Tutorial(BITMAP* buffer, Images* images, Human* jack):Level(buffer, im
 
     generateMap(m);
     powers = new List_Powerups;
-
-//    map = new Map(m, images->getImgsMap());
-//    lavas = map->getListLavas();
-    //powers = map->getListPowers();
-    //powers = new List_Powerups;
 }
 
 void Tutorial::generateLevel(){
-
-    resetLevel();
     if(!was_genereted){
+        resetLevel();
         Bat* bat = new Bat(450, 360, images->getImgsBat(),-1,1);
         characters->include(static_cast<Character*>(bat));
         List_Images* aux = images->getImgsMap();
@@ -81,6 +75,12 @@ int Tutorial::gameLoop(){
         return 2; //next level
     }
     return 1;
+}
+
+void Tutorial::eraseAll(){
+    characters->eraseAll();
+    powers->eraseAll();
+    was_genereted = 0;
 }
 
 Tutorial::~Tutorial()

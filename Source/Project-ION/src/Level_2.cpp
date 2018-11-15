@@ -93,16 +93,11 @@ int Level_2::gameLoop()
 
 }
 
-void Level_2::generateLevel(List_Characters* characters){
-    this->characters = characters;
-    was_genereted = 1;
-}
-
 void Level_2::generateLevel(){
-    resetLevel();
+
     if(!was_genereted)
     {
-
+        resetLevel();
         if(rand()%2 == 0)
         {
             Topspin* top = new Topspin(330,589, images->getImgsTopspin(),-1);
@@ -128,7 +123,11 @@ void Level_2::generateLevel(){
     }
 }
 
-void Level_2::resetLevel(){}
+void Level_2::eraseAll(){
+    characters->eraseAll();
+    fireballs->eraseAll();
+    was_genereted = 0;
+}
 
 Level_2::~Level_2()
 {

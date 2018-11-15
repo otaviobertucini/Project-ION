@@ -94,9 +94,9 @@ void Level_3::generateLevel(List_Characters* characters){
 }
 
 void Level_3::generateLevel(){
-    resetLevel();
-    if(!was_genereted){
 
+    if(!was_genereted){
+        resetLevel();
         if(rand()%2 == 0)
         {
             Topspin* top = new Topspin(590, 400, images->getImgsTopspin(),-1);
@@ -105,6 +105,12 @@ void Level_3::generateLevel(){
 
         was_genereted = 1;
     }
+}
+
+void Level_3::eraseAll(){
+    characters->eraseAll();
+    fireballs->eraseAll();
+    was_genereted = 0;
 }
 
 void Level_3::resetLevel(){}
