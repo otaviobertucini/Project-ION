@@ -1,17 +1,16 @@
 #include "Human.h"
 
-Human::Human()
+Human::Human(): x_force(2)
 {
     //ctor
 }
 
 Human::Human(string name, float x, float y, List_Images *img, int direction, bool powerup_on):
-               Character(x, y, img){
+               Character(x, y, img), x_force(2){
     this->name = name;
     this->current_side = 1;
     this->charge = false;
     this->dashOn = false;
-    setPosMatrix();
     h = 60;
     w = 40;
     x_speed = 0.6;
@@ -89,8 +88,6 @@ void Human::loop(){
 void Human::dash()
 {
 
-    float x_force = 2;
-
     if(dashOn)
     {
         if(distance_dash <= 210 &&
@@ -135,26 +132,18 @@ void Human::move(int x_move)
 
 
         x += x_speed*x_move;
-        setPosMatrix();
     }
 }
 
-// Returns the position in the matrix where the character is placed.
-// Takes the left foot as reference so far.
-void Human::setPosMatrix(){
-    i_pos = (int)floor((y+h)/30);
-    j_pos = (int)floor((x+w)/30)-1;
-}
-
-void Human::turnPowerup(bool state){
+void Human::turnPowerup(const bool state){
     powerup_on = state;
 }
 
-bool Human::isPowered(){
+const bool Human::isPowered() const{
     return powerup_on;
 }
 
-void Human::saveState(std::ofstream& myfile){
+void Human::saveState(std::ofstream& myfile) const{
     myfile << name << ":" << x << "," << y << "," << direction << "," << powerup_on << "\n";
 }
 

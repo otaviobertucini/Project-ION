@@ -28,5 +28,9 @@ void Main::execute(){
 
 Main::~Main()
 {
-    //dtor
+    delete solo;
+    solo = NULL;
+    delete menu;
+    menu = NULL;
+    destroy_bitmap(buffer);
 }

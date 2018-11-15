@@ -10,13 +10,13 @@ public:
     void loop();
     void move(int x_move);
     const int getyInitial() const;
-    void saveState(std::ofstream& myfile);
+    void saveState(std::ofstream& myfile) const;
     virtual ~Bat();
 private:
     float flew;
     int step;
-    int x_distance;
-    int y_distance;
+    const int x_distance;
+    const int y_distance;
 };
 
 #endif // BAT_H

@@ -21,16 +21,15 @@ void Fireball::loop(){
     move(0);
 }
 
-bool Fireball::getMoveUp(){
+const bool Fireball::getMoveUp() const{
     return move_up;
 }
 
-void Fireball::saveState(std::ofstream& myfile){
+void Fireball::saveState(std::ofstream& myfile) const{
     myfile << "FIR:" << x << "," << y << "\n";
 }
 
-void Fireball::setPosMatrix(){}
-
 Fireball::~Fireball()
 {
+    destroy_bitmap(current_img);
 }

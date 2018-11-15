@@ -83,6 +83,18 @@ int List_Structures::isCollide(List_Fireballs* fires){
     }
 }
 
+int List_Structures::isCollide(List_Poisons* poisons){
+    for(int i = 0; i < poisons->size(); i++){
+        isCollide(static_cast<Moveable*>((*poisons)[i]));
+        if(!(*poisons)[i]->getMoveSide()){
+            delete (*poisons)[i];
+            poisons->del(i);
+            return 1;
+        }
+    }
+    return 0;
+}
+
 Structure* List_Structures::operator[](int index){
     return structures[index];
 }

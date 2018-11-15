@@ -3,7 +3,7 @@
 #include "Level.h"
 #include "Level_Boss.h"
 #include "Boss.h"
-
+#include "List_Poisons.h"
 
 class Level_Boss: public Level
 {
@@ -16,6 +16,8 @@ public:
     void resetLevel();
     virtual ~Level_Boss();
 private:
+    Boss* boss;
+    List_Poisons* poisons;
 };
 
 #endif // LEVEL_Boss_H

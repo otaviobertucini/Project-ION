@@ -34,7 +34,7 @@ void Topspin::loop(){
     move(0);
 }
 
-void Topspin::saveState(std::ofstream& myfile){
+void Topspin::saveState(std::ofstream& myfile) const{
     myfile << type << ":" << x << "," << y << "," << direction << "\n";
 }
 

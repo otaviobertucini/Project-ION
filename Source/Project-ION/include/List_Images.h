@@ -13,6 +13,7 @@ public:
     void include(BITMAP* newi);
     void deleteAll();
     int empty();
+    int size();
     BITMAP* operator[](int index);
     virtual ~List_Images();
 private:

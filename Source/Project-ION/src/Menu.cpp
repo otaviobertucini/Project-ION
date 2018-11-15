@@ -31,28 +31,30 @@ int Menu::inicial(){
             if(option == 1){
                 return 1;
             }
-            if(option == 2){
+            if(option == 4){
                 return 0;
             }
         }
 
-        if(key[KEY_UP]){
+        if(key[KEY_UP] && option > 1){
             rest(200);
-            option = 1;
+            option -= 1;
         }
-        if(key[KEY_DOWN]){
+        if(key[KEY_DOWN] && option < 4){
             rest(200);
-            option = 2;
+            option += 1;
         }
 
-        if(option == 1){
-            y_cursor = 325;
-        }
-        else if(option == 2){
-            y_cursor = 455;
-        }
+        if(option == 1)
+            y_cursor = 125;
+        else if(option == 2)
+            y_cursor = 235;
+        else if(option == 3)
+            y_cursor = 335;
+        else if(option == 4)
+            y_cursor = 435;
 
-        draw_sprite(buffer, cursor, 225, y_cursor);
+        draw_sprite(buffer, cursor, 700, y_cursor);
         blit(buffer, screen, 0, 0, 0, 0, 1080, 720);
         clear(buffer);
     }
@@ -126,5 +128,8 @@ int Menu::sologame(){
 
 Menu::~Menu()
 {
-    //dtor
+    destroy_bitmap(img_back);
+    destroy_bitmap(cursor);
+    destroy_bitmap(pause_back);
+    destroy_bitmap(solo_back);
 }

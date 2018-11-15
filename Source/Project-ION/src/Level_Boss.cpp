@@ -47,11 +47,19 @@ Level_Boss::Level_Boss(BITMAP* buffer, Images* images, Human* jack):Level(buffer
         }
     }
 
+    poisons = new List_Poisons;
     generateMap(m);
 }
 
 int Level_Boss::gameLoop(){
 
+    boss->createPoison(poisons);
+    poisons->loop();
+    poisons->print(buffer);
+    if(poisons->isCollide(jack)){
+        return 0;
+    }
+    structures->isCollide(poisons);
 
     game_status = genericGameLoop();
     if(game_status != 1)
@@ -67,7 +75,7 @@ void Level_Boss::generateLevel(){
 
     if(!was_genereted){
         resetLevel();
-        Boss* boss = new Boss(480, 350, images->getImgsBoss(),jack);
+        boss = new Boss(480, 350, images->getImgsBoss(),jack);
         characters->include(static_cast<Character*>(boss));
         was_genereted = 1;
     }

@@ -10,10 +10,9 @@ public:
     Fireball();
     Fireball(float x, float y, BITMAP* img);
     void move(int x_move);
-    void saveState(std::ofstream& myfile);
-    void setPosMatrix();
+    void saveState(std::ofstream& myfile) const;
     void loop();
-    bool getMoveUp();
+    const bool getMoveUp() const;
     virtual ~Fireball();
 private:
 };

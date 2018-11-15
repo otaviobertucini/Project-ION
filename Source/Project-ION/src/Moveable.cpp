@@ -7,23 +7,23 @@ Moveable::Moveable()
 
 Moveable::Moveable(float x, float y):Entity(x, y){}
 
-void Moveable::setRight(bool new_mode){
+void Moveable::setRight(const bool new_mode){
     move_right = new_mode;
 }
 
-void Moveable::setLeft(bool new_mode){
+void Moveable::setLeft(const bool new_mode){
     move_left = new_mode;
 }
 
-void Moveable::setUp(bool new_mode){
+void Moveable::setUp(const bool new_mode){
     move_up = new_mode;
 }
 
-void Moveable::setDown(bool new_mode){
+void Moveable::setDown(const bool new_mode){
     move_down = new_mode;
 }
 
-int Moveable::getDirection(){
+const int Moveable::getDirection(){
     return direction;
 }
 

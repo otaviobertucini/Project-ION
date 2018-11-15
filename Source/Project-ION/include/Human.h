@@ -16,16 +16,15 @@ class Human:public Character
         Human(string name, float x, float y, List_Images *img, int direction = 1, bool powerup_on = 0);
         ~Human();
         void move(int x_move);
-        void setPosMatrix();
         void gravity();
         void jump();
         void JetPack();
         void activeDash();
         void dash();
         void loop();
-        void turnPowerup(bool state = true);
-        bool isPowered();
-        void saveState(std::ofstream& myfile);
+        void turnPowerup(const bool state = true);
+        const bool isPowered() const;
+        void saveState(std::ofstream& myfile) const;
     private:
         string name;
         float y_force;
@@ -33,6 +32,7 @@ class Human:public Character
         bool dashOn;
         float distance_dash;
         bool powerup_on;
+        const float x_force;
 };
 
 #endif // HUMAN_H

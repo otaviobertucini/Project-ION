@@ -22,20 +22,16 @@ Character::Character(float x, float y, List_Images *img):
 //Apply Gravity
 void Character::gravity()
 {
-
-    float y_force_limit;
-
     if(move_up == false)
     {
         y_force *= -0.5;
         move_up = true;
     }
 
-    y_force_limit = 2;
     y_force += 0.02;
 
-    if(y_force > y_force_limit)
-        y_force = y_force_limit;
+    if(y_force > 2)
+        y_force = 2;
 
     if(move_down == false)
        y_force = 0;

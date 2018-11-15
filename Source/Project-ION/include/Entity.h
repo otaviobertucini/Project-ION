@@ -14,24 +14,19 @@ class Entity
 public:
     Entity();
     Entity(float x, float y, BITMAP* curren_img = NULL);
-    virtual void setPosMatrix() = 0;
-    void getPosMatrix(int* i, int* j);
     virtual void print(BITMAP* screen);
     BITMAP* getCurrentImg();
-    float getx();
-    float gety();
-    int getw();
-    int geth();
-    void sety(float new_y);
-    void setx(float new_x);
-    virtual void loop() = 0;
+    const float getx() const;
+    const float gety() const;
+    const int getw() const;
+    const int geth() const;
+    void sety(const float new_y);
+    void setx(const float new_x);
     virtual ~Entity();
 protected:
     float x;
     float y;
     BITMAP* current_img;
-    int i_pos;
-    int j_pos;
     int w; //Width
     int h; //Height
 };

@@ -7,13 +7,14 @@ class Moveable: public Entity
 public:
     Moveable();
     Moveable(float x, float y);
-    void setRight(bool new_move);
-    void setLeft(bool new_move);
-    void setUp(bool new_move);
-    void setDown(bool new_move);
-    int getDirection();
+    void setRight(const bool new_move);
+    void setLeft(const bool new_move);
+    void setUp(const bool new_move);
+    void setDown(const bool new_move);
+    const int getDirection();
     virtual void move(int x_move) = 0;
-    virtual void saveState(std::ofstream& myfile) = 0;
+    virtual void loop() = 0;
+    virtual void saveState(std::ofstream& myfile) const = 0;
     virtual ~Moveable();
 protected:
     bool move_left;

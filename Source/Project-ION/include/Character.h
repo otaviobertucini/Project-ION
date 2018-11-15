@@ -21,7 +21,6 @@ public:
     Character();
     Character(float x, float y, List_Images *img);
     ~Character();
-    virtual void setPosMatrix() = 0;
     virtual void loop() = 0;
     virtual void gravity();
 protected:
