@@ -21,12 +21,14 @@ public:
     List_Images* getImgsLava();
     List_Images* getImgsFireball();
     List_Images* getImgsBat();
+    List_Images* getImgsBoss();
 private:
     List_Images *imgsJack;
     List_Images *imgsMap;
     List_Images *imgsTopspin;
     List_Images *imgsFireball;
     List_Images *imgsBat;
+    List_Images *imgsBoss;
 };
 
 #endif // IMAGES_H

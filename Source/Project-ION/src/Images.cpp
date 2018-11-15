@@ -45,6 +45,10 @@ Images::Images()
     //loads images from bat
     imgsBat = new List_Images;
     imgsBat->include(load_bitmap("Material/Enemy/bat_1.bmp", NULL));
+
+    //loads images from boss
+    imgsBoss = new List_Images;
+    imgsBoss->include(load_bitmap("Material/Enemy/boss.bmp", NULL));
 }
 
 List_Images* Images::getImgsJack(){
@@ -65,6 +69,10 @@ List_Images* Images::getImgsFireball(){
 
 List_Images* Images::getImgsBat(){
     return imgsBat;
+}
+
+List_Images* Images::getImgsBoss(){
+    return imgsBoss;
 }
 
 Images::~Images()
