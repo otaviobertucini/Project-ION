@@ -12,6 +12,8 @@ public:
     void generateLevel();
     void generateLevel(List_Characters* characters);
     void eraseAll();
+    void saveLevel(std::ofstream& myfile) const;
+    void loadLevel(ifstream& file);
     virtual ~Level_2();
 private:
     List_Fireballs* fireballs;

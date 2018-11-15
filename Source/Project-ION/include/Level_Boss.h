@@ -13,7 +13,7 @@ public:
     int gameLoop();
     void generateLevel();
     void generateLevel(List_Characters* characters);
-    void resetLevel();
+    void loadLevel(ifstream& file);
     virtual ~Level_Boss();
 private:
     Boss* boss;
