@@ -64,9 +64,10 @@ int Level_Boss::gameLoop(){
 }
 
 void Level_Boss::generateLevel(){
+
     if(!was_genereted){
         resetLevel();
-        Boss* boss = new Boss(300, 350, images->getImgsBoss());
+        Boss* boss = new Boss(480, 350, images->getImgsBoss(),jack);
         characters->include(static_cast<Character*>(boss));
         was_genereted = 1;
     }
