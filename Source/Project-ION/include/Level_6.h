@@ -11,9 +11,9 @@ public:
     Level_6(BITMAP* buffer, Images* images, Human* jack);
     int gameLoop();
     void generateLevel();
-    void generateLevel(List_Characters* characters);
-    void resetLevel();
     void eraseAll();
+    void saveLevel(std::ofstream& myfile) const;
+    void loadLevel(ifstream& file);
     virtual ~Level_6();
 private:
     List_Fireballs* fireballs;

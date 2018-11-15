@@ -65,7 +65,9 @@ void Boss::verifyDirection(){
     }
 }
 
-void Boss::saveState(std::ofstream& myfile) const{}
+void Boss::saveState(std::ofstream& myfile) const{
+    myfile << "BOS:" << x << "," << y << "\n";
+}
 
 Boss::~Boss()
 {

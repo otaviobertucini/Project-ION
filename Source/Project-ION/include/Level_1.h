@@ -13,6 +13,7 @@ public:
     void generateLevel();
     void generateLevel(List_Characters* characters);
     void saveLevel(std::ofstream& myfile);
+    void loadLevel(ifstream& file);
     void eraseAll();
     virtual ~Level_1();
 private:

@@ -73,15 +73,10 @@ int Level_4::gameLoop(){
     return 1;
 }
 
-void Level_4::generateLevel(List_Characters* characters){
-    this->characters = characters;
-    was_genereted = 1;
-}
-
 void Level_4::generateLevel(){
 
-    resetLevel();
     if(!was_genereted){
+        resetLevel();
 
         if(rand()%2 == 0)
         {
@@ -146,8 +141,6 @@ void Level_4::generateLevel(){
         was_genereted = 1;
     }
 }
-
-void Level_4::resetLevel(){}
 
 Level_4::~Level_4()
 {

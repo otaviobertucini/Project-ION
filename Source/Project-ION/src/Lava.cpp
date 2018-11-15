@@ -12,7 +12,7 @@ Lava::Lava(float x, float y, BITMAP* current_img):Obstacle(x, y, current_img){
 
 Fireball* Lava::createFireball(){
 
-    int num = rand()%4000;
+    int num = rand()%3000;
 
     if(num == 0){
         int rand_size = rand()%30;
