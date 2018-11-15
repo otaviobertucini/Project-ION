@@ -36,6 +36,7 @@
 		</Compiler>
 		<Unit filename="include/Bat.h" />
 		<Unit filename="include/Birl.h" />
+		<Unit filename="include/Boss.h" />
 		<Unit filename="include/Character.h" />
 		<Unit filename="include/Enemy.h" />
 		<Unit filename="include/Entity.h" />
@@ -79,6 +80,7 @@
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Bat.cpp" />
 		<Unit filename="src/Birl.cpp" />
+		<Unit filename="src/Boss.cpp" />
 		<Unit filename="src/Character.cpp" />
 		<Unit filename="src/Enemy.cpp" />
 		<Unit filename="src/Entity.cpp" />
