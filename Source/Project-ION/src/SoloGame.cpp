@@ -23,8 +23,13 @@ void SoloGame::execute()
     bool exit = false;
     bool exit_loop;
     int load_level = 0;
+    int return_possible_archive;
 
     int start = menu1->sologame();
+
+    if(start == 1)
+        usuario.setName(menu1->readMenu());
+
     //Loop do jogo todo
     while(!exit)
     {
@@ -33,21 +38,26 @@ void SoloGame::execute()
         y = 140;
 
         chances = 100;
-        i_level = 6;
+        i_level = 0;
         if(start == 2){
-            ifstream file("register.txt");
-            readLevel(file);
+            usuario.setName(menu1->readMenu());
+            string aux_str = "Register/" + usuario.getName() + ".txt";
+            ifstream file(aux_str.c_str());
+            return_possible_archive = readLevel(file);
+
+            if(return_possible_archive == 0)
+                break;
+
             current = (*levels)[i_level];
             current->loadLevel(file);
+            current->resetPlayer(jack->getx(),jack->gety());
 
             start = 1;
             load_level = 1;
         }
         if(start == 1)
         {
-            start = 4;
             dead = false;
-            menu1->readMenu();
 
             //Loop de cada jogada
             while(!dead){
@@ -60,8 +70,6 @@ void SoloGame::execute()
                 current->generateLevel();
 
                 load_level = 0;
-
-
 
                 //Loop de cada fase
                 while(!exit_loop)
@@ -84,15 +92,13 @@ void SoloGame::execute()
 
                     if(game_status == 0)
                     {
-                        jack->lessLife();
-                        if(jack->getLifes() == 0)
+                        chances--;
+                        if(chances == 0)
                         {
                             dead = true;
                             exit_loop = true;
-                            jack->resetLifes();
                         }
                         current->resetPlayer();
-
                     }
 
                     if(game_status == 2){
@@ -182,7 +188,9 @@ void SoloGame::level0(){
 }
 
 void SoloGame::saveLevel(){
-    ofstream myfile("register.txt");
+
+    string aux = "Register/" + usuario.getName() + ".txt";
+    ofstream myfile(aux.c_str());
     myfile << "LEV:" << i_level << "\n";
     myfile << "LIF:" << chances << "\n";
     myfile << "TIM:" << power_time << endl;
@@ -190,7 +198,7 @@ void SoloGame::saveLevel(){
     current->saveLevel(myfile);
 }
 
-void SoloGame::readLevel(ifstream& myfile){
+int SoloGame::readLevel(ifstream& myfile){
     std::string line;
     if(myfile.is_open()){
         getline(myfile, line);
@@ -224,7 +232,10 @@ void SoloGame::readLevel(ifstream& myfile){
             jack->setUp(false);
             jack->turnPowerup((int) atoi(power_copy.c_str()));
         }
+        return 1;
     }
+    else
+        return 0;
 }
 
 void SoloGame::resetLevels(){

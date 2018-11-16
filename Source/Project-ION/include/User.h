@@ -10,7 +10,7 @@ public:
     User(string name, float score = 0);
     ~User();
     void setScore(float score);
-    void setName(string name);
+    void setName(string newName);
     string getName();
     float getScore();
 

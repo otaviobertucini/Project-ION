@@ -11,6 +11,7 @@
 #include <string>
 #include <ctime>
 #include "Human.h"
+#include "User.h"
 #include "Game.h"
 #include "Topspin.h"
 #include "Tutorial.h"
@@ -37,7 +38,7 @@ public:
     void execute();
     void saveLevel();
     //void readLevel(List_Characters* characters, List_Powerups* powers, List_Fireballs* fires);
-    void readLevel(ifstream& file);
+    int readLevel(ifstream& file);
     void resetLevels();
     void deleteLevels();
     void level0();
@@ -45,6 +46,7 @@ private:
     int chances;
     int i_level;
     Human* jack;
+    User usuario;
     double power_time;
 };
 

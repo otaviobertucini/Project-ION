@@ -42,6 +42,7 @@
 		<Unit filename="include/Entity.h" />
 		<Unit filename="include/Fireball.h" />
 		<Unit filename="include/Game.h" />
+		<Unit filename="include/Handle.h" />
 		<Unit filename="include/Human.h" />
 		<Unit filename="include/Images.h" />
 		<Unit filename="include/Lava.h" />
@@ -58,6 +59,7 @@
 		<Unit filename="include/List.h" />
 		<Unit filename="include/List_Characters.h" />
 		<Unit filename="include/List_Fireballs.h" />
+		<Unit filename="include/List_Handles.h" />
 		<Unit filename="include/List_Images.h" />
 		<Unit filename="include/List_Lavas.h" />
 		<Unit filename="include/List_Levels.h" />
@@ -66,10 +68,7 @@
 		<Unit filename="include/List_Powerups.h" />
 		<Unit filename="include/List_Structures.h" />
 		<Unit filename="include/Main.h" />
-<<<<<<< Updated upstream
 		<Unit filename="include/Matrices.h" />
-=======
->>>>>>> Stashed changes
 		<Unit filename="include/Menu.h" />
 		<Unit filename="include/Moveable.h" />
 		<Unit filename="include/Obstacle.h" />
@@ -91,6 +90,7 @@
 		<Unit filename="src/Entity.cpp" />
 		<Unit filename="src/Fireball.cpp" />
 		<Unit filename="src/Game.cpp" />
+		<Unit filename="src/Handle.cpp" />
 		<Unit filename="src/Human.cpp" />
 		<Unit filename="src/Images.cpp" />
 		<Unit filename="src/Lava.cpp" />
@@ -106,6 +106,7 @@
 		<Unit filename="src/Level_Boss.cpp" />
 		<Unit filename="src/List_Characters.cpp" />
 		<Unit filename="src/List_Fireballs.cpp" />
+		<Unit filename="src/List_Handles.cpp" />
 		<Unit filename="src/List_Images.cpp" />
 		<Unit filename="src/List_Lavas.cpp" />
 		<Unit filename="src/List_Levels.cpp" />

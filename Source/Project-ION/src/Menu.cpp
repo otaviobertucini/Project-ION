@@ -160,7 +160,7 @@ int Menu::sologame(){
     return 0;
 }
 
-void Menu::readMenu()
+string Menu::readMenu()
 {
     string editText;
     string::iterator iter;
@@ -177,41 +177,43 @@ void Menu::readMenu()
 
     while(confirm)
     {
-
-        int newkey = readkey();
-        char ASCII = newkey & 0xff;
-
-        if(ASCII >= 32 && ASCII <= 126 && caret <= 15)
+        while(keypressed())
         {
-            if(insert || iter == editText.end())
-              iter = editText.insert(iter, ASCII);
-           else
-              editText.replace(caret, 1, 1, ASCII);
-           caret++;
-           iter++;
-        }
-        else
-        {
-            if(key[KEY_ENTER] && confirmEnter)
-                confirm = false;
-            else if(key[KEY_BACKSPACE])
+            int newkey = readkey();
+            char ASCII = newkey & 0xff;
+
+            if(ASCII >= 32 && ASCII <= 126 && caret <= 15)
             {
-                 if(iter != editText.begin())
-                 {
+                if(insert || iter == editText.end())
+                    iter = editText.insert(iter, ASCII);
+                else
+                    editText.replace(caret, 1, 1, ASCII);
+                caret++;
+                iter++;
+            }
+
+            if(key[KEY_ENTER] && confirmEnter && caret != 0)
+                    confirm = false;
+            if(key[KEY_BACKSPACE])
+            {
+                if(iter != editText.begin())
+                {
                     caret--;
                     iter--;
                     iter = editText.erase(iter);
-                 }
+                }
             }
             if(!key[KEY_ENTER])
                 confirmEnter = true;
-        }
 
-        clear(buffer);
-        draw_sprite(buffer, login_back, 0, 0);
-        textout_ex(buffer, font_main, editText.c_str() , 400, 340, makecol(255, 255, 255),-1);
-        blit(buffer, screen, 0, 0, 0, 0, 1080, 720);
+            clear(buffer);
+            draw_sprite(buffer, login_back, 0, 0);
+            textout_ex(buffer, font_main, editText.c_str() , 400, 340, makecol(255, 255, 255),-1);
+            blit(buffer, screen, 0, 0, 0, 0, 1080, 720);
+        }
     }
+    string teste = editText;
+    return teste;
 }
 
 Menu::~Menu()

@@ -2,11 +2,19 @@
 
 User::User()
 {
+    name = " ";
+    score = 0;
 }
 
 User::User(string name, float score)
 {
-    this->name = name;
+    int i=0;
+    while(name[i]!=NULL)
+    {
+        this->name[i]=name[i];
+        i++;
+    }
+
     this->score = score;
 }
 
@@ -15,9 +23,11 @@ void User::setScore(float score)
     this->score = score;
 }
 
-void User::setName(string name)
+void User::setName(string newName)
 {
-    this->name = name;
+    name = newName;
+    int i=0;
+
 }
 
 string User::getName()

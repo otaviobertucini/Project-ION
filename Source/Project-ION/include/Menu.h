@@ -14,7 +14,7 @@ public:
     int inicial();
     int pause();
     int sologame();
-    void readMenu();
+    string readMenu();
     virtual ~Menu();
 private:
     BITMAP* buffer;
