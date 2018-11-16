@@ -11,6 +11,8 @@ Menu::Menu(BITMAP* buffer){
     cursor = load_bitmap("Material/Scenario/pack_1.bmp", NULL);
     pause_back = load_bitmap("Material/pause.bmp", NULL);
     solo_back = load_bitmap("Material/solo_back.bmp", NULL);
+    login_back = load_bitmap("Material/login_back.bmp",NULL);
+    font_main = load_font("Fonts/ImpactFont.pcx", NULL, NULL);
 }
 
 int Menu::inicial(){
@@ -157,10 +159,65 @@ int Menu::sologame(){
     return 0;
 }
 
+void Menu::readMenu()
+{
+    string editText;
+    string::iterator iter;
+    int caret;
+    bool insert;
+    bool confirm;
+    bool confirmEnter;
+
+    iter = editText.begin();
+    caret = 0;
+    insert = true;
+    confirm = true;
+    confirmEnter=false;
+
+    while(confirm)
+    {
+
+        int newkey = readkey();
+        char ASCII = newkey & 0xff;
+
+        if(ASCII >= 32 && ASCII <= 126 && caret <= 15)
+        {
+            if(insert || iter == editText.end())
+              iter = editText.insert(iter, ASCII);
+           else
+              editText.replace(caret, 1, 1, ASCII);
+           caret++;
+           iter++;
+        }
+        else
+        {
+            if(key[KEY_ENTER] && confirmEnter)
+                confirm = false;
+            else if(key[KEY_BACKSPACE])
+            {
+                 if(iter != editText.begin())
+                 {
+                    caret--;
+                    iter--;
+                    iter = editText.erase(iter);
+                 }
+            }
+            if(!key[KEY_ENTER])
+                confirmEnter = true;
+        }
+
+        clear(buffer);
+        draw_sprite(buffer, login_back, 0, 0);
+        textout_ex(buffer, font_main, editText.c_str() , 400, 340, makecol(255, 255, 255),-1);
+        blit(buffer, screen, 0, 0, 0, 0, 1080, 720);
+    }
+}
+
 Menu::~Menu()
 {
     destroy_bitmap(img_back);
     destroy_bitmap(cursor);
     destroy_bitmap(pause_back);
     destroy_bitmap(solo_back);
+    destroy_bitmap(login_back);
 }

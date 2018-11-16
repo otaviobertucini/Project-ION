@@ -2,8 +2,9 @@
 #define MENU_H
 #include <allegro.h>
 #include <iostream>
-using std::cout;
-using std::endl;
+#include <string>
+
+using namespace std;
 
 class Menu
 {
@@ -13,6 +14,7 @@ public:
     int inicial();
     int pause();
     int sologame();
+    void readMenu();
     virtual ~Menu();
 private:
     BITMAP* buffer;
@@ -20,6 +22,8 @@ private:
     BITMAP* cursor;
     BITMAP* pause_back;
     BITMAP* solo_back;
+    BITMAP* login_back;
+    FONT* font_main;
 };
 
 #endif // MENU_H

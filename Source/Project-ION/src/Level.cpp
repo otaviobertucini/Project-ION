@@ -184,7 +184,7 @@ int Level::genericGameLoop()
         printMap();
         jack->print(buffer);
         characters->print(buffer);
-        //textout_ex(buffer, font_main, "iaiaiai", 0, 0, makecol(0, 0, 255), -1);
+        textout_ex(buffer, font_main, "aiaiai" , 0, 0, makecol(0, 0, 255), -1);
         draw_sprite(screen, buffer, 0, 0);
         clear_bitmap(buffer);
         if (key[KEY_C])

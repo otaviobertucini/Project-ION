@@ -33,7 +33,7 @@ void SoloGame::execute()
         y = 140;
 
         chances = 100;
-        i_level = 6;
+        i_level = 0;
         if(start == 2){
             ifstream file("register.txt");
             readLevel(file);
@@ -46,6 +46,7 @@ void SoloGame::execute()
         if(start == 1)
         {
             dead = false;
+            menu1->readMenu();
             //Loop de cada jogada
 
             while(!dead){
