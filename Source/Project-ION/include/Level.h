@@ -5,6 +5,7 @@
 #include <iostream>
 #include <vector>
 #include <fstream>
+#include <sstream>
 #include "Character.h"
 #include "Topspin.h"
 #include "Bat.h"
@@ -65,6 +66,7 @@ protected:
     List_Lavas* lavas;
     int iterations;
     FONT* font_main;
+    std::string life_txt;
 };
 
 #endif // LEVEL_H

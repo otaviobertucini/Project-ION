@@ -183,8 +183,10 @@ int Level::genericGameLoop()
     if(iterations % 4 == 0){
         printMap();
         jack->print(buffer);
-
-        textout_ex(buffer, font_main, "Vidas: ", 0, 0, makecol(255, 0, 0), -1);
+        std::stringstream ss;
+        ss << "Vidas: " << jack->getLifes();
+        life_txt = ss.str();
+        textout_ex(buffer, font_main, life_txt.c_str(), 0, 0, makecol(255, 0, 0), -1);
         characters->print(buffer);
         draw_sprite(screen, buffer, 0, 0);
         clear_bitmap(buffer);

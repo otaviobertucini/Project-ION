@@ -85,6 +85,7 @@ int Level_Boss::gameLoop(){
 
 void Level_Boss::generateLevel(){
     if(!was_genereted){
+        handles = new List_Handles;
         resetLevel();
         boss = new Boss(480, 350, images->getImgsBoss(),jack);
         characters->include(static_cast<Character*>(boss));
@@ -167,7 +168,8 @@ void Level_Boss::loadLevel(ifstream& myfile){
 void Level_Boss::eraseAll(){
     characters->eraseAll();
     handles->eraseAll();
-    delete handles;
+    poisons->eraseAll();
+    was_genereted = 0;
 }
 
 Level_Boss::~Level_Boss()
