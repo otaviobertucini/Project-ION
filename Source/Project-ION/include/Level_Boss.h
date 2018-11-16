@@ -15,6 +15,7 @@ public:
     int gameLoop();
     void generateLevel();
     void generateLevel(List_Characters* characters);
+    void saveLevel(std::ofstream& myfile) const;
     void loadLevel(ifstream& file);
     virtual ~Level_Boss();
 private:

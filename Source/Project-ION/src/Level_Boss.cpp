@@ -67,7 +67,7 @@ int Level_Boss::gameLoop(){
         aux->switch_on();
     }
     if(Handle::getSwitchedOn() == 4){
-        cout << "parabéns vc ganhou a porra do jogo" << endl;
+        cout << "parabéns vc ganhou o jogo" << endl;
     }
 
     if(poisons->isCollide(jack)){
@@ -79,6 +79,8 @@ int Level_Boss::gameLoop(){
         resetPlayer(1050,jack->gety());
         return 3; //prev level
     }
+
+    return 1;
 }
 
 void Level_Boss::generateLevel(){
@@ -91,7 +93,14 @@ void Level_Boss::generateLevel(){
         handles->include(new Handle(120, 570, images->getImgsHandle()));
         handles->include(new Handle(930, 570, images->getImgsHandle()));
         was_genereted = 1;
+        Handle::setSwitchedOn(0);
     }
+}
+
+void Level_Boss::saveLevel(std::ofstream& myfile) const{
+    characters->saveLevel(myfile);
+    handles->saveState(myfile);
+    myfile << "NHA:" << Handle::getSwitchedOn() << "\n";
 }
 
 void Level_Boss::loadLevel(ifstream& myfile){
@@ -129,6 +138,26 @@ void Level_Boss::loadLevel(ifstream& myfile){
                 int y = (int) atoi(yc.c_str());
                 boss = new Boss(x, y, images->getImgsBoss(), jack);
                 characters->include(static_cast<Character*>(boss));
+            }
+            if(copy == "HAN"){
+                int i;
+                std::vector<int> index;
+                for(i=4; i<line.size(); i++){
+                    if(line[i] == ',')
+                        index.push_back(i);
+                }
+                std::string xc(line, 4, index[0]);
+                std::string yc(line, index[0]+1, index[1]);
+                std::string oc(line, index[1]+1, line.size()-1);
+                int x = (int) atoi(xc.c_str());
+                int y = (int) atoi(yc.c_str());
+                int on = (int) atoi(oc.c_str());
+                handles->include(new Handle(x, y, images->getImgsHandle(), on));
+            }
+            if(copy == "NHA"){
+                std::string xc(line, 4, line.size() -1);
+                int n = (int) atoi(xc.c_str());
+                Handle::setSwitchedOn(n);
             }
         }
         was_genereted = 1;

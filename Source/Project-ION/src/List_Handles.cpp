@@ -40,6 +40,12 @@ Handle* List_Handles::isCollide(Human* a){
     return NULL;
 }
 
+void List_Handles::saveState(std::ofstream& myfile){
+    for(int i = 0; i < size(); i++){
+        handles.at(i)->saveState(myfile);
+    }
+}
+
 List_Handles::~List_Handles()
 {
     //dtor

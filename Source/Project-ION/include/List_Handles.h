@@ -13,6 +13,7 @@ public:
     void print(BITMAP* buffer);
     void eraseAll();
     Handle* isCollide(Human* a);
+    void saveState(std::ofstream& myfile);
     virtual ~List_Handles();
 private:
     List<Handle*> handles;
