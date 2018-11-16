@@ -45,10 +45,11 @@ void SoloGame::execute()
         }
         if(start == 1)
         {
+            start = 4;
             dead = false;
             menu1->readMenu();
-            //Loop de cada jogada
 
+            //Loop de cada jogada
             while(!dead){
                 exit_loop = false;
                 current = (*levels)[i_level];

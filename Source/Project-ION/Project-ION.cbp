@@ -78,6 +78,7 @@
 		<Unit filename="include/Structure.h" />
 		<Unit filename="include/Topspin.h" />
 		<Unit filename="include/Tutorial.h" />
+		<Unit filename="include/User.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Bat.cpp" />
 		<Unit filename="src/Birl.cpp" />
@@ -121,6 +122,7 @@
 		<Unit filename="src/Structure.cpp" />
 		<Unit filename="src/Topspin.cpp" />
 		<Unit filename="src/Tutorial.cpp" />
+		<Unit filename="src/User.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />
