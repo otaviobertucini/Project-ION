@@ -37,12 +37,13 @@
 
 1542320788 D
 
-1542391642 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/Level.h
+1542405992 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/Level.h
 	<allegro.h>
 	<cstddef>
 	<iostream>
 	<vector>
 	<fstream>
+	<sstream>
 	"Character.h"
 	"Topspin.h"
 	"Bat.h"
@@ -79,7 +80,7 @@
 	"Powerup.h"
 	"Birl.h"
 
-1542394379 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Level.cpp
+1542406129 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Level.cpp
 	"Level.h"
 
 1542144258 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Map.cpp
@@ -720,7 +721,7 @@
 1542317466 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Level_6.cpp
 	"Level_6.h"
 
-1542394904 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Level_Boss.cpp
+1542407022 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Level_Boss.cpp
 	"Level_Boss.h"
 
 1542243524 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Level_4_1.cpp
@@ -910,7 +911,7 @@
 1542388272 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Handle.cpp
 	"Handle.h"
 
-1542389643 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/List_Handles.cpp
+1542406820 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/List_Handles.cpp
 	"List_Handles.h"
 
 1542383966 les.h"
