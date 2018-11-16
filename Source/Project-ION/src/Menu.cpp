@@ -16,6 +16,7 @@ Menu::Menu(BITMAP* buffer){
 int Menu::inicial(){
     //cout << "aqui" << endl;
     bool exit = false;
+    bool confirmButton = false;
     int option = 1;
     float y_cursor;
     //show_mouse(screen);
@@ -27,7 +28,8 @@ int Menu::inicial(){
         if(key[KEY_T]){
             return 2;
         }
-        if(key[KEY_ENTER]){
+        if(key[KEY_ENTER] && confirmButton)
+        {
             if(option == 1){
                 return 1;
             }
@@ -35,6 +37,8 @@ int Menu::inicial(){
                 return 0;
             }
         }
+        if(!key[KEY_ENTER])
+            confirmButton = true;
 
         if(key[KEY_UP] && option > 1){
             rest(200);
@@ -74,7 +78,7 @@ int Menu::pause(){
             return 2;
         }
 
-        if(key[KEY_SPACE]){
+        if(key[KEY_ENTER]){
             if(option == 1)
                 return 1;
             if(option == 2)
@@ -92,13 +96,13 @@ int Menu::pause(){
         }
 
         if(option == 1){
-            y_cursor = 300;
+            y_cursor = 260;
         }
         else if(option == 2){
             y_cursor = 414;
         }
 
-        draw_sprite(buffer, cursor, 225, y_cursor);
+        draw_sprite(buffer, cursor, 330, y_cursor);
         blit(buffer, screen, 0, 0, 0, 0, 1080, 720);
         clear(buffer);
     }
@@ -107,19 +111,46 @@ int Menu::pause(){
 
 int Menu::sologame(){
     bool exit = false;
+    bool confirmButton = false;
+    int option = 1;
+    float y_cursor;
+    //show_mouse(screen);
     while(!exit){
         draw_sprite(buffer, solo_back, 0, 0);
-        if(key[KEY_J]){
+        if(key[KEY_E]){
             return 1;
         }
-        if(key[KEY_T]){
+        if(key[KEY_R]){
             return 2;
         }
 
-        if(key[KEY_ESC]){
-            exit = true;
+        if(key[KEY_ENTER] && confirmButton){
+            if(option == 1)
+                return 1;
+            if(option == 2)
+                return 2;
+        }
+        if(!key[KEY_ENTER])
+            confirmButton = true;
+
+        if(key[KEY_UP]){
+            rest(200);
+            option = 1;
         }
 
+        if(key[KEY_DOWN]){
+            rest(200);
+            option = 2;
+        }
+
+        if(option == 1){
+            y_cursor = 260;
+        }
+        else if(option == 2){
+            y_cursor = 414;
+        }
+
+        draw_sprite(buffer, cursor, 310, y_cursor);
         blit(buffer, screen, 0, 0, 0, 0, 1080, 720);
         clear(buffer);
     }

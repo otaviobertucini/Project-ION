@@ -485,7 +485,7 @@
 	<allegro.h>
 	<iostream>
 
-1542246748 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\level_1.cpp
+1542328259 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\level_1.cpp
 	"Level_1.h"
 
 1542246311 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\list_characters.cpp
@@ -494,7 +494,7 @@
 1541190401 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\list_levels.cpp
 	"List_Levels.h"
 
-1542324458 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\menu.cpp
+1542377840 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\menu.cpp
 	"Menu.h"
 
 1542246799 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\tutorial.cpp
@@ -537,7 +537,7 @@
 	"Obstacle.h"
 	"Fireball.h"
 
-1542320788 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\lava.cpp
+1542328259 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\lava.cpp
 	"Lava.h"
 
 1542195699 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\list_obstacles.cpp
@@ -570,10 +570,10 @@
 	"Topspin.h"
 	"Bat.h"
 
-1542246312 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\level_2.cpp
+1542328259 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\level_2.cpp
 	"Level_2.h"
 
-1542246311 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\level_3.cpp
+1542328259 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\level_3.cpp
 	"Level_3.h"
 
 1542328259 c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\include\level_3.h
@@ -631,7 +631,7 @@
 
 1542105345 ated upstream
 
-1542221315 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\level_4.cpp
+1542328259 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\level_4.cpp
 	"Level_4.h"
 
 1542328259 c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\include\level_5.h
@@ -639,10 +639,10 @@
 	"Topspin.h"
 	"Bat.h"
 
-1542287920 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\level_5.cpp
+1542328259 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\level_5.cpp
 	"Level_5.h"
 
-1542292523 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\level_6.cpp
+1542328259 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\level_6.cpp
 	"Level_6.h"
 
 1542328259 c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\include\level_6.h
@@ -656,7 +656,7 @@
 	"Boss.h"
 	"List_Poisons.h"
 
-1542320788 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\level_boss.cpp
+1542328259 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\level_boss.cpp
 	"Level_Boss.h"
 
 1542221339 c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\include\level_4_1.h
@@ -859,7 +859,7 @@
 	<fstream>
 	<ctime>
 
-1542320788 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\boss.cpp
+1542328259 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\boss.cpp
 	"Boss.h"
 
 1542313829 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/List_Poisons.h
