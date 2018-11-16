@@ -30,6 +30,7 @@ int Menu::inicial(){
         if(key[KEY_T]){
             return 2;
         }
+
         if(key[KEY_ENTER] && confirmButton)
         {
             if(option == 1){

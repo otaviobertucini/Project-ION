@@ -33,6 +33,12 @@ Images::Images()
     imgsMap->include(load_bitmap("Material/Scenario/spine_4.bmp", NULL));
     imgsMap->include(load_bitmap("Material/Powerups/birl.bmp", NULL));
 
+
+    //loads images from handle
+    imgsHandle = new List_Images;
+    imgsHandle->include(load_bitmap("Material/Scenario/lever_switch_1.bmp", NULL));
+    imgsHandle->include(load_bitmap("Material/Scenario/lever_switch_2.bmp", NULL));
+
     //Loads images from topspin
     imgsTopspin = new List_Images;
     imgsTopspin->include(load_bitmap("Material/Enemy/topSpin_Walk_1.bmp", NULL));
@@ -75,6 +81,10 @@ List_Images* Images::getImgsBat(){
 
 List_Images* Images::getImgsBoss(){
     return imgsBoss;
+}
+
+List_Images* Images::getImgsHandle(){
+    return imgsHandle;
 }
 
 Images::~Images()

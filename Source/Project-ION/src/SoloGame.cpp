@@ -33,7 +33,7 @@ void SoloGame::execute()
         y = 140;
 
         chances = 100;
-        i_level = 0;
+        i_level = 6;
         if(start == 2){
             ifstream file("register.txt");
             readLevel(file);
@@ -61,6 +61,8 @@ void SoloGame::execute()
 
                 load_level = 0;
 
+
+
                 //Loop de cada fase
                 while(!exit_loop)
                 {
@@ -82,13 +84,15 @@ void SoloGame::execute()
 
                     if(game_status == 0)
                     {
-                        chances--;
-                        if(chances == 0)
+                        jack->lessLife();
+                        if(jack->getLifes() == 0)
                         {
                             dead = true;
                             exit_loop = true;
+                            jack->resetLifes();
                         }
                         current->resetPlayer();
+
                     }
 
                     if(game_status == 2){

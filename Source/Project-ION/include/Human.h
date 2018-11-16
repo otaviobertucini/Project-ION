@@ -24,6 +24,9 @@ class Human:public Character
         void loop();
         void turnPowerup(const bool state = true);
         const bool isPowered() const;
+        int getLifes();
+        void lessLife();
+        void resetLifes();
         void saveState(std::ofstream& myfile) const;
     private:
         string name;
@@ -33,6 +36,7 @@ class Human:public Character
         float distance_dash;
         bool powerup_on;
         const float x_force;
+        int lifes;
 };
 
 #endif // HUMAN_H

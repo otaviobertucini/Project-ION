@@ -48,6 +48,7 @@ Level_Boss::Level_Boss(BITMAP* buffer, Images* images, Human* jack):Level(buffer
     }
 
     poisons = new List_Poisons;
+    handles = new List_Handles;
     generateMap(m);
 }
 
@@ -60,6 +61,15 @@ int Level_Boss::gameLoop(){
     boss->createPoison(poisons);
     poisons->loop();
     poisons->print(buffer);
+    handles->print(buffer);
+    Handle* aux = handles->isCollide(jack);
+    if(aux != NULL && key[KEY_E]){
+        aux->switch_on();
+    }
+    if(Handle::getSwitchedOn() == 4){
+        cout << "parabéns vc ganhou o jogo" << endl;
+    }
+
     if(poisons->isCollide(jack)){
         return 0;
     }
@@ -69,16 +79,28 @@ int Level_Boss::gameLoop(){
         resetPlayer(1050,jack->gety());
         return 3; //prev level
     }
+
+    return 1;
 }
 
 void Level_Boss::generateLevel(){
-
     if(!was_genereted){
         resetLevel();
         boss = new Boss(480, 350, images->getImgsBoss(),jack);
         characters->include(static_cast<Character*>(boss));
+        handles->include(new Handle(120, 330, images->getImgsHandle()));
+        handles->include(new Handle(930, 330, images->getImgsHandle()));
+        handles->include(new Handle(120, 570, images->getImgsHandle()));
+        handles->include(new Handle(930, 570, images->getImgsHandle()));
         was_genereted = 1;
+        Handle::setSwitchedOn(0);
     }
+}
+
+void Level_Boss::saveLevel(std::ofstream& myfile) const{
+    characters->saveLevel(myfile);
+    handles->saveState(myfile);
+    myfile << "NHA:" << Handle::getSwitchedOn() << "\n";
 }
 
 void Level_Boss::loadLevel(ifstream& myfile){
@@ -86,7 +108,6 @@ void Level_Boss::loadLevel(ifstream& myfile){
     if(myfile.is_open()){
         while (getline(myfile,line)){
             std::string copy(line.begin(), line.begin()+3);
-            cout << copy << endl;
             if(copy == "JAK"){
                 int i;
                 std::vector<int> index;
@@ -105,7 +126,20 @@ void Level_Boss::loadLevel(ifstream& myfile){
                 jack->turnPowerup((int) atoi(power_copy.c_str()));
             }
             if(copy == "BOS"){
-                cout << "entrei";
+                int i;
+                std::vector<int> index;
+                for(i=4; i<line.size(); i++){
+                    if(line[i] == ',')
+                        index.push_back(i);
+                }
+                std::string xc(line, 4, index[0]);
+                std::string yc(line, index[0]+1, line.size()-1);
+                int x = (int) atoi(xc.c_str());
+                int y = (int) atoi(yc.c_str());
+                boss = new Boss(x, y, images->getImgsBoss(), jack);
+                characters->include(static_cast<Character*>(boss));
+            }
+            if(copy == "HAN"){
                 int i;
                 std::vector<int> index;
                 for(i=4; i<line.size(); i++){
@@ -114,15 +148,26 @@ void Level_Boss::loadLevel(ifstream& myfile){
                 }
                 std::string xc(line, 4, index[0]);
                 std::string yc(line, index[0]+1, index[1]);
+                std::string oc(line, index[1]+1, line.size()-1);
                 int x = (int) atoi(xc.c_str());
                 int y = (int) atoi(yc.c_str());
-                cout << x << "," << y;
-                boss = new Boss(x, y, images->getImgsBoss(), jack);
-                characters->include(static_cast<Character*>(boss));
+                int on = (int) atoi(oc.c_str());
+                handles->include(new Handle(x, y, images->getImgsHandle(), on));
+            }
+            if(copy == "NHA"){
+                std::string xc(line, 4, line.size() -1);
+                int n = (int) atoi(xc.c_str());
+                Handle::setSwitchedOn(n);
             }
         }
         was_genereted = 1;
     }
+}
+
+void Level_Boss::eraseAll(){
+    characters->eraseAll();
+    handles->eraseAll();
+    delete handles;
 }
 
 Level_Boss::~Level_Boss()

@@ -17,6 +17,7 @@ Human::Human(string name, float x, float y, List_Images *img, int direction, boo
     y_speed = 0.6;
     this->direction = direction;
     this->powerup_on = powerup_on;
+    lifes = 2;
 }
 
 void Human::gravity()
@@ -145,6 +146,18 @@ const bool Human::isPowered() const{
 
 void Human::saveState(std::ofstream& myfile) const{
     myfile << name << ":" << x << "," << y << "," << direction << "," << powerup_on << "\n";
+}
+
+int Human::getLifes(){
+    return lifes;
+}
+
+void Human::lessLife(){
+    lifes--;
+}
+
+void Human::resetLifes(){
+    lifes = 2;
 }
 
 Human::~Human()
