@@ -4,6 +4,8 @@
 #include "Level_Boss.h"
 #include "Boss.h"
 #include "List_Poisons.h"
+#include "Handle.h"
+#include "List_Handles.h"
 
 class Level_Boss: public Level
 {
@@ -18,6 +20,7 @@ public:
 private:
     Boss* boss;
     List_Poisons* poisons;
+    List_Handles* handles;
 };
 
 #endif // LEVEL_Boss_H

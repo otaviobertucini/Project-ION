@@ -22,6 +22,7 @@ public:
     List_Images* getImgsFireball();
     List_Images* getImgsBat();
     List_Images* getImgsBoss();
+    List_Images* getImgsHandle();
 private:
     List_Images *imgsJack;
     List_Images *imgsMap;
@@ -29,6 +30,7 @@ private:
     List_Images *imgsFireball;
     List_Images *imgsBat;
     List_Images *imgsBoss;
+    List_Images *imgsHandle;
 };
 
 #endif // IMAGES_H

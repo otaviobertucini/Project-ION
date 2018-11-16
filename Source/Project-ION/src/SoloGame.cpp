@@ -33,7 +33,7 @@ void SoloGame::execute()
         y = 140;
 
         chances = 100;
-        i_level = 6;
+        i_level = 0;
         if(start == 2){
             ifstream file("register.txt");
             readLevel(file);
