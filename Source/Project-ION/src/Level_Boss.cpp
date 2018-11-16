@@ -164,6 +164,12 @@ void Level_Boss::loadLevel(ifstream& myfile){
     }
 }
 
+void Level_Boss::eraseAll(){
+    characters->eraseAll();
+    handles->eraseAll();
+    delete handles;
+}
+
 Level_Boss::~Level_Boss()
 {
     //dtor

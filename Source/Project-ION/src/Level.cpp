@@ -13,10 +13,10 @@ Level::Level(BITMAP* buffer, Images *images, Human* jack){
     structures = new List_Structures;
     lavas = new List_Lavas;
     this->jack = jack;
+    font_main = load_font("Fonts/ImpactFont.pcx", NULL, NULL);
     game_status = 1;
     was_genereted = 0;
     iterations = 0;
-    font_main = load_font("Fonts/ImpactFont.pcx", NULL, NULL);
 }
 
 void Level::generateMap(int** matrix){
@@ -183,8 +183,9 @@ int Level::genericGameLoop()
     if(iterations % 4 == 0){
         printMap();
         jack->print(buffer);
+
+        textout_ex(buffer, font_main, "Vidas: ", 0, 0, makecol(255, 0, 0), -1);
         characters->print(buffer);
-        //textout_ex(buffer, font_main, "iaiaiai", 0, 0, makecol(0, 0, 255), -1);
         draw_sprite(screen, buffer, 0, 0);
         clear_bitmap(buffer);
         if (key[KEY_C])

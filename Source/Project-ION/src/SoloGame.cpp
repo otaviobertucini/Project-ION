@@ -46,6 +46,7 @@ void SoloGame::execute()
         if(start == 1)
         {
             dead = false;
+            menu1->readMenu();
             //Loop de cada jogada
 
             while(!dead){
@@ -58,6 +59,8 @@ void SoloGame::execute()
                 current->generateLevel();
 
                 load_level = 0;
+
+
 
                 //Loop de cada fase
                 while(!exit_loop)
@@ -80,13 +83,15 @@ void SoloGame::execute()
 
                     if(game_status == 0)
                     {
-                        chances--;
-                        if(chances == 0)
+                        jack->lessLife();
+                        if(jack->getLifes() == 0)
                         {
                             dead = true;
                             exit_loop = true;
+                            jack->resetLifes();
                         }
                         current->resetPlayer();
+
                     }
 
                     if(game_status == 2){

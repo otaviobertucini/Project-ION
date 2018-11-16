@@ -22,6 +22,7 @@
 #include "List_Obstacles.h"
 #include "List_Structures.h"
 #include "Images.h"
+#include "Menu.h"
 using std::cout;
 using std::endl;
 
