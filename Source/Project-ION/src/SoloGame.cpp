@@ -14,6 +14,7 @@ SoloGame::SoloGame(Menu* menu, BITMAP* buffer):Game()
     level0();
 }
 
+//Execute
 void SoloGame::execute()
 {
     int game_status;
