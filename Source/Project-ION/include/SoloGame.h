@@ -11,7 +11,7 @@
 #include <string>
 #include <ctime>
 #include "Human.h"
-#include "User.h"
+#include "List_user.h"
 #include "Game.h"
 #include "Topspin.h"
 #include "Tutorial.h"
@@ -46,7 +46,8 @@ private:
     int chances;
     int i_level;
     Human* jack;
-    User usuario;
+    List_user listUsers;
+    User current_user;
     double power_time;
 };
 

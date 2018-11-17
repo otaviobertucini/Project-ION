@@ -1,0 +1,3 @@
+Nicolas,1,0
+Otavio,4,3021
+Ciclano,3,2345

@@ -314,7 +314,7 @@
 	<math.h>
 	"Character.h"
 
-1542411131 c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\include\sologame.h
+1542488079 c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\include\sologame.h
 	<allegro.h>
 	<stdlib.h>
 	<time.h>
@@ -325,7 +325,7 @@
 	<string>
 	<ctime>
 	"Human.h"
-	"User.h"
+	"List_user.h"
 	"Game.h"
 	"Topspin.h"
 	"Tutorial.h"
@@ -384,7 +384,7 @@
 1542195699 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\map.cpp
 	"Map.h"
 
-1542469670 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\sologame.cpp
+1542488977 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\sologame.cpp
 	"SoloGame.h"
 
 1542320788 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\structure.cpp
@@ -468,7 +468,7 @@
 1542315314 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Level_1.cpp
 	"Level_1.h"
 
-1542246311 c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\include\list_characters.h
+1542477346 c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\include\list_characters.h
 	"Character.h"
 	"Human.h"
 
@@ -920,13 +920,13 @@
 
 1542383966 les.h"
 
-1542407812 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\user.cpp
+1542488554 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\user.cpp
 	"User.h"
 
 1542385976 7af213f733357dade0807dc9b037376e39bca
 	"User.h"
 
-1542407844 c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\include\user.h
+1542488398 c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\include\user.h
 	<string>
 
 1542379917 b252889e5b65da7feaf06d77d471e3fc862f3
@@ -945,4 +945,15 @@
 
 1542399364 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\list_handles.cpp
 	"List_Handles.h"
+
+1542489925 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\list_user.cpp
+	"List_User.h"
+
+1542489755 c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\include\list_user.h
+	<Vector>
+	<fstream>
+	<iostream>
+	<string>
+	"stdlib.h"
+	"User.h"
 

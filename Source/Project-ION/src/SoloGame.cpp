@@ -5,6 +5,7 @@ SoloGame::SoloGame(){}
 SoloGame::SoloGame(Menu* menu, BITMAP* buffer):Game()
 {
     this->buffer = buffer;
+    listUsers.Import_List();
     menu1 = menu;
     chances = 3;
     i_level = 0;
@@ -29,7 +30,7 @@ void SoloGame::execute()
     int start = menu1->sologame();
 
     if(start == 1)
-        usuario.setName(menu1->readMenu());
+        current_user.setName(menu1->readMenu());
 
     //Loop do jogo todo
     while(!exit)
@@ -42,8 +43,8 @@ void SoloGame::execute()
         i_level = 0;
 
         if(start == 2){
-            usuario.setName(menu1->readMenu());
-            string aux_str = "Register/" + usuario.getName() + ".txt";
+            current_user.setName(menu1->readMenu());
+            string aux_str = "Register/" + current_user.getName() + ".txt";
             ifstream file(aux_str.c_str());
             return_possible_archive = readLevel(file);
 
@@ -91,6 +92,22 @@ void SoloGame::execute()
                             dead = true;
                             exit = true;
                             saveLevel();
+
+                            int level_point;
+
+                            if(i_level == 7)
+                                level_point = 2;
+
+                            else if(i_level == 8)
+                                level_point = 4;
+
+                            else
+                                level_point = i_level;
+
+                            current_user.setLevel(level_point);
+                            current_user.setScore(power_time);
+                            listUsers.Add_User(&current_user);
+                            listUsers.Export_List();
                         }
                     }
 
@@ -194,7 +211,7 @@ void SoloGame::level0(){
 
 void SoloGame::saveLevel(){
 
-    string aux = "Register/" + usuario.getName() + ".txt";
+    string aux = "Register/" + current_user.getName() + ".txt";
     ofstream myfile(aux.c_str());
     myfile << "LEV:" << i_level << "\n";
     myfile << "LIF:" << jack->getLifes() << "\n";

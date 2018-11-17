@@ -67,6 +67,7 @@
 		<Unit filename="include/List_Poisons.h" />
 		<Unit filename="include/List_Powerups.h" />
 		<Unit filename="include/List_Structures.h" />
+		<Unit filename="include/List_User.h" />
 		<Unit filename="include/Main.h" />
 		<Unit filename="include/Matrices.h" />
 		<Unit filename="include/Menu.h" />
@@ -114,6 +115,7 @@
 		<Unit filename="src/List_Poisons.cpp" />
 		<Unit filename="src/List_Powerups.cpp" />
 		<Unit filename="src/List_Structures.cpp" />
+		<Unit filename="src/List_User.cpp" />
 		<Unit filename="src/Main.cpp" />
 		<Unit filename="src/Menu.cpp" />
 		<Unit filename="src/Moveable.cpp" />

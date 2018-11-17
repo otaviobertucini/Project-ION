@@ -4,18 +4,26 @@ User::User()
 {
     name = " ";
     score = 0;
+    level = 0;
 }
 
-User::User(string name, float score)
+User::User(string name, float score, int level)
 {
-    int i=0;
-    while(name[i]!=NULL)
-    {
-        this->name[i]=name[i];
-        i++;
-    }
-
+    this->name = name;
     this->score = score;
+    this->level = level;
+}
+
+void User::setAll(string name, float score, int level)
+{
+    this->name = name;
+    this->score = score;
+    this->level = level;
+}
+
+void User::setName(string newName)
+{
+    name = newName;
 }
 
 void User::setScore(float score)
@@ -23,11 +31,9 @@ void User::setScore(float score)
     this->score = score;
 }
 
-void User::setName(string newName)
+void User::setLevel(int level)
 {
-    name = newName;
-    int i=0;
-
+    this->level = level;
 }
 
 string User::getName()
@@ -38,6 +44,11 @@ string User::getName()
 float User::getScore()
 {
     return score;
+}
+
+int User::getLevel()
+{
+    return level;
 }
 
 User::~User()
