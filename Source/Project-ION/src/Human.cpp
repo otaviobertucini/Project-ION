@@ -160,6 +160,10 @@ void Human::resetLifes(){
     lifes = 2;
 }
 
+void Human::setLifes(const int lifes){
+    this->lifes = lifes;
+}
+
 Human::~Human()
 {
 

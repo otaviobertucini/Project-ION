@@ -39,6 +39,7 @@ void SoloGame::execute()
 
         chances = 100;
         i_level = 0;
+
         if(start == 2){
             usuario.setName(menu1->readMenu());
             string aux_str = "Register/" + usuario.getName() + ".txt";
@@ -92,11 +93,12 @@ void SoloGame::execute()
 
                     if(game_status == 0)
                     {
-                        chances--;
-                        if(chances == 0)
+                        jack->lessLife();
+                        if(jack->getLifes() == 0)
                         {
                             dead = true;
                             exit_loop = true;
+                            jack->resetLifes();
                         }
                         current->resetPlayer();
                     }
@@ -192,7 +194,7 @@ void SoloGame::saveLevel(){
     string aux = "Register/" + usuario.getName() + ".txt";
     ofstream myfile(aux.c_str());
     myfile << "LEV:" << i_level << "\n";
-    myfile << "LIF:" << chances << "\n";
+    myfile << "LIF:" << jack->getLifes() << "\n";
     myfile << "TIM:" << power_time << endl;
     jack->saveState(myfile);
     current->saveLevel(myfile);
@@ -201,37 +203,38 @@ void SoloGame::saveLevel(){
 int SoloGame::readLevel(ifstream& myfile){
     std::string line;
     if(myfile.is_open()){
-        getline(myfile, line);
-        std::string copy(line.begin(), line.begin()+3);
-        if(copy == "LEV"){
-            std::string lev(line, 4, line.size()-1);
-            i_level = ((int) atoi(lev.c_str()));
-        }
-        if(copy == "LIF"){
-            std::string lif(line, 4, line.size()-1);
-            chances = ((int) atoi(lif.c_str()));
-        }
-        if(copy == "TIM"){
-            std::string lif(line, 4, line.size()-1);
-            power_time = ((float) atof(lif.c_str()));
-        }
-        if(copy == "JAK"){
-            int i;
-            std::vector<int> index;
-            for(i=4; i<line.size(); i++){
-                if(line[i] == ',')
-                    index.push_back(i);
+            getline(myfile, line);
+            std::string copy(line.begin(), line.begin()+3);
+            if(copy == "LEV"){
+                std::string lev(line, 4, line.size()-1);
+                i_level = ((int) atoi(lev.c_str()));
             }
-            std::string x(line, 4, index[0]);
-            std::string y(line, index[0]+1, index[1]);
-            std::string dir_copy(line, index[1]+1, index[2]);
-            std::string power_copy(line, index[2]+1, line.size()-1);
-            jack->setx((float) atof(x.c_str()));
-            jack->sety((float) atof(y.c_str())-1);
-            jack->setDown(false);
-            jack->setUp(false);
-            jack->turnPowerup((int) atoi(power_copy.c_str()));
-        }
+            if(copy == "LIF"){
+                std::string lif(line, 4, line.size()-1);
+                jack->setLifes((int) atoi(lif.c_str()));
+            }
+            if(copy == "TIM"){
+                std::string lif(line, 4, line.size()-1);
+                power_time = ((float) atof(lif.c_str()));
+            }
+            if(copy == "JAK"){
+                int i;
+                std::vector<int> index;
+                for(i=4; i<line.size(); i++){
+                    if(line[i] == ',')
+                        index.push_back(i);
+                }
+                std::string x(line, 4, index[0]);
+                std::string y(line, index[0]+1, index[1]);
+                std::string dir_copy(line, index[1]+1, index[2]);
+                std::string power_copy(line, index[2]+1, line.size()-1);
+                jack->setx((float) atof(x.c_str()));
+                jack->sety((float) atof(y.c_str())-1);
+                jack->setDown(false);
+                jack->setUp(false);
+                jack->turnPowerup((int) atoi(power_copy.c_str()));
+            }
+
         return 1;
     }
     else
