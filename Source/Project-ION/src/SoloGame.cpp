@@ -50,6 +50,8 @@ void SoloGame::execute()
             if(return_possible_archive == 0)
                 break;
 
+            file.clear();
+            file.seekg(0, ios::beg);
             current = (*levels)[i_level];
             current->loadLevel(file);
             current->resetPlayer(jack->getx(),jack->gety());
@@ -204,7 +206,8 @@ void SoloGame::saveLevel(){
 int SoloGame::readLevel(ifstream& myfile){
     std::string line;
     if(myfile.is_open()){
-            getline(myfile, line);
+        while(getline(myfile, line))
+        {
             std::string copy(line.begin(), line.begin()+3);
             if(copy == "LEV"){
                 std::string lev(line, 4, line.size()-1);
@@ -235,6 +238,7 @@ int SoloGame::readLevel(ifstream& myfile){
                 jack->setUp(false);
                 jack->turnPowerup((int) atoi(power_copy.c_str()));
             }
+        }
 
         return 1;
     }

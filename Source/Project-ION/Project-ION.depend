@@ -221,7 +221,7 @@
 	"SoloGame.h"
 	"Main.h"
 
-1542411499 c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\include\level.h
+1542470204 c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\include\level.h
 	<allegro.h>
 	<cstddef>
 	<iostream>
@@ -375,7 +375,7 @@
 1542399364 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\images.cpp
 	"Images.h"
 
-1542411499 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\level.cpp
+1542470199 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\level.cpp
 	"Level.h"
 
 1542320788 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\list_images.cpp
@@ -384,7 +384,7 @@
 1542195699 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\map.cpp
 	"Map.h"
 
-1542465065 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\sologame.cpp
+1542469670 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\sologame.cpp
 	"SoloGame.h"
 
 1542320788 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\structure.cpp
@@ -492,7 +492,7 @@
 	<iostream>
 	<string>
 
-1542328259 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\level_1.cpp
+1542469870 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\level_1.cpp
 	"Level_1.h"
 
 1542246311 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\list_characters.cpp
