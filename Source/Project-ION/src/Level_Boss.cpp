@@ -66,12 +66,13 @@ int Level_Boss::gameLoop(){
     if(aux != NULL && key[KEY_E]){
         aux->switch_on();
     }
+
     if(Handle::getSwitchedOn() == 4){
-        cout << "parabéns vc ganhou o jogo" << endl;
+        return 100;
     }
 
     if(poisons->isCollide(jack)){
-        return 0;
+       return 0;
     }
     structures->isCollide(poisons);
 

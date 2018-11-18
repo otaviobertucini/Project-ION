@@ -74,11 +74,10 @@ int List_Structures::isCollide(List_Characters* chars){
 
 int List_Structures::isCollide(List_Fireballs* fires){
     for(int i = 0; i < fires->size(); i++){
-        if(isCollide(static_cast<Moveable*>((*fires)[i]))){
-            if(!(*fires)[i]->getMoveUp()){
-                delete (*fires)[i];
-                fires->erase(i);
-            }
+        isCollide(static_cast<Moveable*>((*fires)[i]));
+        if(!(*fires)[i]->getMoveUp()){
+            delete (*fires)[i];
+            fires->erase(i);
         }
     }
 }

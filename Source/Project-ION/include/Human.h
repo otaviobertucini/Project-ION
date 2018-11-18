@@ -28,8 +28,8 @@ class Human:public Character
         int getLifes();
         void lessLife();
         void resetLifes();
-        void saveState(std::ofstream& myfile) const;
         void setLifes(const int lifes);
+        void saveState(std::ofstream& myfile) const;
     private:
         string name;
         float y_force;

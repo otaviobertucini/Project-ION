@@ -13,6 +13,8 @@ Bat::Bat(float x, float y, List_Images *img, int direction, int step, int x_dist
     this->flew = flew;
     this->direction = direction;
     this->step = step;
+    move_animation = 0;
+    confirmAnimation = true;
 }
 
 void Bat::move(int x_move){
@@ -46,6 +48,27 @@ void Bat::move(int x_move){
             flew = 0.0;
             step = 1;
         }
+    }
+
+    move_animation+=0.2;
+    animationBat();
+}
+
+void Bat::animationBat()
+{
+    if(move_animation > 30)
+    {
+        if(confirmAnimation)
+        {
+            current_img = (*img)[1];
+            confirmAnimation = false;
+        }
+        else
+        {
+            current_img = (*img)[0];
+            confirmAnimation = true;
+        }
+        move_animation = 0;
     }
 }
 

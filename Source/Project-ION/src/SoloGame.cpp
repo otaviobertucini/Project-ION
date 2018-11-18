@@ -10,6 +10,7 @@ SoloGame::SoloGame(Menu* menu, BITMAP* buffer):Game()
     chances = 3;
     i_level = 0;
     power_time = 0;
+    font_main = load_font("Fonts/ImpactFont.pcx", NULL, NULL);
 
     //Level 0
     level0();
@@ -27,6 +28,7 @@ void SoloGame::execute()
     bool exit = false;
     bool exit_loop;
     int load_level = 0;
+    int level_point = 0;
     int return_possible_archive;
 
     int start = menu1->sologame();
@@ -37,7 +39,6 @@ void SoloGame::execute()
     //Loop do jogo todo
     while(!exit)
     {
-
         x = 240;
         y = 140;
         i_level = 0;
@@ -48,16 +49,13 @@ void SoloGame::execute()
             string aux_str = "Register/" + current_user.getName() + ".txt";
             ifstream file(aux_str.c_str());
             return_possible_archive = readLevel(file);
-
             if(return_possible_archive == 0)
                 break;
-
             file.clear();
             file.seekg(0, ios::beg);
             current = (*levels)[i_level];
             current->loadLevel(file);
             current->resetPlayer(jack->getx(),jack->gety());
-
             start = 1;
             load_level = 1;
         }
@@ -74,7 +72,6 @@ void SoloGame::execute()
                     current->resetPlayer(x,y);
                 }
                 current->generateLevel();
-                current->setInitial(x_save,y_save);
 
                 load_level = 0;
 
@@ -94,8 +91,6 @@ void SoloGame::execute()
                             dead = true;
                             exit = true;
                             saveLevel();
-
-                            int level_point;
 
                             if(i_level == 7)
                                 level_point = 2;
@@ -127,6 +122,19 @@ void SoloGame::execute()
                         current->resetPlayer();
                     }
 
+                    if(game_status == 100){
+                        score = clock() - runTime;
+                        current_user.setLevel(8);
+                        current_user.setScore(score);
+                        listUsers.Add_User(&current_user);
+                        listUsers.Insertion_Sort_Level();
+                        listUsers.Export_List();
+                        menu1->win();
+                        dead = true;
+                        exit_loop = true;
+                        exit = true;
+                    }
+
                     if(game_status == 2){
                         i_level++;
                         exit_loop = true;
@@ -153,16 +161,6 @@ void SoloGame::execute()
                     }
                     if(game_status == 20){
                         power_time = 0;
-                    }
-                    if(jack->isPowered()){
-                        int stop = clock();
-                        power_time += (stop-start)/double(CLOCKS_PER_SEC)*1000;
-
-                        //cout << power_time << endl;
-                        if(power_time >= 5000){
-                            jack->turnPowerup(false);
-                            //cout << "terminou power" << endl;
-                        }
                     }
 
                     x = current->getXInitial();
@@ -217,7 +215,6 @@ void SoloGame::level0(){
 }
 
 void SoloGame::saveLevel(){
-
     string aux = "Register/" + current_user.getName() + ".txt";
     ofstream myfile(aux.c_str());
     myfile << "LEV:" << i_level << "\n";
@@ -266,8 +263,7 @@ int SoloGame::readLevel(ifstream& myfile){
 
         return 1;
     }
-    else
-        return 0;
+    return 0;
 }
 
 void SoloGame::resetLevels(){
@@ -287,4 +283,5 @@ SoloGame::~SoloGame()
     delete jack;
     jack = NULL;
     deleteLevels();
+    destroy_font(font_main);
 }

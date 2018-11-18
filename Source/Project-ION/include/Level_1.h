@@ -12,7 +12,7 @@ public:
     int gameLoop();
     void generateLevel();
     void generateLevel(List_Characters* characters);
-    void saveLevel(std::ofstream& myfile);
+    void saveLevel(std::ofstream& myfile) const;
     void loadLevel(ifstream& file);
     void eraseAll();
     virtual ~Level_1();

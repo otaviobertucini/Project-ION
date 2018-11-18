@@ -23,6 +23,7 @@ public:
     ~Character();
     virtual void loop() = 0;
     virtual void gravity();
+
 protected:
     std::string type;
     int current_side;

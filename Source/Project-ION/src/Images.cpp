@@ -54,6 +54,7 @@ Images::Images()
     //loads images from bat
     imgsBat = new List_Images;
     imgsBat->include(load_bitmap("Material/Enemy/bat_1.bmp", NULL));
+    imgsBat->include(load_bitmap("Material/Enemy/bat_2.bmp", NULL));
 
     //loads images from boss
     imgsBoss = new List_Images;

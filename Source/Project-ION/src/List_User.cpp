@@ -34,6 +34,7 @@ void List_user::Import_List()
             user_aux->setAll(name,score,level);
             users.push_back(user_aux);
         }
+
     }
     else
         cout << "n abriu" << endl;

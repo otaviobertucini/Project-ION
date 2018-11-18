@@ -14,15 +14,20 @@ Topspin::Topspin(float x, float y, List_Images *img, int direction):
     type = "TOP";
     x_speed = 0.2;
     y_speed = 0.06;
+
+    if(direction == 1)
+        current_img = (*img)[1];
 }
 
 void Topspin::move(int x_move){
     if(!move_left){
         direction = 1;
+        current_img = (*img)[1];
         move_left = true;
     }
     else if(!move_right){
         direction = -1;
+        current_img = (*img)[0];
         move_right = true;
     }
 

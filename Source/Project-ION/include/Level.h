@@ -55,6 +55,7 @@ public:
     virtual void resetPlayer(float x, float y);
     virtual void saveLevel(std::ofstream& myfile) const;
     virtual void loadLevel(ifstream& file);
+    virtual void printText();
 protected:
     BITMAP* buffer; //Pointer to the display where all components will be shown.
     Human* jack;
