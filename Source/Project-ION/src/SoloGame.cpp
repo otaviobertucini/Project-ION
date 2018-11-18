@@ -21,7 +21,7 @@ void SoloGame::execute()
     int game_status;
     bool dead;
     int pause;
-    float x,y;
+    float x,y,x_save,y_save;
     clockid_t runTime;
     float score;
     bool exit = false;
@@ -40,8 +40,6 @@ void SoloGame::execute()
 
         x = 240;
         y = 140;
-
-        chances = 100;
         i_level = 0;
         runTime = clock();
 
@@ -76,6 +74,7 @@ void SoloGame::execute()
                     current->resetPlayer(x,y);
                 }
                 current->generateLevel();
+                current->setInitial(x_save,y_save);
 
                 load_level = 0;
 
@@ -169,6 +168,9 @@ void SoloGame::execute()
                     x = current->getXInitial();
                     y = current->getYInitial();
                 }
+
+                x_save = current->getXSaveInitial();
+                y_save = current->getYSaveInitial();
                 current->resetLevel();
             }
             resetLevels();

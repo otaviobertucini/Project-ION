@@ -221,7 +221,7 @@
 	"SoloGame.h"
 	"Main.h"
 
-1542470204 c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\include\level.h
+1542552016 c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\include\level.h
 	<allegro.h>
 	<cstddef>
 	<iostream>
@@ -314,7 +314,7 @@
 	<math.h>
 	"Character.h"
 
-1542488079 c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\include\sologame.h
+1542550741 c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\include\sologame.h
 	<allegro.h>
 	<stdlib.h>
 	<time.h>
@@ -369,13 +369,13 @@
 1542320788 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\game.cpp
 	"Game.h"
 
-1542466960 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\human.cpp
+1542553379 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\human.cpp
 	"Human.h"
 
 1542399364 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\images.cpp
 	"Images.h"
 
-1542470199 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\level.cpp
+1542552089 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\level.cpp
 	"Level.h"
 
 1542320788 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\list_images.cpp
@@ -384,7 +384,7 @@
 1542195699 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\map.cpp
 	"Map.h"
 
-1542541859 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\sologame.cpp
+1542553311 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\sologame.cpp
 	"SoloGame.h"
 
 1542320788 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\structure.cpp
@@ -494,7 +494,7 @@
 	<sstream>
 	"List_User.h"
 
-1542469870 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\level_1.cpp
+1542553276 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\level_1.cpp
 	"Level_1.h"
 
 1542246311 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\list_characters.cpp
@@ -506,7 +506,7 @@
 1542541165 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\menu.cpp
 	"Menu.h"
 
-1542246799 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\tutorial.cpp
+1542552960 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\tutorial.cpp
 	"Tutorial.h"
 
 1542152299 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/List_Obstacles.cpp
@@ -579,10 +579,10 @@
 	"Topspin.h"
 	"Bat.h"
 
-1542328259 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\level_2.cpp
+1542554175 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\level_2.cpp
 	"Level_2.h"
 
-1542328259 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\level_3.cpp
+1542554570 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\level_3.cpp
 	"Level_3.h"
 
 1542328259 c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\include\level_3.h
@@ -630,7 +630,7 @@
 	"Topspin.h"
 	"Bat.h"
 
-1542246311 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\level_2_1.cpp
+1542554000 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\level_2_1.cpp
 	"Level_2_1.h"
 
 1542328259 c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\include\level_4.h
@@ -640,7 +640,7 @@
 
 1542105345 ated upstream
 
-1542328259 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\level_4.cpp
+1542555341 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\level_4.cpp
 	"Level_4.h"
 
 1542328259 c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\include\level_5.h
@@ -648,10 +648,10 @@
 	"Topspin.h"
 	"Bat.h"
 
-1542328259 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\level_5.cpp
+1542556183 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\level_5.cpp
 	"Level_5.h"
 
-1542328259 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\level_6.cpp
+1542557246 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\level_6.cpp
 	"Level_6.h"
 
 1542328259 c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\include\level_6.h
@@ -667,7 +667,7 @@
 	"Handle.h"
 	"List_Handles.h"
 
-1542411499 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\level_boss.cpp
+1542556836 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\level_boss.cpp
 	"Level_Boss.h"
 
 1542221339 c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\include\level_4_1.h
@@ -675,7 +675,7 @@
 	"Topspin.h"
 	"Bat.h"
 
-1542224135 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\level_4_1.cpp
+1542555235 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\level_4_1.cpp
 	"Level_4_1.h"
 
 1541615700 .h"
@@ -948,7 +948,7 @@
 1542399364 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\list_handles.cpp
 	"List_Handles.h"
 
-1542540944 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\list_user.cpp
+1542541993 source:c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\src\list_user.cpp
 	"List_User.h"
 
 1542537599 c:\users\nicol\onedrive\desktop\sistemas da informação\fundamentos da programação 2\projeto\project-ion\source\project-ion\include\list_user.h

@@ -59,6 +59,8 @@ int Level_4_1::gameLoop(){
         return game_status;
 
     if(jack->gety() >= 720){
+        x_save_initial = 420;
+        y_save_initial = 150;
         resetPlayer(jack->getx(),-20);
         return 7;
     }

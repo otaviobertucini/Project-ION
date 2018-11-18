@@ -76,6 +76,8 @@ int Level_Boss::gameLoop(){
     structures->isCollide(poisons);
 
     if(jack->getx() <= -20){
+        x_save_initial = 700;
+        y_save_initial = 60;
         resetPlayer(1050,jack->gety());
         return 3; //prev level
     }

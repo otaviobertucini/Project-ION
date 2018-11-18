@@ -36,6 +36,9 @@ public:
     void printMap();
     const float getXInitial();
     const float getYInitial();
+    const float getXSaveInitial();
+    const float getYSaveInitial();
+    void setInitial(float x, float y);
     void generateMap(int** matrix);
     void isStructureCollide(Moveable* a);
     int isFireballCollide(Character* a);
@@ -59,6 +62,8 @@ protected:
     Images* images;
     float x_initial;
     float y_initial;
+    float x_save_initial;
+    float y_save_initial;
     int game_status;
     int was_genereted;
     List_Obstacles* obstacles;

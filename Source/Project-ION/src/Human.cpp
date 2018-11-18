@@ -17,7 +17,7 @@ Human::Human(string name, float x, float y, List_Images *img, int direction, boo
     y_speed = 0.6;
     this->direction = direction;
     this->powerup_on = powerup_on;
-    lifes = 2;
+    lifes = 10;
 }
 
 void Human::gravity()
@@ -157,7 +157,7 @@ void Human::lessLife(){
 }
 
 void Human::resetLifes(){
-    lifes = 2;
+    lifes = 10;
 }
 
 void Human::setLifes(const int lifes){

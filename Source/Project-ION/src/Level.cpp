@@ -156,6 +156,22 @@ const float Level::getYInitial()
     return y_initial;
 }
 
+const float Level::getXSaveInitial()
+{
+    return x_save_initial;
+}
+
+const float Level::getYSaveInitial()
+{
+    return y_save_initial;
+}
+
+void Level::setInitial(float x, float y)
+{
+    x_initial = x;
+    y_initial = y;
+}
+
 void Level::resetPlayer(){
     jack->setx(x_initial);
     jack->sety(y_initial);

@@ -71,6 +71,8 @@ int Tutorial::gameLoop(){
 
     if(jack->getx() >= 1075){
         resetPlayer(-15,jack->gety());
+        x_save_initial = 90;
+        y_save_initial = 600;
         return 2; //next level
     }
     return 1;

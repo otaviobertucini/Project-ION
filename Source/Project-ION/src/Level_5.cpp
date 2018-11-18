@@ -81,10 +81,14 @@ int Level_5::gameLoop(){
         return game_status;
 
     if(jack->getx() <= -20){
+        x_save_initial = 960;
+        y_save_initial = 90;
         resetPlayer(1050,jack->gety());
         return 3; //prev level
     }
     else if(jack->gety() <= -30){
+        x_save_initial = 750;
+        y_save_initial = 630;
         resetPlayer(jack->getx(),710);
         return 2;
     }
