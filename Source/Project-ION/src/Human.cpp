@@ -18,6 +18,8 @@ Human::Human(string name, float x, float y, List_Images *img, int direction, boo
     this->direction = direction;
     this->powerup_on = powerup_on;
     lifes = 10;
+    distance_walk_animation = 0;
+    walk = true;
 }
 
 void Human::gravity()
@@ -45,6 +47,48 @@ void Human::gravity()
            charge = true;
         }
         y += y_force;
+    }
+}
+
+void Human::animation()
+{
+    if(current_side == 1)
+    {
+        if(!move_down && distance_walk_animation > 55)
+        {
+            if(walk)
+            {
+                current_img = (*img)[1];
+                walk = false;
+            }
+            else
+            {
+                current_img = (*img)[0];
+                walk = true;
+            }
+            distance_walk_animation = 0;
+        }
+        else if(move_down)
+            current_img = (*img)[1];
+    }
+    else
+    {
+        if(!move_down && distance_walk_animation > 55)
+        {
+            if(walk)
+            {
+                current_img = (*img)[3];
+                walk = false;
+            }
+            else
+            {
+                current_img = (*img)[2];
+                walk = true;
+            }
+            distance_walk_animation = 0;
+        }
+        else if(move_down)
+            current_img = (*img)[3];
     }
 }
 
@@ -133,6 +177,7 @@ void Human::move(int x_move)
 
 
         x += x_speed*x_move;
+        distance_walk_animation+= x_speed;
     }
 }
 

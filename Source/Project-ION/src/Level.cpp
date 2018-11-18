@@ -198,6 +198,7 @@ int Level::genericGameLoop()
 {
     if(iterations % 4 == 0){
         printMap();
+        jack->animation();
         jack->print(buffer);
         std::stringstream ss;
         ss << "Vidas: " << jack->getLifes();

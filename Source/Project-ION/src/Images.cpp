@@ -5,6 +5,9 @@ Images::Images()
     //Loads images from Jack
     imgsJack = new List_Images;
     imgsJack->include(load_bitmap("Material/Scenario/jack_1.bmp", NULL));
+    imgsJack->include(load_bitmap("Material/Scenario/jack_2.bmp", NULL));
+    imgsJack->include(load_bitmap("Material/Scenario/jack_3.bmp", NULL));
+    imgsJack->include(load_bitmap("Material/Scenario/jack_4.bmp", NULL));
 
     //Loads images from map
     imgsMap = new List_Images;

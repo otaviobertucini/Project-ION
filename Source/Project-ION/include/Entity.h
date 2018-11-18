@@ -16,6 +16,7 @@ public:
     Entity(float x, float y, BITMAP* curren_img = NULL);
     virtual void print(BITMAP* screen);
     BITMAP* getCurrentImg();
+    void setCurrentImg(BITMAP* img);
     const float getx() const;
     const float gety() const;
     const int getw() const;

@@ -15,6 +15,10 @@ BITMAP* Entity::getCurrentImg(){
     return current_img;
 }
 
+void Entity::setCurrentImg(BITMAP* img)
+{
+    current_img = img;
+}
 const float Entity::getx() const
 {
     return x;

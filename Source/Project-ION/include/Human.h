@@ -20,6 +20,7 @@ class Human:public Character
         void jump();
         void JetPack();
         void activeDash();
+        void animation();
         void dash();
         void loop();
         void turnPowerup(const bool state = true);
@@ -33,10 +34,12 @@ class Human:public Character
         string name;
         float y_force;
         bool charge;
+        bool walk;
         bool dashOn;
         float distance_dash;
         bool powerup_on;
         const float x_force;
+        float distance_walk_animation;
         int lifes;
 };
 
