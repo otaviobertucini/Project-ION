@@ -13,6 +13,7 @@ Menu::Menu(BITMAP* buffer){
     solo_back = load_bitmap("Material/solo_back.bmp", NULL);
     login_back = load_bitmap("Material/login_back.bmp",NULL);
     rank_back = load_bitmap("Material/rank_back.bmp",NULL);
+    win_back = load_bitmap("Material/win_back.bmp",NULL);
     font_main = load_font("Fonts/ImpactFont.pcx", NULL, NULL);
 }
 
@@ -263,6 +264,20 @@ string Menu::readMenu()
     return teste;
 }
 
+void Menu::win(){
+    bool exit = false;
+    while(!exit){
+        draw_sprite(buffer, win_back, 0, 0);
+
+        if(key[KEY_ENTER]){
+            exit = true;
+        }
+
+        blit(buffer, screen, 0, 0, 0, 0, 1080, 720);
+        clear(buffer);
+    }
+}
+
 Menu::~Menu()
 {
     destroy_bitmap(img_back);
@@ -270,5 +285,7 @@ Menu::~Menu()
     destroy_bitmap(pause_back);
     destroy_bitmap(solo_back);
     destroy_bitmap(login_back);
+    destroy_bitmap(rank_back);
+    destroy_bitmap(win_back);
     destroy_font(font_main);
 }

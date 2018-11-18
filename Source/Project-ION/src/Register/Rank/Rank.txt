@@ -1,4 +1,6 @@
-otavio,3,1.7243e+07
+otavio7,6,3
 nicolas,2,1
 dasmacin,1,1
 dasmacian,1,6
+xcczas]d,0,1
+otavio,0,2.63087e+06

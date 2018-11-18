@@ -10,6 +10,7 @@ SoloGame::SoloGame(Menu* menu, BITMAP* buffer):Game()
     chances = 3;
     i_level = 0;
     power_time = 0;
+    font_main = load_font("Fonts/ImpactFont.pcx", NULL, NULL);
 
     //Level 0
     level0();
@@ -39,7 +40,7 @@ void SoloGame::execute()
     {
         x = 240;
         y = 140;
-        i_level = 3;
+        i_level = 0;
         runTime = clock();
 
         if(start == 2){
@@ -51,10 +52,8 @@ void SoloGame::execute()
                 break;
             file.clear();
             file.seekg(0, ios::beg);
-            cout << "i_level: " << i_level << endl;
             current = (*levels)[i_level];
             current->loadLevel(file);
-            //cout << "pos jack: " << jack->getx() << "," << jack->gety();
             current->resetPlayer(jack->getx(),jack->gety());
             start = 1;
             load_level = 1;
@@ -124,6 +123,13 @@ void SoloGame::execute()
                         current->resetPlayer();
                     }
 
+                    if(game_status == 100){
+                        menu1->win();
+                        dead = true;
+                        exit_loop = true;
+                        exit = true;
+                    }
+
                     if(game_status == 2){
                         i_level++;
                         exit_loop = true;
@@ -150,16 +156,6 @@ void SoloGame::execute()
                     }
                     if(game_status == 20){
                         power_time = 0;
-                    }
-                    if(jack->isPowered()){
-                        int stop = clock();
-                        power_time += (stop-start)/double(CLOCKS_PER_SEC)*1000;
-
-                        //cout << power_time << endl;
-                        if(power_time >= 5000){
-                            jack->turnPowerup(false);
-                            //cout << "terminou power" << endl;
-                        }
                     }
 
                     x = current->getXInitial();
@@ -282,4 +278,5 @@ SoloGame::~SoloGame()
     delete jack;
     jack = NULL;
     deleteLevels();
+    destroy_font(font_main);
 }

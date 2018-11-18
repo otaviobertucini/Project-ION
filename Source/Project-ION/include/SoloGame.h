@@ -49,6 +49,7 @@ private:
     List_user listUsers;
     User current_user;
     double power_time;
+    FONT* font_main;
 };
 
 #endif // SOLOGAME_H

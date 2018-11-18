@@ -64,7 +64,18 @@ int Tutorial::gameLoop(){
     game_status = genericGameLoop();
 
     powers->print(buffer);
-    powers->isCollide(jack);
+    if(powers->isCollide(jack)){
+        start = clock();
+    }
+
+    if(jack->isPowered()){
+        int stop = clock();
+        power_time = (stop-start)/double(CLOCKS_PER_SEC)*1000;
+
+        if(power_time >= 5000){
+            jack->turnPowerup(false);
+        }
+    }
 
     if(game_status != 1)
         return game_status;
@@ -76,6 +87,21 @@ int Tutorial::gameLoop(){
         return 2; //next level
     }
     return 1;
+}
+
+void Tutorial::printText(){
+    if(jack->isPowered()){
+        int sub = ((5000 - power_time)/1000)+1;
+        std::stringstream ss;
+        ss << "Birl: " << sub;
+        std::string timer_txt = ss.str();
+        textout_ex(buffer, font_main, timer_txt.c_str(), 900, 0, makecol(255, 0, 0), -1);
+    }
+    std::stringstream ss;
+    ss << "Vidas: " << jack->getLifes();
+    life_txt = ss.str();
+    textout_ex(buffer, font_main, life_txt.c_str(), 0, 0, makecol(255, 0, 0), -1);
+    characters->print(buffer);
 }
 
 void Tutorial::eraseAll(){

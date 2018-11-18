@@ -177,6 +177,7 @@ void Level::resetPlayer(){
     jack->sety(y_initial);
     jack->setUp(false);
     jack->setDown(false);
+    jack->turnPowerup(false);
 }
 
 void Level::resetPlayer(float x, float y){
@@ -194,16 +195,20 @@ void Level::eraseAll(){
     was_genereted = 0;
 }
 
+void Level::printText(){
+    std::stringstream ss;
+    ss << "Vidas: " << jack->getLifes();
+    life_txt = ss.str();
+    textout_ex(buffer, font_main, life_txt.c_str(), 0, 0, makecol(255, 0, 0), -1);
+    characters->print(buffer);
+}
+
 int Level::genericGameLoop()
 {
     if(iterations % 4 == 0){
         printMap();
         jack->print(buffer);
-        std::stringstream ss;
-        ss << "Vidas: " << jack->getLifes();
-        life_txt = ss.str();
-        textout_ex(buffer, font_main, life_txt.c_str(), 0, 0, makecol(255, 0, 0), -1);
-        characters->print(buffer);
+        printText();
         draw_sprite(screen, buffer, 0, 0);
         clear_bitmap(buffer);
         if (key[KEY_C])

@@ -18,6 +18,7 @@ public:
     int sologame();
     string readMenu();
     void ranking();
+    void win();
     virtual ~Menu();
 private:
     BITMAP* buffer;
@@ -27,6 +28,7 @@ private:
     BITMAP* solo_back;
     BITMAP* login_back;
     BITMAP* rank_back;
+    BITMAP* win_back;
     FONT* font_main;
 };
 

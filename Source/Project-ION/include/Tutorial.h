@@ -13,9 +13,12 @@ public:
     int gameLoop();
     virtual void generateLevel();
     void eraseAll();
+    void printText();
     virtual ~Tutorial();
 private:
     List_Powerups* powers;
+    double power_time;
+    int start;
 };
 
 #endif // TUTORIAL_H
