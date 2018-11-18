@@ -19,6 +19,8 @@ public:
     void Add_User(User* user);
     void Insertion_Sort_Level();
     void setCurrentUser(User* user);
+    int getSize();
+    User* getUser(int i);
     ~List_user();
 private:
     vector<User*> users;

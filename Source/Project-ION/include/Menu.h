@@ -3,6 +3,7 @@
 #include <allegro.h>
 #include <iostream>
 #include <string>
+#include <sstream>
 #include "List_User.h"
 
 using namespace std;

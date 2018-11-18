@@ -30,8 +30,7 @@ void List_user::Import_List()
             string score_copy(line,i,line.size()-1);
             score = (float) atof(score_copy.c_str());
 
-            User *user_aux;
-            user_aux = (User*) malloc(sizeof(User));
+            User *user_aux = new User;
             user_aux->setAll(name,score,level);
             users.push_back(user_aux);
         }
@@ -102,6 +101,17 @@ void List_user::Insertion_Sort_Level()
 void List_user::setCurrentUser(User* user)
 {
     current_user = user;
+}
+
+int List_user::getSize()
+{
+    cout << users.size() << endl;
+    return users.size();
+}
+
+User* List_user::getUser(int i)
+{
+    return users[i];
 }
 
 List_user::~List_user()

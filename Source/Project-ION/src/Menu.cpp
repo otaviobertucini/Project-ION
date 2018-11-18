@@ -170,9 +170,31 @@ void Menu::ranking()
 {
     bool exit = false;
     bool confirm = false;
+    List_user listAux;
+    User *userAux;
+    int size;
+    listAux.Import_List();
+    size = listAux.getSize();
 
     while(!exit){
         draw_sprite(buffer, rank_back, 0, 0);
+
+        for(int i = 0; i < size && i < 10; i++)
+        {
+            userAux = listAux.getUser(i);
+
+            textout_ex(buffer, font_main, userAux->getName().c_str() , 150, 150 + (i * 50), makecol(255, 255, 255),-1);
+
+            std::stringstream forTextout;
+            forTextout << userAux->getLevel();
+
+            textout_ex(buffer, font_main, forTextout.str().c_str() , 520, 150 + (i * 50), makecol(255, 255, 255),-1);
+
+            forTextout.str("");
+            forTextout << userAux->getScore();
+
+            textout_ex(buffer, font_main, forTextout.str().c_str(), 800, 150 + (i * 50), makecol(255, 255, 255),-1);
+        }
 
         if(key[KEY_ENTER] && confirm)
             exit = true;
@@ -248,4 +270,5 @@ Menu::~Menu()
     destroy_bitmap(pause_back);
     destroy_bitmap(solo_back);
     destroy_bitmap(login_back);
+    destroy_font(font_main);
 }

@@ -9,7 +9,7 @@ public:
     User();
     User(string name, float score = 0, int level = 0);
     ~User();
-    void setAll(string name, float score = 0, int level = 0);
+    void setAll(string newName, float score = 0, int level = 0);
     void setName(string newName);
     void setScore(float score);
     void setLevel(int level);

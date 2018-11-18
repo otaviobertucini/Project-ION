@@ -14,9 +14,9 @@ User::User(string name, float score, int level)
     this->level = level;
 }
 
-void User::setAll(string name, float score, int level)
+void User::setAll(string newName, float score, int level)
 {
-    this->name = name;
+    name = newName;
     this->score = score;
     this->level = level;
 }
