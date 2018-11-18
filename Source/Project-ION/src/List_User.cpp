@@ -80,8 +80,22 @@ void List_user::Add_User(User* user)
         users.push_back(user);
 }
 
-void List_user::Quick_Sort_Level()
+void List_user::Insertion_Sort_Level()
 {
+    int i,j;
+    typename std::vector<User*>::iterator itr = users.begin();
+
+    i=0;
+    for(;itr != users.end();itr++)
+    {
+        j=i;
+        while(j-1 >= 0 && (users[j-1]->getLevel() < users[j]->getLevel() || (users[j-1]->getLevel() == users[j]->getLevel() && users[j-1]->getScore() > users[j]->getScore())))
+        {
+            swap(users[j],users[j-1]);
+            j--;
+        }
+        i++;
+    }
 
 }
 

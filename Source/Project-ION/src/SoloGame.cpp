@@ -107,6 +107,7 @@ void SoloGame::execute()
                             current_user.setLevel(level_point);
                             current_user.setScore(power_time);
                             listUsers.Add_User(&current_user);
+                            listUsers.Insertion_Sort_Level();
                             listUsers.Export_List();
                         }
                     }

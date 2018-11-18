@@ -12,6 +12,7 @@ Menu::Menu(BITMAP* buffer){
     pause_back = load_bitmap("Material/pause.bmp", NULL);
     solo_back = load_bitmap("Material/solo_back.bmp", NULL);
     login_back = load_bitmap("Material/login_back.bmp",NULL);
+    rank_back = load_bitmap("Material/rank_back.bmp",NULL);
     font_main = load_font("Fonts/ImpactFont.pcx", NULL, NULL);
 }
 
@@ -35,6 +36,11 @@ int Menu::inicial(){
         {
             if(option == 1){
                 return 1;
+            }
+            if(option == 3)
+            {
+                ranking();
+                confirmButton = false;
             }
             if(option == 4){
                 return 0;
@@ -159,6 +165,25 @@ int Menu::sologame(){
     }
     return 0;
 }
+
+void Menu::ranking()
+{
+    bool exit = false;
+    bool confirm = false;
+
+    while(!exit){
+        draw_sprite(buffer, rank_back, 0, 0);
+
+        if(key[KEY_ENTER] && confirm)
+            exit = true;
+        if(!key[KEY_ENTER])
+            confirm = true;
+
+        blit(buffer, screen, 0, 0, 0, 0, 1080, 720);
+        clear(buffer);
+    }
+}
+
 
 string Menu::readMenu()
 {

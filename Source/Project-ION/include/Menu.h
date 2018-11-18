@@ -3,6 +3,7 @@
 #include <allegro.h>
 #include <iostream>
 #include <string>
+#include "List_User.h"
 
 using namespace std;
 
@@ -15,6 +16,7 @@ public:
     int pause();
     int sologame();
     string readMenu();
+    void ranking();
     virtual ~Menu();
 private:
     BITMAP* buffer;
@@ -23,6 +25,7 @@ private:
     BITMAP* pause_back;
     BITMAP* solo_back;
     BITMAP* login_back;
+    BITMAP* rank_back;
     FONT* font_main;
 };
 

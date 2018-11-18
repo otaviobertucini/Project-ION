@@ -1,3 +1,5 @@
-Nicolas,1,0
-Otavio,4,3021
-Ciclano,3,2345
+Otavio,3,0
+Joo,3,0
+ze joares,1,0
+Nicolas,1,5005
+nicolas,0,5005

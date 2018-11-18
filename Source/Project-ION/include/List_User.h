@@ -17,7 +17,7 @@ public:
     void Import_List();
     void Export_List();
     void Add_User(User* user);
-    void Quick_Sort_Level();
+    void Insertion_Sort_Level();
     void setCurrentUser(User* user);
     ~List_user();
 private:
