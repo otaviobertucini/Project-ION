@@ -73,7 +73,7 @@ void List_user::Add_User(User* user)
     if(confirm)
     {
         users[save_i]->setLevel(user->getLevel());
-        users[save_i]->setScore(user->getScore());
+        users[save_i]->setScore(user->getScore() + users[save_i]->getScore());
     }
     else
         users.push_back(user);

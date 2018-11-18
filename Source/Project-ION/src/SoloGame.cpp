@@ -22,6 +22,8 @@ void SoloGame::execute()
     bool dead;
     int pause;
     float x,y;
+    clockid_t runTime;
+    float score;
     bool exit = false;
     bool exit_loop;
     int load_level = 0;
@@ -41,6 +43,7 @@ void SoloGame::execute()
 
         chances = 100;
         i_level = 0;
+        runTime = clock();
 
         if(start == 2){
             current_user.setName(menu1->readMenu());
@@ -104,8 +107,9 @@ void SoloGame::execute()
                             else
                                 level_point = i_level;
 
+                            score = clock() - runTime;
                             current_user.setLevel(level_point);
-                            current_user.setScore(power_time);
+                            current_user.setScore(score);
                             listUsers.Add_User(&current_user);
                             listUsers.Insertion_Sort_Level();
                             listUsers.Export_List();
