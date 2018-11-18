@@ -63,7 +63,7 @@ int Level_3::gameLoop()
         lavas->createFireballs(fireballs);
     }
 
-    if(iterations == 3){
+    if(iterations % 3 == 0){
         structures->isCollide(fireballs);
         fireballs->loop();
     }

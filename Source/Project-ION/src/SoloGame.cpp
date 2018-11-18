@@ -37,10 +37,9 @@ void SoloGame::execute()
     //Loop do jogo todo
     while(!exit)
     {
-
         x = 240;
         y = 140;
-        i_level = 0;
+        i_level = 3;
         runTime = clock();
 
         if(start == 2){
@@ -48,16 +47,15 @@ void SoloGame::execute()
             string aux_str = "Register/" + current_user.getName() + ".txt";
             ifstream file(aux_str.c_str());
             return_possible_archive = readLevel(file);
-
             if(return_possible_archive == 0)
                 break;
-
             file.clear();
             file.seekg(0, ios::beg);
+            cout << "i_level: " << i_level << endl;
             current = (*levels)[i_level];
             current->loadLevel(file);
+            //cout << "pos jack: " << jack->getx() << "," << jack->gety();
             current->resetPlayer(jack->getx(),jack->gety());
-
             start = 1;
             load_level = 1;
         }
@@ -74,7 +72,6 @@ void SoloGame::execute()
                     current->resetPlayer(x,y);
                 }
                 current->generateLevel();
-                current->setInitial(x_save,y_save);
 
                 load_level = 0;
 
@@ -217,7 +214,6 @@ void SoloGame::level0(){
 }
 
 void SoloGame::saveLevel(){
-
     string aux = "Register/" + current_user.getName() + ".txt";
     ofstream myfile(aux.c_str());
     myfile << "LEV:" << i_level << "\n";
@@ -266,8 +262,7 @@ int SoloGame::readLevel(ifstream& myfile){
 
         return 1;
     }
-    else
-        return 0;
+    return 0;
 }
 
 void SoloGame::resetLevels(){

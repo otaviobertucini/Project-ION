@@ -77,12 +77,14 @@ int Level_1::gameLoop(){
     if(game_status != 1)
         return game_status;
 
+    //cout << x_initial << "," << y_initial << endl;
     if(jack->getx() >= 1075 && jack->gety() >= 0){
         resetPlayer(-15,jack->gety());
         x_save_initial = 0;
         y_save_initial = 180;
         return 2; //next level
     }
+
     else if(jack->getx() <= -20){
         resetPlayer(1050,jack->gety());
         return 3; //prev level
@@ -154,12 +156,11 @@ void Level_1::generateLevel(){
             Bat* batman5 = new Bat(810,60,images->getImgsBat(),1,1,60,390);
             characters->include(static_cast<Character*>(batman5));
         }
-
         was_genereted = 1;
     }
 }
 
-void Level_1::saveLevel(std::ofstream& myfile){
+void Level_1::saveLevel(std::ofstream& myfile) const{
     characters->saveLevel(myfile);
     fireballs->saveLevel(myfile);
 }
@@ -167,7 +168,7 @@ void Level_1::saveLevel(std::ofstream& myfile){
 void Level_1::loadLevel(ifstream& myfile){
     std::string line;
     if(myfile.is_open()){
-        while (getline(myfile,line)){
+        while(getline(myfile,line)){
             std::string copy(line.begin(), line.begin()+3);
             if(copy == "JAK"){
                 int i;
@@ -235,7 +236,7 @@ void Level_1::loadLevel(ifstream& myfile){
                 std::string y_copy(line, index[0]+1, line.size()-1);
                 int x = (int) atoi(x_copy.c_str());
                 int y = (int) atoi(y_copy.c_str());
-                cout << x << ", " << y << endl;
+                //cout << x << ", " << y << endl;
                 List_Images* aux = images->getImgsFireball();
                 fireballs->include(static_cast<Fireball*>(new Fireball(x, y, (*aux)[0])));
             }

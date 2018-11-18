@@ -11,7 +11,7 @@
 #include <string>
 #include <ctime>
 #include "Human.h"
-#include "List_user.h"
+#include "List_User.h"
 #include "Game.h"
 #include "Topspin.h"
 #include "Tutorial.h"
