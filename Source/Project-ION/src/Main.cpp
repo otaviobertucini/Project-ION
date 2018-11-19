@@ -29,8 +29,11 @@ void Main::execute(){
 Main::~Main()
 {
     delete solo;
+    cout << "main 1" << endl;
     solo = NULL;
     delete menu;
+    cout << "main 2" << endl;
     menu = NULL;
     destroy_bitmap(buffer);
+    cout << "main 3" << endl;
 }

@@ -8,7 +8,6 @@ class List_Characters
 public:
     List_Characters();
     void include(Character* newc);
-    void deleteAll();
     int empty();
     int size();
     void erase(int i);

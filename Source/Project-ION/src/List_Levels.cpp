@@ -22,14 +22,16 @@ Level* List_Levels::operator[](int index){
 }
 
 void List_Levels::eraseAll(){
-    levels.erase(levels.begin(), levels.end());
+    for(int i = 0; i  < size(); i++){
+        levels[i]->eraseAll();
+    }
 }
 
 void List_Levels::deleteAll(){
-    typename std::vector<Level*>::iterator itr = levels.begin();
-    for(; itr != levels.end(); itr++)
-        delete *itr;
-    levels.clear();
+    for(int i = 0; i < size(); i++){
+        delete levels[i];
+        levels[i] = NULL;
+    }
 }
 
 List_Levels::~List_Levels()

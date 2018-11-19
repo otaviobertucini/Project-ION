@@ -10,7 +10,6 @@ SoloGame::SoloGame(Menu* menu, BITMAP* buffer):Game()
     chances = 3;
     i_level = 0;
     power_time = 0;
-    font_main = load_font("Fonts/ImpactFont.pcx", NULL, NULL);
 
     //Level 0
     level0();
@@ -267,15 +266,11 @@ int SoloGame::readLevel(ifstream& myfile){
 }
 
 void SoloGame::resetLevels(){
-    for(int i = 0; i<levels->size(); i++){
-        (*levels)[i]->eraseAll();
-    }
+    levels->eraseAll();
 }
 
 void SoloGame::deleteLevels(){
-    for(unsigned int i = 0; i<levels->size(); i++){
-        delete (*levels)[i];
-    }
+    levels->deleteAll();
 }
 
 SoloGame::~SoloGame()
@@ -283,5 +278,5 @@ SoloGame::~SoloGame()
     delete jack;
     jack = NULL;
     deleteLevels();
-    destroy_font(font_main);
+    cout << "solo game" << endl;
 }

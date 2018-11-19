@@ -102,14 +102,13 @@ void Level::generateMap(int** matrix){
             else if(matrix[i][j] == 2){
                 Lava* aux;
                 if(matrix[i-1][j] != 2 && matrix[i-1][j] != 3)
-                    aux = new Lava(30*j, 30*i, (*img)[18]);
+                    aux = new Lava(30*j, 30*i, images->getImgsMap(), 1);
                 else
-                    aux = new Lava(30*j, 30*i, (*img)[17]);
-
+                    aux = new Lava(30*j, 30*i, images->getImgsMap(), 0);
                 obstacles->include(static_cast<Obstacle*>(aux));
             }
             else if(matrix[i][j] == 3){
-                Lava* aux = new Lava(30*j, 30*i, (*img)[18]);
+                Lava* aux = new Lava(30*j, 30*i, images->getImgsMap(), 1);
                 obstacles->include(static_cast<Obstacle*>(aux));
                 lavas->include(aux);
             }
@@ -336,8 +335,6 @@ void Level::loadLevel(ifstream& myfile){
 }
 
 Level::~Level()
-{
-    characters->deleteAll();
-}
+{}
 
 

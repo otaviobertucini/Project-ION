@@ -35,6 +35,7 @@ Images::Images()
     imgsMap->include(load_bitmap("Material/Scenario/spine_3.bmp", NULL));
     imgsMap->include(load_bitmap("Material/Scenario/spine_4.bmp", NULL));
     imgsMap->include(load_bitmap("Material/Powerups/birl.bmp", NULL));
+    imgsMap->include(load_bitmap("Material/Enemy/fireball.bmp", NULL));
 
 
     //loads images from handle

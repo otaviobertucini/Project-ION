@@ -8,10 +8,11 @@ class Lava: public Obstacle
 {
 public:
     Lava();
-    Lava(float x, float y, BITMAP* current_img);
+    Lava(float x, float y, List_Images* img, int id);
     Fireball* createFireball();
     virtual ~Lava();
 private:
+    List_Images* img;
 };
 
 #endif // LAVA_H
