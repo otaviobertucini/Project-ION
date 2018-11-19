@@ -22,8 +22,8 @@ void SoloGame::execute()
     bool dead;
     int pause;
     float x,y,x_save,y_save;
-    clockid_t runTime;
-    float score;
+    int runTime;
+    int score;
     bool exit = false;
     bool exit_loop;
     int load_level = 0;
@@ -99,7 +99,6 @@ void SoloGame::execute()
 
                             else
                                 level_point = i_level;
-
                             score = clock() - runTime;
                             current_user.setLevel(level_point);
                             current_user.setScore(score);
@@ -278,5 +277,4 @@ SoloGame::~SoloGame()
     delete jack;
     jack = NULL;
     deleteLevels();
-    cout << "solo game" << endl;
 }

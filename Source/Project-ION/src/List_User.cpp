@@ -106,7 +106,6 @@ void List_user::setCurrentUser(User* user)
 
 int List_user::getSize()
 {
-    cout << users.size() << endl;
     return users.size();
 }
 
@@ -116,9 +115,4 @@ User* List_user::getUser(int i)
 }
 
 List_user::~List_user()
-{
-    typename std::vector<User*>::iterator itr = users.begin();
-    for(; itr != users.end(); itr++)
-        delete *itr;
-    users.clear();
-}
+{}
