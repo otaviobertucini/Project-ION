@@ -91,14 +91,15 @@ void SoloGame::execute()
                             exit = true;
                             saveLevel();
 
-                            if(i_level == 7)
+                            if(i_level == 8)
                                 level_point = 2;
 
-                            else if(i_level == 8)
+                            else if(i_level == 9)
                                 level_point = 4;
 
                             else
                                 level_point = i_level;
+
                             score = clock() - runTime;
                             current_user.setLevel(level_point);
                             current_user.setScore(score);
