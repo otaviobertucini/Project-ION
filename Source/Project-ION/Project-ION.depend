@@ -111,7 +111,7 @@
 1542622799 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Human.cpp
 	"Human.h"
 
-1542566117 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/SoloGame.h
+1542708357 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/SoloGame.h
 	<allegro.h>
 	<stdlib.h>
 	<time.h>
@@ -163,7 +163,7 @@
 1542626810 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Images.cpp
 	"Images.h"
 
-1542637811 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/SoloGame.cpp
+1542711753 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/SoloGame.cpp
 	"SoloGame.h"
 
 1542622799 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/Entity.h
@@ -446,7 +446,7 @@
 1542628316 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/List_Characters.cpp
 	"List_Characters.h"
 
-1542564938 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Menu.cpp
+1542708357 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/Menu.cpp
 	"Menu.h"
 
 1542564805 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/Menu.h
@@ -968,7 +968,7 @@
 1542637935 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/User.h
 	<string>
 
-1542558686 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/User.cpp
+1542638006 source:/home/otavio/Documentos/Project_ION/Source/Project-ION/src/User.cpp
 	"User.h"
 
 1542558791 /home/otavio/Documentos/Project_ION/Source/Project-ION/include/List_User.h

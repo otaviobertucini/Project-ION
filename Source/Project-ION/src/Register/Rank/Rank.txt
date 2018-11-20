@@ -1,11 +1,5 @@
-nicolas,8,182398
-novoarquivo,2,7
-dasmacian,1,3219527
-iasjdm,0,1
-iahsd,0,1
-ashdnasdb,0,2
-otavio,0,2
-uahsddas,0,2
-juasbd,0,2
-iahsduhasd,0,2
-otadfsauhf,0,985685
+kkkkkkkkkk,8,20267580
+nicolas,4,34307056
+joao,1,5416914
+otavio,1,28566476
+maria,1,31054682
