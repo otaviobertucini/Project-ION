@@ -37,7 +37,7 @@ void List_Characters::print(BITMAP* buffer){
 
 void List_Characters::loop(){
     for(int i = 0; i < size(); i++){
-        characters[i]->loop();
+        (*characters[i])++;
     }
 }
 

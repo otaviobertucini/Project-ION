@@ -23,7 +23,7 @@ public:
     ~Character();
     virtual void loop() = 0;
     virtual void gravity();
-
+    void operator++(int n);
 protected:
     std::string type;
     int current_side;

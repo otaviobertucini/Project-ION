@@ -40,5 +40,9 @@ void Character::gravity()
        y += y_force;
 }
 
+void Character::operator++(int n){
+    loop();
+}
+
 Character::~Character()
 {}
