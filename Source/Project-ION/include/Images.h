@@ -23,14 +23,13 @@ public:
     List_Images* getImgsBat();
     List_Images* getImgsBoss();
     List_Images* getImgsHandle();
-private:
-    List_Images *imgsJack;
-    List_Images *imgsMap;
-    List_Images *imgsTopspin;
-    List_Images *imgsFireball;
-    List_Images *imgsBat;
-    List_Images *imgsBoss;
-    List_Images *imgsHandle;
+    static List_Images* imgsJack;
+    static List_Images *imgsMap;
+    static List_Images *imgsTopspin;
+    static List_Images *imgsFireball;
+    static List_Images *imgsBat;
+    static List_Images *imgsBoss;
+    static List_Images *imgsHandle;
 };
 
 #endif // IMAGES_H

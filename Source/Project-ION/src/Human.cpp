@@ -5,8 +5,8 @@ Human::Human(): x_force(2)
     //ctor
 }
 
-Human::Human(string name, float x, float y, List_Images *img, int direction, bool powerup_on):
-               Character(x, y, img), x_force(2){
+Human::Human(string name, float x, float y, int direction, bool powerup_on):
+               Character(x, y), x_force(2){
     this->name = name;
     this->current_side = 1;
     this->charge = false;
@@ -20,6 +20,8 @@ Human::Human(string name, float x, float y, List_Images *img, int direction, boo
     lifes = 10;
     distance_walk_animation = 0;
     walk = true;
+    List_Images* img = Images::imgsJack;
+    current_img = (*img)[0];
 }
 
 void Human::gravity()
@@ -52,24 +54,25 @@ void Human::gravity()
 
 void Human::animation()
 {
+    List_Images* imgs = Images::imgsJack;
     if(current_side == 1)
     {
         if(!move_down && distance_walk_animation > 55)
         {
             if(walk)
             {
-                current_img = (*img)[1];
+                current_img = (*imgs)[1];
                 walk = false;
             }
             else
             {
-                current_img = (*img)[0];
+                current_img = (*imgs)[0];
                 walk = true;
             }
             distance_walk_animation = 0;
         }
         else if(move_down)
-            current_img = (*img)[1];
+            current_img = (*imgs)[1];
     }
     else
     {
@@ -77,18 +80,18 @@ void Human::animation()
         {
             if(walk)
             {
-                current_img = (*img)[3];
+                current_img = (*imgs)[3];
                 walk = false;
             }
             else
             {
-                current_img = (*img)[2];
+                current_img = (*imgs)[2];
                 walk = true;
             }
             distance_walk_animation = 0;
         }
         else if(move_down)
-            current_img = (*img)[3];
+            current_img = (*imgs)[3];
     }
 }
 
@@ -127,7 +130,6 @@ void Human::activeDash()
 void Human::loop(){
     dash();
     gravity();
-    //isStructureCollide();
 }
 
 void Human::dash()

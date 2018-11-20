@@ -6,7 +6,7 @@ class Stone: public Structure
 {
 public:
     Stone();
-    Stone(float x, float y, BITMAP* current_img);
+    Stone(float x, float y, int side);
     virtual ~Stone();
 private:
 };

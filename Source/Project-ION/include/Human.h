@@ -13,7 +13,7 @@ class Human:public Character
 {
     public:
         Human();
-        Human(string name, float x, float y, List_Images *img, int direction = 1, bool powerup_on = 0);
+        Human(string name, float x, float y, int direction = 1, bool powerup_on = 0);
         ~Human();
         void move(int x_move);
         void gravity();

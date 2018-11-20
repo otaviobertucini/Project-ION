@@ -5,8 +5,8 @@ Bat::Bat():x_distance(0), y_distance(0)
     //ctor
 }
 
-Bat::Bat(float x, float y, List_Images *img, int direction, int step, int x_distance, int y_distance, float flew)
-        :Enemy(x, y, img), x_distance(x_distance), y_distance(y_distance){
+Bat::Bat(float x, float y, int direction, int step, int x_distance, int y_distance, float flew)
+        :Enemy(x, y), x_distance(x_distance), y_distance(y_distance){
     type = "BAT";
     h = 30;
     w = 40;
@@ -15,10 +15,11 @@ Bat::Bat(float x, float y, List_Images *img, int direction, int step, int x_dist
     this->step = step;
     move_animation = 0;
     confirmAnimation = true;
+    List_Images* img = Images::imgsBat;
+    current_img = (*img)[0];
 }
 
 void Bat::move(int x_move){
-    //cout << step << endl;
     if(step == 1)
     {
         y += 0.2;
@@ -56,6 +57,7 @@ void Bat::move(int x_move){
 
 void Bat::animationBat()
 {
+    List_Images* img = Images::imgsBat;
     if(move_animation > 30)
     {
         if(confirmAnimation)

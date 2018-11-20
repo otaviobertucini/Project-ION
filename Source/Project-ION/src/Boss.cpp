@@ -5,12 +5,14 @@ Boss::Boss(): speed(0.25)
     //ctor
 }
 
-Boss::Boss(float x, float y, List_Images* img, Human* jack):Enemy(x, y, img), speed(0.25){
+Boss::Boss(float x, float y, Human* jack):Enemy(x, y), speed(0.25){
     h = 70;
     w = 70;
     this->jack = jack;
     timer = 2001;
     last_poison = 0;
+    List_Images* img = Images::imgsBoss;
+    current_img = (*img)[0];
 }
 
 void Boss::move(int x_move){
@@ -53,6 +55,7 @@ void Boss::createPoison(List_Poisons* poisons){
 }
 
 void Boss::verifyDirection(){
+    List_Images* img = Images::imgsBoss;
     if(jack->getx() > x + w/2){
         direction = -1;
         side_ball = x+w;

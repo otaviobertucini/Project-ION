@@ -5,16 +5,13 @@ Character::Character()
     //ctor
 }
 
-Character::Character(float x, float y, List_Images *img):
+Character::Character(float x, float y):
             Moveable(x, y)
 {
-    this->img = img;
     this->move_left = true;
     this->move_right = true;
     this->move_up = true;
     this->move_down = true;
-    if(img != NULL)
-        current_img = (*img)[0];
     direction = 1;
     y_force = 0;
 }

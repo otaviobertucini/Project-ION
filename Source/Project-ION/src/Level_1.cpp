@@ -52,7 +52,6 @@ Level_1::Level_1(BITMAP* buffer, Images* images, Human* jack):Level(buffer, imag
 }
 
 int Level_1::gameLoop(){
-
     game_status = genericGameLoop();
 
     if(iterations % 4 == 0){
@@ -99,61 +98,61 @@ void Level_1::generateLevel(){
         resetLevel();
         if(rand()%2 == 0)
         {
-            Topspin* top = new Topspin(330, 190, images->getImgsTopspin());
+            Topspin* top = new Topspin(330, 190);
             characters->include(static_cast<Character*>(top));
         }
 
         if(rand()%2 == 0)
         {
-            Topspin* top2 = new Topspin(440, 190, images->getImgsTopspin(),-1);
+            Topspin* top2 = new Topspin(440, 190, -1);
             characters->include(static_cast<Character*>(top2));
         }
 
         if(rand()%2 == 0)
         {
-            Topspin* top3 = new Topspin(940, 530, images->getImgsTopspin(),-1);
+            Topspin* top3 = new Topspin(940, 530, -1);
             characters->include(static_cast<Character*>(top3));
         }
 
         if(rand()%2 == 0)
         {
-            Topspin* top4 = new Topspin(910, 530, images->getImgsTopspin());
+            Topspin* top4 = new Topspin(910, 530);
             characters->include(static_cast<Character*>(top4));
         }
 
         if(rand()%2 == 0)
         {
-            Topspin* top5 = new Topspin(540, 530, images->getImgsTopspin());
+            Topspin* top5 = new Topspin(540, 530);
             characters->include(static_cast<Character*>(top5));
         }
 
         if(rand()%2 == 0)
         {
-            Bat* batman1 = new Bat(210,240,images->getImgsBat(),1,1,270,80);
+            Bat* batman1 = new Bat(210,240,1,1,270,80);
             characters->include(static_cast<Character*>(batman1));
         }
 
         if(rand()%2 == 0)
         {
-            Bat* batman2 = new Bat(480,240,images->getImgsBat(),-1,1,270,80);
+            Bat* batman2 = new Bat(480,240,-1,1,270,80);
             characters->include(static_cast<Character*>(batman2));
         }
 
         if(rand()%2 == 0)
         {
-            Bat* batman3 = new Bat(390,60,images->getImgsBat(),1,1,390,40);
+            Bat* batman3 = new Bat(390,60,1,1,390,40);
             characters->include(static_cast<Character*>(batman3));
         }
 
         if(rand()%2 == 0)
         {
-            Bat* batman4 = new Bat(780,60,images->getImgsBat(),-1,1,390,40);
+            Bat* batman4 = new Bat(780,60,-1,1,390,40);
             characters->include(static_cast<Character*>(batman4));
         }
 
         if(rand()%2 == 0)
         {
-            Bat* batman5 = new Bat(810,60,images->getImgsBat(),1,1,60,390);
+            Bat* batman5 = new Bat(810,60,1,1,60,390);
             characters->include(static_cast<Character*>(batman5));
         }
         was_genereted = 1;
@@ -200,7 +199,7 @@ void Level_1::loadLevel(ifstream& myfile){
                 float x = (float) atof(x_copy.c_str());
                 float y = (float) atof(y_copy.c_str());
                 int dir = (int) atoi(dir_copy.c_str());
-                characters->include(static_cast<Character*>(new Topspin(x, y, images->getImgsTopspin(), dir)));
+                characters->include(static_cast<Character*>(new Topspin(x, y, dir)));
             }
             if(copy == "BAT"){
                 int i;
@@ -223,7 +222,7 @@ void Level_1::loadLevel(ifstream& myfile){
                 int x_lim = (int) atoi(xlim_copy.c_str());
                 int y_lim = (int) atoi(ylim_copy.c_str());
                 float flew = (float) atof(flew_copy.c_str());
-                characters->include(static_cast<Character*>(new Bat(x, y, images->getImgsBat(), dir, step, x_lim, y_lim, flew)));
+                characters->include(static_cast<Character*>(new Bat(x, y, dir, step, x_lim, y_lim, flew)));
             }
             if(copy == "FIR"){
                 int i;
@@ -238,7 +237,7 @@ void Level_1::loadLevel(ifstream& myfile){
                 int y = (int) atoi(y_copy.c_str());
                 //cout << x << ", " << y << endl;
                 List_Images* aux = images->getImgsFireball();
-                fireballs->include(static_cast<Fireball*>(new Fireball(x, y, (*aux)[0])));
+                fireballs->include(static_cast<Fireball*>(new Fireball(x, y)));
             }
         }
         was_genereted = 1;

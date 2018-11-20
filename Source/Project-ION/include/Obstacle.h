@@ -6,7 +6,7 @@ class Obstacle: public Entity
 {
 public:
     Obstacle();
-    Obstacle(float x, float y, BITMAP* current_img);
+    Obstacle(float x, float y);
     virtual ~Obstacle();
 protected:
 };

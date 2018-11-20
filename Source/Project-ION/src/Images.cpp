@@ -65,6 +65,14 @@ Images::Images()
     imgsBoss->include(load_bitmap("Material/Enemy/boss_4.bmp", NULL));
 }
 
+List_Images* Images::imgsJack = NULL;
+List_Images* Images::imgsBat = NULL;
+List_Images* Images::imgsMap = NULL;
+List_Images* Images::imgsTopspin = NULL;
+List_Images* Images::imgsFireball = NULL;
+List_Images* Images::imgsBoss = NULL;
+List_Images* Images::imgsHandle = NULL;
+
 List_Images* Images::getImgsJack(){
     return imgsJack;
 }

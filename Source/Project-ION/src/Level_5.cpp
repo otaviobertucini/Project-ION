@@ -101,62 +101,62 @@ void Level_5::generateLevel(){
         resetLevel();
         if(rand()%2 == 0)
         {
-            Topspin* top1 = new Topspin(150, 190, images->getImgsTopspin());
+            Topspin* top1 = new Topspin(150, 190);
             characters->include(static_cast<Character*>(top1));
         }
 
         if(rand()%2 == 0)
         {
-            Topspin* top2 = new Topspin(210, 330, images->getImgsTopspin());
+            Topspin* top2 = new Topspin(210, 330);
             characters->include(static_cast<Character*>(top2));
         }
 
         if(rand()%2 == 0)
         {
-            Topspin* top3 = new Topspin(950, 680, images->getImgsTopspin(),-1);
+            Topspin* top3 = new Topspin(950, 680,-1);
             characters->include(static_cast<Character*>(top3));
         }
 
         if(rand()%2 == 0)
         {
-            Topspin* top4 = new Topspin(510, 400, images->getImgsTopspin(),-1);
+            Topspin* top4 = new Topspin(510, 400,-1);
             characters->include(static_cast<Character*>(top4));
         }
 
         if(rand()%2 == 0)
         {
-            Topspin* top5 = new Topspin(60, 510, images->getImgsTopspin(),-1);
+            Topspin* top5 = new Topspin(60, 510,-1);
             characters->include(static_cast<Character*>(top5));
         }
 
 
         if(rand()%2 == 0)
         {
-            Bat* batman1 = new Bat(720,510,images->getImgsBat(),1,1,150,60);
+            Bat* batman1 = new Bat(720,510,1,1,150,60);
             characters->include(static_cast<Character*>(batman1));
         }
 
         if(rand()%2 == 0)
         {
-            Bat* batman2 = new Bat(480,90,images->getImgsBat(),1,1,330,130);
+            Bat* batman2 = new Bat(480,90,1,1,330,130);
             characters->include(static_cast<Character*>(batman2));
         }
 
         if(rand()%2 == 0)
         {
-            Bat* batman3 = new Bat(810,90,images->getImgsBat(),-1,1,330,130);
+            Bat* batman3 = new Bat(810,90,-1,1,330,130);
             characters->include(static_cast<Character*>(batman3));
         }
 
         if(rand()%2 == 0)
         {
-            Bat* batman4 = new Bat(420,450,images->getImgsBat(),1,1,180,90);
+            Bat* batman4 = new Bat(420,450,1,1,180,90);
             characters->include(static_cast<Character*>(batman4));
         }
 
         if(rand()%2 == 0)
         {
-            Bat* batman5 = new Bat(480,90,images->getImgsBat(),1,1,330,0);
+            Bat* batman5 = new Bat(480,90,1,1,330,0);
             characters->include(static_cast<Character*>(batman5));
         }
 
@@ -211,7 +211,7 @@ void Level_5::loadLevel(ifstream& myfile){
                 float x = (float) atof(x_copy.c_str());
                 float y = (float) atof(y_copy.c_str());
                 int dir = (int) atoi(dir_copy.c_str());
-                characters->include(static_cast<Character*>(new Topspin(x, y, images->getImgsTopspin(), dir)));
+                characters->include(static_cast<Character*>(new Topspin(x, y, dir)));
             }
             if(copy == "BAT"){
                 int i;
@@ -234,7 +234,7 @@ void Level_5::loadLevel(ifstream& myfile){
                 int x_lim = (int) atoi(xlim_copy.c_str());
                 int y_lim = (int) atoi(ylim_copy.c_str());
                 float flew = (float) atof(flew_copy.c_str());
-                characters->include(static_cast<Character*>(new Bat(x, y, images->getImgsBat(), dir, step, x_lim, y_lim, flew)));
+                characters->include(static_cast<Character*>(new Bat(x, y, dir, step, x_lim, y_lim, flew)));
             }
             if(copy == "FIR"){
                 int i;
@@ -247,8 +247,7 @@ void Level_5::loadLevel(ifstream& myfile){
                 std::string y_copy(line, index[0]+1, line.size()-1);
                 int x = (int) atoi(x_copy.c_str());
                 int y = (int) atoi(y_copy.c_str());
-                BITMAP* aux = load_bitmap("Material/Enemy/fireball.bmp", NULL);
-                fireballs->include(static_cast<Fireball*>(new Fireball(x, y, aux)));
+                fireballs->include(static_cast<Fireball*>(new Fireball(x, y)));
             }
         }
         was_genereted = 1;

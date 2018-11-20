@@ -8,7 +8,7 @@ class Powerup : public Entity
 {
 public:
     Powerup();
-    Powerup(float x, float y, BITMAP* current_img);
+    Powerup(float x, float y);
     virtual void modify(Human* a) = 0;
     virtual ~Powerup();
 protected:

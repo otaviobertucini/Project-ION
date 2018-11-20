@@ -73,61 +73,61 @@ void Level_2_1::generateLevel(){
         resetLevel();
         if(rand()%2 == 0)
         {
-            Topspin* top = new Topspin(480, 530, images->getImgsTopspin());
+            Topspin* top = new Topspin(480, 530);
             characters->include(static_cast<Character*>(top));
         }
 
         if(rand()%2 == 0)
         {
-            Topspin* top2 = new Topspin(750, 610, images->getImgsTopspin());
+            Topspin* top2 = new Topspin(750, 610);
             characters->include(static_cast<Character*>(top2));
         }
 
         if(rand()%2 == 0)
         {
-            Topspin* top3 = new Topspin(450, 220, images->getImgsTopspin());
+            Topspin* top3 = new Topspin(450, 220);
             characters->include(static_cast<Character*>(top3));
         }
 
         if(rand()%2 == 0)
         {
-            Topspin* top4 = new Topspin(60, 120, images->getImgsTopspin());
+            Topspin* top4 = new Topspin(60, 120);
             characters->include(static_cast<Character*>(top4));
         }
 
         if(rand()%2 == 0)
         {
-            Topspin* top5 = new Topspin(240, 420, images->getImgsTopspin());
+            Topspin* top5 = new Topspin(240, 420);
             characters->include(static_cast<Character*>(top5));
         }
 
         if(rand()%2 == 0)
         {
-            Bat* batman1 = new Bat(240,300,images->getImgsBat(),1,1,560,80);
+            Bat* batman1 = new Bat(240,300,1,1,560,80);
             characters->include(static_cast<Character*>(batman1));
         }
 
         if(rand()%2 == 0)
         {
-            Bat* batman2 = new Bat(800,300,images->getImgsBat(),-1,1,560,80);
+            Bat* batman2 = new Bat(800,300,-1,1,560,80);
             characters->include(static_cast<Character*>(batman2));
         }
 
         if(rand()%2 == 0)
         {
-            Bat* batman3 = new Bat(800,90,images->getImgsBat(),-1,1,450,50);
+            Bat* batman3 = new Bat(800,90,-1,1,450,50);
             characters->include(static_cast<Character*>(batman3));
         }
 
         if(rand()%2 == 0)
         {
-            Bat* batman4 = new Bat(240,90,images->getImgsBat(),1,1,450,50);
+            Bat* batman4 = new Bat(240,90,1,1,450,50);
             characters->include(static_cast<Character*>(batman4));
         }
 
         if(rand()%2 == 0)
         {
-            Bat* batman5 = new Bat(30,230,images->getImgsBat(),1,1,70,70);
+            Bat* batman5 = new Bat(30,230,1,1,70,70);
             characters->include(static_cast<Character*>(batman5));
         }
 

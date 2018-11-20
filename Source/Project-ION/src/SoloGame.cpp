@@ -179,7 +179,7 @@ void SoloGame::execute()
 }
 
 void SoloGame::level0(){
-    jack = new Human("JAK", 0, 0, images->getImgsJack());
+    jack = new Human("JAK", 0, 0);
 
     Tutorial* tutorial = new Tutorial(buffer, images, jack);
     levels->include(static_cast<Level*>(tutorial));

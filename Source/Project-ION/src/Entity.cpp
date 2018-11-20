@@ -5,10 +5,9 @@ Entity::Entity()
     //ctor
 }
 
-Entity::Entity(float x, float y, BITMAP* curren_img){
+Entity::Entity(float x, float y){
     this->x = x;
     this->y = y;
-    this->current_img = curren_img;
 }
 
 BITMAP* Entity::getCurrentImg(){

@@ -6,6 +6,7 @@
 #include <iostream>
 #include <vector>
 #include "List_Images.h"
+#include "Images.h"
 using std::cout;
 using std::endl;
 
@@ -13,7 +14,7 @@ class Entity
 {
 public:
     Entity();
-    Entity(float x, float y, BITMAP* curren_img = NULL);
+    Entity(float x, float y);
     virtual void print(BITMAP* screen);
     BITMAP* getCurrentImg();
     void setCurrentImg(BITMAP* img);

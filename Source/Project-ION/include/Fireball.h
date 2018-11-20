@@ -8,7 +8,7 @@ class Fireball : public Moveable
 {
 public:
     Fireball();
-    Fireball(float x, float y, BITMAP* img);
+    Fireball(float x, float y);
     void move(int x_move);
     void saveState(std::ofstream& myfile) const;
     void loop();

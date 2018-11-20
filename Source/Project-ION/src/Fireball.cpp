@@ -5,8 +5,9 @@ Fireball::Fireball()
     //ctor
 }
 
-Fireball::Fireball(float x, float y, BITMAP* img):Moveable(x, y){
-    this->current_img = img;
+Fireball::Fireball(float x, float y):Moveable(x, y){
+    List_Images* imgs = Images::imgsFireball;
+    current_img =(*imgs)[0];
     h = 10;
     w = 10;
 }

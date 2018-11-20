@@ -7,7 +7,7 @@ class Handle: public Structure
 {
 public:
     Handle();
-    Handle(float x, float y, List_Images* img, bool on = 0);
+    Handle(float x, float y, bool on = 0);
     void switch_on();
     static int getSwitchedOn();
     static void setSwitchedOn(const int n);

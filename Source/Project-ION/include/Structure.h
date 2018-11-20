@@ -7,7 +7,7 @@ class Structure: public Entity
 {
 public:
     Structure();
-    Structure(float x, float y, BITMAP* current_img);
+    Structure(float x, float y);
     void setPosMatrix();
     virtual ~Structure();
 protected:

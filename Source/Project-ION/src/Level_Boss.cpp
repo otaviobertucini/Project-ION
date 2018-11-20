@@ -90,12 +90,12 @@ void Level_Boss::generateLevel(){
     if(!was_genereted){
         handles = new List_Handles;
         resetLevel();
-        boss = new Boss(480, 350, images->getImgsBoss(),jack);
+        boss = new Boss(480, 350,jack);
         characters->include(static_cast<Character*>(boss));
-        handles->include(new Handle(120, 330, images->getImgsHandle()));
-        handles->include(new Handle(930, 330, images->getImgsHandle()));
-        handles->include(new Handle(120, 570, images->getImgsHandle()));
-        handles->include(new Handle(930, 570, images->getImgsHandle()));
+        handles->include(new Handle(120, 330));
+        handles->include(new Handle(930, 330));
+        handles->include(new Handle(120, 570));
+        handles->include(new Handle(930, 570));
         was_genereted = 1;
         Handle::setSwitchedOn(0);
     }
@@ -140,7 +140,7 @@ void Level_Boss::loadLevel(ifstream& myfile){
                 std::string yc(line, index[0]+1, line.size()-1);
                 int x = (int) atoi(xc.c_str());
                 int y = (int) atoi(yc.c_str());
-                boss = new Boss(x, y, images->getImgsBoss(), jack);
+                boss = new Boss(x, y, jack);
                 characters->include(static_cast<Character*>(boss));
             }
             if(copy == "HAN"){
@@ -156,7 +156,7 @@ void Level_Boss::loadLevel(ifstream& myfile){
                 int x = (int) atoi(xc.c_str());
                 int y = (int) atoi(yc.c_str());
                 int on = (int) atoi(oc.c_str());
-                handles->include(new Handle(x, y, images->getImgsHandle(), on));
+                handles->include(new Handle(x, y, on));
             }
             if(copy == "NHA"){
                 std::string xc(line, 4, line.size() -1);
