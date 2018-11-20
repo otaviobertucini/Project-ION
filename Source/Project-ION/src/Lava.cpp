@@ -8,7 +8,7 @@ Lava::Lava()
 Lava::Lava(float x, float y, int id):Obstacle(x, y){
     w = 30;
     h = 30;
-    List_Images* img = Images::imgsMap;
+    List_Images* img = Images_Library::imgsMap;
     current_img = (*img)[17+id];
 }
 

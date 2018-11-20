@@ -9,10 +9,6 @@ void List_Obstacles::include(Obstacle* news){
     obstacles.push_back(news);
 }
 
-int List_Obstacles::empty(){
-    return obstacles.empty();
-}
-
 int List_Obstacles::size(){
     return obstacles.size();
 }

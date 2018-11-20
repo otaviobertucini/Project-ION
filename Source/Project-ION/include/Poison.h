@@ -3,7 +3,7 @@
 #include "Moveable.h"
 #include <fstream>
 
-class Poison: public Moveable
+class Poison: public Mover
 {
 public:
     Poison();

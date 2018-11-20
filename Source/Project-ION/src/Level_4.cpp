@@ -5,7 +5,7 @@ Level_4::Level_4()
     //ctor
 }
 
-Level_4::Level_4(BITMAP* buffer, Images* images, Human* jack):Level(buffer, images, jack){
+Level_4::Level_4(BITMAP* buffer, Human* jack):Level(buffer, jack){
 
     int** m = new int*[24];
     for(int i = 0; i<24; i++)

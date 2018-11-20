@@ -5,7 +5,7 @@ Level_1::Level_1()
     //ctor
 }
 
-Level_1::Level_1(BITMAP* buffer, Images* images, Human* jack):Level(buffer, images, jack){
+Level_1::Level_1(BITMAP* buffer, Human* jack):Level(buffer, jack){
 
     int** m = new int*[24];
     for(int i = 0; i<24; i++)
@@ -76,7 +76,6 @@ int Level_1::gameLoop(){
     if(game_status != 1)
         return game_status;
 
-    //cout << x_initial << "," << y_initial << endl;
     if(jack->getx() >= 1075 && jack->gety() >= 0){
         resetPlayer(-15,jack->gety());
         x_save_initial = 0;
@@ -235,15 +234,14 @@ void Level_1::loadLevel(ifstream& myfile){
                 std::string y_copy(line, index[0]+1, line.size()-1);
                 int x = (int) atoi(x_copy.c_str());
                 int y = (int) atoi(y_copy.c_str());
-                //cout << x << ", " << y << endl;
-                List_Images* aux = images->getImgsFireball();
+
                 fireballs->include(static_cast<Fireball*>(new Fireball(x, y)));
             }
         }
         was_genereted = 1;
     }
     else{
-        cout << "NÃO ABRIU LULULULULUL" << endl;
+        cout << "Erro ao carregar arquivo!" << endl;
     }
 }
 

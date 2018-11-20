@@ -14,12 +14,12 @@ Topspin::Topspin(float x, float y, int direction):
     type = "TOP";
     x_speed = 0.2;
     y_speed = 0.06;
-    List_Images* img = Images::imgsTopspin;
+    List_Images* img = Images_Library::imgsTopspin;
     current_img = (*img)[1];
 }
 
 void Topspin::move(int x_move){
-    List_Images* img = Images::imgsTopspin;
+    List_Images* img = Images_Library::imgsTopspin;
     if(!move_left){
         direction = 1;
         current_img = (*img)[1];

@@ -9,8 +9,6 @@ class List_Fireballs
 public:
     List_Fireballs();
     void include(Fireball* newc);
-    void deleteAll();
-    int empty();
     int size();
     void erase(int i);
     void eraseAll();

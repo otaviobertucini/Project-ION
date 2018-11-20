@@ -1,33 +1,33 @@
 #include "Moveable.h"
 
-Moveable::Moveable()
+Mover::Mover()
 {
     //ctor
 }
 
-Moveable::Moveable(float x, float y):Entity(x, y){}
+Mover::Mover(float x, float y):Entity(x, y){}
 
-void Moveable::setRight(const bool new_mode){
+void Mover::setRight(const bool new_mode){
     move_right = new_mode;
 }
 
-void Moveable::setLeft(const bool new_mode){
+void Mover::setLeft(const bool new_mode){
     move_left = new_mode;
 }
 
-void Moveable::setUp(const bool new_mode){
+void Mover::setUp(const bool new_mode){
     move_up = new_mode;
 }
 
-void Moveable::setDown(const bool new_mode){
+void Mover::setDown(const bool new_mode){
     move_down = new_mode;
 }
 
-const int Moveable::getDirection(){
+const int Mover::getDirection(){
     return direction;
 }
 
-Moveable::~Moveable()
+Mover::~Mover()
 {
     //dtor
 }

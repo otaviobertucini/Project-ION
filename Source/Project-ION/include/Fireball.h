@@ -4,7 +4,7 @@
 #include "Enemy.h"
 #include "Moveable.h"
 
-class Fireball : public Moveable
+class Fireball : public Mover
 {
 public:
     Fireball();

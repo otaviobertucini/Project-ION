@@ -5,7 +5,7 @@ Level_2::Level_2()
 
 }
 
-Level_2::Level_2(BITMAP* buffer, Images* images, Human* jack):Level(buffer, images, jack)
+Level_2::Level_2(BITMAP* buffer, Human* jack):Level(buffer, jack)
 {
     int** m = new int*[24];
     for(int i = 0; i<24; i++)
@@ -255,7 +255,7 @@ void Level_2::loadLevel(ifstream& myfile){
         was_genereted = 1;
     }
     else{
-        cout << "NÃO ABRIU LULULULULUL" << endl;
+        cout << "Erro ao carregar arquivo!" << endl;
     }
 }
 

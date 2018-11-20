@@ -181,34 +181,34 @@ void SoloGame::execute()
 void SoloGame::level0(){
     jack = new Human("JAK", 0, 0);
 
-    Tutorial* tutorial = new Tutorial(buffer, images, jack);
+    Tutorial* tutorial = new Tutorial(buffer,  jack);
     levels->include(static_cast<Level*>(tutorial));
 
-    Level_1* level_1 = new Level_1(buffer, images, jack);
+    Level_1* level_1 = new Level_1(buffer,  jack);
     levels->include(static_cast<Level*>(level_1));
 
-    Level_2* level_2 = new Level_2(buffer, images, jack);
+    Level_2* level_2 = new Level_2(buffer,  jack);
     levels->include(static_cast<Level*>(level_2));
 
-    Level_3* level_3 = new Level_3(buffer, images, jack);
+    Level_3* level_3 = new Level_3(buffer,  jack);
     levels->include(static_cast<Level*>(level_3));
 
-    Level_4* level_4 = new Level_4(buffer, images, jack);
+    Level_4* level_4 = new Level_4(buffer,  jack);
     levels->include(static_cast<Level*>(level_4));
 
-    Level_5* level_5 = new Level_5(buffer, images, jack);
+    Level_5* level_5 = new Level_5(buffer,  jack);
     levels->include(static_cast<Level*>(level_5));
 
-    Level_6* level_6 = new Level_6(buffer, images, jack);
+    Level_6* level_6 = new Level_6(buffer,  jack);
     levels->include(static_cast<Level*>(level_6));
 
-    Level_Boss* level_boss = new Level_Boss(buffer, images, jack);
+    Level_Boss* level_boss = new Level_Boss(buffer,  jack);
     levels->include(static_cast<Level*>(level_boss));
 
-    Level_2_1* level_2_1 = new Level_2_1(buffer, images, jack);
+    Level_2_1* level_2_1 = new Level_2_1(buffer,  jack);
     levels->include(static_cast<Level*>(level_2_1));
 
-    Level_4_1* level_4_1 = new Level_4_1(buffer, images, jack);
+    Level_4_1* level_4_1 = new Level_4_1(buffer,  jack);
     levels->include(static_cast<Level*>(level_4_1));
 }
 

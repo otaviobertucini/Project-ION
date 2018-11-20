@@ -7,7 +7,7 @@ Level_2_1::Level_2_1()
 
 }
 
-Level_2_1::Level_2_1(BITMAP* buffer, Images* images, Human* jack):Level(buffer, images, jack){
+Level_2_1::Level_2_1(BITMAP* buffer, Human* jack):Level(buffer, jack){
 
     int** m = new int*[24];
     for(int i = 0; i<24; i++)

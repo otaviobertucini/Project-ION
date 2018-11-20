@@ -6,7 +6,7 @@ Character::Character()
 }
 
 Character::Character(float x, float y):
-            Moveable(x, y)
+            Mover(x, y)
 {
     this->move_left = true;
     this->move_right = true;

@@ -1,5 +1,5 @@
-#ifndef LIST_IMAGES_H
-#define LIST_IMAGES_H
+#ifndef List_Images_H
+#define List_Images_H
 #include<allegro.h>
 //#include <winalleg.h>
 #include <cstddef> //library for NULL
@@ -17,7 +17,7 @@ public:
     BITMAP* operator[](int index);
     virtual ~List_Images();
 private:
-    std::vector<BITMAP*> images;
+    std::vector<BITMAP*> Images_Library;
 };
 
-#endif // LIST_IMAGES_H
+#endif // List_Images_H

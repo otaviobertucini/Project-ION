@@ -15,7 +15,7 @@
 using std::cout;
 using std::endl;
 
-class Character: public Moveable
+class Character: public Mover
 {
 public:
     Character();

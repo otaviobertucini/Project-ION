@@ -7,7 +7,7 @@ class Level_2: public Level
 {
 public:
     Level_2();
-    Level_2(BITMAP* buffer, Images* images, Human* jack);
+    Level_2(BITMAP* buffer, Human* jack);
     int gameLoop();
     void generateLevel();
     void generateLevel(List_Characters* characters);

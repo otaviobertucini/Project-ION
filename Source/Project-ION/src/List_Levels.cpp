@@ -9,10 +9,6 @@ void List_Levels::include(Level* news){
     levels.push_back(news);
 }
 
-int List_Levels::empty(){
-    return levels.empty();
-}
-
 int List_Levels::size(){
     return levels.size();
 }

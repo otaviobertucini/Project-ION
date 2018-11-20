@@ -9,10 +9,6 @@ void List_Powerups::include(Powerup* newp){
     powers.push_back(newp);
 }
 
-int List_Powerups::empty(){
-    return powers.empty();
-}
-
 int List_Powerups::size(){
     return powers.size();
 }
@@ -49,14 +45,6 @@ void List_Powerups::erase(int i){
 
 void List_Powerups::eraseAll(){
     for(unsigned int i = 0; i<powers.size(); i++){
-        delete powers[i];
-        powers[i] = NULL;
-    }
-    powers.clear();
-}
-
-void List_Powerups::deleteAll(){
-    for(int i = 0; i<powers.size(); i++){
         delete powers[i];
         powers[i] = NULL;
     }

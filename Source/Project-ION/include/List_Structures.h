@@ -15,7 +15,7 @@ public:
     int empty();
     int size();
     void print(BITMAP* buffer);
-    int isCollide(Moveable* a);
+    int isCollide(Mover* a);
     int isCollide(List_Characters* chars);
     int isCollide(List_Fireballs* fires);
     int isCollide(List_Poisons* poisons);

@@ -5,7 +5,7 @@ Tutorial::Tutorial()
     //ctor
 }
 
-Tutorial::Tutorial(BITMAP* buffer, Images* images, Human* jack):Level(buffer, images, jack){
+Tutorial::Tutorial(BITMAP* buffer, Human* jack):Level(buffer, jack){
 
 
     int** m = new int*[24];

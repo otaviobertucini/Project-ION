@@ -31,7 +31,7 @@ class Level
 {
 public:
     Level();
-    Level(BITMAP* buffer, Images *images, Human* jack);
+    Level(BITMAP* buffer, Human* jack);
     virtual ~Level();
     void printMap();
     const float getXInitial();
@@ -40,12 +40,6 @@ public:
     const float getYSaveInitial();
     void setInitial(float x, float y);
     void generateMap(int** matrix);
-    void isStructureCollide(Moveable* a);
-    int isFireballCollide(Character* a);
-    int isPowerupCollide(Human* a);
-    List_Characters* getListCharacters();
-    List_Powerups* getListPowerups();
-    List_Fireballs* getListFireballs();
     int genericGameLoop();
     virtual int gameLoop() = 0;
     virtual void generateLevel() = 0;
@@ -60,7 +54,6 @@ protected:
     BITMAP* buffer; //Pointer to the display where all components will be shown.
     Human* jack;
     List_Characters* characters;
-    Images* images;
     float x_initial;
     float y_initial;
     float x_save_initial;

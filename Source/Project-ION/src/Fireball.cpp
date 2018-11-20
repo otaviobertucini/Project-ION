@@ -5,8 +5,8 @@ Fireball::Fireball()
     //ctor
 }
 
-Fireball::Fireball(float x, float y):Moveable(x, y){
-    List_Images* imgs = Images::imgsFireball;
+Fireball::Fireball(float x, float y):Mover(x, y){
+    List_Images* imgs = Images_Library::imgsFireball;
     current_img =(*imgs)[0];
     h = 10;
     w = 10;

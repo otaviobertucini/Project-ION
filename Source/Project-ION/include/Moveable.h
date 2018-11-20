@@ -2,11 +2,11 @@
 #define MOVEABLE_H
 #include "Entity.h"
 
-class Moveable: public Entity
+class Mover: public Entity
 {
 public:
-    Moveable();
-    Moveable(float x, float y);
+    Mover();
+    Mover(float x, float y);
     void setRight(const bool new_move);
     void setLeft(const bool new_move);
     void setUp(const bool new_move);
@@ -15,7 +15,7 @@ public:
     virtual void move(int x_move) = 0;
     virtual void loop() = 0;
     virtual void saveState(std::ofstream& myfile) const = 0;
-    virtual ~Moveable();
+    virtual ~Mover();
 protected:
     bool move_left;
     bool move_right;

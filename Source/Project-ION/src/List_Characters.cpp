@@ -9,10 +9,6 @@ void List_Characters::include(Character* news){
     characters.push_back(news);
 }
 
-int List_Characters::empty(){
-    return characters.empty();
-}
-
 int List_Characters::size(){
     return characters.size();
 }

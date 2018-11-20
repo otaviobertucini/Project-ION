@@ -20,7 +20,7 @@ Human::Human(string name, float x, float y, int direction, bool powerup_on):
     lifes = 10;
     distance_walk_animation = 0;
     walk = true;
-    List_Images* img = Images::imgsJack;
+    List_Images* img = Images_Library::imgsJack;
     current_img = (*img)[0];
 }
 
@@ -54,7 +54,7 @@ void Human::gravity()
 
 void Human::animation()
 {
-    List_Images* imgs = Images::imgsJack;
+    List_Images* imgs = Images_Library::imgsJack;
     if(current_side == 1)
     {
         if(!move_down && distance_walk_animation > 55)

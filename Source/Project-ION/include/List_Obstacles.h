@@ -11,7 +11,6 @@ public:
     List_Obstacles();
     void include(Obstacle* newc);
     void deleteAll();
-    int empty();
     int size();
     void eraseAll();
     int isCollide(Character* a);

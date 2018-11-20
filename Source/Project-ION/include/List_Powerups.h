@@ -8,8 +8,6 @@ class List_Powerups
 public:
     List_Powerups();
     void include(Powerup* newp);
-    void deleteAll();
-    int empty();
     int size();
     void erase(int i);
     void eraseAll();

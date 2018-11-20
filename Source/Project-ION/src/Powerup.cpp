@@ -6,7 +6,7 @@ Powerup::Powerup()
 }
 
 Powerup::Powerup(float x, float y):Entity(x, y){
-    List_Images* img = Images::imgsMap;
+    List_Images* img = Images_Library::imgsMap;
     current_img = (*img)[23];
 }
 

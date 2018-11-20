@@ -37,7 +37,7 @@ void List_user::Import_List()
 
     }
     else
-        cout << "n abriu" << endl;
+        cout << "Erro ao carregar arquivo! (rank)" << endl;
 }
 
 void List_user::Export_List()

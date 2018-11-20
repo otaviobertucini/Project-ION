@@ -5,9 +5,8 @@ Level::Level()
     //ctor
 }
 
-Level::Level(BITMAP* buffer, Images *images, Human* jack){
+Level::Level(BITMAP* buffer, Human* jack){
     this->buffer = buffer;
-    this->images = images;
     characters = new List_Characters;
     obstacles = new List_Obstacles;
     structures = new List_Structures;
@@ -24,7 +23,6 @@ void Level::generateMap(int** matrix){
     bool downStone;
     bool leftStone;
     bool rightStone;
-    List_Images* img = images->getImgsMap();
     srand(time(NULL));
 
     for(int i = 0; i<24; i++){
@@ -232,7 +230,7 @@ int Level::genericGameLoop()
             jack->move(1);
         }
         jack->loop();
-        structures->isCollide(static_cast<Moveable*>(jack));
+        structures->isCollide(static_cast<Mover*>(jack));
         structures->isCollide(characters);
         characters->loop();
     }
@@ -329,7 +327,7 @@ void Level::loadLevel(ifstream& myfile){
         was_genereted = 1;
     }
     else{
-        cout << "NÃO ABRIU LULULULULUL" << endl;
+        cout << "Erro ao carregar arquivo!" << endl;
     }
 }
 

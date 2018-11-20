@@ -4,27 +4,27 @@ List_Images::List_Images()
 {}
 
 void List_Images::include(BITMAP* newi){
-    images.push_back(newi);
+    Images_Library.push_back(newi);
 }
 
 int List_Images::empty(){
-    return images.empty();
+    return Images_Library.empty();
 }
 
 int List_Images::size(){
-    return images.size();
+    return Images_Library.size();
 }
 
 BITMAP* List_Images::operator[](int index){
-    return images[index];
+    return Images_Library[index];
 }
 
 void List_Images::deleteAll(){
     for(int i = 0; i < size(); i++){
-        destroy_bitmap(images[i]);
-        images[i] = NULL;
+        destroy_bitmap(Images_Library[i]);
+        Images_Library[i] = NULL;
     }
-    images.clear();
+    Images_Library.clear();
 }
 
 List_Images::~List_Images()

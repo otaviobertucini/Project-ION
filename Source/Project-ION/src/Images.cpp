@@ -1,15 +1,15 @@
 #include "Images.h"
 
-Images::Images()
+Images_Library::Images_Library()
 {
-    //Loads images from Jack
+    //Loads Images_Library from Jack
     imgsJack = new List_Images;
     imgsJack->include(load_bitmap("Material/Scenario/jack_1.bmp", NULL));
     imgsJack->include(load_bitmap("Material/Scenario/jack_2.bmp", NULL));
     imgsJack->include(load_bitmap("Material/Scenario/jack_3.bmp", NULL));
     imgsJack->include(load_bitmap("Material/Scenario/jack_4.bmp", NULL));
 
-    //Loads images from map
+    //Loads Images_Library from map
     imgsMap = new List_Images;
     imgsMap->include(load_bitmap("Material/Scenario/stone_1.bmp", NULL));
     imgsMap->include(load_bitmap("Material/Scenario/stone_2.bmp", NULL));
@@ -38,26 +38,26 @@ Images::Images()
     imgsMap->include(load_bitmap("Material/Enemy/fireball.bmp", NULL));
 
 
-    //loads images from handle
+    //loads Images_Library from handle
     imgsHandle = new List_Images;
     imgsHandle->include(load_bitmap("Material/Scenario/lever_switch_1.bmp", NULL));
     imgsHandle->include(load_bitmap("Material/Scenario/lever_switch_2.bmp", NULL));
 
-    //Loads images from topspin
+    //Loads Images_Library from topspin
     imgsTopspin = new List_Images;
     imgsTopspin->include(load_bitmap("Material/Enemy/topSpin_Walk_1.bmp", NULL));
     imgsTopspin->include(load_bitmap("Material/Enemy/topSpin_Walk_2.bmp", NULL));
 
-    //Loads images from fireball
+    //Loads Images_Library from fireball
     imgsFireball = new List_Images;
     imgsFireball->include(load_bitmap("Material/Enemy/fireball.bmp", NULL));
 
-    //loads images from bat
+    //loads Images_Library from bat
     imgsBat = new List_Images;
     imgsBat->include(load_bitmap("Material/Enemy/bat_1.bmp", NULL));
     imgsBat->include(load_bitmap("Material/Enemy/bat_2.bmp", NULL));
 
-    //loads images from boss
+    //loads Images_Library from boss
     imgsBoss = new List_Images;
     imgsBoss->include(load_bitmap("Material/Enemy/boss_1.bmp", NULL));
     imgsBoss->include(load_bitmap("Material/Enemy/boss_2.bmp", NULL));
@@ -65,42 +65,15 @@ Images::Images()
     imgsBoss->include(load_bitmap("Material/Enemy/boss_4.bmp", NULL));
 }
 
-List_Images* Images::imgsJack = NULL;
-List_Images* Images::imgsBat = NULL;
-List_Images* Images::imgsMap = NULL;
-List_Images* Images::imgsTopspin = NULL;
-List_Images* Images::imgsFireball = NULL;
-List_Images* Images::imgsBoss = NULL;
-List_Images* Images::imgsHandle = NULL;
+List_Images* Images_Library::imgsJack = NULL;
+List_Images* Images_Library::imgsBat = NULL;
+List_Images* Images_Library::imgsMap = NULL;
+List_Images* Images_Library::imgsTopspin = NULL;
+List_Images* Images_Library::imgsFireball = NULL;
+List_Images* Images_Library::imgsBoss = NULL;
+List_Images* Images_Library::imgsHandle = NULL;
 
-List_Images* Images::getImgsJack(){
-    return imgsJack;
-}
-List_Images* Images::getImgsMap(){
-    return imgsMap;
-}
-
-List_Images* Images::getImgsTopspin(){
-    return imgsTopspin;
-}
-
-List_Images* Images::getImgsFireball(){
-    return imgsFireball;
-}
-
-List_Images* Images::getImgsBat(){
-    return imgsBat;
-}
-
-List_Images* Images::getImgsBoss(){
-    return imgsBoss;
-}
-
-List_Images* Images::getImgsHandle(){
-    return imgsHandle;
-}
-
-Images::~Images()
+Images_Library::~Images_Library()
 {
     imgsJack->deleteAll();
     imgsMap->deleteAll();

@@ -23,7 +23,7 @@ public:
 protected:
     List_Levels* levels;
     BITMAP* buffer;
-    Images *images;
+    Images_Library *images;
     Level *current;
     Menu* menu1;
 };

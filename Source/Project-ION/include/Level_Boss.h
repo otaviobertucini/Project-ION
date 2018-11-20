@@ -11,7 +11,7 @@ class Level_Boss: public Level
 {
 public:
     Level_Boss();
-    Level_Boss(BITMAP* buffer, Images* images, Human* jack);
+    Level_Boss(BITMAP* buffer, Human* jack);
     int gameLoop();
     void generateLevel();
     void generateLevel(List_Characters* characters);
