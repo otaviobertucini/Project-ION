@@ -36,8 +36,6 @@ void List_user::Import_List()
         }
 
     }
-    else
-        cout << "n abriu" << endl;
 }
 
 void List_user::Export_List()

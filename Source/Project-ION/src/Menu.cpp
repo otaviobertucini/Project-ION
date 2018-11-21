@@ -21,6 +21,7 @@ int Menu::inicial(){
     //cout << "aqui" << endl;
     bool exit = false;
     bool confirmButton = false;
+    bool confirmArrow = false;
     int option = 1;
     float y_cursor;
     //show_mouse(screen);
@@ -50,13 +51,19 @@ int Menu::inicial(){
         if(!key[KEY_ENTER])
             confirmButton = true;
 
-        if(key[KEY_UP] && option > 1){
+        if(key[KEY_UP] && option > 1 && !confirmArrow){
             rest(200);
             option -= 1;
+            confirmArrow = true;
         }
-        if(key[KEY_DOWN] && option < 4){
+        if(key[KEY_DOWN] && option < 4 && !confirmArrow){
             rest(200);
             option += 1;
+            confirmArrow = true;
+        }
+
+        if(!key[KEY_UP] && !key[KEY_DOWN]){
+            confirmArrow = false;
         }
 
         if(option == 1)

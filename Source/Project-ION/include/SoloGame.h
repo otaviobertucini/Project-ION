@@ -37,7 +37,6 @@ public:
     void menu();
     void execute();
     void saveLevel();
-    //void readLevel(List_Characters* characters, List_Powerups* powers, List_Fireballs* fires);
     int readLevel(ifstream& file);
     void resetLevels();
     void deleteLevels();

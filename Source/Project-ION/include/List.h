@@ -97,7 +97,8 @@ int List<TYPE>::size(){
 }
 
 template<class TYPE>
-void List<TYPE>::clear(){
+void List<TYPE>::
+    clear(){
     List<TYPE>::Element* aux = first;
     List<TYPE>::Element* aux2;
     while(aux != NULL){
