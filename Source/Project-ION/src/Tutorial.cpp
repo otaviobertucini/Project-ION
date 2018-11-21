@@ -47,34 +47,18 @@ Tutorial::Tutorial(BITMAP* buffer, Human* jack):Level(buffer, jack){
     }
 
     generateMap(m);
-    powers = new List_Powerups;
 }
 
 void Tutorial::generateLevel(){
 
     if(!was_genereted){
         resetLevel();
-        powers->include(static_cast<Powerup*>(new Birl(840, 630)));
         was_genereted = 1;
     }
 }
 
 int Tutorial::gameLoop(){
     game_status = genericGameLoop();
-
-    powers->print(buffer);
-    if(powers->isCollide(jack)){
-        start = clock();
-    }
-
-    if(jack->isPowered()){
-        int stop = clock();
-        power_time = (stop-start)/double(CLOCKS_PER_SEC)*1000;
-
-        if(power_time >= 5000){
-            jack->turnPowerup(false);
-        }
-    }
 
     if(game_status != 1)
         return game_status;
@@ -104,7 +88,6 @@ void Tutorial::printText(){
 
 void Tutorial::eraseAll(){
     characters->eraseAll();
-    powers->eraseAll();
     was_genereted = 0;
 }
 

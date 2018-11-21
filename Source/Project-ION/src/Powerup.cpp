@@ -10,6 +10,10 @@ Powerup::Powerup(float x, float y):Entity(x, y){
     current_img = (*img)[23];
 }
 
+void Powerup::saveLevel(std::ofstream& myfile){
+    myfile << "POW:" << x << "," << y << "\n";
+}
+
 Powerup::~Powerup()
 {
     //dtor

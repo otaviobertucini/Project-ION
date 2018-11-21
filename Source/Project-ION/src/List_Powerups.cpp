@@ -51,6 +51,12 @@ void List_Powerups::eraseAll(){
     powers.clear();
 }
 
+void List_Powerups::saveLevel(std::ofstream& myfile){
+    for(int i = 0; i < size(); i++){
+        powers[i]->saveLevel(myfile);
+    }
+}
+
 List_Powerups::~List_Powerups()
 {
     //dtor

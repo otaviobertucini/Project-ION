@@ -202,12 +202,14 @@ void Level_6::printText(){
 void Level_6::eraseAll(){
     characters->eraseAll();
     fireballs->eraseAll();
+    powers->eraseAll();
     was_genereted = 0;
 }
 
 void Level_6::saveLevel(std::ofstream& myfile) const{
     characters->saveLevel(myfile);
     fireballs->saveLevel(myfile);
+    powers->saveLevel(myfile);
 }
 
 void Level_6::loadLevel(ifstream& myfile){
@@ -282,6 +284,20 @@ void Level_6::loadLevel(ifstream& myfile){
                 int x = (int) atoi(x_copy.c_str());
                 int y = (int) atoi(y_copy.c_str());
                 fireballs->include(static_cast<Fireball*>(new Fireball(x, y)));
+            }
+            if(copy == "POW"){
+                int i;
+                std::vector<int> index;
+                for(i=4; i<line.size(); i++){
+                    if(line[i] == ',')
+                        index.push_back(i);
+                }
+                std::string x_copy(line, 4, index[0]);
+                std::string y_copy(line, index[0]+1, line.size()-1);
+                int x = (int) atoi(x_copy.c_str());
+                int y = (int) atoi(y_copy.c_str());
+
+                powers->include(static_cast<Powerup*>(new Birl(x, y)));
             }
         }
         was_genereted = 1;

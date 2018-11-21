@@ -10,6 +10,7 @@ public:
     Powerup();
     Powerup(float x, float y);
     virtual void modify(Human* a) = 0;
+    void saveLevel(std::ofstream& myfile);
     virtual ~Powerup();
 protected:
     std::string type;

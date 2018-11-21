@@ -40,7 +40,7 @@ void SoloGame::execute()
     {
         x = 240;
         y = 140;
-        i_level = 0;
+        i_level = 6;
         runTime = clock();
 
         if(start == 2){

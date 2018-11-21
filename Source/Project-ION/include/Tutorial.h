@@ -16,7 +16,6 @@ public:
     void printText();
     virtual ~Tutorial();
 private:
-    List_Powerups* powers;
     double power_time;
     int start;
 };

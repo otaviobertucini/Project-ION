@@ -11,7 +11,7 @@ Handle::Handle(float x, float y, bool on):Structure(x, y){
     h = 30;
     w = 30;
     List_Images* img = Images_Library::imgsHandle;
-    current_img = (*img)[0];
+    current_img = (*img)[on];
     this->on = on;
 }
 

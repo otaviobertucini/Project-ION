@@ -13,6 +13,7 @@ public:
     void eraseAll();
     int isCollide(Human* a);
     void print(BITMAP* buffer);
+    void saveLevel(std::ofstream& myfile);
     Powerup* operator[](int index);
     virtual ~List_Powerups();
 private:
