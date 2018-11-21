@@ -5,10 +5,9 @@ Entity::Entity()
     //ctor
 }
 
-Entity::Entity(float x, float y, BITMAP* curren_img){
+Entity::Entity(float x, float y){
     this->x = x;
     this->y = y;
-    this->current_img = curren_img;
 }
 
 BITMAP* Entity::getCurrentImg(){
@@ -47,7 +46,7 @@ void Entity::setx(const float new_x){
     x = new_x;
 }
 
-//Shows on screen the images in the images vector.
+//Shows on screen the Images_Library in the Images_Library vector.
 void Entity::print(BITMAP* screen){
     masked_blit(current_img, screen, 0,0, x, y, w, h);
 }

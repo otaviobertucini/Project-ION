@@ -9,7 +9,7 @@ class Tutorial: public Level
 {
 public:
     Tutorial();
-    Tutorial(BITMAP* buffer, Images* images, Human* jack);
+    Tutorial(BITMAP* buffer, Human* jack);
     int gameLoop();
     virtual void generateLevel();
     void eraseAll();

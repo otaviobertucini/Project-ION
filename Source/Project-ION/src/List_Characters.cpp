@@ -9,10 +9,6 @@ void List_Characters::include(Character* news){
     characters.push_back(news);
 }
 
-int List_Characters::empty(){
-    return characters.empty();
-}
-
 int List_Characters::size(){
     return characters.size();
 }
@@ -37,7 +33,7 @@ void List_Characters::print(BITMAP* buffer){
 
 void List_Characters::loop(){
     for(int i = 0; i < size(); i++){
-        characters[i]->loop();
+        (*characters[i])++;
     }
 }
 

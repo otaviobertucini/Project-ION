@@ -1,9 +1,2 @@
-teste,8,97345
-Brasileirinho,7,109756
-nicolas,7,235362
-Carlos,6,88735
-Joo,3,21699
-Otavio,3,34929
-Nicolas,2,93341
-s,0,1918
-1234567890123456,0,2065
+nicolas,7,103147
+oct,4,24269

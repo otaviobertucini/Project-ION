@@ -5,7 +5,7 @@ Tutorial::Tutorial()
     //ctor
 }
 
-Tutorial::Tutorial(BITMAP* buffer, Images* images, Human* jack):Level(buffer, images, jack){
+Tutorial::Tutorial(BITMAP* buffer, Human* jack):Level(buffer, jack){
 
 
     int** m = new int*[24];
@@ -54,8 +54,7 @@ void Tutorial::generateLevel(){
 
     if(!was_genereted){
         resetLevel();
-        List_Images* aux = images->getImgsMap();
-        powers->include(static_cast<Powerup*>(new Birl(840, 630, (*aux)[23])));
+        powers->include(static_cast<Powerup*>(new Birl(840, 630)));
         was_genereted = 1;
     }
 }
@@ -101,7 +100,6 @@ void Tutorial::printText(){
     ss << "Vidas: " << jack->getLifes();
     life_txt = ss.str();
     textout_ex(buffer, font_main, life_txt.c_str(), 0, 0, makecol(255, 0, 0), -1);
-    characters->print(buffer);
 }
 
 void Tutorial::eraseAll(){

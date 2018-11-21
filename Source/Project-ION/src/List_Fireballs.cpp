@@ -9,10 +9,6 @@ void List_Fireballs::include(Fireball* news){
     fireballs.push_back(news);
 }
 
-int List_Fireballs::empty(){
-    return fireballs.empty();
-}
-
 int List_Fireballs::size(){
     return fireballs.size();
 }
@@ -51,14 +47,6 @@ void List_Fireballs::loop(){
 
 void List_Fireballs::eraseAll(){
     for(unsigned int i = 0; i<fireballs.size(); i++){
-        delete fireballs[i];
-        fireballs[i] = NULL;
-    }
-    fireballs.clear();
-}
-
-void List_Fireballs::deleteAll(){
-    for(int i = 0; i<fireballs.size(); i++){
         delete fireballs[i];
         fireballs[i] = NULL;
     }

@@ -5,7 +5,9 @@ Spine::Spine()
     //ctor
 }
 
-Spine::Spine(float x, float y, BITMAP* current_img):Obstacle(x, y, current_img){
+Spine::Spine(float x, float y, int side):Obstacle(x, y){
+    List_Images* img = Images_Library::imgsMap;
+    current_img = (*img)[side];
     h = 30;
     w = 30;
 }

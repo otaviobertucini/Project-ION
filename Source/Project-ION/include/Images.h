@@ -1,5 +1,5 @@
-#ifndef IMAGES_H
-#define IMAGES_H
+#ifndef Images_Library_H
+#define Images_Library_H
 #include <allegro.h>
 //#include <winalleg.h>
 #include <vector>
@@ -10,27 +10,18 @@
 using std::cout;
 using std::endl;
 
-class Images
+class Images_Library
 {
 public:
-    Images();
-    ~Images();
-    List_Images* getImgsJack();
-    List_Images* getImgsMap();
-    List_Images* getImgsTopspin();
-    List_Images* getImgsLava();
-    List_Images* getImgsFireball();
-    List_Images* getImgsBat();
-    List_Images* getImgsBoss();
-    List_Images* getImgsHandle();
-private:
-    List_Images *imgsJack;
-    List_Images *imgsMap;
-    List_Images *imgsTopspin;
-    List_Images *imgsFireball;
-    List_Images *imgsBat;
-    List_Images *imgsBoss;
-    List_Images *imgsHandle;
+    Images_Library();
+    ~Images_Library();
+    static List_Images* imgsJack;
+    static List_Images *imgsMap;
+    static List_Images *imgsTopspin;
+    static List_Images *imgsFireball;
+    static List_Images *imgsBat;
+    static List_Images *imgsBoss;
+    static List_Images *imgsHandle;
 };
 
-#endif // IMAGES_H
+#endif // Images_Library_H

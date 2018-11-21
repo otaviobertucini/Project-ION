@@ -4,11 +4,11 @@
 #include "Enemy.h"
 #include "Moveable.h"
 
-class Fireball : public Moveable
+class Fireball : public Mover
 {
 public:
     Fireball();
-    Fireball(float x, float y, BITMAP* img);
+    Fireball(float x, float y);
     void move(int x_move);
     void saveState(std::ofstream& myfile) const;
     void loop();

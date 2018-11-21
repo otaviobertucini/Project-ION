@@ -5,7 +5,10 @@ Powerup::Powerup()
     //ctor
 }
 
-Powerup::Powerup(float x, float y, BITMAP* current_img):Entity(x, y,  current_img){}
+Powerup::Powerup(float x, float y):Entity(x, y){
+    List_Images* img = Images_Library::imgsMap;
+    current_img = (*img)[23];
+}
 
 Powerup::~Powerup()
 {

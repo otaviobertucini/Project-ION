@@ -23,7 +23,7 @@ void List_Structures::print(BITMAP* buffer){
     }
 }
 
-int List_Structures::isCollide(Moveable* a){
+int List_Structures::isCollide(Mover* a){
     int i;
     float x_center,y_center,x_center_body,y_center_body;
 
@@ -68,13 +68,13 @@ int List_Structures::isCollide(Moveable* a){
 
 int List_Structures::isCollide(List_Characters* chars){
     for(int i = 0; i < chars->size(); i++){
-        isCollide(static_cast<Moveable*>((*chars)[i]));
+        isCollide(static_cast<Mover*>((*chars)[i]));
     }
 }
 
 int List_Structures::isCollide(List_Fireballs* fires){
     for(int i = 0; i < fires->size(); i++){
-        isCollide(static_cast<Moveable*>((*fires)[i]));
+        isCollide(static_cast<Mover*>((*fires)[i]));
         if(!(*fires)[i]->getMoveUp()){
             delete (*fires)[i];
             fires->erase(i);
@@ -84,7 +84,7 @@ int List_Structures::isCollide(List_Fireballs* fires){
 
 int List_Structures::isCollide(List_Poisons* poisons){
     for(int i = 0; i < poisons->size(); i++){
-        isCollide(static_cast<Moveable*>((*poisons)[i]));
+        isCollide(static_cast<Mover*>((*poisons)[i]));
         if(!(*poisons)[i]->getMoveSide()){
             delete (*poisons)[i];
             poisons->del(i);

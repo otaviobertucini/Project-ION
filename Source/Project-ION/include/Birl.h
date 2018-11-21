@@ -8,7 +8,7 @@ class Birl : public Powerup
 {
 public:
     Birl();
-    Birl(float x, float y, BITMAP* current_img);
+    Birl(float x, float y);
     void modify(Human* a);
     virtual ~Birl();
 private:

@@ -5,9 +5,8 @@ Level::Level()
     //ctor
 }
 
-Level::Level(BITMAP* buffer, Images *images, Human* jack){
+Level::Level(BITMAP* buffer, Human* jack){
     this->buffer = buffer;
-    this->images = images;
     characters = new List_Characters;
     obstacles = new List_Obstacles;
     structures = new List_Structures;
@@ -24,7 +23,6 @@ void Level::generateMap(int** matrix){
     bool downStone;
     bool leftStone;
     bool rightStone;
-    List_Images* img = images->getImgsMap();
     srand(time(NULL));
 
     for(int i = 0; i<24; i++){
@@ -51,64 +49,64 @@ void Level::generateMap(int** matrix){
                     if(downStone)
                     {
                         if(rightStone)
-                            structures->include(static_cast<Structure*>(new Stone(30*j, 30*i, (*img)[13])));
+                            structures->include(static_cast<Structure*>(new Stone(30*j, 30*i, 13)));
                         else if(leftStone)
-                            structures->include(static_cast<Structure*>(new Stone(30*j, 30*i, (*img)[15])));
+                            structures->include(static_cast<Structure*>(new Stone(30*j, 30*i, 15)));
                         else
-                            structures->include(static_cast<Structure*>(new Stone(30*j, 30*i, (*img)[11])));
+                            structures->include(static_cast<Structure*>(new Stone(30*j, 30*i, 11)));
                     }
                     else if(rightStone)
                     {
                         if(leftStone)
-                            structures->include(static_cast<Structure*>(new Stone(30*j, 30*i, (*img)[16])));
+                            structures->include(static_cast<Structure*>(new Stone(30*j, 30*i, 16)));
                         else
-                            structures->include(static_cast<Structure*>(new Stone(30*j, 30*i, (*img)[7])));
+                            structures->include(static_cast<Structure*>(new Stone(30*j, 30*i, 7)));
                     }
                     else if(leftStone)
-                        structures->include(static_cast<Structure*>(new Stone(30*j, 30*i, (*img)[10])));
+                        structures->include(static_cast<Structure*>(new Stone(30*j, 30*i, 10)));
                     else
-                        structures->include(static_cast<Structure*>(new Stone(30*j, 30*i, (*img)[3])));
+                        structures->include(static_cast<Structure*>(new Stone(30*j, 30*i, 3)));
                 }
                 else if(rightStone)
                 {
                     if(leftStone)
                     {
                         if(downStone)
-                            structures->include(static_cast<Structure*>(new Stone(30*j, 30*i, (*img)[14])));
+                            structures->include(static_cast<Structure*>(new Stone(30*j, 30*i, 14)));
                         else
-                            structures->include(static_cast<Structure*>(new Stone(30*j, 30*i, (*img)[12])));
+                            structures->include(static_cast<Structure*>(new Stone(30*j, 30*i, 12)));
                     }
                     else if(downStone)
-                        structures->include(static_cast<Structure*>(new Stone(30*j, 30*i, (*img)[8])));
+                        structures->include(static_cast<Structure*>(new Stone(30*j, 30*i, 8)));
                     else
-                        structures->include(static_cast<Structure*>(new Stone(30*j, 30*i, (*img)[4])));
+                        structures->include(static_cast<Structure*>(new Stone(30*j, 30*i, 4)));
                 }
                 else if(downStone)
                 {
                     if(leftStone)
-                        structures->include(static_cast<Structure*>(new Stone(30*j, 30*i, (*img)[9])));
+                        structures->include(static_cast<Structure*>(new Stone(30*j, 30*i, 9)));
                     else
-                        structures->include(static_cast<Structure*>(new Stone(30*j, 30*i, (*img)[5])));
+                        structures->include(static_cast<Structure*>(new Stone(30*j, 30*i, 5)));
                 }
                 else if(leftStone)
-                        structures->include(static_cast<Structure*>(new Stone(30*j, 30*i, (*img)[6])));
+                        structures->include(static_cast<Structure*>(new Stone(30*j, 30*i, 6)));
                 else
                 {
                     int aux;
                     aux = rand()%3;
-                    structures->include(static_cast<Structure*>(new Stone(30*j, 30*i, (*img)[aux])));
+                    structures->include(static_cast<Structure*>(new Stone(30*j, 30*i, aux)));
                 }
             }
             else if(matrix[i][j] == 2){
                 Lava* aux;
                 if(matrix[i-1][j] != 2 && matrix[i-1][j] != 3)
-                    aux = new Lava(30*j, 30*i, images->getImgsMap(), 1);
+                    aux = new Lava(30*j, 30*i, 1);
                 else
-                    aux = new Lava(30*j, 30*i, images->getImgsMap(), 0);
+                    aux = new Lava(30*j, 30*i, 0);
                 obstacles->include(static_cast<Obstacle*>(aux));
             }
             else if(matrix[i][j] == 3){
-                Lava* aux = new Lava(30*j, 30*i, images->getImgsMap(), 1);
+                Lava* aux = new Lava(30*j, 30*i, 1);
                 obstacles->include(static_cast<Obstacle*>(aux));
                 lavas->include(aux);
             }
@@ -132,7 +130,7 @@ void Level::generateMap(int** matrix){
                     else if(matrix[i][j-1] == 0){
                         side = 20;
                     }
-                    obstacles->include(static_cast<Obstacle*>(new Spine(30*j, 30*i, (*img)[side])));
+                    obstacles->include(static_cast<Obstacle*>(new Spine(30*j, 30*i, side)));
                 }
             }
         }
@@ -199,7 +197,6 @@ void Level::printText(){
     ss << "Vidas: " << jack->getLifes();
     life_txt = ss.str();
     textout_ex(buffer, font_main, life_txt.c_str(), 0, 0, makecol(255, 0, 0), -1);
-    characters->print(buffer);
 }
 
 int Level::genericGameLoop()
@@ -209,6 +206,7 @@ int Level::genericGameLoop()
         jack->animation();
         jack->print(buffer);
         printText();
+        characters->print(buffer);
         draw_sprite(screen, buffer, 0, 0);
         clear_bitmap(buffer);
         if (key[KEY_C])
@@ -223,7 +221,6 @@ int Level::genericGameLoop()
         {
             jack->activeDash();
         }
-
         if (key[KEY_LEFT])
         {
             jack->move(-1);
@@ -233,7 +230,7 @@ int Level::genericGameLoop()
             jack->move(1);
         }
         jack->loop();
-        structures->isCollide(static_cast<Moveable*>(jack));
+        structures->isCollide(static_cast<Mover*>(jack));
         structures->isCollide(characters);
         characters->loop();
     }
@@ -301,7 +298,7 @@ void Level::loadLevel(ifstream& myfile){
                 float x = (float) atof(x_copy.c_str());
                 float y = (float) atof(y_copy.c_str());
                 int dir = (int) atoi(dir_copy.c_str());
-                characters->include(static_cast<Character*>(new Topspin(x, y, images->getImgsTopspin(), dir)));
+                characters->include(static_cast<Character*>(new Topspin(x, y, dir)));
             }
             if(copy == "BAT"){
                 int i;
@@ -324,13 +321,13 @@ void Level::loadLevel(ifstream& myfile){
                 int x_lim = (int) atoi(xlim_copy.c_str());
                 int y_lim = (int) atoi(ylim_copy.c_str());
                 float flew = (float) atof(flew_copy.c_str());
-                characters->include(static_cast<Character*>(new Bat(x, y, images->getImgsBat(), dir, step, x_lim, y_lim, flew)));
+                characters->include(static_cast<Character*>(new Bat(x, y, dir, step, x_lim, y_lim, flew)));
             }
         }
         was_genereted = 1;
     }
     else{
-        cout << "NÃO ABRIU LULULULULUL" << endl;
+        cout << "Erro ao carregar arquivo!" << endl;
     }
 }
 

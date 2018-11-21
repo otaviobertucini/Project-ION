@@ -69,10 +69,6 @@
 		<Unit filename="include/List_Structures.h" />
 		<Unit filename="include/List_User.h" />
 		<Unit filename="include/Main.h" />
-<<<<<<< Updated upstream
-		<Unit filename="include/Matrices.h" />
-=======
->>>>>>> Stashed changes
 		<Unit filename="include/Menu.h" />
 		<Unit filename="include/Moveable.h" />
 		<Unit filename="include/Obstacle.h" />

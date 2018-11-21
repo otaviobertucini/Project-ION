@@ -5,7 +5,7 @@ Birl::Birl()
     //ctor
 }
 
-Birl::Birl(float x, float y, BITMAP* current_img):Powerup(x, y, current_img){
+Birl::Birl(float x, float y):Powerup(x, y){
     h = 30;
     w = 21;
     type = "BIL";

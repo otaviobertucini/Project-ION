@@ -15,21 +15,20 @@
 using std::cout;
 using std::endl;
 
-class Character: public Moveable
+class Character: public Mover
 {
 public:
     Character();
-    Character(float x, float y, List_Images *img);
+    Character(float x, float y);
     ~Character();
     virtual void loop() = 0;
     virtual void gravity();
-
+    void operator++(int n);
 protected:
     std::string type;
     int current_side;
     float x_speed;  // Values that will be
     float y_speed;  // increased/decreased when moving.
-    List_Images *img;
     float y_force;
 };
 

@@ -2,7 +2,7 @@
 
 Game::Game()
 {
-    images = new Images;
+    images = new Images_Library;
     levels = new List_Levels;
     menu1 = new Menu(buffer);
 }

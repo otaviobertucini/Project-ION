@@ -5,7 +5,7 @@ Poison::Poison()
     //ctor
 }
 
-Poison::Poison(float x, float y, BITMAP* current_img, int direction):Moveable(x, y){
+Poison::Poison(float x, float y, BITMAP* current_img, int direction):Mover(x, y){
     this->current_img = current_img;
     h = 25;
     w = 25;

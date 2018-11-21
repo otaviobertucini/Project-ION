@@ -7,7 +7,7 @@ Level_6::Level_6()
 
 }
 
-Level_6::Level_6(BITMAP* buffer, Images* images, Human* jack):Level(buffer, images, jack){
+Level_6::Level_6(BITMAP* buffer, Human* jack):Level(buffer, jack){
 
     int** m = new int*[24];
     for(int i = 0; i<24; i++)
@@ -50,6 +50,7 @@ Level_6::Level_6(BITMAP* buffer, Images* images, Human* jack):Level(buffer, imag
     }
 
     fireballs = new List_Fireballs;
+    powers = new List_Powerups;
     generateMap(m);
 }
 
@@ -58,6 +59,19 @@ int Level_6::gameLoop(){
 
     game_status = genericGameLoop();
 
+    powers->print(buffer);
+    if(powers->isCollide(jack)){
+        start = clock();
+    }
+
+    if(jack->isPowered()){
+        int stop = clock();
+        power_time = (stop-start)/double(CLOCKS_PER_SEC)*1000;
+
+        if(power_time >= 5000){
+            jack->turnPowerup(false);
+        }
+    }
 
     if(iterations % 4 == 0){
         fireballs->print(buffer);
@@ -101,65 +115,66 @@ void Level_6::generateLevel()
     if(!was_genereted){
 
         resetLevel();
+        powers->include(static_cast<Powerup*>(new Birl(450, 210)));
 
         if(rand()%2 == 0)
         {
-            Topspin* top1 = new Topspin(670, 650, images->getImgsTopspin(),-1);
+            Topspin* top1 = new Topspin(670, 650,-1);
             characters->include(static_cast<Character*>(top1));
         }
 
         if(rand()%2 == 0)
         {
-            Topspin* top2 = new Topspin(570, 400, images->getImgsTopspin(),-1);
+            Topspin* top2 = new Topspin(570, 400,-1);
             characters->include(static_cast<Character*>(top2));
         }
 
         if(rand()%2 == 0)
         {
-            Topspin* top3 = new Topspin(420, 640, images->getImgsTopspin(),-1);
+            Topspin* top3 = new Topspin(420, 640,-1);
             characters->include(static_cast<Character*>(top3));
         }
 
         if(rand()%2 == 0)
         {
-            Topspin* top4 = new Topspin(270, 610, images->getImgsTopspin(),-1);
+            Topspin* top4 = new Topspin(270, 610,-1);
             characters->include(static_cast<Character*>(top4));
         }
 
         if(rand()%2 == 0)
         {
-            Topspin* top5 = new Topspin(60, 280, images->getImgsTopspin(),1);
+            Topspin* top5 = new Topspin(60, 280,1);
             characters->include(static_cast<Character*>(top5));
         }
 
 
         if(rand()%2 == 0)
         {
-            Bat* batman1 = new Bat(450,180,images->getImgsBat(),1,1,130,90);
+            Bat* batman1 = new Bat(450,180,1,1,130,90);
             characters->include(static_cast<Character*>(batman1));
         }
 
         if(rand()%2 == 0)
         {
-            Bat* batman2 = new Bat(300,210,images->getImgsBat(),1,1,40,430);
+            Bat* batman2 = new Bat(300,210,1,1,40,430);
             characters->include(static_cast<Character*>(batman2));
         }
 
         if(rand()%2 == 0)
         {
-            Bat* batman3 = new Bat(340,210,images->getImgsBat(),-1,1,40,430);
+            Bat* batman3 = new Bat(340,210,-1,1,40,430);
             characters->include(static_cast<Character*>(batman3));
         }
 
         if(rand()%2 == 0)
         {
-            Bat* batman4 = new Bat(450,150,images->getImgsBat(),1,1,160,0);
+            Bat* batman4 = new Bat(450,150,1,1,160,0);
             characters->include(static_cast<Character*>(batman4));
         }
 
         if(rand()%2 == 0)
         {
-            Bat* batman5 = new Bat(150,30,images->getImgsBat(),1,1,50,600);
+            Bat* batman5 = new Bat(150,30,1,1,50,600);
             characters->include(static_cast<Character*>(batman5));
         }
 
@@ -167,6 +182,22 @@ void Level_6::generateLevel()
     }
 
 }
+
+void Level_6::printText(){
+
+    if(jack->isPowered()){
+        int sub = ((5000 - power_time)/1000)+1;
+        std::stringstream ss;
+        ss << "Birl: " << sub;
+        std::string timer_txt = ss.str();
+        textout_ex(buffer, font_main, timer_txt.c_str(), 900, 0, makecol(255, 0, 0), -1);
+    }
+    std::stringstream ss;
+    ss << "Vidas: " << jack->getLifes();
+    life_txt = ss.str();
+    textout_ex(buffer, font_main, life_txt.c_str(), 0, 0, makecol(255, 0, 0), -1);
+}
+
 
 void Level_6::eraseAll(){
     characters->eraseAll();
@@ -214,7 +245,7 @@ void Level_6::loadLevel(ifstream& myfile){
                 float x = (float) atof(x_copy.c_str());
                 float y = (float) atof(y_copy.c_str());
                 int dir = (int) atoi(dir_copy.c_str());
-                characters->include(static_cast<Character*>(new Topspin(x, y, images->getImgsTopspin(), dir)));
+                characters->include(static_cast<Character*>(new Topspin(x, y, dir)));
             }
             if(copy == "BAT"){
                 int i;
@@ -237,7 +268,7 @@ void Level_6::loadLevel(ifstream& myfile){
                 int x_lim = (int) atoi(xlim_copy.c_str());
                 int y_lim = (int) atoi(ylim_copy.c_str());
                 float flew = (float) atof(flew_copy.c_str());
-                characters->include(static_cast<Character*>(new Bat(x, y, images->getImgsBat(), dir, step, x_lim, y_lim, flew)));
+                characters->include(static_cast<Character*>(new Bat(x, y, dir, step, x_lim, y_lim, flew)));
             }
             if(copy == "FIR"){
                 int i;
@@ -250,14 +281,13 @@ void Level_6::loadLevel(ifstream& myfile){
                 std::string y_copy(line, index[0]+1, line.size()-1);
                 int x = (int) atoi(x_copy.c_str());
                 int y = (int) atoi(y_copy.c_str());
-                BITMAP* aux = load_bitmap("Material/Enemy/fireball.bmp", NULL);
-                fireballs->include(static_cast<Fireball*>(new Fireball(x, y, aux)));
+                fireballs->include(static_cast<Fireball*>(new Fireball(x, y)));
             }
         }
         was_genereted = 1;
     }
     else{
-        cout << "NÃO ABRIU LULULULULUL" << endl;
+        cout << "Erro ao carregar arquivo!" << endl;
     }
 }
 

@@ -8,7 +8,7 @@ class Spine : public Obstacle
 {
 public:
     Spine();
-    Spine(float x, float y, BITMAP* current_img);
+    Spine(float x, float y, int side);
     virtual ~Spine();
 private:
 };

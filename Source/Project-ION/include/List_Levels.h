@@ -9,7 +9,6 @@ public:
     List_Levels();
     void include(Level* newl);
     void deleteAll();
-    int empty();
     int size();
     void eraseAll();
     Level* operator[](int index);

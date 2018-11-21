@@ -8,7 +8,7 @@ class Level_4: public Level
 {
 public:
     Level_4();
-    Level_4(BITMAP* buffer, Images* images, Human* jack);
+    Level_4(BITMAP* buffer, Human* jack);
     int gameLoop();
     void generateLevel();
     virtual ~Level_4();

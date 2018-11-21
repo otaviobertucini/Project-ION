@@ -18,7 +18,6 @@ Menu::Menu(BITMAP* buffer){
 }
 
 int Menu::inicial(){
-    //cout << "aqui" << endl;
     bool exit = false;
     bool confirmButton = false;
     bool confirmArrow = false;
